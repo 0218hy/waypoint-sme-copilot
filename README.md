@@ -8,7 +8,7 @@ Repository: **https://github.com/0218hy/waypoint-sme-copilot**
 
 ![Eight screens from the current build (demo mode, simulated company TulBrew): the map of planning areas scored on public Singapore data; the cost card, likely and if things go badly; a contractor quote read by AI, its planted instruction ignored; the unit-economics and payback card; the set-aside slider; the funding plans side by side; rule R1 (labelled Law, with its source) refusing the WeBank loan for Singapore, with its own lawful alternatives; and the Goal tab after approval](docs/media/screens.jpg)
 
-▶ **[Watch the 2:50 demo video](docs/media/waypoint-demo.mp4)** (720p, English narration and captions; everything in it is simulated). The video, the screenshots and the slider GIF are from the current build.
+▶ **[Watch the 2:45 demo video](docs/media/waypoint-demo.mp4)** (720p, English narration and captions; everything in it is simulated). The video, the screenshots and the slider GIF are from the current build.
 
 ![The set-aside slider: dragging the share from 40% down to 30%, up to 50% and back moves the opening date and the chance of home cash dipping below its floor together (the live preview, from the first 200 of the full solve's runs)](docs/media/slider.gif)
 
