@@ -112,6 +112,13 @@ flowchart LR
   V --> W
 ```
 
+## Environment and dependencies
+
+- **Operating system:** macOS or Linux (developed and tested on macOS, Apple silicon); any Docker host for the container.
+- **Runtime versions:** Python 3.11 (managed by [uv](https://docs.astral.sh/uv/)), Node 22+ with npm; Docker optional (the whole app, or only Mailpit for demo email).
+- **Main dependencies:** FastAPI, Uvicorn, Pydantic, pydantic-ai (Anthropic, OpenAI and AG-UI adapters), the Claude Agent SDK, NumPy, SQLAlchemy (SQLite), APScheduler, Jinja2, Pillow and rfc8785 (`pyproject.toml`, locked in `uv.lock`); React 19, Vite, TypeScript, the AG-UI client, ECharts, Leaflet, i18next, Radix UI and zod (`web/package.json`, locked in `web/package-lock.json`).
+- **Environment variables:** copy `.env.example` to `.env` (gitignored; never commit real secrets). The ones that matter: `WAYPOINT_LLM_PROVIDER` (`auto`, `claude_code`, `anthropic`, `openai` or `none`) with `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` (+ `OPENAI_BASE_URL`, e.g. Qwen) as needed ([docs/MODELS.md](docs/MODELS.md)); `WAYPOINT_BASE_URL` (must match the address you open); `WAYPOINT_DEMO` (demo sign-in and controls); `WAYPOINT_SSO_SECRET` (random per process if unset); `WAYPOINT_SMTP_HOST`/`WAYPOINT_SMTP_PORT` (Mailpit by default); `LTA_ACCOUNT_KEY` (optional, station traffic). No key is needed to run: without a model every card and number still works.
+
 ## Quick start
 
 With Docker:
@@ -140,6 +147,24 @@ make serve
 - **Another port.** `make serve PORT=9000` also needs `WAYPOINT_BASE_URL=http://127.0.0.1:9000` (in the shell or `.env`); otherwise every POST is refused with 403 `cross_origin_request` by the same-origin check, and sign-in links point at port 8000.
 
 **Models:** tested with Claude (the evaluations ran through a local Claude Code login), with a small fast model for understanding typed text and the guard. The Anthropic API and any OpenAI-compatible endpoint are configurable; a Chinese model (Qwen, through the OpenAI-compatible option) is configurable but not yet tested. Details: [docs/MODELS.md](docs/MODELS.md).
+
+## Testing
+
+| Command | What it tests | Expected result |
+|---|---|---|
+| `make test` | 969 Python tests (`tests/`: rules R1–R8, tools and Monte Carlo, guard phrasings, approval cards and replay, audit chain and tamper cases, API security, auth and email, Goal Keeper, harm paths) and 214 web tests (`web/src/test/`: every widget in English and Chinese, chat, composer, fixtures against the JSON Schema) | All pass |
+| `make lint` · `make typecheck` | ruff and eslint; mypy (strict) and tsc | Clean |
+| `make eval` | The pre-registered evaluations that need no model (E1a, E2, E3, E4 keyword, E5, E6, E8) | Writes `results/results.json` and `results/RESULTS.md`; marks as in the Results table above |
+| `make evidence` | `make eval` + the seeded demo + the audit verifier | Every step exits 0; the demo's audit log verifies (106 records at the committed run) |
+| `uv run python -m agent.audit verify results/demo/audit.jsonl` | The committed audit log, without running anything | `OK: 106 records verified` |
+
+Known limitations are listed under [Not done yet](#not-done-yet) and in [docs/SECURITY.md](docs/SECURITY.md) (known-risk list K1–K13): the guard's end-to-end harm mark and the AI quote reader's mark fail as measured, the model evaluations used one model family, E7 (real owners) was not run, and everything runs on simulated data.
+
+## Repository and deployment
+
+- **Repository:** https://github.com/0218hy/waypoint-sme-copilot
+- **Live demo:** none hosted; run it locally in a few minutes (Quick start above), or watch the [demo video](docs/media/waypoint-demo.mp4).
+- **Deployment:** `docker compose up --build` (app on 127.0.0.1:8000, Mailpit on 127.0.0.1:8025), or `make setup` then `make serve` without Docker. Production inside WeBank would replace the mocked SSO, feed and signing, use a CAC-filed domestic model through the OpenAI-compatible provider, a real mail server, and encrypted storage ([docs/SPEC.md](docs/SPEC.md) §2.4).
 
 ## Documents
 
