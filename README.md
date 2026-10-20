@@ -4,7 +4,7 @@
 
 A chat-first finance copilot for the **2026 Shenzhen International FinTech Competition (FinTechathon), International Track (AI), Topic E: SME Finance Copilot**. Team **Tul.py**.
 
-Repository: **https://github.com/0218hy/fintechathon**
+Repository: **https://github.com/0218hy/waypoint-sme-copilot**
 
 ![Eight screens from the current build (demo mode, simulated company TulBrew): the map of planning areas scored on public Singapore data; the cost card, likely and if things go badly; a contractor quote read by AI, its planted instruction ignored; the unit-economics and payback card; the set-aside slider; the funding plans side by side; rule R1 (labelled Law, with its source) refusing the WeBank loan for Singapore, with its own lawful alternatives; and the Goal tab after approval](docs/media/screens.jpg)
 

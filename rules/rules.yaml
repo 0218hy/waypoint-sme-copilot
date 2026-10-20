@@ -63,7 +63,7 @@ rules:
     consequence_zh: "跌破底线会危及工资发放和微众贷款还款。"
     kind: design
     source: "Design rule (protects repayment capacity)"
-    url: "https://github.com/0218hy/fintechathon/blob/main/docs/SPEC.md#81-plan-rules-rulesrulesyaml--rulesenginepy"
+    url: "https://github.com/0218hy/waypoint-sme-copilot/blob/main/docs/SPEC.md#81-plan-rules-rulesrulesyaml--rulesenginepy"
     alternatives: [lower_share, add_savings, rent_free]
     checks: [plan_result]
   R6:
@@ -75,7 +75,7 @@ rules:
     consequence_zh: "资金未到位就签约，可能损失押金或店铺半途停工。"
     kind: design
     source: "Design rule (no lease is signed on money that isn't there yet)"
-    url: "https://github.com/0218hy/fintechathon/blob/main/docs/SPEC.md#81-plan-rules-rulesrulesyaml--rulesenginepy"
+    url: "https://github.com/0218hy/waypoint-sme-copilot/blob/main/docs/SPEC.md#81-plan-rules-rulesrulesyaml--rulesenginepy"
     alternatives: [rent_free, staged_contractor, later_lease]
     checks: [plan_result, action]
   R7:
