@@ -1,0 +1,1 @@
+{% if lang == 'zh' %}确认邮箱：{{ url }}{% else %}Confirm your email: {{ url }}{% endif %}

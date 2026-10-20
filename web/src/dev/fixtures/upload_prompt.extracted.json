@@ -1,0 +1,158 @@
+{
+  "id": "w_up2",
+  "payload": {
+    "type": "upload_prompt",
+    "doc_id": "doc_q1",
+    "image_url": "/api/docs/doc_q1/image",
+    "reader_mode": "replay",
+    "exclusions": [
+      "拆除另计 (demolition charged separately)",
+      "Electrical upgrade not included"
+    ],
+    "extracted": [
+      {
+        "id": "l1",
+        "label": "Carpentry and counters",
+        "amount": "f_x1",
+        "bbox": [
+          0.08,
+          0.36,
+          0.92,
+          0.43
+        ],
+        "confidence": 0.96,
+        "status": "accepted",
+        "matched_label": "Fit-out",
+        "matched_key": "fitout",
+        "part": true
+      },
+      {
+        "id": "l2",
+        "label": "Flooring and ceiling",
+        "amount": "f_x2",
+        "bbox": [
+          0.08,
+          0.45,
+          0.92,
+          0.52
+        ],
+        "confidence": 0.93,
+        "status": "pending",
+        "matched_label": "Fit-out",
+        "matched_key": "fitout",
+        "part": true
+      },
+      {
+        "id": "l3",
+        "label": "Signage",
+        "amount": "f_x3",
+        "bbox": [
+          0.08,
+          0.54,
+          0.92,
+          0.61
+        ],
+        "confidence": 0.58,
+        "status": "check"
+      },
+      {
+        "id": "l4",
+        "label": "Plumbing points",
+        "amount": "f_x4",
+        "bbox": [
+          0.08,
+          0.63,
+          0.92,
+          0.7
+        ],
+        "confidence": 0.9,
+        "status": "rejected"
+      }
+    ],
+    "coverage": [
+      {
+        "key": "fitout",
+        "label": "Fit-out",
+        "whole": false
+      }
+    ],
+    "assignable": [
+      {
+        "value": "fitout",
+        "label": "Fit-out"
+      },
+      {
+        "value": "equipment_pos",
+        "label": "Equipment and POS"
+      },
+      {
+        "value": "aa_me_fees",
+        "label": "A&A and M&E fees"
+      }
+    ]
+  },
+  "figures": {
+    "f_x1": {
+      "id": "f_x1",
+      "label": "Carpentry and counters",
+      "unit": "SGD",
+      "value": "42000",
+      "source": {
+        "kind": "document",
+        "ref": "doc_q1",
+        "as_of": "2026-10-12",
+        "note": "Lim Renovation quote, page 1"
+      },
+      "assumptions": [],
+      "taint": "untrusted"
+    },
+    "f_x2": {
+      "id": "f_x2",
+      "label": "Flooring and ceiling",
+      "unit": "SGD",
+      "value": "31000",
+      "source": {
+        "kind": "document",
+        "ref": "doc_q1",
+        "as_of": "2026-10-12",
+        "note": "Lim Renovation quote, page 1"
+      },
+      "assumptions": [],
+      "taint": "untrusted"
+    },
+    "f_x3": {
+      "id": "f_x3",
+      "label": "Signage",
+      "unit": "SGD",
+      "value": "8500",
+      "source": {
+        "kind": "document",
+        "ref": "doc_q1",
+        "as_of": "2026-10-12",
+        "note": "Lim Renovation quote, page 1"
+      },
+      "assumptions": [],
+      "taint": "untrusted"
+    },
+    "f_x4": {
+      "id": "f_x4",
+      "label": "Plumbing points",
+      "unit": "SGD",
+      "value": "6200",
+      "source": {
+        "kind": "document",
+        "ref": "doc_q1",
+        "as_of": "2026-10-12",
+        "note": "Lim Renovation quote, page 1"
+      },
+      "assumptions": [],
+      "taint": "untrusted"
+    }
+  },
+  "display": {
+    "f_x1": "S$42,000",
+    "f_x2": "S$31,000",
+    "f_x3": "S$8,500",
+    "f_x4": "S$6,200"
+  }
+}

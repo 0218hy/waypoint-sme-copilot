@@ -1,0 +1,3472 @@
+{
+  "$defs": {
+    "AlertCard": {
+      "properties": {
+        "type": {
+          "const": "alert_card",
+          "default": "alert_card",
+          "title": "Type",
+          "type": "string"
+        },
+        "alert_id": {
+          "title": "Alert Id",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "headline": {
+          "title": "Headline",
+          "type": "string"
+        },
+        "weeks_moved": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Weeks Moved"
+        },
+        "act_by_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Act By Date"
+        },
+        "resolved": {
+          "default": false,
+          "title": "Resolved",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "alert_id",
+        "kind",
+        "headline"
+      ],
+      "title": "AlertCard",
+      "type": "object"
+    },
+    "ApprovalCard": {
+      "properties": {
+        "type": {
+          "const": "approval_card",
+          "default": "approval_card",
+          "title": "Type",
+          "type": "string"
+        },
+        "action": {
+          "enum": [
+            "create_goal",
+            "revise_goal",
+            "recurring_setaside"
+          ],
+          "title": "Action",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "lines": {
+          "items": {
+            "$ref": "#/$defs/ApprovalLine"
+          },
+          "title": "Lines",
+          "type": "array"
+        },
+        "card_hash": {
+          "title": "Card Hash",
+          "type": "string"
+        },
+        "nonce": {
+          "title": "Nonce",
+          "type": "string"
+        },
+        "expires_at": {
+          "title": "Expires At",
+          "type": "string"
+        },
+        "state": {
+          "default": "pending",
+          "enum": [
+            "pending",
+            "approved",
+            "cancelled",
+            "refused",
+            "expired"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "refusal": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Refusal"
+        }
+      },
+      "required": [
+        "action",
+        "title",
+        "lines",
+        "card_hash",
+        "nonce",
+        "expires_at"
+      ],
+      "title": "ApprovalCard",
+      "type": "object"
+    },
+    "ApprovalLine": {
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "value"
+      ],
+      "title": "ApprovalLine",
+      "type": "object"
+    },
+    "AreaCard": {
+      "properties": {
+        "type": {
+          "const": "area_card",
+          "default": "area_card",
+          "title": "Type",
+          "type": "string"
+        },
+        "area_id": {
+          "title": "Area Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "score": {
+          "title": "Score",
+          "type": "number"
+        },
+        "factors": {
+          "items": {
+            "$ref": "#/$defs/Factor"
+          },
+          "title": "Factors",
+          "type": "array"
+        },
+        "stats": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Stats",
+          "type": "array"
+        },
+        "age_bands": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "default": {},
+          "title": "Age Bands",
+          "type": "object"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/SourceNote"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "simulated_fields": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Simulated Fields",
+          "type": "array"
+        }
+      },
+      "required": [
+        "area_id",
+        "name",
+        "score",
+        "factors",
+        "stats",
+        "sources"
+      ],
+      "title": "AreaCard",
+      "type": "object"
+    },
+    "AreaMap": {
+      "properties": {
+        "type": {
+          "const": "area_map",
+          "default": "area_map",
+          "title": "Type",
+          "type": "string"
+        },
+        "geojson_url": {
+          "title": "Geojson Url",
+          "type": "string"
+        },
+        "areas": {
+          "items": {
+            "$ref": "#/$defs/MapArea"
+          },
+          "title": "Areas",
+          "type": "array"
+        },
+        "top": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Top",
+          "type": "array"
+        },
+        "reasons": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Reasons",
+          "type": "object"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/SourceNote"
+          },
+          "title": "Sources",
+          "type": "array"
+        }
+      },
+      "required": [
+        "geojson_url",
+        "areas",
+        "top",
+        "reasons",
+        "sources"
+      ],
+      "title": "AreaMap",
+      "type": "object"
+    },
+    "Benchmark": {
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "figure": {
+          "title": "Figure",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceNote"
+        }
+      },
+      "required": [
+        "label",
+        "figure",
+        "source"
+      ],
+      "title": "Benchmark",
+      "type": "object"
+    },
+    "BusinessGlance": {
+      "description": "\"Your business at a glance\": ratios computed from the (mock) feed alone (tools/ratios.py).",
+      "properties": {
+        "type": {
+          "const": "business_glance",
+          "default": "business_glance",
+          "title": "Type",
+          "type": "string"
+        },
+        "rows": {
+          "items": {
+            "$ref": "#/$defs/RatioRow"
+          },
+          "title": "Rows",
+          "type": "array"
+        },
+        "singapore": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/RatioRow"
+          },
+          "title": "Singapore",
+          "type": "array"
+        },
+        "as_of": {
+          "title": "As Of",
+          "type": "string"
+        },
+        "simulated_feed": {
+          "default": true,
+          "title": "Simulated Feed",
+          "type": "boolean"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "rows",
+        "as_of"
+      ],
+      "title": "BusinessGlance",
+      "type": "object"
+    },
+    "ChartSeries": {
+      "properties": {
+        "weeks": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "Weeks",
+          "type": "array"
+        },
+        "month_labels": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Month Labels",
+          "type": "array"
+        },
+        "pot_p10": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Pot P10",
+          "type": "array"
+        },
+        "pot_p50": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Pot P50",
+          "type": "array"
+        },
+        "pot_p90": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Pot P90",
+          "type": "array"
+        },
+        "need": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Need",
+          "type": "array"
+        },
+        "home_p05": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Home P05",
+          "type": "array"
+        },
+        "home_p50": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Home P50",
+          "type": "array"
+        },
+        "floor": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Floor",
+          "type": "array"
+        },
+        "milestones": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Milestones",
+          "type": "array"
+        },
+        "currency": {
+          "const": "CNY",
+          "default": "CNY",
+          "title": "Currency",
+          "type": "string"
+        }
+      },
+      "required": [
+        "weeks",
+        "month_labels",
+        "pot_p10",
+        "pot_p50",
+        "pot_p90",
+        "need",
+        "home_p05",
+        "home_p50",
+        "floor",
+        "milestones"
+      ],
+      "title": "ChartSeries",
+      "type": "object"
+    },
+    "CheckinForm": {
+      "properties": {
+        "type": {
+          "const": "checkin_form",
+          "default": "checkin_form",
+          "title": "Type",
+          "type": "string"
+        },
+        "goal_id": {
+          "title": "Goal Id",
+          "type": "string"
+        },
+        "period_label": {
+          "title": "Period Label",
+          "type": "string"
+        },
+        "fields": {
+          "default": [
+            "profit_cny",
+            "set_aside_cny"
+          ],
+          "items": {
+            "enum": [
+              "profit_cny",
+              "set_aside_cny"
+            ],
+            "type": "string"
+          },
+          "title": "Fields",
+          "type": "array"
+        },
+        "period": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Period"
+        }
+      },
+      "required": [
+        "goal_id",
+        "period_label"
+      ],
+      "title": "CheckinForm",
+      "type": "object"
+    },
+    "ChecklistItem": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "who": {
+          "enum": [
+            "owner",
+            "agent",
+            "provider",
+            "bank"
+          ],
+          "title": "Who",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceNote"
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "who",
+        "source"
+      ],
+      "title": "ChecklistItem",
+      "type": "object"
+    },
+    "ClosedOptions": {
+      "properties": {
+        "type": {
+          "const": "closed_options",
+          "default": "closed_options",
+          "title": "Type",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/$defs/ClosedRoute"
+          },
+          "title": "Options",
+          "type": "array"
+        }
+      },
+      "required": [
+        "options"
+      ],
+      "title": "ClosedOptions",
+      "type": "object"
+    },
+    "ClosedRoute": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "rule_id": {
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceNote"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "rule_id",
+        "reason",
+        "source"
+      ],
+      "title": "ClosedRoute",
+      "type": "object"
+    },
+    "CompareColumn": {
+      "properties": {
+        "id": {
+          "enum": [
+            "setaside",
+            "savings",
+            "partner"
+          ],
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "blurb": {
+          "title": "Blurb",
+          "type": "string"
+        },
+        "open": {
+          "default": true,
+          "title": "Open",
+          "type": "boolean"
+        },
+        "why_not": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Why Not"
+        },
+        "chosen": {
+          "default": false,
+          "title": "Chosen",
+          "type": "boolean"
+        },
+        "savings_editable": {
+          "default": false,
+          "title": "Savings Editable",
+          "type": "boolean"
+        },
+        "savings": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Savings"
+        },
+        "monthly": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Monthly"
+        },
+        "open_likely": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Open Likely"
+        },
+        "open_p95": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Open P95"
+        },
+        "floor_risk": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Floor Risk"
+        },
+        "floor_risk_upper": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Floor Risk Upper"
+        },
+        "ownership": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ownership"
+        },
+        "profit_share": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Profit Share"
+        },
+        "pros": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Pros",
+          "type": "array"
+        },
+        "cons": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Cons",
+          "type": "array"
+        },
+        "terms": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/CompareTerms"
+          },
+          "title": "Terms",
+          "type": "array"
+        },
+        "toggles": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/CompareToggle"
+          },
+          "title": "Toggles",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "blurb"
+      ],
+      "title": "CompareColumn",
+      "type": "object"
+    },
+    "CompareTerms": {
+      "description": "A route's own cost and conditions in a compare column (the catalogue's words).",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "cost": {
+          "title": "Cost",
+          "type": "string"
+        },
+        "conditions": {
+          "title": "Conditions",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "cost",
+        "conditions"
+      ],
+      "title": "CompareTerms",
+      "type": "object"
+    },
+    "CompareToggle": {
+      "description": "One toggle_option action \"Choose this funding\" sends for its column.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "on": {
+          "title": "On",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "on"
+      ],
+      "title": "CompareToggle",
+      "type": "object"
+    },
+    "ConfirmCard": {
+      "properties": {
+        "type": {
+          "const": "confirm_card",
+          "default": "confirm_card",
+          "title": "Type",
+          "type": "string"
+        },
+        "step": {
+          "title": "Step",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/$defs/ApprovalLine"
+          },
+          "title": "Items",
+          "type": "array"
+        },
+        "confirm_label": {
+          "title": "Confirm Label",
+          "type": "string"
+        },
+        "edit_label": {
+          "title": "Edit Label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "step",
+        "title",
+        "items",
+        "confirm_label",
+        "edit_label"
+      ],
+      "title": "ConfirmCard",
+      "type": "object"
+    },
+    "ConsentCard": {
+      "properties": {
+        "type": {
+          "const": "consent_card",
+          "default": "consent_card",
+          "title": "Type",
+          "type": "string"
+        },
+        "reads": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reads",
+          "type": "array"
+        },
+        "never": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Never",
+          "type": "array"
+        },
+        "withdraw": {
+          "title": "Withdraw",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reads",
+        "never",
+        "withdraw"
+      ],
+      "title": "ConsentCard",
+      "type": "object"
+    },
+    "CostBreakdown": {
+      "properties": {
+        "type": {
+          "const": "cost_breakdown",
+          "default": "cost_breakdown",
+          "title": "Type",
+          "type": "string"
+        },
+        "groups": {
+          "items": {
+            "$ref": "#/$defs/CostGroupRow"
+          },
+          "title": "Groups",
+          "type": "array"
+        },
+        "total_likely": {
+          "title": "Total Likely",
+          "type": "string"
+        },
+        "total_bad": {
+          "title": "Total Bad",
+          "type": "string"
+        },
+        "total_likely_cny": {
+          "title": "Total Likely Cny",
+          "type": "string"
+        },
+        "total_bad_cny": {
+          "title": "Total Bad Cny",
+          "type": "string"
+        },
+        "read_only": {
+          "default": false,
+          "title": "Read Only",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "groups",
+        "total_likely",
+        "total_bad",
+        "total_likely_cny",
+        "total_bad_cny"
+      ],
+      "title": "CostBreakdown",
+      "type": "object"
+    },
+    "CostGroupRow": {
+      "properties": {
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "likely": {
+          "title": "Likely",
+          "type": "string"
+        },
+        "bad": {
+          "title": "Bad",
+          "type": "string"
+        },
+        "lines": {
+          "items": {
+            "$ref": "#/$defs/CostLineRow"
+          },
+          "title": "Lines",
+          "type": "array"
+        }
+      },
+      "required": [
+        "key",
+        "label",
+        "likely",
+        "bad",
+        "lines"
+      ],
+      "title": "CostGroupRow",
+      "type": "object"
+    },
+    "CostLineRow": {
+      "properties": {
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "likely": {
+          "title": "Likely",
+          "type": "string"
+        },
+        "bad": {
+          "title": "Bad",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceNote"
+        },
+        "from_quote": {
+          "default": false,
+          "title": "From Quote",
+          "type": "boolean"
+        },
+        "editable": {
+          "default": true,
+          "title": "Editable",
+          "type": "boolean"
+        },
+        "flags": {
+          "default": [],
+          "items": {
+            "enum": [
+              "partial",
+              "below_estimate",
+              "conflict"
+            ],
+            "type": "string"
+          },
+          "title": "Flags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "key",
+        "label",
+        "likely",
+        "bad",
+        "source"
+      ],
+      "title": "CostLineRow",
+      "type": "object"
+    },
+    "CoverageRow": {
+      "description": "A cost line this quote touches, and whether it covers all of it (the owner can change it).",
+      "properties": {
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "whole": {
+          "title": "Whole",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "key",
+        "label",
+        "whole"
+      ],
+      "title": "CoverageRow",
+      "type": "object"
+    },
+    "DraftCard": {
+      "description": "A draft the owner sends or a checklist the owner works through (SPEC §7.4, tier T1).\n\nWaypoint never sends it. For a consent request, `facts` are built by code from the goal and\n`body` is the model-written prose (placeholders filled by code after the number check).",
+      "properties": {
+        "type": {
+          "const": "draft_card",
+          "default": "draft_card",
+          "title": "Type",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "consent_request",
+            "checklist"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "milestone_id": {
+          "title": "Milestone Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "to": {
+          "default": "",
+          "title": "To",
+          "type": "string"
+        },
+        "subject": {
+          "default": "",
+          "title": "Subject",
+          "type": "string"
+        },
+        "body": {
+          "default": "",
+          "title": "Body",
+          "type": "string"
+        },
+        "facts": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/DraftFact"
+          },
+          "title": "Facts",
+          "type": "array"
+        },
+        "items": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ChecklistItem"
+          },
+          "title": "Items",
+          "type": "array"
+        },
+        "who": {
+          "default": "",
+          "title": "Who",
+          "type": "string"
+        },
+        "sources": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/SourceNote"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "as_of": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "As Of"
+        },
+        "filename": {
+          "title": "Filename",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "milestone_id",
+        "title",
+        "filename"
+      ],
+      "title": "DraftCard",
+      "type": "object"
+    },
+    "DraftFact": {
+      "description": "One fact a draft states: a label and either a Figure id (a quantity) or plain text.",
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "figure": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Figure"
+        },
+        "text": {
+          "default": "",
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "label"
+      ],
+      "title": "DraftFact",
+      "type": "object"
+    },
+    "EconLine": {
+      "description": "One labelled figure on the unit-economics card.",
+      "properties": {
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "figure": {
+          "title": "Figure",
+          "type": "string"
+        },
+        "estimate": {
+          "default": false,
+          "title": "Estimate",
+          "type": "boolean"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "key",
+        "label",
+        "figure"
+      ],
+      "title": "EconLine",
+      "type": "object"
+    },
+    "ExtractedRow": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "amount": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Amount"
+        },
+        "bbox": {
+          "anyOf": [
+            {
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bbox"
+        },
+        "confidence": {
+          "title": "Confidence",
+          "type": "number"
+        },
+        "status": {
+          "enum": [
+            "pending",
+            "accepted",
+            "rejected",
+            "check"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "matched_label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Matched Label"
+        },
+        "matched_key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Matched Key"
+        },
+        "part": {
+          "default": false,
+          "title": "Part",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "amount",
+        "confidence",
+        "status"
+      ],
+      "title": "ExtractedRow",
+      "type": "object"
+    },
+    "Factor": {
+      "properties": {
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "points": {
+          "title": "Points",
+          "type": "number"
+        },
+        "max_points": {
+          "title": "Max Points",
+          "type": "number"
+        },
+        "detail": {
+          "title": "Detail",
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "label",
+        "points",
+        "max_points",
+        "detail"
+      ],
+      "title": "Factor",
+      "type": "object"
+    },
+    "Figure": {
+      "description": "One displayed quantity. `value` is the point value; `low`/`high` give a range when known.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "unit": {
+          "enum": [
+            "SGD",
+            "CNY",
+            "weeks",
+            "months",
+            "pct",
+            "count",
+            "cups_per_day",
+            "sqft",
+            "people",
+            "score",
+            "times"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "low": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Low"
+        },
+        "high": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "High"
+        },
+        "source": {
+          "$ref": "#/$defs/Source"
+        },
+        "assumptions": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "taint": {
+          "$ref": "#/$defs/Taint",
+          "default": "trusted"
+        },
+        "inputs": {
+          "default": [],
+          "description": "Ids of the Figures this one was computed from.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "unit",
+        "source"
+      ],
+      "title": "Figure",
+      "type": "object"
+    },
+    "FundingCard": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "open",
+            "optional",
+            "closed",
+            "later"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "covers": {
+          "title": "Covers",
+          "type": "string"
+        },
+        "available_from": {
+          "title": "Available From",
+          "type": "string"
+        },
+        "cost": {
+          "title": "Cost",
+          "type": "string"
+        },
+        "conditions": {
+          "title": "Conditions",
+          "type": "string"
+        },
+        "amount": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Amount"
+        },
+        "on": {
+          "default": false,
+          "title": "On",
+          "type": "boolean"
+        },
+        "rule_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Rule Ids",
+          "type": "array"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceNote"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "variant": {
+          "default": "plan",
+          "enum": [
+            "plan",
+            "webank",
+            "partner_bank",
+            "after_opening"
+          ],
+          "title": "Variant",
+          "type": "string"
+        },
+        "as_of": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "As Of"
+        },
+        "subject_to_approval": {
+          "default": false,
+          "title": "Subject To Approval",
+          "type": "boolean"
+        },
+        "product": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceNote"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "note_rule": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note Rule"
+        },
+        "words": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Words",
+          "type": "array"
+        },
+        "why": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RankWhy"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "why_not": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Why Not"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "status",
+        "covers",
+        "available_from",
+        "cost",
+        "conditions"
+      ],
+      "title": "FundingCard",
+      "type": "object"
+    },
+    "FundingCompare": {
+      "description": "Compare funding plans: each column one full solve of the plan model at the slider's share.",
+      "properties": {
+        "type": {
+          "const": "funding_compare",
+          "default": "funding_compare",
+          "title": "Type",
+          "type": "string"
+        },
+        "share": {
+          "title": "Share",
+          "type": "number"
+        },
+        "share_fig": {
+          "title": "Share Fig",
+          "type": "string"
+        },
+        "columns": {
+          "items": {
+            "$ref": "#/$defs/CompareColumn"
+          },
+          "title": "Columns",
+          "type": "array"
+        },
+        "savings_max": {
+          "title": "Savings Max",
+          "type": "string"
+        },
+        "preview_url": {
+          "default": "/api/preview/compare",
+          "title": "Preview Url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "share",
+        "share_fig",
+        "columns",
+        "savings_max"
+      ],
+      "title": "FundingCompare",
+      "type": "object"
+    },
+    "FundingMix": {
+      "properties": {
+        "type": {
+          "const": "funding_mix",
+          "default": "funding_mix",
+          "title": "Type",
+          "type": "string"
+        },
+        "total": {
+          "title": "Total",
+          "type": "string"
+        },
+        "segments": {
+          "items": {
+            "$ref": "#/$defs/MixSegment"
+          },
+          "title": "Segments",
+          "type": "array"
+        }
+      },
+      "required": [
+        "total",
+        "segments"
+      ],
+      "title": "FundingMix",
+      "type": "object"
+    },
+    "FundingOptions": {
+      "properties": {
+        "type": {
+          "const": "funding_options",
+          "default": "funding_options",
+          "title": "Type",
+          "type": "string"
+        },
+        "gap": {
+          "title": "Gap",
+          "type": "string"
+        },
+        "spare": {
+          "title": "Spare",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/$defs/FundingCard"
+          },
+          "title": "Options",
+          "type": "array"
+        },
+        "webank_role": {
+          "title": "Webank Role",
+          "type": "string"
+        },
+        "bank_cards": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/FundingCard"
+          },
+          "title": "Bank Cards",
+          "type": "array"
+        },
+        "later_cards": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/FundingCard"
+          },
+          "title": "Later Cards",
+          "type": "array"
+        },
+        "not_yet": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/FundingCard"
+          },
+          "title": "Not Yet",
+          "type": "array"
+        }
+      },
+      "required": [
+        "gap",
+        "spare",
+        "options",
+        "webank_role"
+      ],
+      "title": "FundingOptions",
+      "type": "object"
+    },
+    "GoalSummary": {
+      "properties": {
+        "type": {
+          "const": "goal_summary",
+          "default": "goal_summary",
+          "title": "Type",
+          "type": "string"
+        },
+        "sentence": {
+          "title": "Sentence",
+          "type": "string"
+        },
+        "figures": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Figures",
+          "type": "array"
+        },
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "sentence",
+        "figures",
+        "assumptions"
+      ],
+      "title": "GoalSummary",
+      "type": "object"
+    },
+    "MapArea": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Score"
+        },
+        "rank": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rank"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "MapArea",
+      "type": "object"
+    },
+    "MilestoneTimeline": {
+      "properties": {
+        "type": {
+          "const": "milestone_timeline",
+          "default": "milestone_timeline",
+          "title": "Type",
+          "type": "string"
+        },
+        "start_date": {
+          "title": "Start Date",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/$defs/TimelineItem"
+          },
+          "title": "Items",
+          "type": "array"
+        },
+        "step": {
+          "default": "goal_plan",
+          "enum": [
+            "goal_plan",
+            "goal_keeper"
+          ],
+          "title": "Step",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_date",
+        "items"
+      ],
+      "title": "MilestoneTimeline",
+      "type": "object"
+    },
+    "MissingItems": {
+      "properties": {
+        "type": {
+          "const": "missing_items",
+          "default": "missing_items",
+          "title": "Type",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/$defs/Option"
+          },
+          "title": "Items",
+          "type": "array"
+        }
+      },
+      "required": [
+        "items"
+      ],
+      "title": "MissingItems",
+      "type": "object"
+    },
+    "MixSegment": {
+      "properties": {
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "amount": {
+          "title": "Amount",
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "label",
+        "amount"
+      ],
+      "title": "MixSegment",
+      "type": "object"
+    },
+    "Option": {
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "detail": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Detail"
+        }
+      },
+      "required": [
+        "value",
+        "label"
+      ],
+      "title": "Option",
+      "type": "object"
+    },
+    "PlanSummary": {
+      "properties": {
+        "type": {
+          "const": "plan_summary",
+          "default": "plan_summary",
+          "title": "Type",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "site",
+            "cost",
+            "funding"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "lines": {
+          "items": {
+            "$ref": "#/$defs/ApprovalLine"
+          },
+          "title": "Lines",
+          "type": "array"
+        },
+        "figures": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Figures",
+          "type": "array"
+        },
+        "reopen_step": {
+          "enum": [
+            "site",
+            "cost",
+            "funding"
+          ],
+          "title": "Reopen Step",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "title",
+        "lines",
+        "figures",
+        "reopen_step"
+      ],
+      "title": "PlanSummary",
+      "type": "object"
+    },
+    "PlanVsActual": {
+      "properties": {
+        "type": {
+          "const": "plan_vs_actual",
+          "default": "plan_vs_actual",
+          "title": "Type",
+          "type": "string"
+        },
+        "weeks": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "Weeks",
+          "type": "array"
+        },
+        "month_labels": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Month Labels",
+          "type": "array"
+        },
+        "planned_pot": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Planned Pot",
+          "type": "array"
+        },
+        "actual_pot": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Actual Pot",
+          "type": "array"
+        },
+        "planned_profit": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Planned Profit",
+          "type": "array"
+        },
+        "actual_profit": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Actual Profit",
+          "type": "array"
+        },
+        "milestones": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Milestones",
+          "type": "array"
+        },
+        "today_week": {
+          "title": "Today Week",
+          "type": "integer"
+        },
+        "currency": {
+          "const": "CNY",
+          "default": "CNY",
+          "title": "Currency",
+          "type": "string"
+        }
+      },
+      "required": [
+        "weeks",
+        "month_labels",
+        "planned_pot",
+        "actual_pot",
+        "planned_profit",
+        "actual_profit",
+        "milestones",
+        "today_week"
+      ],
+      "title": "PlanVsActual",
+      "type": "object"
+    },
+    "PnlRow": {
+      "description": "The store P&L at one steady cups-a-day level (a month at steady state), payback and NPV.",
+      "properties": {
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "cups": {
+          "title": "Cups",
+          "type": "string"
+        },
+        "owner": {
+          "default": false,
+          "title": "Owner",
+          "type": "boolean"
+        },
+        "registered": {
+          "default": false,
+          "title": "Registered",
+          "type": "boolean"
+        },
+        "revenue": {
+          "title": "Revenue",
+          "type": "string"
+        },
+        "ebitda": {
+          "title": "Ebitda",
+          "type": "string"
+        },
+        "margin": {
+          "title": "Margin",
+          "type": "string"
+        },
+        "depreciation": {
+          "title": "Depreciation",
+          "type": "string"
+        },
+        "tax": {
+          "title": "Tax",
+          "type": "string"
+        },
+        "net": {
+          "title": "Net",
+          "type": "string"
+        },
+        "payback_likely": {
+          "title": "Payback Likely",
+          "type": "string"
+        },
+        "payback_bad": {
+          "title": "Payback Bad",
+          "type": "string"
+        },
+        "npv": {
+          "title": "Npv",
+          "type": "string"
+        },
+        "npv_bad": {
+          "title": "Npv Bad",
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "cups",
+        "revenue",
+        "ebitda",
+        "margin",
+        "depreciation",
+        "tax",
+        "net",
+        "payback_likely",
+        "payback_bad",
+        "npv",
+        "npv_bad"
+      ],
+      "title": "PnlRow",
+      "type": "object"
+    },
+    "ProfileCard": {
+      "properties": {
+        "type": {
+          "const": "profile_card",
+          "default": "profile_card",
+          "title": "Type",
+          "type": "string"
+        },
+        "fields": {
+          "items": {
+            "$ref": "#/$defs/ProfileField"
+          },
+          "title": "Fields",
+          "type": "array"
+        },
+        "simulated_feed": {
+          "default": false,
+          "title": "Simulated Feed",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "fields"
+      ],
+      "title": "ProfileCard",
+      "type": "object"
+    },
+    "ProfileField": {
+      "properties": {
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "figure": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Figure"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Text"
+        },
+        "source": {
+          "enum": [
+            "feed",
+            "owner",
+            "computed",
+            "missing"
+          ],
+          "title": "Source",
+          "type": "string"
+        },
+        "editable": {
+          "default": true,
+          "title": "Editable",
+          "type": "boolean"
+        },
+        "input": {
+          "default": "text",
+          "enum": [
+            "money_cny",
+            "count",
+            "enum",
+            "multi",
+            "text"
+          ],
+          "title": "Input",
+          "type": "string"
+        },
+        "options": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Option"
+          },
+          "title": "Options",
+          "type": "array"
+        }
+      },
+      "required": [
+        "key",
+        "label",
+        "source"
+      ],
+      "title": "ProfileField",
+      "type": "object"
+    },
+    "QuickReplies": {
+      "properties": {
+        "type": {
+          "const": "quick_replies",
+          "default": "quick_replies",
+          "title": "Type",
+          "type": "string"
+        },
+        "slot": {
+          "title": "Slot",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/$defs/Option"
+          },
+          "title": "Options",
+          "type": "array"
+        },
+        "default": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Default"
+        },
+        "allow_text": {
+          "default": true,
+          "title": "Allow Text",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "slot",
+        "options"
+      ],
+      "title": "QuickReplies",
+      "type": "object"
+    },
+    "RankWhy": {
+      "description": "Figure ids behind a ranked route's words, in the order the ranking compares them.",
+      "properties": {
+        "cost": {
+          "title": "Cost",
+          "type": "string"
+        },
+        "weeks": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Weeks"
+        },
+        "dilution": {
+          "title": "Dilution",
+          "type": "string"
+        },
+        "floor_change": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Floor Change"
+        }
+      },
+      "required": [
+        "cost",
+        "dilution"
+      ],
+      "title": "RankWhy",
+      "type": "object"
+    },
+    "RatioRow": {
+      "description": "One ratio on the at-a-glance card: a figure, optionally a second one to read it against.",
+      "properties": {
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "figure": {
+          "title": "Figure",
+          "type": "string"
+        },
+        "compare": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Compare"
+        },
+        "compare_label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Compare Label"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "caveat": {
+          "default": false,
+          "title": "Caveat",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "key",
+        "label",
+        "figure"
+      ],
+      "title": "RatioRow",
+      "type": "object"
+    },
+    "RepairOptions": {
+      "properties": {
+        "type": {
+          "const": "repair_options",
+          "default": "repair_options",
+          "title": "Type",
+          "type": "string"
+        },
+        "alert_id": {
+          "title": "Alert Id",
+          "type": "string"
+        },
+        "repairs": {
+          "items": {
+            "$ref": "#/$defs/RepairRow"
+          },
+          "title": "Repairs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "alert_id",
+        "repairs"
+      ],
+      "title": "RepairOptions",
+      "type": "object"
+    },
+    "RepairRow": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "detail": {
+          "title": "Detail",
+          "type": "string"
+        },
+        "new_open_likely": {
+          "title": "New Open Likely",
+          "type": "string"
+        },
+        "new_open_p95": {
+          "title": "New Open P95",
+          "type": "string"
+        },
+        "new_floor_risk": {
+          "title": "New Floor Risk",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "detail",
+        "new_open_likely",
+        "new_open_p95",
+        "new_floor_risk"
+      ],
+      "title": "RepairRow",
+      "type": "object"
+    },
+    "RuleCard": {
+      "properties": {
+        "type": {
+          "const": "rule_card",
+          "default": "rule_card",
+          "title": "Type",
+          "type": "string"
+        },
+        "rule_id": {
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "consequence": {
+          "title": "Consequence",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceNote"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/$defs/Option"
+          },
+          "title": "Options",
+          "type": "array"
+        }
+      },
+      "required": [
+        "rule_id",
+        "title",
+        "message",
+        "consequence",
+        "source",
+        "options"
+      ],
+      "title": "RuleCard",
+      "type": "object"
+    },
+    "SetasideSlider": {
+      "properties": {
+        "type": {
+          "const": "setaside_slider",
+          "default": "setaside_slider",
+          "title": "Type",
+          "type": "string"
+        },
+        "share": {
+          "title": "Share",
+          "type": "number"
+        },
+        "min": {
+          "default": 0.0,
+          "title": "Min",
+          "type": "number"
+        },
+        "max": {
+          "default": 1.0,
+          "title": "Max",
+          "type": "number"
+        },
+        "step": {
+          "default": 0.05,
+          "title": "Step",
+          "type": "number"
+        },
+        "wall": {
+          "title": "Wall",
+          "type": "number"
+        },
+        "preview_url": {
+          "title": "Preview Url",
+          "type": "string"
+        },
+        "chart": {
+          "$ref": "#/$defs/ChartSeries"
+        },
+        "open_likely": {
+          "title": "Open Likely",
+          "type": "string"
+        },
+        "open_p95": {
+          "title": "Open P95",
+          "type": "string"
+        },
+        "floor_risk": {
+          "title": "Floor Risk",
+          "type": "string"
+        },
+        "monthly_amount": {
+          "title": "Monthly Amount",
+          "type": "string"
+        },
+        "opened_share": {
+          "title": "Opened Share",
+          "type": "string"
+        }
+      },
+      "required": [
+        "share",
+        "wall",
+        "preview_url",
+        "chart",
+        "open_likely",
+        "open_p95",
+        "floor_risk",
+        "monthly_amount",
+        "opened_share"
+      ],
+      "title": "SetasideSlider",
+      "type": "object"
+    },
+    "Source": {
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/SourceKind"
+        },
+        "ref": {
+          "description": "Tool name, dataset id, document id, parameter key or 'owner'.",
+          "title": "Ref",
+          "type": "string"
+        },
+        "as_of": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "As Of"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Url"
+        }
+      },
+      "required": [
+        "kind",
+        "ref"
+      ],
+      "title": "Source",
+      "type": "object"
+    },
+    "SourceKind": {
+      "enum": [
+        "tool",
+        "feed",
+        "document",
+        "public_data",
+        "owner",
+        "param",
+        "simulated"
+      ],
+      "title": "SourceKind",
+      "type": "string"
+    },
+    "SourceNote": {
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Url"
+        },
+        "as_of": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "As Of"
+        },
+        "kind": {
+          "anyOf": [
+            {
+              "enum": [
+                "law",
+                "design",
+                "law+design"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Kind"
+        }
+      },
+      "required": [
+        "label"
+      ],
+      "title": "SourceNote",
+      "type": "object"
+    },
+    "StatusCard": {
+      "properties": {
+        "type": {
+          "const": "status_card",
+          "default": "status_card",
+          "title": "Type",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "on_track",
+            "at_risk",
+            "off_track"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "headline": {
+          "title": "Headline",
+          "type": "string"
+        },
+        "changes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Changes",
+          "type": "array"
+        },
+        "figures": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Figures",
+          "type": "array"
+        }
+      },
+      "required": [
+        "status",
+        "headline",
+        "changes",
+        "figures"
+      ],
+      "title": "StatusCard",
+      "type": "object"
+    },
+    "Taint": {
+      "enum": [
+        "trusted",
+        "untrusted"
+      ],
+      "title": "Taint",
+      "type": "string"
+    },
+    "TimelineItem": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "order": {
+          "title": "Order",
+          "type": "integer"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "who": {
+          "title": "Who",
+          "type": "string"
+        },
+        "likely": {
+          "title": "Likely",
+          "type": "string"
+        },
+        "likely_date": {
+          "title": "Likely Date",
+          "type": "string"
+        },
+        "latest_safe_date": {
+          "title": "Latest Safe Date",
+          "type": "string"
+        },
+        "act_by_date": {
+          "title": "Act By Date",
+          "type": "string"
+        },
+        "status": {
+          "default": "upcoming",
+          "enum": [
+            "upcoming",
+            "due",
+            "done",
+            "late"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "detail": {
+          "default": "",
+          "title": "Detail",
+          "type": "string"
+        },
+        "done_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Done Date"
+        },
+        "can_mark_done": {
+          "default": false,
+          "title": "Can Mark Done",
+          "type": "boolean"
+        },
+        "money_step": {
+          "default": false,
+          "title": "Money Step",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "order",
+        "label",
+        "who",
+        "likely",
+        "likely_date",
+        "latest_safe_date",
+        "act_by_date"
+      ],
+      "title": "TimelineItem",
+      "type": "object"
+    },
+    "TopicCard": {
+      "properties": {
+        "type": {
+          "const": "topic_card",
+          "default": "topic_card",
+          "title": "Type",
+          "type": "string"
+        },
+        "topic_id": {
+          "title": "Topic Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "say": {
+          "title": "Say",
+          "type": "string"
+        },
+        "more": {
+          "title": "More",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceNote"
+        }
+      },
+      "required": [
+        "topic_id",
+        "title",
+        "say",
+        "more",
+        "source"
+      ],
+      "title": "TopicCard",
+      "type": "object"
+    },
+    "UnitCompare": {
+      "properties": {
+        "type": {
+          "const": "unit_compare",
+          "default": "unit_compare",
+          "title": "Type",
+          "type": "string"
+        },
+        "units": {
+          "items": {
+            "$ref": "#/$defs/UnitRow"
+          },
+          "title": "Units",
+          "type": "array"
+        },
+        "chosen": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Chosen"
+        }
+      },
+      "required": [
+        "units"
+      ],
+      "title": "UnitCompare",
+      "type": "object"
+    },
+    "UnitEconomics": {
+      "description": "\"Unit economics & payback\" for the chosen unit (tools/unit_econ.py).",
+      "properties": {
+        "type": {
+          "const": "unit_economics",
+          "default": "unit_economics",
+          "title": "Type",
+          "type": "string"
+        },
+        "unit_id": {
+          "title": "Unit Id",
+          "type": "string"
+        },
+        "unit_name": {
+          "title": "Unit Name",
+          "type": "string"
+        },
+        "headline": {
+          "items": {
+            "$ref": "#/$defs/EconLine"
+          },
+          "title": "Headline",
+          "type": "array"
+        },
+        "per_cup": {
+          "items": {
+            "$ref": "#/$defs/EconLine"
+          },
+          "title": "Per Cup",
+          "type": "array"
+        },
+        "fixed": {
+          "items": {
+            "$ref": "#/$defs/EconLine"
+          },
+          "title": "Fixed",
+          "type": "array"
+        },
+        "investment": {
+          "items": {
+            "$ref": "#/$defs/EconLine"
+          },
+          "title": "Investment",
+          "type": "array"
+        },
+        "rows": {
+          "items": {
+            "$ref": "#/$defs/PnlRow"
+          },
+          "title": "Rows",
+          "type": "array"
+        },
+        "sensitivity": {
+          "items": {
+            "$ref": "#/$defs/EconLine"
+          },
+          "title": "Sensitivity",
+          "type": "array"
+        },
+        "ramp_likely": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Ramp Likely",
+          "type": "array"
+        },
+        "ramp_bad": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Ramp Bad",
+          "type": "array"
+        },
+        "benchmarks": {
+          "items": {
+            "$ref": "#/$defs/Benchmark"
+          },
+          "title": "Benchmarks",
+          "type": "array"
+        },
+        "chain": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/RatioRow"
+          },
+          "title": "Chain",
+          "type": "array"
+        },
+        "notes": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Notes",
+          "type": "array"
+        },
+        "owner_cups": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Owner Cups"
+        },
+        "editable": {
+          "default": true,
+          "title": "Editable",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "unit_id",
+        "unit_name",
+        "headline",
+        "per_cup",
+        "fixed",
+        "investment",
+        "rows",
+        "sensitivity",
+        "ramp_likely",
+        "ramp_bad",
+        "benchmarks"
+      ],
+      "title": "UnitEconomics",
+      "type": "object"
+    },
+    "UnitRow": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "mall": {
+          "title": "Mall",
+          "type": "string"
+        },
+        "unit_no": {
+          "title": "Unit No",
+          "type": "string"
+        },
+        "area_name": {
+          "title": "Area Name",
+          "type": "string"
+        },
+        "size_sqft": {
+          "title": "Size Sqft",
+          "type": "integer"
+        },
+        "rent": {
+          "title": "Rent",
+          "type": "string"
+        },
+        "gto_pct": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gto Pct"
+        },
+        "breakeven": {
+          "title": "Breakeven",
+          "type": "string"
+        },
+        "best_shop_cups": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Best Shop Cups"
+        },
+        "avg_shop_cups": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Avg Shop Cups"
+        },
+        "early_cost": {
+          "title": "Early Cost",
+          "type": "string"
+        },
+        "lat": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lat"
+        },
+        "lng": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lng"
+        },
+        "simulated": {
+          "default": true,
+          "title": "Simulated",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "mall",
+        "unit_no",
+        "area_name",
+        "size_sqft",
+        "rent",
+        "breakeven",
+        "early_cost"
+      ],
+      "title": "UnitRow",
+      "type": "object"
+    },
+    "UploadPrompt": {
+      "properties": {
+        "type": {
+          "const": "upload_prompt",
+          "default": "upload_prompt",
+          "title": "Type",
+          "type": "string"
+        },
+        "accept": {
+          "default": [
+            "image/jpeg",
+            "image/png",
+            "image/heic",
+            "application/pdf"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Accept",
+          "type": "array"
+        },
+        "max_mb": {
+          "default": 10,
+          "title": "Max Mb",
+          "type": "integer"
+        },
+        "doc_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Doc Id"
+        },
+        "image_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Image Url"
+        },
+        "extracted": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ExtractedRow"
+          },
+          "title": "Extracted",
+          "type": "array"
+        },
+        "exclusions": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Exclusions",
+          "type": "array"
+        },
+        "reader_mode": {
+          "default": "none",
+          "enum": [
+            "model",
+            "replay",
+            "none"
+          ],
+          "title": "Reader Mode",
+          "type": "string"
+        },
+        "coverage": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/CoverageRow"
+          },
+          "title": "Coverage",
+          "type": "array"
+        },
+        "assignable": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Option"
+          },
+          "title": "Assignable",
+          "type": "array"
+        }
+      },
+      "title": "UploadPrompt",
+      "type": "object"
+    }
+  },
+  "description": "What travels to the UI: one payload plus the Figures it references (already formatted).",
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "payload": {
+      "discriminator": {
+        "mapping": {
+          "alert_card": "#/$defs/AlertCard",
+          "approval_card": "#/$defs/ApprovalCard",
+          "area_card": "#/$defs/AreaCard",
+          "area_map": "#/$defs/AreaMap",
+          "business_glance": "#/$defs/BusinessGlance",
+          "checkin_form": "#/$defs/CheckinForm",
+          "closed_options": "#/$defs/ClosedOptions",
+          "confirm_card": "#/$defs/ConfirmCard",
+          "consent_card": "#/$defs/ConsentCard",
+          "cost_breakdown": "#/$defs/CostBreakdown",
+          "draft_card": "#/$defs/DraftCard",
+          "funding_compare": "#/$defs/FundingCompare",
+          "funding_mix": "#/$defs/FundingMix",
+          "funding_options": "#/$defs/FundingOptions",
+          "goal_summary": "#/$defs/GoalSummary",
+          "milestone_timeline": "#/$defs/MilestoneTimeline",
+          "missing_items": "#/$defs/MissingItems",
+          "plan_summary": "#/$defs/PlanSummary",
+          "plan_vs_actual": "#/$defs/PlanVsActual",
+          "profile_card": "#/$defs/ProfileCard",
+          "quick_replies": "#/$defs/QuickReplies",
+          "repair_options": "#/$defs/RepairOptions",
+          "rule_card": "#/$defs/RuleCard",
+          "setaside_slider": "#/$defs/SetasideSlider",
+          "status_card": "#/$defs/StatusCard",
+          "topic_card": "#/$defs/TopicCard",
+          "unit_compare": "#/$defs/UnitCompare",
+          "unit_economics": "#/$defs/UnitEconomics",
+          "upload_prompt": "#/$defs/UploadPrompt"
+        },
+        "propertyName": "type"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/QuickReplies"
+        },
+        {
+          "$ref": "#/$defs/ProfileCard"
+        },
+        {
+          "$ref": "#/$defs/BusinessGlance"
+        },
+        {
+          "$ref": "#/$defs/ConsentCard"
+        },
+        {
+          "$ref": "#/$defs/AreaMap"
+        },
+        {
+          "$ref": "#/$defs/AreaCard"
+        },
+        {
+          "$ref": "#/$defs/UnitCompare"
+        },
+        {
+          "$ref": "#/$defs/CostBreakdown"
+        },
+        {
+          "$ref": "#/$defs/UnitEconomics"
+        },
+        {
+          "$ref": "#/$defs/UploadPrompt"
+        },
+        {
+          "$ref": "#/$defs/MissingItems"
+        },
+        {
+          "$ref": "#/$defs/FundingOptions"
+        },
+        {
+          "$ref": "#/$defs/ClosedOptions"
+        },
+        {
+          "$ref": "#/$defs/SetasideSlider"
+        },
+        {
+          "$ref": "#/$defs/FundingMix"
+        },
+        {
+          "$ref": "#/$defs/FundingCompare"
+        },
+        {
+          "$ref": "#/$defs/MilestoneTimeline"
+        },
+        {
+          "$ref": "#/$defs/GoalSummary"
+        },
+        {
+          "$ref": "#/$defs/ApprovalCard"
+        },
+        {
+          "$ref": "#/$defs/StatusCard"
+        },
+        {
+          "$ref": "#/$defs/AlertCard"
+        },
+        {
+          "$ref": "#/$defs/RepairOptions"
+        },
+        {
+          "$ref": "#/$defs/RuleCard"
+        },
+        {
+          "$ref": "#/$defs/TopicCard"
+        },
+        {
+          "$ref": "#/$defs/ConfirmCard"
+        },
+        {
+          "$ref": "#/$defs/CheckinForm"
+        },
+        {
+          "$ref": "#/$defs/PlanVsActual"
+        },
+        {
+          "$ref": "#/$defs/PlanSummary"
+        },
+        {
+          "$ref": "#/$defs/DraftCard"
+        }
+      ],
+      "title": "Payload"
+    },
+    "figures": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Figure"
+      },
+      "default": {},
+      "title": "Figures",
+      "type": "object"
+    },
+    "display": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Figure id -> formatted text in the session language.",
+      "title": "Display",
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "payload"
+  ],
+  "title": "Widget",
+  "type": "object"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "w_co1",
+  "payload": {
+    "type": "closed_options",
+    "options": [
+      {
+        "id": "webank_loan",
+        "label": "WeBank 微业贷 for Singapore",
+        "rule_id": "R1",
+        "reason": "Your WeBank business loan must be used for your business in China. Using it overseas breaks its terms.",
+        "source": {
+          "label": "WeBank loan agreement, use of funds",
+          "as_of": "2026-01-01"
+        }
+      },
+      {
+        "id": "guarantee",
+        "label": "A guarantee from your Shenzhen company",
+        "rule_id": "R3",
+        "reason": "Cross-border guarantees need their own registration and are not part of this plan.",
+        "source": {
+          "label": "SAFE cross-border guarantee rules",
+          "as_of": "2025-12-31"
+        }
+      },
+      {
+        "id": "sg_bank",
+        "label": "Singapore bank or EFS loan before opening",
+        "rule_id": "R5",
+        "reason": "Needs trading history or 30% local ownership.",
+        "source": {
+          "label": "Enterprise Singapore EFS",
+          "as_of": "2026-06-30",
+          "url": "https://www.enterprisesg.gov.sg/"
+        }
+      }
+    ]
+  },
+  "figures": {},
+  "display": {}
+}

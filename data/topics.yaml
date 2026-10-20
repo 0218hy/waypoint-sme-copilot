@@ -1,0 +1,166 @@
+# Topic library (SPEC §4.5). Each topic is raised at most once per journey, only by a Skill that lists
+# it, and only when its trigger holds (checked in code: agent/steps.py, maybe_topic; five triggers are
+# not wired, SPEC §4.5). Text holds no bare numbers: quantities are {{fig:param:<key>}} placeholders
+# resolved from data/params.yaml.
+version: 1
+topics:
+  T-RESIDENT-DIRECTOR:
+    trigger: first_cost_card
+    title: {en: "You'll need a resident director", zh: "需要一位本地居民董事"}
+    say:
+      en: "A Singapore company must have at least one director who lives in Singapore. Most first-time owners pay a corporate service firm for a nominee director, so it's already in your setup line."
+      zh: "新加坡公司必须至少有一位常住新加坡的董事。多数首次出海的老板会请秘书公司提供挂名董事，这笔费用已经算在“公司设立”里。"
+    more:
+      en: "The nominee is a formality, but the role carries legal duties, so choose a reputable provider. If you later move to Singapore yourself, or bring in a local partner, they can take the role instead."
+      zh: "挂名董事只是形式，但这个职位有法律责任，请选择信誉好的服务商。以后如果你本人移居新加坡，或者引入本地合伙人，可以改由他们担任。"
+    source: {label: "ACRA: setting up a local company", url: "https://www.acra.gov.sg/how-to-guides/setting-up-a-local-company", as_of: "2026-10"}
+  T-EP-SALARY:
+    trigger: manager_send_own
+    title: {en: "Sending your own manager", zh: "派自己的店长过去"}
+    say:
+      en: "Your manager needs an Employment Pass, which has a minimum monthly salary of {{fig:param:ep_min_salary_sgd}} for new applications, rising with age. We've used the minimum, so treat the people line as a lower estimate."
+      zh: "你的店长需要申请就业准证（EP），新申请的最低月薪为{{fig:param:ep_min_salary_sgd}}，年龄越大要求越高。我们按最低标准估算，所以人工这一项是偏低的估计。"
+    more:
+      en: "The pass also needs enough points under MOM's COMPASS framework. A pass agent can check your manager's case; if it doesn't qualify, hiring a local manager is the fallback, and the card shows that cost."
+      zh: "准证还需要在人力部的COMPASS评分中达标。准证代理可以帮你评估；如果不达标，可以改为聘请本地店长，卡片会显示对应的成本。"
+    source: {label: "MOM: Employment Pass eligibility", url: "https://www.mom.gov.sg/passes-and-permits/employment-pass/eligibility", as_of: "2026-10"}
+  T-CPF-QUOTA:
+    trigger: opened_people_line
+    title: {en: "CPF and local staff", zh: "公积金与本地员工"}
+    say:
+      en: "For Singapore citizen and PR staff you pay CPF on top of wages, at {{fig:param:cpf_employer_rate}} for most ages. How many foreign workers you may hire depends on how many locals you employ."
+      zh: "雇用新加坡公民和永久居民，需要在工资之外缴纳公积金，多数年龄段的雇主缴费率为{{fig:param:cpf_employer_rate}}。可以聘请多少外籍员工，取决于你雇了多少本地员工。"
+    more:
+      en: "Counter crew in food services must earn at least the Progressive Wage level for their role. Locals count towards your foreign-worker quota only if they earn at least the local qualifying salary."
+      zh: "餐饮柜台员工的工资不能低于渐进式薪金标准。本地员工只有在工资达到本地合格薪资时，才计入外籍员工配额。"
+    source: {label: "CPF Board; MOM services sector rules", url: "https://www.mom.gov.sg/passes-and-permits/work-permit-for-foreign-worker/sector-specific-rules/services-sector-requirements", as_of: "2026-10"}
+  T-GST:
+    trigger: opened_gst_line
+    title: {en: "GST on your costs", zh: "成本中的消费税"}
+    say:
+      en: "A new Singapore company usually isn't GST-registered, so the {{fig:param:gst_rate}} GST on fit-out, rent and supplies is a real cost, not a refund."
+      zh: "新成立的新加坡公司通常还没有注册消费税，所以装修、租金和采购上的{{fig:param:gst_rate}}消费税是实际成本，不能退回。"
+    more:
+      en: "Registering voluntarily can let you claim some of it back, but it comes with filing obligations for a minimum period. Ask your accountant; we show it as an option, not in the headline cost."
+      zh: "自愿注册消费税可以申报抵扣一部分，但需要在规定期限内持续申报。请咨询你的会计师；我们把它作为选项展示，没有计入总成本。"
+    source: {label: "IRAS: GST registration", url: "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/registration-for-gst", as_of: "2026-10"}
+  T-GTO:
+    trigger: unit_has_gto
+    title: {en: "Rent tied to sales (GTO)", zh: "营业额租金（GTO）"}
+    say:
+      en: "Some malls charge a share of your sales on top of the base rent. We include it in each unit's break-even point."
+      zh: "有些商场除了基本租金，还会按你的营业额收取一定比例。我们已经把它算进每个铺位的保本点。"
+    more:
+      en: "Usually you pay whichever is higher: the base rent, or the agreed share of gross sales. Ask the landlord for the exact formula in the letter of offer."
+      zh: "通常按“基本租金”和“营业额分成”两者中较高的一项收取。请在要约书里向业主确认具体公式。"
+    source: {label: "Code of Conduct for Leasing of Retail Premises", url: "https://www.ftic.org.sg", as_of: "2026-10"}
+  T-STATION-TRAFFIC:
+    trigger: first_area_card
+    title: {en: "Station traffic isn't footfall", zh: "地铁客流不等于商场人流"}
+    say:
+      en: "We use train-station traffic and residents as signals of how busy an area is. They aren't mall footfall, so visit the mall at your busiest hours before you commit."
+      zh: "我们用地铁站客流和居民数据来判断一个区域的热闹程度。它们不等于商场人流，签约前请在你最忙的时段亲自去商场看看。"
+    more:
+      en: "Malls track their own footfall and may share it with serious tenants. Ask the leasing manager for weekday and weekend numbers."
+      zh: "商场有自己的人流统计，可能会提供给有意向的租户。可以向招商经理索取工作日和周末的数据。"
+    source: {label: "LTA DataMall; SingStat", url: "https://datamall.lta.gov.sg", as_of: "2026-10"}
+  T-NOT-YET-SIGN:
+    trigger: asked_about_offer
+    title: {en: "You can't sign yet", zh: "现在还不能签约"}
+    say:
+      en: "The lease is signed by your Singapore company, which can only be funded after WeBank's consent, the ODI filing and the bank registration. Your plan will time the signing, so offers you see now are for comparison."
+      zh: "租约要由你的新加坡公司来签，而这家公司只有在微众银行同意、完成境外投资备案和银行登记之后才能注资。签约时间会在你的计划里安排，现在看到的铺位主要用来比较。"
+    more:
+      en: "Letters of offer usually expire within weeks. When your signing window opens, Waypoint will remind you to ask agents for live units."
+      zh: "要约书通常几周内就会失效。等你的签约窗口打开时，Waypoint会提醒你向中介了解当时可租的铺位。"
+    source: {label: "NDRC Order 11; SAFE capital account guide (2024)", url: "https://www.gov.cn/zhengce/zhengceku/202404/P020240413283163235756.pdf", as_of: "2026-10"}
+  T-REINSTATEMENT:
+    trigger: opened_lease_line
+    title: {en: "Restoring the unit at the end", zh: "退租时的复原费用"}
+    say:
+      en: "When a lease ends, most malls require you to return the unit to bare shell. It isn't in your opening cost; the plan sets a little aside from trading for it."
+      zh: "租约结束时，大多数商场要求把铺位恢复成毛坯状态。这笔钱不在开店成本里，计划会从营业收入中逐月预留。"
+    more:
+      en: "Ask whether the landlord will accept your fit-out as-is for the next tenant; that can shrink the bill."
+      zh: "可以问业主是否接受把装修原样留给下一位租户，这样能减少复原费用。"
+    source: {label: "Code of Conduct for Leasing of Retail Premises", url: "https://www.ftic.org.sg", as_of: "2026-10"}
+  T-WEBANK-ROLE:
+    trigger: first_funding_screen
+    title: {en: "WeBank's role in this move", zh: "微众银行在这次出海中的角色"}
+    say:
+      en: "Your WeBank loan keeps your shops in Shenzhen running; the law doesn't let it pay for a company abroad. WeBank can hold your Singapore savings in a sub-account in your company's name, and your shock buffer stays undrawn."
+      zh: "你的微业贷用于支持深圳门店的日常经营，法律不允许用它投资境外公司。微众银行可以用公司名下的子账户帮你存放新加坡专项储蓄，应急额度则保持不动用。"
+    more:
+      en: "Your chats and what-ifs here are never used for credit decisions. The plan reaches WeBank only in the consent request you preview and send."
+      zh: "你在这里的对话和各种假设从不用于授信决策。计划只会通过你预览并发送的同意申请送达微众银行。"
+    source: {label: "互联网贷款管理暂行办法 Art. 24; 流动资金贷款管理办法 (2024) Art. 9", url: "https://www.gov.cn/gongbao/2024/issue_11306/202404/content_6947721.html", as_of: "2026-10"}
+  T-LENDER-CONSENT:
+    trigger: first_timeline
+    title: {en: "Ask WeBank first", zh: "先征得微众银行同意"}
+    say:
+      en: "Before investing abroad, your loan contract requires WeBank's consent as your lender. Waypoint drafts the request; you send it."
+      zh: "对外投资之前，你的贷款合同要求先取得微众银行作为贷款人的同意。Waypoint会帮你起草申请，由你本人发送。"
+    more:
+      en: "Sending it early lets your next line renewal be confirmed in the same reply. Your plan already shows what happens if WeBank says yes, says yes with conditions, or doesn't reply."
+      zh: "尽早发送，可以让下一次额度续期在同一次回复中确认。你的计划已经列出银行同意、附条件同意或未回复时分别会怎样。"
+    source: {label: "流动资金贷款管理办法 (2024) Art. 25(3)", url: "https://www.gov.cn/gongbao/2024/issue_11306/202404/content_6947721.html", as_of: "2026-10"}
+  T-ODI:
+    trigger: first_timeline_or_guard
+    title: {en: "The outbound investment filing (ODI)", zh: "境外投资备案（ODI）"}
+    say:
+      en: "Money can only go to your Singapore company after the Shenzhen DRC and Commerce Bureau filing and a bank registration. Skipping it risks a fine and a bar on future overseas investment."
+      zh: "只有完成深圳发改委和商务局的备案以及银行登记之后，资金才能汇往新加坡公司。跳过备案可能被罚款，并被限制今后的境外投资。"
+    more:
+      en: "A filing agent usually handles the paperwork. Waypoint prepares the source-of-funds history for each transfer so the bank can clear it in one visit."
+      zh: "备案材料通常由代办机构处理。Waypoint会为每笔汇款准备资金来源记录，方便银行一次办结。"
+    source: {label: "State Council Decree 837 Art. 27; NDRC Order 11", url: "https://www.gov.cn/gongbao/2026/issue_12786/202606/content_7071618.html", as_of: "2026-10"}
+  T-PRE-INVESTMENT:
+    trigger: first_timeline
+    title: {en: "Pre-investment allowance (前期费用)", zh: "前期费用"}
+    say:
+      en: "Before the company exists you may send up to {{fig:param:pre_investment_cap_share}} of the planned total for costs like incorporation and research. It can't be used for the lease deposit."
+      zh: "公司成立之前，最多可以汇出计划投资总额的{{fig:param:pre_investment_cap_share}}，用于注册公司、市场调研等前期费用。它不能用来支付租赁押金。"
+    more:
+      en: "Unused allowance must be reported and returned if the overseas company isn't set up within the allowed time."
+      zh: "如果境外公司没有在规定时间内设立，未使用的前期费用需要申报并调回。"
+    source: {label: "SAFE capital account guide (2024) §8.1", url: "https://www.gov.cn/zhengce/zhengceku/202404/P020240413283163235756.pdf", as_of: "2026-10"}
+  T-SAFETY-FLOOR:
+    trigger: first_slider
+    title: {en: "Your safety line", zh: "你的安全线"}
+    say:
+      en: "Your shops in Shenzhen keep enough cash for payroll and loan repayments; we only set aside what's above that line. Shares that would make dipping below it too likely are greyed out."
+      zh: "深圳门店会留足发工资和还贷所需的现金，我们只从超出这条线的部分里储蓄。会让现金跌破安全线的风险过高的比例，会显示为灰色、不能选择。"
+    more:
+      en: "By default the line is your payroll for the next couple of months plus your next loan repayments. You can raise it on the Account tab."
+      zh: "默认的安全线是未来一段时间的工资加上接下来的还款额。你可以在“账户”页提高它。"
+    source: {label: "Waypoint design rule R5", as_of: "2026-10"}
+  T-PARTNER:
+    trigger: asked_partner
+    title: {en: "A local partner", zh: "本地合伙人"}
+    say:
+      en: "A Singapore citizen or PR who takes a stake can cover part of the cost and makes government-backed loans and grants possible. In return they share the profit."
+      zh: "如果有新加坡公民或永久居民入股，可以承担一部分成本，也能让你申请政府担保贷款和补助。作为交换，他们会分享利润。"
+    more:
+      en: "Only consider this if you already know someone you trust. Waypoint doesn't find partners; the plan shows how much less of your money goes in and how much profit you'd share."
+      zh: "只有在你已经认识值得信任的人时才考虑这个选项。Waypoint不负责寻找合伙人；计划会显示你可以少投入多少资金、需要分出多少利润。"
+    source: {label: "Enterprise Singapore: Enterprise Financing Scheme", url: "https://www.enterprisesg.gov.sg", as_of: "2026-10"}
+  T-HIRING-LOCALS:
+    trigger: cost_confirmed
+    title: {en: "You'll need to hire locally first", zh: "需要先在当地招聘员工"}
+    say:
+      en: "You can't bring a full crew from Shenzhen: work permits for PRC workers are capped at a small share of a services company's staff, and your quota grows only as you employ Singaporeans and PRs. Plan to recruit locally before opening."
+      zh: "不能从深圳带一整支团队过去：服务业公司里中国籍工作准证员工的比例有严格上限，而且配额要靠先雇用新加坡公民和永久居民才能获得。请提前在当地招聘。"
+    more:
+      en: "Local staff only count towards your quota once they're on your CPF payroll, averaged over recent months, and counter crew must earn at least the food-services progressive wage. The cost card's people line already uses local wages; a manager you send needs an Employment Pass."
+      zh: "本地员工要进入公积金发薪名单、并按最近几个月的平均人数计算，才计入配额；柜台员工的工资不能低于餐饮业渐进式薪金标准。成本卡里的人工已按本地工资估算；你派去的店长需要申请就业准证。"
+    source: {label: "MOM: levy and quota requirements (services sector)", url: "https://www.mom.gov.sg/passes-and-permits/s-pass/quota-and-levy/levy-and-quota-requirements", as_of: "2026-02"}
+  T-SCOPE:
+    trigger: side_question_without_a_topic
+    title: {en: "I can't answer that one here", zh: "这个问题我在这里不能回答"}
+    say:
+      en: "I answer side questions only from these checked cards, so I won't give a free answer to this one. What your plan does with money, and in what order, is set by the rule checks and your own approval, and I'll keep to that."
+      zh: "旁支问题我只用这些经过核对的卡片来回答，所以这个问题我不做自由回答。计划里资金怎么用、步骤按什么顺序，都由规则检查和你本人的批准决定，我会照此执行。"
+    more:
+      en: "For a legal, tax or credit question, ask a filing agent, an accountant or your WeBank relationship manager. The question I was asking you is just below."
+      zh: "法律、税务或信贷方面的问题，请咨询备案代办机构、会计师或你的微众银行客户经理。我刚才的问题在下面。"
+    source: {label: "Waypoint: how side questions are answered (SPEC §4.5)", as_of: "2026-10"}

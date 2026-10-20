@@ -1,0 +1,546 @@
+{
+  "id": "w_fc23",
+  "payload": {
+    "type": "funding_compare",
+    "share": 0.4,
+    "share_fig": "plan.setaside_share",
+    "columns": [
+      {
+        "id": "setaside",
+        "title": "Set-aside only",
+        "blurb": "Your spare cash and the monthly set-aside from profit; nothing else.",
+        "open": true,
+        "chosen": false,
+        "savings_editable": false,
+        "savings": "funding.compare.setaside.savings",
+        "monthly": "funding.compare.setaside.monthly",
+        "open_likely": "funding.compare.setaside.open_likely",
+        "open_p95": "funding.compare.setaside.open_p95",
+        "floor_risk": "funding.compare.setaside.floor_risk",
+        "floor_risk_upper": "funding.compare.setaside.floor_risk_upper",
+        "ownership": "funding.compare.setaside.ownership",
+        "pros": [
+          "cheapest",
+          "keeps_ownership"
+        ],
+        "cons": [
+          "slowest"
+        ],
+        "terms": [
+          {
+            "id": "setaside",
+            "label": "Set-aside from monthly profit",
+            "cost": "Profit not drawn or reinvested at home",
+            "conditions": "Paused while WeBank borrowing is above your normal level (R2); only from cash above the floor"
+          }
+        ],
+        "toggles": [
+          {
+            "id": "own_savings",
+            "on": false
+          },
+          {
+            "id": "partner_equity",
+            "on": false
+          }
+        ]
+      },
+      {
+        "id": "savings",
+        "title": "Set-aside + your savings",
+        "blurb": "Adds savings you put in as capital through your Shenzhen company. Change the amount to see it move.",
+        "open": true,
+        "chosen": true,
+        "savings_editable": true,
+        "savings": "funding.compare.savings.savings",
+        "monthly": "funding.compare.savings.monthly",
+        "open_likely": "funding.compare.savings.open_likely",
+        "open_p95": "funding.compare.savings.open_p95",
+        "floor_risk": "funding.compare.savings.floor_risk",
+        "floor_risk_upper": "funding.compare.savings.floor_risk_upper",
+        "ownership": "funding.compare.savings.ownership",
+        "pros": [
+          "cheapest",
+          "keeps_ownership",
+          "lowers_floor_risk"
+        ],
+        "cons": [],
+        "terms": [
+          {
+            "id": "own_savings",
+            "label": "Your own savings, put in as capital",
+            "cost": "Your personal savings",
+            "conditions": "Savings only, never borrowed money (R7). Put in through your Shenzhen company: it becomes the company's capital and goes to Singapore under the company's ODI filing and bank registration, never sent personally or on your own FX quota (R4). Source of funds is checked in the filing"
+          }
+        ],
+        "toggles": [
+          {
+            "id": "own_savings",
+            "on": true
+          },
+          {
+            "id": "partner_equity",
+            "on": false
+          }
+        ]
+      },
+      {
+        "id": "partner",
+        "title": "Set-aside + a local partner",
+        "blurb": "A Singapore citizen or PR partner takes a share of the company and pays that share of the cost.",
+        "open": true,
+        "chosen": false,
+        "savings_editable": false,
+        "savings": "funding.compare.partner.savings",
+        "monthly": "funding.compare.partner.monthly",
+        "open_likely": "funding.compare.partner.open_likely",
+        "open_p95": "funding.compare.partner.open_p95",
+        "floor_risk": "funding.compare.partner.floor_risk",
+        "floor_risk_upper": "funding.compare.partner.floor_risk_upper",
+        "ownership": "funding.compare.partner.ownership",
+        "profit_share": "funding.compare.partner.profit_share",
+        "pros": [
+          "fastest",
+          "lowers_floor_risk"
+        ],
+        "cons": [
+          "costs_profit_share",
+          "gives_up_ownership"
+        ],
+        "terms": [
+          {
+            "id": "partner_equity",
+            "label": "Local partner equity (at least 30% Singapore citizen/PR)",
+            "cost": "A share of the profit",
+            "conditions": "Unlocks EFS and grant eligibility after opening; shown simply, not modelled in depth"
+          }
+        ],
+        "toggles": [
+          {
+            "id": "own_savings",
+            "on": false
+          },
+          {
+            "id": "partner_equity",
+            "on": true
+          }
+        ]
+      }
+    ],
+    "savings_max": "funding.compare.savings_max",
+    "preview_url": "/api/preview/compare"
+  },
+  "figures": {
+    "plan.setaside_share": {
+      "id": "plan.setaside_share",
+      "label": "Set-aside share",
+      "unit": "pct",
+      "value": "0.40",
+      "source": {
+        "kind": "tool",
+        "ref": "simulate_plan"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.setaside.savings": {
+      "id": "funding.compare.setaside.savings",
+      "label": "Extra savings added",
+      "unit": "CNY",
+      "value": "0",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.setaside.monthly": {
+      "id": "funding.compare.setaside.monthly",
+      "label": "Monthly set-aside",
+      "unit": "CNY",
+      "value": "84826.0",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans",
+        "note": "seed 20261019, 4000 runs"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.setaside.open_likely": {
+      "id": "funding.compare.setaside.open_likely",
+      "label": "Likely opening",
+      "unit": "weeks",
+      "value": "80",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans",
+        "note": "seed 20261019, 4000 runs"
+      },
+      "assumptions": [
+        "mc_runs",
+        "default_seed",
+        "horizon_weeks"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.setaside.open_p95": {
+      "id": "funding.compare.setaside.open_p95",
+      "label": "Opening if things go badly",
+      "unit": "weeks",
+      "value": "102",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans",
+        "note": "seed 20261019, 4000 runs"
+      },
+      "assumptions": [
+        "mc_runs",
+        "default_seed",
+        "horizon_weeks"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.setaside.floor_risk": {
+      "id": "funding.compare.setaside.floor_risk",
+      "label": "Chance home cash dips below the floor",
+      "unit": "pct",
+      "value": "0.02775",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans",
+        "note": "seed 20261019, 4000 runs; an estimate"
+      },
+      "assumptions": [
+        "floor_risk_limit",
+        "mc_runs",
+        "default_seed",
+        "horizon_weeks"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.setaside.floor_risk_upper": {
+      "id": "funding.compare.setaside.floor_risk_upper",
+      "label": "Floor risk, upper bound",
+      "unit": "pct",
+      "value": "0.0333",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans",
+        "note": "seed 20261019, 4000 runs; Wilson 95% upper bound"
+      },
+      "assumptions": [
+        "floor_risk_limit",
+        "mc_runs",
+        "default_seed",
+        "horizon_weeks"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.setaside.ownership": {
+      "id": "funding.compare.setaside.ownership",
+      "label": "Ownership of the Singapore company kept",
+      "unit": "pct",
+      "value": "1",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.savings.savings": {
+      "id": "funding.compare.savings.savings",
+      "label": "Extra savings added",
+      "unit": "CNY",
+      "value": "300000",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.savings.monthly": {
+      "id": "funding.compare.savings.monthly",
+      "label": "Monthly set-aside",
+      "unit": "CNY",
+      "value": "84826.0",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans",
+        "note": "seed 20261019, 4000 runs"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.savings.open_likely": {
+      "id": "funding.compare.savings.open_likely",
+      "label": "Likely opening",
+      "unit": "weeks",
+      "value": "63",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans",
+        "note": "seed 20261019, 4000 runs"
+      },
+      "assumptions": [
+        "mc_runs",
+        "default_seed",
+        "horizon_weeks"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.savings.open_p95": {
+      "id": "funding.compare.savings.open_p95",
+      "label": "Opening if things go badly",
+      "unit": "weeks",
+      "value": "85",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans",
+        "note": "seed 20261019, 4000 runs"
+      },
+      "assumptions": [
+        "mc_runs",
+        "default_seed",
+        "horizon_weeks"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.savings.floor_risk": {
+      "id": "funding.compare.savings.floor_risk",
+      "label": "Chance home cash dips below the floor",
+      "unit": "pct",
+      "value": "0.0265",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans",
+        "note": "seed 20261019, 4000 runs; an estimate"
+      },
+      "assumptions": [
+        "floor_risk_limit",
+        "mc_runs",
+        "default_seed",
+        "horizon_weeks"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.savings.floor_risk_upper": {
+      "id": "funding.compare.savings.floor_risk_upper",
+      "label": "Floor risk, upper bound",
+      "unit": "pct",
+      "value": "0.0320",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans",
+        "note": "seed 20261019, 4000 runs; Wilson 95% upper bound"
+      },
+      "assumptions": [
+        "floor_risk_limit",
+        "mc_runs",
+        "default_seed",
+        "horizon_weeks"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.savings.ownership": {
+      "id": "funding.compare.savings.ownership",
+      "label": "Ownership of the Singapore company kept",
+      "unit": "pct",
+      "value": "1",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.partner.savings": {
+      "id": "funding.compare.partner.savings",
+      "label": "Extra savings added",
+      "unit": "CNY",
+      "value": "0",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.partner.monthly": {
+      "id": "funding.compare.partner.monthly",
+      "label": "Monthly set-aside",
+      "unit": "CNY",
+      "value": "84826.0",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans",
+        "note": "seed 20261019, 4000 runs"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.partner.open_likely": {
+      "id": "funding.compare.partner.open_likely",
+      "label": "Likely opening",
+      "unit": "weeks",
+      "value": "50",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans",
+        "note": "seed 20261019, 4000 runs"
+      },
+      "assumptions": [
+        "mc_runs",
+        "default_seed",
+        "horizon_weeks"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.partner.open_p95": {
+      "id": "funding.compare.partner.open_p95",
+      "label": "Opening if things go badly",
+      "unit": "weeks",
+      "value": "68",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans",
+        "note": "seed 20261019, 4000 runs"
+      },
+      "assumptions": [
+        "mc_runs",
+        "default_seed",
+        "horizon_weeks"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.partner.floor_risk": {
+      "id": "funding.compare.partner.floor_risk",
+      "label": "Chance home cash dips below the floor",
+      "unit": "pct",
+      "value": "0.02325",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans",
+        "note": "seed 20261019, 4000 runs; an estimate"
+      },
+      "assumptions": [
+        "floor_risk_limit",
+        "mc_runs",
+        "default_seed",
+        "horizon_weeks"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.partner.floor_risk_upper": {
+      "id": "funding.compare.partner.floor_risk_upper",
+      "label": "Floor risk, upper bound",
+      "unit": "pct",
+      "value": "0.0284",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans",
+        "note": "seed 20261019, 4000 runs; Wilson 95% upper bound"
+      },
+      "assumptions": [
+        "floor_risk_limit",
+        "mc_runs",
+        "default_seed",
+        "horizon_weeks"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.partner.ownership": {
+      "id": "funding.compare.partner.ownership",
+      "label": "Ownership of the Singapore company kept",
+      "unit": "pct",
+      "value": "0.7",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.partner.profit_share": {
+      "id": "funding.compare.partner.profit_share",
+      "label": "Share of the Singapore profit the partner takes",
+      "unit": "pct",
+      "value": "0.3",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans"
+      },
+      "assumptions": [
+        "partner_min_local_share"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "funding.compare.savings_max": {
+      "id": "funding.compare.savings_max",
+      "label": "Most savings the plan can use",
+      "unit": "CNY",
+      "value": "2004214",
+      "source": {
+        "kind": "tool",
+        "ref": "compare_plans"
+      },
+      "assumptions": [
+        "fx_cny_per_sgd"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    }
+  },
+  "display": {
+    "plan.setaside_share": "40%",
+    "funding.compare.setaside.savings": "RMB 0",
+    "funding.compare.setaside.monthly": "RMB 85k",
+    "funding.compare.setaside.open_likely": "month 18.5 (May 2028)",
+    "funding.compare.setaside.open_p95": "month 23.5 (Oct 2028)",
+    "funding.compare.setaside.floor_risk": "2.8%",
+    "funding.compare.setaside.floor_risk_upper": "3.3%",
+    "funding.compare.setaside.ownership": "100%",
+    "funding.compare.savings.savings": "RMB 300k",
+    "funding.compare.savings.monthly": "RMB 85k",
+    "funding.compare.savings.open_likely": "month 14.5 (Jan 2028)",
+    "funding.compare.savings.open_p95": "month 19.5 (Jun 2028)",
+    "funding.compare.savings.floor_risk": "2.7%",
+    "funding.compare.savings.floor_risk_upper": "3.2%",
+    "funding.compare.savings.ownership": "100%",
+    "funding.compare.partner.savings": "RMB 0",
+    "funding.compare.partner.monthly": "RMB 85k",
+    "funding.compare.partner.open_likely": "month 11.5 (Oct 2027)",
+    "funding.compare.partner.open_p95": "month 15.5 (Feb 2028)",
+    "funding.compare.partner.floor_risk": "2.3%",
+    "funding.compare.partner.floor_risk_upper": "2.8%",
+    "funding.compare.partner.ownership": "70%",
+    "funding.compare.partner.profit_share": "30%",
+    "funding.compare.savings_max": "RMB 2m"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "w_ap2",
+  "payload": {
+    "type": "approval_card",
+    "action": "recurring_setaside",
+    "title": "Monthly transfer to your savings sub-account",
+    "card_hash": "sha256:9c2d…",
+    "nonce": "n_1b2c",
+    "expires_at": "Oct 19, 2026 18:30",
+    "state": "refused",
+    "refusal": "Your plan changed after this card was made. Ask again in the chat.",
+    "lines": [
+      {
+        "label": "Amount",
+        "value": "RMB 168,000 a month"
+      },
+      {
+        "label": "To",
+        "value": "Your company's WeBank sub-account …1234"
+      }
+    ]
+  },
+  "figures": {},
+  "display": {}
+}

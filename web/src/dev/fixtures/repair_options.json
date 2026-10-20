@@ -1,0 +1,163 @@
+{
+  "id": "w_rp1",
+  "payload": {
+    "type": "repair_options",
+    "alert_id": "a_12",
+    "repairs": [
+      {
+        "id": "r1",
+        "label": "Set aside 45% instead of 40%",
+        "detail": "Still under your safety limit",
+        "new_open_likely": "f_r1_o",
+        "new_open_p95": "f_r1_p",
+        "new_floor_risk": "f_r1_r"
+      },
+      {
+        "id": "r2",
+        "label": "Add RMB 0.2m of your own savings",
+        "detail": "Put in as capital, never borrowed",
+        "new_open_likely": "f_r2_o",
+        "new_open_p95": "f_r2_p",
+        "new_floor_risk": "f_r2_r"
+      },
+      {
+        "id": "r3",
+        "label": "Ask the landlord for 2 rent-free months",
+        "detail": "Shown only if agreed in the offer",
+        "new_open_likely": "f_r3_o",
+        "new_open_p95": "f_r3_p",
+        "new_floor_risk": "f_r3_r"
+      }
+    ]
+  },
+  "figures": {
+    "f_r1_o": {
+      "id": "f_r1_o",
+      "label": "New likely opening",
+      "unit": "weeks",
+      "value": "62",
+      "source": {
+        "kind": "tool",
+        "ref": "find_repairs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_r1_p": {
+      "id": "f_r1_p",
+      "label": "New bad-case opening",
+      "unit": "weeks",
+      "value": "74",
+      "source": {
+        "kind": "tool",
+        "ref": "find_repairs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_r1_r": {
+      "id": "f_r1_r",
+      "label": "New floor risk",
+      "unit": "pct",
+      "value": "3",
+      "source": {
+        "kind": "tool",
+        "ref": "find_repairs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_r2_o": {
+      "id": "f_r2_o",
+      "label": "New likely opening",
+      "unit": "weeks",
+      "value": "62",
+      "source": {
+        "kind": "tool",
+        "ref": "find_repairs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_r2_p": {
+      "id": "f_r2_p",
+      "label": "New bad-case opening",
+      "unit": "weeks",
+      "value": "74",
+      "source": {
+        "kind": "tool",
+        "ref": "find_repairs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_r2_r": {
+      "id": "f_r2_r",
+      "label": "New floor risk",
+      "unit": "pct",
+      "value": "3",
+      "source": {
+        "kind": "tool",
+        "ref": "find_repairs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_r3_o": {
+      "id": "f_r3_o",
+      "label": "New likely opening",
+      "unit": "weeks",
+      "value": "62",
+      "source": {
+        "kind": "tool",
+        "ref": "find_repairs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_r3_p": {
+      "id": "f_r3_p",
+      "label": "New bad-case opening",
+      "unit": "weeks",
+      "value": "74",
+      "source": {
+        "kind": "tool",
+        "ref": "find_repairs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_r3_r": {
+      "id": "f_r3_r",
+      "label": "New floor risk",
+      "unit": "pct",
+      "value": "3",
+      "source": {
+        "kind": "tool",
+        "ref": "find_repairs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    }
+  },
+  "display": {
+    "f_r1_o": "Jan 2028",
+    "f_r1_p": "Apr 2028",
+    "f_r1_r": "4.2%",
+    "f_r2_o": "Jan 2028",
+    "f_r2_p": "Mar 2028",
+    "f_r2_r": "3.1%",
+    "f_r3_o": "Feb 2028",
+    "f_r3_p": "Apr 2028",
+    "f_r3_r": "3.0%"
+  }
+}

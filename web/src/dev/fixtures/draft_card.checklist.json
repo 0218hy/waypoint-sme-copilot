@@ -1,0 +1,127 @@
+{
+  "id": "w34",
+  "payload": {
+    "type": "draft_card",
+    "kind": "checklist",
+    "milestone_id": "odi_filing",
+    "title": "ODI filing: what to prepare",
+    "to": "",
+    "subject": "",
+    "body": "",
+    "facts": [],
+    "items": [
+      {
+        "id": "consent_letter",
+        "text": "WeBank's written consent as your lender (the reply to your consent request)",
+        "who": "owner",
+        "source": {
+          "label": "流动资金贷款管理办法 (2024) Art. 25(3): the lender's consent",
+          "url": "https://www.gov.cn/gongbao/2024/issue_11306/202404/content_6947721.html",
+          "as_of": "2026-10"
+        }
+      },
+      {
+        "id": "ndrc_form",
+        "text": "The NDRC project filing form for the Singapore shop, filed with the Shenzhen DRC",
+        "who": "agent",
+        "source": {
+          "label": "State Council Decree 837 Art. 27; NDRC Order 11 (企业境外投资管理办法): project filing",
+          "url": "https://www.gov.cn/gongbao/2026/issue_12786/202606/content_7071618.html",
+          "as_of": "2026-10"
+        }
+      },
+      {
+        "id": "mofcom_form",
+        "text": "The Commerce Bureau outbound investment filing form, filed online, for the investment certificate",
+        "who": "agent",
+        "source": {
+          "label": "MOFCOM Order 2014 No. 3 (境外投资管理办法): enterprise filing and the outbound investment certificate",
+          "url": null,
+          "as_of": "2026-10"
+        }
+      },
+      {
+        "id": "licence",
+        "text": "Your Shenzhen company's business licence",
+        "who": "owner",
+        "source": {
+          "label": "State Council Decree 837 Art. 27; NDRC Order 11 (企业境外投资管理办法): project filing",
+          "url": "https://www.gov.cn/gongbao/2026/issue_12786/202606/content_7071618.html",
+          "as_of": "2026-10"
+        }
+      },
+      {
+        "id": "resolution",
+        "text": "A shareholders' or board decision approving the Singapore investment",
+        "who": "owner",
+        "source": {
+          "label": "State Council Decree 837 Art. 27; NDRC Order 11 (企业境外投资管理办法): project filing",
+          "url": "https://www.gov.cn/gongbao/2026/issue_12786/202606/content_7071618.html",
+          "as_of": "2026-10"
+        }
+      },
+      {
+        "id": "source_of_funds",
+        "text": "Proof the money comes from the company's own profit and savings: recent financial statements and the set-aside account statements",
+        "who": "owner",
+        "source": {
+          "label": "Waypoint plan rules R1, R3, R7 (rules/rules.yaml)",
+          "url": null,
+          "as_of": "2026-10"
+        }
+      },
+      {
+        "id": "no_guarantee",
+        "text": "A note that nothing in China guarantees the Singapore company's obligations",
+        "who": "owner",
+        "source": {
+          "label": "Waypoint plan rules R1, R3, R7 (rules/rules.yaml)",
+          "url": null,
+          "as_of": "2026-10"
+        }
+      },
+      {
+        "id": "pre_investment",
+        "text": "If you need money before the company exists: the pre-investment allowance (前期费用) request, never for the lease deposit",
+        "who": "agent",
+        "source": {
+          "label": "SAFE capital account guide (2024) §8.1: 前期费用 and ODI registration",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202404/P020240413283163235756.pdf",
+          "as_of": "2026-10"
+        }
+      }
+    ],
+    "who": "Your filing agent files; you sign the forms",
+    "sources": [
+      {
+        "label": "流动资金贷款管理办法 (2024) Art. 25(3): the lender's consent",
+        "url": "https://www.gov.cn/gongbao/2024/issue_11306/202404/content_6947721.html",
+        "as_of": "2026-10"
+      },
+      {
+        "label": "State Council Decree 837 Art. 27; NDRC Order 11 (企业境外投资管理办法): project filing",
+        "url": "https://www.gov.cn/gongbao/2026/issue_12786/202606/content_7071618.html",
+        "as_of": "2026-10"
+      },
+      {
+        "label": "MOFCOM Order 2014 No. 3 (境外投资管理办法): enterprise filing and the outbound investment certificate",
+        "url": null,
+        "as_of": "2026-10"
+      },
+      {
+        "label": "Waypoint plan rules R1, R3, R7 (rules/rules.yaml)",
+        "url": null,
+        "as_of": "2026-10"
+      },
+      {
+        "label": "SAFE capital account guide (2024) §8.1: 前期费用 and ODI registration",
+        "url": "https://www.gov.cn/zhengce/zhengceku/202404/P020240413283163235756.pdf",
+        "as_of": "2026-10"
+      }
+    ],
+    "as_of": "2026-10-19",
+    "filename": "waypoint-checklist-odi_filing.txt"
+  },
+  "figures": {},
+  "display": {}
+}

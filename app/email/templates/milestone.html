@@ -1,0 +1,5 @@
+{% extends "_base.html" %}{% block body %}
+<p style="font-size:16px;font-weight:600">{{ step_label }}</p>
+{% if lang == 'zh' %}<p>建议在{{ act_by }}之前完成。打开 Waypoint 查看需要准备的材料。</p>{% else %}<p>Act by {{ act_by }}. Open Waypoint for the checklist of what to prepare.</p>{% endif %}
+<p style="margin:20px 0"><a href="{{ url }}" style="background:#1f6f5c;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;display:inline-block">{{ cta or ('打开 Waypoint' if lang == 'zh' else 'Open Waypoint') }}</a></p>
+{% endblock %}

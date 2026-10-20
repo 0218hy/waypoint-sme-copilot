@@ -1,0 +1,60 @@
+{
+  "id": "w_ps1",
+  "payload": {
+    "type": "plan_summary",
+    "kind": "site",
+    "title": "Century Square #B1-08",
+    "reopen_step": "site",
+    "figures": [
+      "f_ps_rent",
+      "f_ps_be"
+    ],
+    "lines": [
+      {
+        "label": "Area",
+        "value": "Tampines"
+      },
+      {
+        "label": "Size",
+        "value": "420 sq ft"
+      },
+      {
+        "label": "Why this area",
+        "value": "Many residents aged 20–39; busy station"
+      }
+    ]
+  },
+  "figures": {
+    "f_ps_rent": {
+      "id": "f_ps_rent",
+      "label": "Rent + service charge",
+      "unit": "SGD",
+      "value": "9600",
+      "source": {
+        "kind": "simulated",
+        "ref": "units.u2",
+        "as_of": "2026-10-01",
+        "note": "Fictional listing for the demo"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_ps_be": {
+      "id": "f_ps_be",
+      "label": "Break-even",
+      "unit": "cups_per_day",
+      "value": "338",
+      "source": {
+        "kind": "tool",
+        "ref": "break_even",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    }
+  },
+  "display": {
+    "f_ps_rent": "S$9,600 a month",
+    "f_ps_be": "338 cups a day"
+  }
+}

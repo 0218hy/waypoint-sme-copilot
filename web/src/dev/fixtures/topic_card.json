@@ -1,0 +1,17 @@
+{
+  "id": "w_tp1",
+  "payload": {
+    "type": "topic_card",
+    "topic_id": "T-RESIDENT-DIRECTOR",
+    "title": "You'll need a resident director",
+    "say": "A Singapore company needs at least one director who lives in Singapore. Most owners pay a provider for this in the first year.",
+    "more": "If you send your own manager on an Employment Pass, they can become the resident director later.\nUntil then, a nominee director service typically costs a few thousand dollars a year and is already in your setup line.",
+    "source": {
+      "label": "ACRA: company officers",
+      "as_of": "2026-05-01",
+      "url": "https://www.acra.gov.sg/"
+    }
+  },
+  "figures": {},
+  "display": {}
+}

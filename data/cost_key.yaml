@@ -1,0 +1,321 @@
+# Cost key (SPEC §6.3): one entry per cost-card line. `formula` names a function in tools/costs.py;
+# `inputs` name parameters in data/params.yaml (never numbers). Likely = the mode of each input;
+# bad = the line's average share of a P90 total from correlated overruns (Gaussian copula, ρ from params).
+#
+# keywords: words in a quote line that name the whole cost line (an accepted line with one replaces the estimate).
+# part_keywords: words that name only part of it (e.g. demolition is part of fit-out): those lines set a floor
+#   under the estimate, and the estimate stays until a quote covers the whole line or the owner says it does.
+#   A quote line matches the line whose keyword is the longest match; a line with no match stays unmatched
+#   for the owner to assign.
+#
+# kind (unit-economics card): sunk (default), refundable (refund_at: opening | lease_end), working_capital
+#   (recovered at the end of the lease) or reserve (the running reserve: not part of the investment).
+#
+# due: the milestone the money must be in Singapore by:
+#   incorporate / setup_transfer -> the setup transfer
+#   first_transfer / sign_lease / fitout -> the first main transfer (R6: before signing)
+#   opening -> the final transfer (the full reserve is needed to open)
+
+as_of: 2026-10-16
+groups:
+  lease: {label_en: "Deposit and lease", label_zh: "押金和租约"}
+  fitout: {label_en: "Fit-out and equipment", label_zh: "装修和设备"}
+  setup: {label_en: "Setup and licences", label_zh: "公司设立和执照"}
+  people: {label_en: "People before opening", label_zh: "开业前人员"}
+  reserve: {label_en: "Running-cost reserve", label_zh: "运营备用金"}
+  gst: {label_en: "GST", label_zh: "消费税 (GST)"}
+
+lines:
+  - key: security_deposit
+    group: lease
+    kind: refundable
+    refund_at: lease_end
+    label_en: "Security deposit"
+    label_zh: "租赁押金"
+    due: sign_lease
+    formula: rent_months
+    inputs: {months: deposit_months}
+    overrun: false
+    quotable: false
+    likely_basis: "deposit_months x (base rent + service charge)"
+    bad_basis: "Same: fixed by the letter of offer"
+    source: "Code of Conduct for Leasing of Retail Premises in Singapore; Lease Agreements for Retail Premises Act 2023"
+    as_of: 2026-10-16
+
+  - key: stamp_duty
+    group: lease
+    label_en: "Stamp duty on the lease"
+    label_zh: "租约印花税"
+    due: sign_lease
+    formula: stamp_duty
+    inputs: {rate: stamp_duty_lease_rate}
+    overrun: false
+    quotable: false
+    likely_basis: "0.4% x total rent over the lease term"
+    bad_basis: "Same: set by IRAS"
+    source: "IRAS, Stamp duty for leases"
+    url: "https://www.iras.gov.sg/taxes/stamp-duty/for-property/renting-a-property/stamp-duty-for-leases"
+    as_of: 2026-10-16
+
+  - key: landlord_fitout_deposit
+    group: lease
+    kind: refundable
+    refund_at: opening
+    label_en: "Landlord fit-out deposit (refundable)"
+    label_zh: "商场装修押金（可退）"
+    due: sign_lease
+    formula: tri
+    inputs: {amount: landlord_fitout_deposit_sgd}
+    overrun: false
+    quotable: false
+    likely_basis: "Typical mall renovation deposit"
+    bad_basis: "Upper end of mall fit-out guidelines"
+    source: "Build-team estimate from mall fit-out guidelines (assumption to verify per mall)"
+    as_of: 2026-10-16
+
+  - key: aa_me_fees
+    group: lease
+    label_en: "A&A and M&E fees"
+    label_zh: "改建审批及机电接驳费"
+    due: fitout
+    formula: tri
+    inputs: {amount: aa_me_fees_sgd}
+    overrun: true
+    quotable: true
+    keywords: ["A&A", "M&E", "submission", "报建", "机电", "exhaust", "排烟"]
+    likely_basis: "Landlord submission and M&E tie-in fees"
+    bad_basis: "Correlated overrun with fit-out"
+    source: "Build-team estimate (assumption to verify)"
+    as_of: 2026-10-16
+
+  - key: pre_opening_rent
+    group: lease
+    label_en: "Rent before opening (net of rent-free)"
+    label_zh: "开业前租金（扣除免租期）"
+    due: fitout
+    formula: pre_opening_rent
+    inputs: {weeks: pre_opening_rent_weeks, rent_free: rent_free_months}
+    overrun: true
+    quotable: false
+    likely_basis: "About 12 weeks from handover to opening, minus rent-free months"
+    bad_basis: "Fit-out delays correlated with cost overruns"
+    source: "Build-team estimate from the SPEC §13 time chain"
+    as_of: 2026-10-16
+
+  - key: fitout
+    group: fitout
+    label_en: "Fit-out"
+    label_zh: "装修"
+    due: fitout
+    formula: fitout_psf
+    inputs: {psf: fitout_psf_sgd}
+    overrun: true
+    quotable: true
+    keywords: ["fit-out", "fitout", "renovation", "装修"]
+    part_keywords: ["demolition", "拆除", "hacking", "carpentry", "木工", "ceiling", "吊顶", "天花", "flooring", "地面", "partition", "隔墙", "electrical", "plumbing", "水电", "counter", "吧台", "cabinet", "柜体", "joinery", "signage", "招牌", "painting", "油漆"]
+    likely_basis: "S$/sq ft by level x unit size"
+    bad_basis: "Correlated overrun (copula)"
+    source: "Build-team estimates anchored to public founder breakdowns (Amacha S$209k opening cost, Mothership / AsiaOne, Sep 2026); assumptions to verify"
+    as_of: 2026-10-16
+
+  - key: equipment_pos
+    group: fitout
+    label_en: "Equipment and POS"
+    label_zh: "设备和收银系统"
+    due: fitout
+    formula: tri
+    inputs: {amount: equipment_pos_sgd}
+    overrun: true
+    quotable: true
+    keywords: ["equipment", "设备"]
+    part_keywords: ["POS", "收银", "ice machine", "制冰机", "chiller", "冰柜", "sealer", "封口机"]
+    likely_basis: "Tea bar equipment and POS"
+    bad_basis: "Correlated overrun (copula)"
+    source: "Build-team estimate anchored to public founder breakdowns (assumption to verify)"
+    as_of: 2026-10-16
+
+  - key: opening_stock
+    group: fitout
+    kind: working_capital
+    label_en: "Opening stock (with freight and import GST)"
+    label_zh: "开业备货（含运费和进口消费税）"
+    due: opening
+    formula: stock_import_gst
+    inputs: {amount: opening_stock_sgd, gst: gst_rate}
+    overrun: false
+    quotable: true
+    keywords: ["stock", "inventory", "备货", "原料", "freight", "运费"]
+    likely_basis: "4-6 weeks of tea and packaging, CIF, plus import GST"
+    bad_basis: "Upper end of stock estimate"
+    source: "Build-team estimate; Singapore Customs: GST on imported goods"
+    as_of: 2026-10-16
+
+  - key: incorporation
+    group: setup
+    label_en: "Incorporation (ACRA + filing agent)"
+    label_zh: "公司注册（ACRA + 代理）"
+    due: incorporate
+    formula: tri
+    inputs: {amount: incorporation_sgd}
+    overrun: true
+    quotable: true
+    keywords: ["incorporation", "ACRA", "注册"]
+    likely_basis: "ACRA S$315 + corporate service provider fee"
+    bad_basis: "Correlated overrun (copula)"
+    source: "ACRA fees; build-team CSP estimate"
+    url: "https://www.acra.gov.sg/how-to-guides/setting-up-a-local-company/fees"
+    as_of: 2026-10-16
+
+  - key: corp_secretary
+    group: setup
+    label_en: "Corporate secretary (first year)"
+    label_zh: "公司秘书（首年）"
+    due: incorporate
+    formula: tri
+    inputs: {amount: corp_secretary_first_year_sgd}
+    overrun: true
+    quotable: true
+    keywords: ["secretary", "秘书"]
+    likely_basis: "Published CSP packages"
+    bad_basis: "Correlated overrun (copula)"
+    source: "Companies Act s171; build-team estimate"
+    as_of: 2026-10-16
+
+  - key: resident_director
+    group: setup
+    label_en: "Resident director (first year)"
+    label_zh: "本地居民董事（首年）"
+    due: incorporate
+    formula: tri
+    inputs: {amount: resident_director_first_year_sgd}
+    overrun: true
+    quotable: true
+    keywords: ["nominee", "resident director", "董事"]
+    likely_basis: "Published nominee-director packages"
+    bad_basis: "Correlated overrun (copula)"
+    source: "Companies Act s145; build-team estimate"
+    as_of: 2026-10-16
+
+  - key: food_shop_licence
+    group: setup
+    label_en: "Food shop licence (SFA)"
+    label_zh: "食品店执照（SFA）"
+    due: opening
+    formula: fixed_param
+    inputs: {amount: food_shop_licence_sgd}
+    overrun: false
+    quotable: false
+    likely_basis: "SFA annual fee (to verify)"
+    bad_basis: "Same"
+    source: "SFA food shop licence (to verify)"
+    url: "https://www.sfa.gov.sg/food-retail/food-shop"
+    as_of: 2026-10-16
+
+  - key: insurance
+    group: setup
+    label_en: "Insurance (first year)"
+    label_zh: "保险（首年）"
+    due: opening
+    formula: tri
+    inputs: {amount: insurance_first_year_sgd}
+    overrun: true
+    quotable: true
+    keywords: ["insurance", "保险", "WICA"]
+    likely_basis: "Public liability, fire, WICA"
+    bad_basis: "Correlated overrun (copula)"
+    source: "Build-team estimate (assumption)"
+    as_of: 2026-10-16
+
+  - key: pre_opening_wages
+    group: people
+    label_en: "Wages before opening (with CPF)"
+    label_zh: "开业前工资（含公积金）"
+    due: opening
+    formula: pre_opening_wages
+    inputs: {cpf: cpf_employer_rate, weeks: pre_opening_weeks_paid, staff: staff_plan}
+    overrun: false
+    quotable: false
+    likely_basis: "Manager 6 weeks + crew 2 weeks before opening; CPF 17% for locals"
+    bad_basis: "Higher market wages"
+    source: "CPF Board; MOM PWM (food services); MOM EP qualifying salary (to verify)"
+    as_of: 2026-10-16
+
+  - key: recruitment
+    group: people
+    label_en: "Recruitment"
+    label_zh: "招聘"
+    due: opening
+    formula: tri
+    inputs: {amount: recruitment_sgd}
+    overrun: false
+    quotable: true
+    keywords: ["recruitment", "招聘", "agency"]
+    likely_basis: "Job ads and agency fees"
+    bad_basis: "Upper end"
+    source: "Build-team estimate (assumption)"
+    as_of: 2026-10-16
+
+  - key: work_pass_fees
+    group: people
+    label_en: "Work pass fees"
+    label_zh: "工作准证费用"
+    due: opening
+    formula: work_pass
+    inputs: {fee: work_pass_fee_sgd}
+    overrun: false
+    quotable: false
+    only_when: send_own
+    likely_basis: "EP application S$105 + issuance S$225 per pass"
+    bad_basis: "Same"
+    source: "MOM Employment Pass fees"
+    url: "https://www.mom.gov.sg/passes-and-permits/employment-pass/apply-for-a-pass"
+    as_of: 2026-10-16
+
+  - key: running_reserve
+    group: reserve
+    kind: reserve
+    label_en: "Running-cost reserve"
+    label_zh: "运营备用金"
+    due: opening
+    formula: reserve
+    inputs: {months: reserve_months, utilities: utilities_monthly_sgd, other: other_fixed_monthly_sgd}
+    overrun: false
+    quotable: false
+    likely_basis: "3 months of rent + service charge, wages with CPF, utilities and fees"
+    bad_basis: "Higher wages and utilities"
+    source: "SPEC §6.3 design default; CPF Board; MOM PWM"
+    as_of: 2026-10-16
+
+  - key: gst_fitout
+    group: gst
+    label_en: "GST on fit-out, equipment and pre-opening rent"
+    label_zh: "装修、设备和开业前租金的消费税"
+    due: fitout
+    formula: gst_on
+    inputs: {rate: gst_rate}
+    gst_on: [fitout, equipment_pos, aa_me_fees, pre_opening_rent]
+    overrun: true
+    quotable: false
+    likely_basis: "9% on local supplies; a new Pte Ltd is not GST-registered, so it can't claim it back"
+    bad_basis: "Follows the bases"
+    source: "IRAS: GST 9%"
+    url: "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)"
+    as_of: 2026-10-16
+
+  - key: gst_services
+    group: gst
+    label_en: "GST on services and reserve rent"
+    label_zh: "服务和备用金租金的消费税"
+    due: opening
+    formula: gst_on
+    inputs: {rate: gst_rate}
+    gst_on: [incorporation, corp_secretary, resident_director, insurance, recruitment]
+    plus_reserve_rent: true
+    plus_reserve_supplies: true
+    overrun: false
+    quotable: false
+    likely_basis: "9% on services and on the rent, utilities and other running costs covered by the reserve"
+    bad_basis: "Follows the bases"
+    source: "IRAS: GST 9%"
+    url: "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)"
+    as_of: 2026-10-16

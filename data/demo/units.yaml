@@ -1,0 +1,26 @@
+# SIMULATED unit listings for the demo (SPEC §10). Mall names and locations are real; unit numbers,
+# sizes, rents, service charges, turnover-rent (GTO) terms and availability are INVENTED by the build team
+# and labelled simulated: true. Production would use a licensed broker or listing feed.
+# Rents are S$ per month (base rent); service charge is S$ per month; gto_pct is the turnover rent share
+# (rent = the higher of base rent and gto_pct x gross sales). lat/lng are the mall's location.
+as_of: 2026-10-16
+simulated: true
+units:
+  - {id: u-tm-01, mall: "Tampines Mall", unit_no: "#B1-S03", area_id: "TAMPINES", size_sqft: 480, rent_monthly_sgd: "9600", service_charge_monthly_sgd: "960", gto_pct: null, lease_years: 3, available_from: 2027-03-01, lat: 1.3525, lng: 103.9447, simulated: true}
+  - {id: u-tm-02, mall: "Tampines Mall", unit_no: "#02-K07", area_id: "TAMPINES", size_sqft: 380, rent_monthly_sgd: "8360", service_charge_monthly_sgd: "760", gto_pct: "0.08", lease_years: 3, available_from: 2027-01-15, lat: 1.3525, lng: 103.9447, simulated: true}
+  - {id: u-t1-01, mall: "Tampines 1", unit_no: "#01-K12", area_id: "TAMPINES", size_sqft: 420, rent_monthly_sgd: "7980", service_charge_monthly_sgd: "840", gto_pct: null, lease_years: 3, available_from: 2027-02-01, lat: 1.3541, lng: 103.9451, simulated: true}
+  - {id: u-cs-01, mall: "Century Square", unit_no: "#B1-S11", area_id: "TAMPINES", size_sqft: 560, rent_monthly_sgd: "9520", service_charge_monthly_sgd: "1120", gto_pct: "0.07", lease_years: 3, available_from: 2027-04-01, lat: 1.3521, lng: 103.9437, simulated: true}
+  - {id: u-jem-01, mall: "JEM", unit_no: "#B1-K21", area_id: "JURONG EAST", size_sqft: 450, rent_monthly_sgd: "9450", service_charge_monthly_sgd: "900", gto_pct: "0.08", lease_years: 3, available_from: 2027-02-15, lat: 1.3333, lng: 103.7436, simulated: true}
+  - {id: u-jem-02, mall: "JEM", unit_no: "#03-S06", area_id: "JURONG EAST", size_sqft: 700, rent_monthly_sgd: "11900", service_charge_monthly_sgd: "1400", gto_pct: null, lease_years: 3, available_from: 2027-05-01, lat: 1.3333, lng: 103.7436, simulated: true}
+  - {id: u-wg-01, mall: "Westgate", unit_no: "#B1-K09", area_id: "JURONG EAST", size_sqft: 400, rent_monthly_sgd: "8400", service_charge_monthly_sgd: "800", gto_pct: "0.07", lease_years: 3, available_from: 2027-03-01, lat: 1.3343, lng: 103.7428, simulated: true}
+  - {id: u-wg-02, mall: "Westgate", unit_no: "#02-S14", area_id: "JURONG EAST", size_sqft: 900, rent_monthly_sgd: "13500", service_charge_monthly_sgd: "1800", gto_pct: null, lease_years: 3, available_from: 2027-06-01, lat: 1.3343, lng: 103.7428, simulated: true}
+  - {id: u-bm-01, mall: "Bedok Mall", unit_no: "#B2-K04", area_id: "BEDOK", size_sqft: 380, rent_monthly_sgd: "7600", service_charge_monthly_sgd: "760", gto_pct: null, lease_years: 3, available_from: 2027-01-01, lat: 1.3249, lng: 103.9294, simulated: true}
+  - {id: u-bm-02, mall: "Bedok Mall", unit_no: "#01-S15", area_id: "BEDOK", size_sqft: 620, rent_monthly_sgd: "11160", service_charge_monthly_sgd: "1240", gto_pct: "0.08", lease_years: 3, available_from: 2027-04-15, lat: 1.3249, lng: 103.9294, simulated: true}
+  - {id: u-wp-01, mall: "Waterway Point", unit_no: "#B1-K18", area_id: "PUNGGOL", size_sqft: 420, rent_monthly_sgd: "7560", service_charge_monthly_sgd: "840", gto_pct: null, lease_years: 3, available_from: 2027-02-01, lat: 1.4067, lng: 103.902, simulated: true}
+  - {id: u-wp-02, mall: "Waterway Point", unit_no: "#01-S22", area_id: "PUNGGOL", size_sqft: 550, rent_monthly_sgd: "9350", service_charge_monthly_sgd: "1100", gto_pct: "0.06", lease_years: 3, available_from: 2027-05-01, lat: 1.4067, lng: 103.902, simulated: true}
+  - {id: u-amk-01, mall: "AMK Hub", unit_no: "#B2-K15", area_id: "ANG MO KIO", size_sqft: 360, rent_monthly_sgd: "7200", service_charge_monthly_sgd: "720", gto_pct: null, lease_years: 3, available_from: 2027-01-15, lat: 1.3693, lng: 103.8486, simulated: true}
+  - {id: u-amk-02, mall: "AMK Hub", unit_no: "#01-S09", area_id: "ANG MO KIO", size_sqft: 650, rent_monthly_sgd: "11050", service_charge_monthly_sgd: "1300", gto_pct: "0.07", lease_years: 3, available_from: 2027-03-15, lat: 1.3693, lng: 103.8486, simulated: true}
+  - {id: u-c1-01, mall: "Compass One", unit_no: "#B1-K05", area_id: "SENGKANG", size_sqft: 400, rent_monthly_sgd: "7200", service_charge_monthly_sgd: "800", gto_pct: null, lease_years: 3, available_from: 2027-02-15, lat: 1.3924, lng: 103.8952, simulated: true}
+  - {id: u-cp-01, mall: "Causeway Point", unit_no: "#B1-K11", area_id: "WOODLANDS", size_sqft: 450, rent_monthly_sgd: "7650", service_charge_monthly_sgd: "900", gto_pct: null, lease_years: 3, available_from: 2027-03-01, lat: 1.4361, lng: 103.786, simulated: true}
+  - {id: u-rc-01, mall: "Raffles City", unit_no: "#B1-K26", area_id: "DOWNTOWN CORE", size_sqft: 420, rent_monthly_sgd: "15960", service_charge_monthly_sgd: "1050", gto_pct: "0.10", lease_years: 3, available_from: 2027-04-01, lat: 1.2937, lng: 103.853, simulated: true}
+  - {id: u-ion-01, mall: "ION Orchard", unit_no: "#B4-K18", area_id: "ORCHARD", size_sqft: 380, rent_monthly_sgd: "16340", service_charge_monthly_sgd: "1140", gto_pct: "0.10", lease_years: 3, available_from: 2027-05-15, lat: 1.304, lng: 103.8318, simulated: true}

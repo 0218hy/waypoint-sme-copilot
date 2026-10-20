@@ -1,0 +1,115 @@
+{
+  "id": "w_am1",
+  "payload": {
+    "type": "area_map",
+    "geojson_url": "/geo/planning_areas.geojson",
+    "areas": [
+      {
+        "id": "TAMPINES",
+        "name": "Tampines",
+        "score": 86,
+        "rank": 1
+      },
+      {
+        "id": "JURONG EAST",
+        "name": "Jurong East",
+        "score": 81,
+        "rank": 2
+      },
+      {
+        "id": "BEDOK",
+        "name": "Bedok",
+        "score": 77,
+        "rank": 3
+      },
+      {
+        "id": "WOODLANDS",
+        "name": "Woodlands",
+        "score": 64,
+        "rank": 4
+      },
+      {
+        "id": "ANG MO KIO",
+        "name": "Ang Mo Kio",
+        "score": 69,
+        "rank": 5
+      },
+      {
+        "id": "TOA PAYOH",
+        "name": "Toa Payoh",
+        "score": 62,
+        "rank": 6
+      },
+      {
+        "id": "CLEMENTI",
+        "name": "Clementi",
+        "score": 58,
+        "rank": 7
+      },
+      {
+        "id": "PUNGGOL",
+        "name": "Punggol",
+        "score": 66,
+        "rank": 8
+      },
+      {
+        "id": "YISHUN",
+        "name": "Yishun",
+        "score": 55,
+        "rank": 9
+      },
+      {
+        "id": "SENGKANG",
+        "name": "Sengkang",
+        "score": 60,
+        "rank": 10
+      },
+      {
+        "id": "DOWNTOWN CORE",
+        "name": "Downtown Core",
+        "score": 41,
+        "rank": 11
+      },
+      {
+        "id": "BUKIT BATOK",
+        "name": "Bukit Batok",
+        "score": 50,
+        "rank": 12
+      }
+    ],
+    "top": [
+      "TAMPINES",
+      "JURONG EAST",
+      "BEDOK"
+    ],
+    "reasons": {
+      "TAMPINES": [
+        "Many residents aged 20–39",
+        "Typical rents below your budget line",
+        "Busy station: Tampines MRT"
+      ],
+      "JURONG EAST": [
+        "Large office and student population",
+        "Two malls next to the interchange"
+      ],
+      "BEDOK": [
+        "Many young families and students",
+        "Rents below your budget line"
+      ]
+    },
+    "sources": [
+      {
+        "label": "Singstat population by planning area",
+        "as_of": "2025-06-30",
+        "url": "https://www.singstat.gov.sg/"
+      },
+      {
+        "label": "LTA station passenger volume",
+        "as_of": "2026-08-31",
+        "url": "https://datamall.lta.gov.sg/"
+      }
+    ]
+  },
+  "figures": {},
+  "display": {}
+}

@@ -1,0 +1,30 @@
+{
+  "id": "w_cf1",
+  "payload": {
+    "type": "confirm_card",
+    "step": "site",
+    "title": "Cost this unit?",
+    "confirm_label": "Yes, cost it",
+    "edit_label": "Pick another",
+    "items": [
+      {
+        "label": "Unit",
+        "value": "Century Square #B1-08, Tampines"
+      },
+      {
+        "label": "Size",
+        "value": "420 sq ft"
+      },
+      {
+        "label": "Rent + service",
+        "value": "S$9,600 a month"
+      },
+      {
+        "label": "Break-even",
+        "value": "338 cups a day"
+      }
+    ]
+  },
+  "figures": {},
+  "display": {}
+}

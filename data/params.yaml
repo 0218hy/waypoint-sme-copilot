@@ -1,0 +1,905 @@
+# Waypoint parameters (SPEC §13). Every number the tools use lives here, with its unit, source and date.
+# Nothing in tools/, rules/ or sim/ hard-codes a fact. "Build-team assumption" means a modelling choice
+# made by the team that must be verified or calibrated before production; "to verify" flags a public
+# figure we could not confirm from the primary source at the as_of date.
+#
+# Shape of every entry:
+#   key:
+#     value: <number | {low, likely, high} | mapping | list>
+#     unit: <unit>
+#     source: <where it comes from>
+#     as_of: <date>
+#     note: <how it is used / caveats>
+
+# ------------------------------------------------------------------ FX and time
+
+fx_cny_per_sgd:
+  value: 5.25
+  unit: CNY per SGD
+  source: "Build-team dated rate (SPEC §13); Q3 2026 average 5.27"
+  as_of: 2026-10-16
+  note: "All CNY figures shown with this rate and its date. Re-dated before every demo."
+
+fx_annual_vol:
+  value: 0.04
+  unit: share per year
+  source: "Build-team assumption (CNY/SGD 1-year realised volatility has been roughly 3-5%)"
+  as_of: 2026-10-16
+  note: "Monte Carlo draws one log-normal FX move per run over a one-year horizon."
+
+weeks_per_month:
+  value: 4.345
+  unit: weeks per month
+  source: "Calendar: 365.25 / 12 / 7"
+  as_of: 2026-10-16
+  note: "All monthly amounts are converted to weekly steps with this factor."
+
+horizon_weeks:
+  value: 156
+  unit: weeks
+  source: "SPEC §6.6"
+  as_of: 2026-10-16
+  note: "Plan model horizon (3 years)."
+
+default_seed:
+  value: 20261019
+  unit: seed
+  source: "Build-team choice"
+  as_of: 2026-10-19
+  note: "Default seed for every random draw; tools return the seed they used."
+
+# ------------------------------------------------------------------ safety floor (SPEC §6.5)
+
+floor_payroll_weeks:
+  value: 8
+  unit: weeks of payroll
+  source: "SPEC §6.5 design rule"
+  as_of: 2026-10-16
+  note: "Floor = 8 weeks of payroll + the next 2 loan repayments. The owner may raise it."
+
+floor_loan_repayments:
+  value: 2
+  unit: monthly repayments
+  source: "SPEC §6.5 design rule"
+  as_of: 2026-10-16
+  note: "Next 2 scheduled WeBank repayments are kept in the floor."
+
+buffer_payroll_weeks:
+  value: 4
+  unit: weeks of payroll
+  source: "SPEC §6.5 design rule"
+  as_of: 2026-10-16
+  note: "Payroll buffer above the floor; set-asides only come from cash above floor + buffer."
+
+floor_risk_limit:
+  value: 0.05
+  unit: share of runs
+  source: "SPEC §8.1 R5 (design rule)"
+  as_of: 2026-10-16
+  note: "The slider wall: the largest set-aside share whose floor risk stays at or below this, judged on the Wilson 95% upper bound of the estimate (tools/plan.py), not the point estimate."
+
+payroll_to_profit_ratio_default:
+  value: 1.3
+  unit: ratio
+  source: "Build-team assumption (tea chains: payroll about 25-30% of sales, profit about 20%)"
+  as_of: 2026-10-16
+  note: "Only used in standalone mode when the owner gives profit but not payroll. Shown as an estimate."
+
+# ------------------------------------------------------------------ status, alerts
+
+alert_move_weeks:
+  value: 2
+  unit: weeks
+  source: "SPEC §7.2"
+  as_of: 2026-10-16
+  note: "Alert when the likely opening moves by at least this much."
+
+act_by_alert_days:
+  value: 14
+  unit: days
+  source: "SPEC §7.2"
+  as_of: 2026-10-16
+  note: "Alert when a milestone's act-by date is within this many days."
+
+status_thresholds:
+  value:
+    on_track_slip_weeks: 2
+    at_risk_slip_weeks: 6
+    at_risk_floor_risk: 0.05
+    off_track_floor_risk: 0.10
+  unit: weeks / share
+  source: "SPEC §7.2 status table"
+  as_of: 2026-10-20
+  note: "On track: slip <= 2 wk and floor risk <= 5%. At risk: slip over 2 and up to 6 wk, or floor risk over 5% and up to 10%. Off track: beyond either, or a step past its latest-safe week. Read by app/goalkeeper.py _status_for; at_risk_floor_risk also gates alerts."
+
+# ------------------------------------------------------------------ lease (Singapore)
+
+deposit_months:
+  value: 3
+  unit: months of gross rent
+  source: "Code of Conduct for Leasing of Retail Premises in Singapore (FTIC), mandatory under the Lease Agreements for Retail Premises Act 2023 (from 1 Jun 2024): security deposit default"
+  as_of: 2026-10-16
+  note: "Gross rent = base rent + service charge. A higher deposit needs a declaration under the code."
+
+rent_free_months:
+  value: 1
+  unit: months
+  source: "Build-team assumption from common mall fit-out rent-free periods; not mandated by the code"
+  as_of: 2026-10-16
+  note: "Default rent-free fit-out period. Sensitivity 0-2 months."
+
+rent_free_months_max:
+  value: 2
+  unit: months
+  source: "Build-team assumption"
+  as_of: 2026-10-16
+  note: "Largest rent-free period the repairs search will suggest asking for."
+
+stamp_duty_lease_rate:
+  value: 0.004
+  unit: share of total rent
+  source: "IRAS, Stamp duty for leases: 0.4% of total rent for the lease period (lease <= 4 years, AAR > S$1,000)"
+  url: "https://www.iras.gov.sg/taxes/stamp-duty/for-property/renting-a-property/stamp-duty-for-leases"
+  as_of: 2026-10-16
+  note: "Applied to base rent + service charge over the lease term."
+
+landlord_fitout_deposit_sgd:
+  value: {low: 5000, likely: 10000, high: 15000}
+  unit: SGD
+  source: "Build-team estimate from mall fit-out guidelines (refundable fit-out / renovation deposit); assumption to verify per mall"
+  as_of: 2026-10-16
+  note: "Refundable on completion; cash is still needed before fit-out."
+
+aa_me_fees_sgd:
+  value: {low: 2000, likely: 5000, high: 9000}
+  unit: SGD
+  source: "Build-team estimate: landlord A&A submission and M&E (electrical, plumbing, exhaust) tie-in fees; assumption to verify"
+  as_of: 2026-10-16
+  note: "Correlated with fit-out overruns."
+
+pre_opening_rent_weeks:
+  value: {low: 10, likely: 12, high: 17}
+  unit: weeks
+  source: "Build-team estimate: fit-out (~10 wk) + licence (~2-3 wk) between signing and opening"
+  as_of: 2026-10-16
+  note: "Rent is payable from handover; the rent-free months are netted off."
+
+# ------------------------------------------------------------------ fit-out and equipment
+
+fitout_psf_sgd:
+  value:
+    basic: {low: 90, likely: 110, high: 150}
+    standard: {low: 130, likely: 160, high: 220}
+    premium: {low: 190, likely: 240, high: 320}
+  unit: SGD per sq ft
+  source: "Build-team estimates anchored to public founder cost breakdowns (e.g. Amacha's S$209k opening cost, reported Sep 2026 by Mothership / AsiaOne); assumptions to verify with contractor quotes"
+  as_of: 2026-10-16
+  note: "Triangular low / likely / high by fit-out level. Replaced by an accepted quote."
+
+equipment_pos_sgd:
+  value: {low: 30000, likely: 42000, high: 60000}
+  unit: SGD
+  source: "Build-team estimate (tea bar: ice machine, sealer, chillers, boilers, blenders, POS) anchored to public founder breakdowns; assumption to verify"
+  as_of: 2026-10-16
+  note: "Correlated with fit-out overruns."
+
+opening_stock_sgd:
+  value: {low: 6000, likely: 9000, high: 14000}
+  unit: SGD (CIF, before import GST)
+  source: "Build-team estimate: first 4-6 weeks of tea, packaging and consumables with freight; assumption"
+  as_of: 2026-10-16
+  note: "Import GST at the GST rate is added on top (Singapore Customs: GST on imports)."
+
+# ------------------------------------------------------------------ company setup and licences
+
+incorporation_sgd:
+  value: {low: 1115, likely: 1315, high: 2015}
+  unit: SGD
+  source: "ACRA: S$15 name application + S$300 incorporation; plus corporate service provider filing fee (build-team estimate)"
+  url: "https://www.acra.gov.sg/how-to-guides/setting-up-a-local-company/fees"
+  as_of: 2026-10-16
+  note: "ACRA fees are fixed; the CSP fee varies."
+
+corp_secretary_first_year_sgd:
+  value: {low: 600, likely: 1000, high: 1800}
+  unit: SGD per year
+  source: "Build-team estimate from published CSP packages; Companies Act s171 requires a secretary within 6 months"
+  as_of: 2026-10-16
+  note: "First year only in the cost card."
+
+resident_director_first_year_sgd:
+  value: {low: 2000, likely: 3000, high: 5000}
+  unit: SGD per year
+  source: "Build-team estimate from published nominee-director packages; Companies Act s145 requires one director ordinarily resident in Singapore"
+  as_of: 2026-10-16
+  note: "Nominee providers often also ask for a refundable security deposit (not included)."
+
+food_shop_licence_sgd:
+  value: 390
+  unit: SGD per year
+  source: "SFA food shop licence fee (to verify: fee depends on floor area)"
+  url: "https://www.sfa.gov.sg/food-retail/food-shop"
+  as_of: 2026-10-16
+  note: "To verify against SFA's current fee schedule."
+
+insurance_first_year_sgd:
+  value: {low: 1200, likely: 2000, high: 3500}
+  unit: SGD per year
+  source: "Build-team estimate: public liability, fire and work injury compensation (WICA) for a small F&B unit; assumption"
+  as_of: 2026-10-16
+  note: "Malls usually require public liability cover in the lease."
+
+# ------------------------------------------------------------------ people
+
+cpf_employer_rate:
+  value: 0.17
+  unit: share of wage
+  source: "CPF Board: employer contribution 17% for employees aged 55 and below (citizens / 3rd-year PR)"
+  url: "https://www.cpf.gov.sg/employer/employer-obligations/how-much-cpf-contributions-to-pay"
+  as_of: 2026-10-16
+  note: "Applied to local (citizen/PR) wages only; not to Employment Pass holders."
+
+ep_min_salary_sgd:
+  value: 6000
+  unit: SGD per month
+  source: "MOM COMPASS / EP qualifying salary: from S$6,000 a month for new applications in 2027 (to verify; rises with age)"
+  url: "https://www.mom.gov.sg/passes-and-permits/employment-pass/eligibility"
+  as_of: 2026-10-16
+  note: "Lower-bound estimate for a young manager sent from China; older candidates need more."
+
+work_pass_fee_sgd:
+  value: 330
+  unit: SGD per pass
+  source: "MOM: Employment Pass application fee S$105 + issuance fee S$225"
+  url: "https://www.mom.gov.sg/passes-and-permits/employment-pass/apply-for-a-pass"
+  as_of: 2026-10-16
+  note: "Only when the owner sends his own manager."
+
+pwm_counter_attendant_wage_sgd:
+  value:
+    "2026-07-01": 2295
+    "2027-07-01": 2435
+  unit: SGD per month (basic wage, full-time)
+  source: "MOM Progressive Wage Model for Food Services: counter / service attendant wage from 1 Jul 2026 and 1 Jul 2027"
+  url: "https://www.mom.gov.sg/employment-practices/progressive-wage-model/food-services-pwm"
+  as_of: 2026-10-16
+  note: "The rate in force at the opening date is used (to verify against the final schedule)."
+
+crew_wage_market_premium:
+  value: {low: 0.0, likely: 0.05, high: 0.15}
+  unit: share above the PWM wage
+  source: "Build-team assumption (tight F&B labour market)"
+  as_of: 2026-10-16
+  note: "Crew wage = PWM wage x (1 + premium)."
+
+local_manager_wage_sgd:
+  value: {low: 3800, likely: 4200, high: 4800}
+  unit: SGD per month
+  source: "Build-team estimate for an F&B outlet supervisor; assumption to verify with MOM wage tables"
+  as_of: 2026-10-16
+  note: "Used when the owner hires a local manager (CPF applies)."
+
+staff_plan:
+  value:
+    managers: 1
+    crew_fte: 4
+  unit: people
+  source: "Build-team assumption: one mall kiosk, open 7 days, about 12 hours a day"
+  as_of: 2026-10-16
+  note: "Drives pre-opening wages, the reserve and break-even."
+
+pre_opening_weeks_paid:
+  value:
+    manager: 6
+    crew: 2
+  unit: weeks
+  source: "Build-team assumption: manager joins for set-up, crew for training"
+  as_of: 2026-10-16
+  note: "Wages paid before opening (with CPF for locals)."
+
+recruitment_sgd:
+  value: {low: 1000, likely: 2500, high: 5000}
+  unit: SGD
+  source: "Build-team estimate: job ads and agency fees; assumption"
+  as_of: 2026-10-16
+  note: ""
+
+# ------------------------------------------------------------------ running costs and reserve
+
+reserve_months:
+  value: 3
+  unit: months
+  source: "SPEC §6.3 / §13 design default"
+  as_of: 2026-10-16
+  note: "Rent, wages, utilities and fees for the first months; the full reserve must be in Singapore to open."
+
+utilities_monthly_sgd:
+  value: {low: 1200, likely: 1500, high: 2200}
+  unit: SGD per month
+  source: "Build-team estimate for a small F&B unit (electricity, water, gas); assumption"
+  as_of: 2026-10-16
+  note: ""
+
+other_fixed_monthly_sgd:
+  value: 1000
+  unit: SGD per month
+  source: "Build-team assumption: POS subscription, accounting, marketing, card terminal fees"
+  as_of: 2026-10-16
+  note: ""
+
+gst_rate:
+  value: 0.09
+  unit: share
+  source: "IRAS: GST at 9% from 1 Jan 2024"
+  url: "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)"
+  as_of: 2026-10-16
+  note: "A new Pte Ltd is not GST-registered, so GST on local supplies, rent and imports is a cost (voluntary registration is a lever)."
+
+# ------------------------------------------------------------------ cost uncertainty
+
+cost_overrun_rho:
+  value: 0.5
+  unit: correlation
+  source: "SPEC §13 (build-team assumption; sensitivity 0.3 / 0.7)"
+  as_of: 2026-10-16
+  note: "Gaussian copula correlation across fit-out, equipment, setup and pre-opening-rent overruns."
+
+bad_case_quantile:
+  value: 0.90
+  unit: quantile of the total
+  source: "Build-team choice"
+  as_of: 2026-10-16
+  note: "The 'if things go badly' total is the P90 of the simulated total, not the worst case on every line."
+
+likely_quantile:
+  value: 0.50
+  unit: quantile of the total
+  source: "Build-team choice: the median of the simulated total"
+  as_of: 2026-10-20
+  note: "The 'likely' total is the P50 of the simulated total, so it is as likely to come in above as below. The sum of each input's most likely value (the 'base estimate') sits below it because the cost ranges are skewed upwards."
+
+quote_variation_allowance:
+  value: {low: 0.0, likely: 0.05, high: 0.15}
+  unit: share of the accepted quote
+  source: "Build-team assumption (to verify): variations and extras on an accepted quote. Singapore renovation guides advise keeping a 10-20% contingency on top of a quote (e.g. renonation.sg, 'Does your renovation need a contingency fund')"
+  url: "https://www.renonation.sg/does-your-renovation-need-a-contingency-fund"
+  as_of: 2026-10-20
+  note: "Triangular, applied to each line an accepted quote covers in full, with the line's overrun draw; a quote fixes the price of the work it lists, not the changes made during the job."
+
+reader_check_confidence:
+  value: 0.8
+  unit: reader confidence (0..1)
+  source: "Build-team choice"
+  as_of: 2026-10-20
+  note: "A quote line read with lower confidence is marked 'check': the owner confirms it on its own; 'Accept all' leaves it."
+
+cost_mc_samples:
+  value: 4000
+  unit: samples
+  source: "Build-team choice"
+  as_of: 2026-10-16
+  note: "Samples used to find the bad-case total and each line's share of it."
+
+cost_bad_window:
+  value: 0.02
+  unit: quantile half-width
+  source: "Build-team choice"
+  as_of: 2026-10-16
+  note: "Line likely and bad values = average of each line over samples whose total lies within P50 (likely) or P90 (bad) +/- this window, so the lines add up to the total."
+
+# ------------------------------------------------------------------ time chain (SPEC §6.7, §13)
+
+lender_consent_weeks:
+  value: {low: 1, likely: 3, high: 6}
+  unit: weeks
+  source: "SPEC §13 (WeBank consent; sensitivity 1 / 6 weeks); 流贷办法 2024 Art. 25(3)"
+  as_of: 2026-10-16
+  note: "Triangular."
+
+odi_filing_weeks:
+  value: {low: 6, likely: 9, high: 13}
+  unit: weeks
+  source: "SPEC §13: ODI filing + registration ~3 months total (NDRC Order 11, MOFCOM Order 3, Shenzhen DRC + Commerce Bureau); build-team split"
+  as_of: 2026-10-16
+  note: "Filing part of the ~13-week ODI chain."
+
+odi_bank_registration_weeks:
+  value: {low: 2, likely: 4, high: 6}
+  unit: weeks
+  source: "SPEC §13; SAFE 资本项目外汇业务指引 (2024) — bank ODI registration; build-team split"
+  as_of: 2026-10-16
+  note: "Registration part of the ~13-week ODI chain (likely total 9 + 4 = 13 weeks)."
+
+incorporation_weeks:
+  value: {low: 1, likely: 1, high: 2}
+  unit: weeks
+  source: "ACRA BizFile+ incorporation is usually same-day; CSP onboarding and KYC (build-team estimate)"
+  as_of: 2026-10-16
+  note: "After bank ODI registration (legal order)."
+
+sg_account_weeks:
+  value: {low: 3, likely: 6, high: 12}
+  unit: weeks
+  source: "SPEC §13: Singapore corporate account for a foreign-owned company, Triangular(3, 6, 12)"
+  as_of: 2026-10-16
+  note: ""
+
+sign_lease_lag_weeks:
+  value: {low: 1, likely: 1, high: 3}
+  unit: weeks
+  source: "Build-team assumption: accept the offer and sign after the first main transfer lands"
+  as_of: 2026-10-16
+  note: "Always at least one week after the first main transfer (R6)."
+
+fitout_weeks:
+  value: {low: 8, likely: 10, high: 14}
+  unit: weeks
+  source: "SPEC §13 (10 weeks; sensitivity 8 / 14; holiday slowdown)"
+  as_of: 2026-10-16
+  note: ""
+
+licence_weeks:
+  value: {low: 2, likely: 3, high: 4}
+  unit: weeks
+  source: "SPEC §13 (SFA licensing 2-4 weeks)"
+  as_of: 2026-10-16
+  note: ""
+
+hiring_weeks:
+  value: {low: 4, likely: 6, high: 10}
+  unit: weeks
+  source: "Build-team assumption: recruiting and training local F&B service crew; MOM work-permit quotas in services depend on local headcount, so locals are hired first (topic T-HIRING-LOCALS)"
+  as_of: 2026-10-19
+  note: "Starts once the lease is signed, runs alongside the fit-out; the shop opens only when it is done. Drawn from its own random stream so other draws are unchanged."
+
+pre_investment_cap_share:
+  value: 0.15
+  unit: share of planned total
+  source: "Decree 837 Art. 27 / SAFE Guide 2024 §8.1: 前期费用 at most 15% of the planned investment; 6-month clock"
+  as_of: 2026-10-16
+  note: "Only for costs before the company exists; never the lease deposit (R4)."
+
+pre_investment_clock_months:
+  value: 6
+  unit: months
+  source: "SAFE 资本项目外汇业务指引 (2024) §8.1"
+  as_of: 2026-10-16
+  note: "Unused 前期费用 must be returned or converted after this period."
+
+timeline_milestones:
+  value:
+    - {id: lender_consent, label_en: "Lender consent (WeBank)", label_zh: "贷款行同意（微众银行）", who_en: "You send; WeBank decides", who_zh: "您提交；微众银行决定", duration: lender_consent_weeks, after: [], money_step: false}
+    - {id: odi_filing, label_en: "ODI filing: Shenzhen DRC + Commerce Bureau", label_zh: "境外投资备案：深圳发改委 + 商务局", who_en: "Your agent", who_zh: "您的代理", duration: odi_filing_weeks, after: [lender_consent], money_step: false}
+    - {id: bank_registration, label_en: "Bank ODI registration", label_zh: "银行 ODI 外汇登记", who_en: "ODI bank", who_zh: "ODI 银行", duration: odi_bank_registration_weeks, after: [odi_filing], money_step: false}
+    - {id: incorporate, label_en: "Incorporate the Pte Ltd; open its bank account", label_zh: "注册新加坡私人有限公司并开户", who_en: "Corporate service provider; Singapore bank", who_zh: "公司秘书服务商；新加坡银行", duration: sg_account_weeks, after: [bank_registration], money_step: false}
+    - {id: setup_transfer, label_en: "Setup transfer", label_zh: "设立资金汇出", who_en: "You release", who_zh: "您放款", duration: null, after: [incorporate], money_step: true}
+    - {id: first_transfer, label_en: "First main transfer (deposit, fit-out, pre-opening rent)", label_zh: "首笔主要汇款（押金、装修、开业前租金）", who_en: "You release", who_zh: "您放款", duration: null, after: [setup_transfer], money_step: true}
+    - {id: sign_lease, label_en: "Accept the offer and sign the lease", label_zh: "接受要约并签租约", who_en: "Pte Ltd", who_zh: "新加坡公司", duration: sign_lease_lag_weeks, after: [first_transfer], money_step: false}
+    - {id: hiring, label_en: "Hire and train local staff", label_zh: "招聘并培训本地员工", who_en: "Pte Ltd", who_zh: "新加坡公司", duration: hiring_weeks, after: [sign_lease], money_step: false}
+    - {id: fitout, label_en: "Fit-out", label_zh: "装修", who_en: "Contractor", who_zh: "装修承包商", duration: fitout_weeks, after: [sign_lease], money_step: false}
+    - {id: licence, label_en: "Licence (SFA)", label_zh: "食品店执照（SFA）", who_en: "Pte Ltd", who_zh: "新加坡公司", duration: licence_weeks, after: [fitout], money_step: false}
+    - {id: opening, label_en: "Remaining reserve in place; open", label_zh: "备用金到位；开业", who_en: "You", who_zh: "您", duration: null, after: [licence, hiring], money_step: true}
+  unit: list
+  source: "SPEC §6.7 legal order; R4 (流贷办法 2024 Art. 25(3); NDRC Order 11; SAFE Guide 2024 §8.1); R6 (cash before commitment)"
+  as_of: 2026-10-19
+  note: "Order is legal order; weeks are completion weeks from the plan start. `after` lists the steps that must be marked done before this one can be (hiring and the fit-out both follow the lease and run in parallel). `money_step` steps are ones the owner releases money for: marking them done always needs the owner's confirmation."
+
+# ------------------------------------------------------------------ plan model (SPEC §6.6)
+
+mc_runs:
+  value: 4000
+  unit: runs
+  source: "SPEC §13; raised from 1,000 after the judge review of 2026-10-20 (results/prereg.md addendum 2026-10-20 (6))"
+  as_of: 2026-10-20
+  note: "Full solve on commit, and the wall (judged on the Wilson 95% upper bound, so 4,000 runs halve its margin). Where the floor risk flattens just under the limit (the demo persona: about 4.1% from a 40% share up, on 20,000 runs), the wall's position still moves with the seed (35%-100% over 10 seeds), always on the safe side."
+
+mc_runs_preview:
+  value: 200
+  unit: runs
+  source: "SPEC §13"
+  as_of: 2026-10-16
+  note: "Slider preview (< 300 ms): the first 200 of the full solve's runs (common draws), never a separate draw."
+
+wall_step:
+  value: 0.05
+  unit: share
+  source: "SPEC §5 setaside_slider step"
+  as_of: 2026-10-16
+  note: "The wall is searched on this grid, from 0 upwards; the first failing share closes it."
+
+seasonal_profile_default:
+  value: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+  unit: multiplier by calendar month (Jan..Dec)
+  source: "Build-team assumption (flat) when no profit history is available"
+  as_of: 2026-10-16
+  note: "With a feed, seasonality is estimated from the owner's own 12+ months of history."
+
+profit_noise_monthly_cv_default:
+  value: 0.15
+  unit: share of seasonal mean
+  source: "Build-team assumption"
+  as_of: 2026-10-16
+  note: "Used only when fewer than 12 months of history are available."
+
+profit_level_ar_phi:
+  value: 0.6
+  unit: AR(1) coefficient per month
+  source: "Build-team assumption (good and bad months cluster)"
+  as_of: 2026-10-16
+  note: "Persistence of the monthly profit level."
+
+profit_noise_weekly_sd:
+  value: 0.10
+  unit: share of weekly mean
+  source: "Build-team assumption"
+  as_of: 2026-10-16
+  note: "Idiosyncratic week-to-week noise on top of the monthly level."
+
+shock_annual_prob:
+  value: 0.15
+  unit: probability per year
+  source: "Build-team assumption: a severe stretch (chain-wide closure, food-safety incident, lockdown) about once in 7 years"
+  as_of: 2026-10-16
+  note: "Jump shocks in the Monte Carlo; each lasts shock_duration_weeks."
+
+shock_severity:
+  value: {low: 0.4, likely: 0.9, high: 1.8}
+  unit: share of average weekly profit lost per week
+  source: "Build-team assumption"
+  as_of: 2026-10-16
+  note: "Triangular. Above 1.0 the business loses money while payroll and rent continue."
+
+shock_duration_weeks:
+  value: 8
+  unit: weeks
+  source: "Build-team assumption"
+  as_of: 2026-10-16
+  note: ""
+
+r2_tolerance_cny:
+  value: 50000
+  unit: CNY
+  source: "Build-team assumption: borrowing within this of the owner's normal level for the month counts as normal"
+  as_of: 2026-10-16
+  note: "R2: above normal + tolerance pauses set-asides and transfers."
+
+loan_excess_halflife_weeks:
+  value: 6
+  unit: weeks
+  source: "Build-team assumption"
+  as_of: 2026-10-16
+  note: "How fast an above-normal draw is expected to be repaid in the plan model."
+
+# ------------------------------------------------------------------ sites (SPEC §6.2)
+
+area_weights:
+  value:
+    foot_traffic: {customer_fit: 0.30, traffic: 0.50, affordability: 0.20, competition: 0.0}
+    low_rent: {customer_fit: 0.25, traffic: 0.15, affordability: 0.60, competition: 0.0}
+    near_customers: {customer_fit: 0.55, traffic: 0.25, affordability: 0.20, competition: 0.0}
+  unit: weights
+  source: "Build-team weights per owner priority (SPEC §6.2)"
+  as_of: 2026-10-16
+  note: "Competition is shown as information, not penalised (weight 0) unless the owner asks."
+
+customer_group_profiles:
+  value:
+    young_adults: {age_low: 20, age_high: 39, daytime: 0.2, income: 0.2}
+    students: {age_low: 15, age_high: 24, daytime: 0.4, income: 0.0}
+    office_workers: {age_low: 25, age_high: 54, daytime: 0.7, income: 0.3}
+    families: {age_low: 35, age_high: 54, daytime: 0.0, income: 0.3}
+    tourists: {age_low: 20, age_high: 64, daytime: 0.9, income: 0.0}
+  unit: age range (years) and weights
+  source: "Build-team mapping from customer group to SingStat age bands, household income and daytime proxy"
+  as_of: 2026-10-16
+  note: "Remaining weight (1 - daytime - income) goes to the age share."
+
+high_income_threshold_sgd:
+  value: 10000
+  unit: SGD per household per month
+  source: "Build-team choice against SingStat household income bands"
+  as_of: 2026-10-16
+  note: "Share of households at or above this counts as high income."
+
+min_residents_for_area:
+  value: 20000
+  unit: residents
+  source: "Build-team choice"
+  as_of: 2026-10-19
+  note: "Areas with fewer residents are ranked only if their daytime proxy is high (e.g. the CBD); resident shares on tiny bases are not used."
+
+min_daytime_for_area:
+  value: 0.5
+  unit: daytime proxy (0..1)
+  source: "Build-team choice"
+  as_of: 2026-10-19
+  note: "A low-resident area with at least this daytime proxy is still ranked (offices, students)."
+
+reason_threshold:
+  value: 0.6
+  unit: normalised factor (0..1)
+  source: "Build-team choice"
+  as_of: 2026-10-16
+  note: "A factor at or above this gives a reason code."
+
+reason_max:
+  value: 3
+  unit: count
+  source: "SPEC §4.3 (up to 3 short reasons per area)"
+  as_of: 2026-10-16
+  note: ""
+
+rent_line_share_of_budget:
+  value: 0.035
+  unit: monthly rent as a share of the total opening budget
+  source: "Build-team assumption"
+  as_of: 2026-10-16
+  note: "The 'budget line' for rent: e.g. S$300k budget -> S$10.5k/month rent + service charge."
+
+typical_unit_sqft:
+  value: 500
+  unit: sq ft
+  source: "Build-team assumption (mall tea kiosk)"
+  as_of: 2026-10-16
+  note: "Size used to turn area rent per sq ft into a monthly rent when no size range is given."
+
+# ------------------------------------------------------------------ tea economics (break-even)
+
+home_cup_price_cny:
+  value: 12
+  unit: RMB per cup (Shenzhen shops, what the customer pays)
+  source: "Build-team assumption for a mid-market Shenzhen tea chain (between budget chains at about RMB 6 and premium ones at about RMB 17 a cup); not sourced"
+  as_of: 2026-10-20
+  note: "The simulated persona's cups a day are derived from its sales with this price (results/prereg.md addendum 2026-10-20 (14)), so the feed's cups and its revenue agree."
+
+best_shop_vs_average:
+  value: 1.8
+  unit: ratio (best shop's cups a day / the average shop's)
+  source: "Build-team assumption for the simulated persona; not sourced"
+  as_of: 2026-10-20
+  note: "The persona's best shop sells this many times the average shop's cups (addendum 2026-10-20 (14))."
+
+
+cup_price_sgd:
+  value: 6.00
+  unit: SGD per cup (what the customer pays)
+  source: "Build-team survey of mall tea-chain menu prices (S$5-7 a cup); assumption"
+  as_of: 2026-10-16
+  note: "Average selling price per cup. Not GST-registered (gst_rate note), the shop charges no GST, so all of it is revenue."
+
+variable_cost_per_cup_sgd:
+  value: 1.80
+  unit: SGD per cup, before GST
+  source: "Build-team assumption: tea, milk, fruit, cup, lid, straw, packaging, card fees (~30% of the cup price)"
+  as_of: 2026-10-16
+  note: "Not GST-registered (gst_rate note), the GST on these supplies is a cost: break-even adds it at the GST rate."
+
+opening_days_per_month:
+  value: 30.4
+  unit: days
+  source: "Malls open daily (365 / 12)"
+  as_of: 2026-10-16
+  note: ""
+
+breakeven_max_iter:
+  value: 50
+  unit: iterations
+  source: "Build-team choice"
+  as_of: 2026-10-16
+  note: "Fixed-point iterations for turnover rent."
+
+# ------------------------------------------------------------------ unit economics and payback (tools/unit_econ.py)
+
+delivery_share:
+  value: 0.20
+  unit: share of cups sold
+  source: "Build-team estimate (to verify after opening): share of a mall kiosk's cups sold through delivery apps"
+  as_of: 2026-10-20
+  note: "The commission on these cups is a per-cup cost. The persona's home shops' own split is in the feed (weekly in-store vs delivery revenue); a Singapore mall kiosk is assumed to sell less through apps."
+
+delivery_commission:
+  value: 0.30
+  unit: share of the order value
+  source: "Grab's own 2020 breakdown: GrabFood merchant commission 25-30% of the order value (Vulcan Post, Jun 2020); the top end is used. Rates vary by plan; to verify with the platform"
+  url: "https://vulcanpost.com/696332/grab-responds-and-provides-actual-breakdown-of-merchant-commission"
+  as_of: 2026-10-20
+  note: "Charged on the menu price of delivered cups. Not GST-registered, the shop also pays GST on the commission and can't claim it back."
+
+cup_price_range_sgd:
+  value: {low: 5.00, likely: 6.00, high: 6.50}
+  unit: SGD per cup (what the customer pays)
+  source: "Singapore menu prices run from Mixue S$2.90 to Heytea S$6.50 (eatbook, Heytea Orchard Central); the likely value is cup_price_sgd. Build-team range for a mid-to-premium tea brand"
+  url: "https://eatbook.sg/heytea-orchard-central/"
+  as_of: 2026-10-20
+  note: "Price sensitivity on the unit-economics card: cups needed to pay back within the lease at the low and high price. S$6.00 is at the top end of the market."
+
+econ_cups_levels:
+  value: [250, 300, 350, 400, 450]
+  unit: cups a day at steady state
+  source: "Build-team choice: around the break-even and the cups needed to pay back within the lease"
+  as_of: 2026-10-20
+  note: "Rows of the store P&L on the unit-economics card, plus the owner's own figure if they give one. The middle level is the reference for the sensitivities when the owner gives none."
+
+ramp_curve:
+  value:
+    likely: {s0: 0.6, tau_months: 3}
+    bad: {s0: 0.5, tau_months: 6}
+  unit: s0 = first month's share of steady-state cups; tau = months
+  source: "Build-team estimate (not a measured curve): a new mall kiosk starts at about half to 60% of its steady volume and closes most of the gap in 3-6 months"
+  as_of: 2026-10-20
+  note: "cups in month m = steady cups x (1 - (1 - s0) x exp(-(m - 1) / tau)). 'Likely' pairs the likely curve with the likely investment; 'if things go badly' pairs the slow curve with the P90 investment."
+
+discount_rate_annual:
+  value: 0.12
+  unit: share per year
+  source: "Build-team choice: a hurdle rate for a first overseas shop of a small chain (sensitivity 8% and 15%)"
+  as_of: 2026-10-20
+  note: "36-month NPV of the shop's after-tax cash flows, discounted monthly at (1 + r)^(1/12) - 1."
+
+discount_rate_sensitivity:
+  value: [0.08, 0.15]
+  unit: share per year
+  source: "Build-team choice"
+  as_of: 2026-10-20
+  note: "The NPV is also shown at these rates."
+
+sg_cit_rate:
+  value: 0.17
+  unit: share of chargeable income
+  source: "IRAS: corporate income tax rate 17%"
+  url: "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/corporate-income-tax-rate-rebates-and-tax-exemption-schemes"
+  as_of: 2026-10-20
+  note: "Applied each year of the lease to EBITDA less the investment spread over the lease, losses carried forward. One-off CIT rebates are not modelled."
+
+sg_partial_exemption:
+  value:
+    - {up_to_sgd: 10000, exempt_share: 0.75}
+    - {up_to_sgd: 200000, exempt_share: 0.50}
+  unit: chargeable income bands (cumulative, SGD) and the share of each band that is exempt
+  source: "IRAS partial tax exemption from YA 2020: 75% of the first S$10,000, 50% of the next S$190,000. The start-up exemption (SUTE) is not used: it needs at least one individual shareholder holding at least 10% of the shares, so a subsidiary wholly owned by Chen's Shenzhen company does not qualify"
+  url: "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/corporate-income-tax-rate-rebates-and-tax-exemption-schemes"
+  as_of: 2026-10-20
+  note: "Partial exemption only."
+
+reinstatement_sgd:
+  value: 20000
+  unit: SGD (once, at the end of the lease)
+  source: "Build-team estimate (to verify per mall): returning a small F&B unit to bare shell at the end of the lease"
+  as_of: 2026-10-20
+  note: "Netted off the security deposit that comes back at the end of the lease in the NPV (topic T-REINSTATEMENT)."
+
+gst_registration_threshold_sgd:
+  value: 1000000
+  unit: SGD of taxable turnover a year
+  source: "IRAS: GST registration is compulsory when taxable turnover exceeds S$1 million in a calendar year, or is expected to in the next 12 months"
+  url: "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/registering-for-gst/do-i-need-to-register-for-gst"
+  as_of: 2026-10-20
+  note: "If a level's steady-state yearly sales exceed this (about 457 cups a day at S$6.00), the card treats the shop as registered: the menu price includes GST (revenue is price / 1.09) and GST on rent, supplies and commissions is claimed back."
+
+econ_cups_search:
+  value: {low: 50, high: 2000}
+  unit: cups a day
+  source: "Build-team choice"
+  as_of: 2026-10-20
+  note: "Bisection range for the cups a day needed to pay back within the lease; above the high end the card says 'not within this range'."
+
+chain_benchmarks:
+  value:
+    - {id: nayuki_payback_2018, value: 10.6, unit: months, en: "Nayuki: payback of its stores opened in 2018", zh: "奈雪的茶：2018年开业门店的投资回收期", url: "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/0618/2021061800009.pdf", page: 197}
+    - {id: nayuki_payback_2018_19, value: 15.5, unit: months, en: "Nayuki: payback of its stores opened in 2018-19", zh: "奈雪的茶：2018-19年开业门店的投资回收期", url: "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/0618/2021061800009.pdf", page: 197}
+    - {id: nayuki_store_margin_2020, value: 0.122, unit: pct, en: "Nayuki: store operating margin, 2020 (18.9% in 2018)", zh: "奈雪的茶：2020年门店经营利润率（2018年为18.9%）", url: "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/0618/2021061800009.pdf", page: 197}
+    - {id: guming_franchisee_margin_2023, value: 0.202, unit: pct, en: "Guming: franchisee store operating margin, FY2023", zh: "古茗：2023财年加盟店经营利润率", url: "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0204/2025020400011.pdf", page: 179}
+    - {id: mixue_cups_per_store, value: 640, unit: cups_per_day, en: "Mixue: cups a store a day", zh: "蜜雪冰城：单店日均杯量", url: "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0221/2025022100009.pdf", page: 15}
+  unit: as given per row
+  source: "HKEX listing prospectuses of Nayuki (2021), Guming (2025) and Mixue (2025), pages as given; read for the judge-response memo (docs/research/judge-response.md §3a)"
+  as_of: 2026-10-20
+  note: "Benchmarks shown in the unit-economics card's footer, for context only: Chinese home-market stores, not a forecast for a Singapore kiosk. The 2018 store margin (18.9%) is quoted in the label, not as a figure."
+
+# ------------------------------------------------------------------ funding and repairs
+
+partner_min_local_share:
+  value: 0.30
+  unit: share of equity
+  source: "Enterprise Singapore EFS: at least 30% local (citizen/PR) shareholding"
+  url: "https://www.enterprisesg.gov.sg/financial-support/enterprise-financing-scheme"
+  as_of: 2026-10-16
+  note: "R8: EFS and grants only with at least this local ownership; never before opening in the plan."
+
+staged_contractor_upfront_share:
+  value: 0.5
+  unit: share of fit-out contract
+  source: "Build-team assumption (stage payments: deposit, mid-point, completion)"
+  as_of: 2026-10-16
+  note: "Shifts when the contractor is paid inside Singapore; R6 still needs the whole fit-out in Singapore before signing."
+
+repair_savings_step_cny:
+  value: 200000
+  unit: CNY
+  source: "Build-team choice"
+  as_of: 2026-10-16
+  note: "The 'add own savings' repair adds this much (from savings, R7)."
+
+repair_runs:
+  value: 4000
+  unit: runs
+  source: "Build-team choice"
+  as_of: 2026-10-20
+  note: "Runs per repair candidate, re-simulated with the same seed; equal to mc_runs so floor risks match the wall."
+
+repair_max:
+  value: 3
+  unit: count
+  source: "SPEC §6.8 (best 2-3)"
+  as_of: 2026-10-16
+  note: ""
+
+# ------------------------------------------------------------------ Goal Keeper change detection (tools/detect.py)
+
+detect_k_sd:
+  value: 1.25
+  unit: sigma
+  source: "frozen on dev seeds 0-299 only by eval/e6_freeze.py (results/detect_freeze.json; results/prereg.md addendum 2026-10-20 (7))"
+  as_of: 2026-10-20
+  note: "CUSUM allowance per week, in the owner's weekly-noise sigmas, on the drop below the adaptive reference. Replaces detect_k (0.12 on the raw ratio)."
+
+detect_h_sd:
+  value: 5
+  unit: sigma
+  source: "frozen on dev seeds 0-299 only by eval/e6_freeze.py (results/detect_freeze.json; results/prereg.md addendum 2026-10-20 (7))"
+  as_of: 2026-10-20
+  note: "CUSUM alarm threshold, in sigmas. Replaces detect_h (0.40 on the raw ratio). Dev seeds 0-299 (E6 counting, onsets weeks 4-40): 1.69 false alarms a chain-year, median delay 2 weeks at -20%, 57% within 3 weeks, 79% within 26."
+
+detect_ref_lambda:
+  value: 0.5
+  unit: share
+  source: "frozen on dev seeds 0-299 only by eval/e6_freeze.py (results/detect_freeze.json; results/prereg.md addendum 2026-10-20 (7))"
+  as_of: 2026-10-20
+  note: "EWMA weight of the adaptive reference (the log profit ratio's recent level)."
+
+detect_ref_lag:
+  value: 2
+  unit: weeks
+  source: "frozen on dev seeds 0-299 only by eval/e6_freeze.py (results/detect_freeze.json; results/prereg.md addendum 2026-10-20 (7))"
+  as_of: 2026-10-20
+  note: "The reference uses observed weeks up to this many weeks before the week checked, so a step is compared with the level before it."
+
+detect_baseline_weeks:
+  value: 13
+  unit: weeks
+  source: "build-team assumption; h calibrated on dev seeds before E6 (results/prereg.md)"
+  as_of: 2026-10-19
+  note: "Weeks before goal start used to fix the baseline level."
+
+detect_shape_shrink:
+  value: false
+  unit: bool
+  source: "frozen on dev seeds 0-299 only by eval/e6_freeze.py (results/detect_freeze.json; results/prereg.md addendum 2026-10-20 (7))"
+  as_of: 2026-10-20
+  note: "Shrink the seasonal shape toward flat by the empirical-Bayes noise weight (addendum 2026-10-19). It also pulls the persona's real Jan-Feb trough toward flat."
+
+detect_channel_shift_tolerance:
+  value: 0.05
+  unit: share
+  source: "build-team assumption, not tuned: half of the persona's normal 10% delivery share (results/prereg.md addendum 2026-10-20 (7))"
+  as_of: 2026-10-20
+  note: "A week is a channel shift only if its delivery share is above the owner's own pre-start share by more than this (and revenue holds, detect_shift_revenue_sd). Was 0.03 on the share itself, which Chen's normal 10% always exceeded."
+
+detect_shift_revenue_sd:
+  value: 2.0
+  unit: sigma
+  source: "build-team assumption, not tuned (results/prereg.md addendum 2026-10-20 (7))"
+  as_of: 2026-10-20
+  note: "Revenue holds if the week's revenue is no more than this many revenue sigmas below its expectation (revenue level x revenue seasonal shape)."
+
+shock_persist_assume:
+  value: true
+  unit: bool
+  source: "build-team assumption; h calibrated on dev seeds before E6 (results/prereg.md)"
+  as_of: 2026-10-19
+  note: "When a drop is detected, the re-plan assumes the observed level persists."
+detect_persist_weight:
+  value: 0.5
+  unit: share
+  source: "build-team assumption (part of a detected drop is ordinary month-to-month variation that reverts)"
+  as_of: 2026-10-19
+  note: "When a drop is detected, the re-plan assumes this share of the observed shortfall persists: level = 1 - weight x (1 - observed ratio)."

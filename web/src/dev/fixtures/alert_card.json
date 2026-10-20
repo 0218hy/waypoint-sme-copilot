@@ -1,0 +1,29 @@
+{
+  "id": "w_al1",
+  "payload": {
+    "type": "alert_card",
+    "alert_id": "a_12",
+    "kind": "date_slip",
+    "headline": "Your opening date moved later",
+    "act_by_date": "Dec 14, 2026",
+    "weeks_moved": "f_moved"
+  },
+  "figures": {
+    "f_moved": {
+      "id": "f_moved",
+      "label": "Weeks moved",
+      "unit": "weeks",
+      "value": "3",
+      "source": {
+        "kind": "tool",
+        "ref": "goal_keeper",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    }
+  },
+  "display": {
+    "f_moved": "3 weeks"
+  }
+}

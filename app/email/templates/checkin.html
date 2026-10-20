@@ -1,0 +1,5 @@
+{% extends "_base.html" %}{% block body %}
+{% if lang == 'zh' %}<p>上个月一切按计划进行吗？一切正常就点第一个按钮；有变化的话，用第二个按钮告诉我利润和储蓄金额。</p>{% else %}<p>Did last month go to plan? If so, one tap is enough. If something changed, tell me last month's profit and how much you set aside.</p>{% endif %}
+{% if quick_url %}<p style="margin:20px 0"><a href="{{ quick_url }}" style="background:#1f6f5c;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;display:inline-block">{{ '一切按计划' if lang == 'zh' else 'On plan as usual' }}</a></p>{% endif %}
+<p style="margin:20px 0"><a href="{{ url }}" style="background:#1f6f5c;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;display:inline-block">{{ cta or ('有变化，告诉 Waypoint' if lang == 'zh' else 'Something changed') }}</a></p>
+{% endblock %}

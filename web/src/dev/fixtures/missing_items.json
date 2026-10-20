@@ -1,0 +1,20 @@
+{
+  "id": "w_mi1",
+  "payload": {
+    "type": "missing_items",
+    "items": [
+      {
+        "value": "demolition",
+        "label": "Demolition",
+        "detail": "Not in your contractor's quote: 拆除另计"
+      },
+      {
+        "value": "electrical",
+        "label": "Electrical upgrade",
+        "detail": "Quote says not included"
+      }
+    ]
+  },
+  "figures": {},
+  "display": {}
+}

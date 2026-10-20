@@ -1,0 +1,243 @@
+{
+  "rule": "results/prereg.md addendum 2026-10-20 (6)",
+  "window": {
+    "checks": 4,
+    "weeks_apart": 4
+  },
+  "chosen": 1422,
+  "summary": {
+    "tried": 8,
+    "shape_ok": 7,
+    "control_alerted": 1,
+    "control_detector_alarm": 2,
+    "dip_no_alert_in_window": 4
+  },
+  "tried": [
+    {
+      "seed": 1415,
+      "shape_ok": true,
+      "control": {
+        "alerts": 0,
+        "detector_alarm": false,
+        "status": [
+          "at_risk",
+          "off_track",
+          "off_track",
+          "off_track"
+        ],
+        "likely_week": [
+          68,
+          72,
+          76,
+          80
+        ],
+        "target_week": 63
+      },
+      "dip": {
+        "alert_after_weeks": null,
+        "detector_alarm": false,
+        "status": [
+          "at_risk",
+          "off_track",
+          "off_track",
+          "off_track"
+        ]
+      },
+      "chosen": false
+    },
+    {
+      "seed": 1416,
+      "shape_ok": true,
+      "control": {
+        "alerts": 0,
+        "detector_alarm": false,
+        "status": [
+          "at_risk",
+          "off_track",
+          "off_track",
+          "off_track"
+        ],
+        "likely_week": [
+          68,
+          72,
+          72,
+          76
+        ],
+        "target_week": 63
+      },
+      "dip": {
+        "alert_after_weeks": null,
+        "detector_alarm": false,
+        "status": [
+          "at_risk",
+          "off_track",
+          "off_track",
+          "off_track"
+        ]
+      },
+      "chosen": false
+    },
+    {
+      "seed": 1417,
+      "shape_ok": true,
+      "control": {
+        "alerts": 0,
+        "detector_alarm": false,
+        "status": [
+          "on_track",
+          "on_track",
+          "on_track",
+          "on_track"
+        ],
+        "likely_week": [
+          63,
+          60,
+          59,
+          62
+        ],
+        "target_week": 68
+      },
+      "dip": {
+        "alert_after_weeks": null,
+        "detector_alarm": true,
+        "status": [
+          "on_track",
+          "on_track",
+          "on_track",
+          "on_track"
+        ]
+      },
+      "chosen": false
+    },
+    {
+      "seed": 1418,
+      "shape_ok": true,
+      "control": {
+        "alerts": 0,
+        "detector_alarm": false,
+        "status": [
+          "on_track",
+          "on_track",
+          "on_track",
+          "on_track"
+        ],
+        "likely_week": [
+          72,
+          72,
+          72,
+          72
+        ],
+        "target_week": 72
+      },
+      "dip": {
+        "alert_after_weeks": null,
+        "detector_alarm": false,
+        "status": [
+          "on_track",
+          "on_track",
+          "at_risk",
+          "at_risk"
+        ]
+      },
+      "chosen": false
+    },
+    {
+      "seed": 1419,
+      "shape_ok": true,
+      "control": {
+        "alerts": 0,
+        "detector_alarm": true,
+        "status": [
+          "on_track",
+          "on_track",
+          "on_track",
+          "on_track"
+        ],
+        "likely_week": [
+          68,
+          68,
+          68,
+          72
+        ],
+        "target_week": 72
+      },
+      "dip": {
+        "alert_after_weeks": 16,
+        "detector_alarm": true,
+        "status": [
+          "on_track",
+          "on_track",
+          "on_track",
+          "off_track"
+        ]
+      },
+      "chosen": false
+    },
+    {
+      "seed": 1420,
+      "shape_ok": false,
+      "chosen": false
+    },
+    {
+      "seed": 1421,
+      "shape_ok": true,
+      "control": {
+        "alerts": 1,
+        "detector_alarm": true,
+        "status": [
+          "on_track",
+          "at_risk",
+          "at_risk",
+          "at_risk"
+        ],
+        "likely_week": [
+          59,
+          63,
+          64,
+          63
+        ],
+        "target_week": 59
+      },
+      "dip": {
+        "alert_after_weeks": 8,
+        "detector_alarm": true,
+        "status": [
+          "on_track",
+          "off_track"
+        ]
+      },
+      "chosen": false
+    },
+    {
+      "seed": 1422,
+      "shape_ok": true,
+      "control": {
+        "alerts": 0,
+        "detector_alarm": false,
+        "status": [
+          "on_track",
+          "on_track",
+          "at_risk",
+          "off_track"
+        ],
+        "likely_week": [
+          63,
+          63,
+          68,
+          72
+        ],
+        "target_week": 63
+      },
+      "dip": {
+        "alert_after_weeks": 4,
+        "detector_alarm": true,
+        "status": [
+          "off_track"
+        ]
+      },
+      "chosen": true
+    }
+  ],
+  "simulated": true,
+  "model": "none (scripted)"
+}

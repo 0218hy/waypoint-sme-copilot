@@ -1,0 +1,55 @@
+{
+  "id": "w_ps3",
+  "payload": {
+    "type": "plan_summary",
+    "kind": "funding",
+    "title": "How it's funded",
+    "reopen_step": "funding",
+    "figures": [
+      "f_ps_m",
+      "f_ps_r"
+    ],
+    "lines": [
+      {
+        "label": "Set-aside",
+        "value": "40% of monthly profit"
+      },
+      {
+        "label": "Safety floor",
+        "value": "8 weeks of payroll + 2 loan repayments"
+      }
+    ]
+  },
+  "figures": {
+    "f_ps_m": {
+      "id": "f_ps_m",
+      "label": "Monthly set-aside",
+      "unit": "CNY",
+      "value": "168000",
+      "source": {
+        "kind": "tool",
+        "ref": "simulate_plan",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_ps_r": {
+      "id": "f_ps_r",
+      "label": "Floor risk",
+      "unit": "pct",
+      "value": "3.1",
+      "source": {
+        "kind": "tool",
+        "ref": "simulate_plan",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    }
+  },
+  "display": {
+    "f_ps_m": "RMB 168,000",
+    "f_ps_r": "3.1%"
+  }
+}

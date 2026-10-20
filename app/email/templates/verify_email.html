@@ -1,0 +1,4 @@
+{% extends "_base.html" %}{% block body %}
+{% if lang == 'zh' %}<p>请确认这个邮箱，用于接收你的目标提醒。</p>{% else %}<p>Confirm this address to receive your goal reminders.</p>{% endif %}
+<p style="margin:20px 0"><a href="{{ url }}" style="background:#1f6f5c;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;display:inline-block">{{ cta or ('打开 Waypoint' if lang == 'zh' else 'Open Waypoint') }}</a></p>
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "_base.html" %}{% block body %}
+{% if lang == 'zh' %}<p>点击下面的按钮登录 Waypoint。链接在短时间内有效，且只能使用一次。</p>{% else %}<p>Tap the button to sign in to Waypoint. The link works once and expires soon.</p>{% endif %}
+<p style="margin:20px 0"><a href="{{ url }}" style="background:#1f6f5c;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;display:inline-block">{{ cta or ('打开 Waypoint' if lang == 'zh' else 'Open Waypoint') }}</a></p>
+{% if lang == 'zh' %}<p style="font-size:13px;color:#6b736e">如果不是你本人操作，请忽略这封邮件。</p>{% else %}<p style="font-size:13px;color:#6b736e">If you didn't ask for this, ignore this email.</p>{% endif %}
+{% endblock %}

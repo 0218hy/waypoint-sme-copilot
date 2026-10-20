@@ -1,0 +1,388 @@
+{
+  "id": "w32",
+  "payload": {
+    "type": "milestone_timeline",
+    "start_date": "2026-10-19",
+    "items": [
+      {
+        "id": "lender_consent",
+        "order": 1,
+        "label": "WeBank's consent as lender",
+        "who": "You send; WeBank decides",
+        "likely": "ms.lender_consent.likely",
+        "likely_date": "Nov 2026",
+        "latest_safe_date": "Sep 2027",
+        "act_by_date": "Aug 2027",
+        "status": "done",
+        "detail": "",
+        "done_date": "19 Oct 2026",
+        "can_mark_done": false,
+        "money_step": false
+      },
+      {
+        "id": "odi_filing",
+        "order": 2,
+        "label": "ODI filing (DRC and Commerce Bureau)",
+        "who": "Your filing agent",
+        "likely": "ms.odi_filing.likely",
+        "likely_date": "Jan 2027",
+        "latest_safe_date": "Nov 2027",
+        "act_by_date": "Sep 2027",
+        "status": "upcoming",
+        "detail": "",
+        "done_date": null,
+        "can_mark_done": true,
+        "money_step": false
+      },
+      {
+        "id": "bank_registration",
+        "order": 3,
+        "label": "Bank ODI registration",
+        "who": "Your ODI bank",
+        "likely": "ms.bank_registration.likely",
+        "likely_date": "Feb 2027",
+        "latest_safe_date": "Dec 2027",
+        "act_by_date": "Nov 2027",
+        "status": "upcoming",
+        "detail": "",
+        "done_date": null,
+        "can_mark_done": false,
+        "money_step": false
+      },
+      {
+        "id": "incorporate",
+        "order": 4,
+        "label": "Incorporate and open the Singapore account",
+        "who": "Corporate service firm; Singapore bank",
+        "likely": "ms.incorporate.likely",
+        "likely_date": "May 2027",
+        "latest_safe_date": "Jan 2028",
+        "act_by_date": "Dec 2027",
+        "status": "upcoming",
+        "detail": "",
+        "done_date": null,
+        "can_mark_done": false,
+        "money_step": false
+      },
+      {
+        "id": "setup_transfer",
+        "order": 5,
+        "label": "Setup transfer",
+        "who": "You release",
+        "likely": "ms.setup_transfer.likely",
+        "likely_date": "May 2027",
+        "latest_safe_date": "Jan 2028",
+        "act_by_date": "Jan 2028",
+        "status": "upcoming",
+        "detail": "",
+        "done_date": null,
+        "can_mark_done": false,
+        "money_step": true
+      },
+      {
+        "id": "first_transfer",
+        "order": 6,
+        "label": "First main transfer",
+        "who": "You release",
+        "likely": "ms.first_transfer.likely",
+        "likely_date": "Jul 2027",
+        "latest_safe_date": "Jan 2028",
+        "act_by_date": "Jan 2028",
+        "status": "upcoming",
+        "detail": "",
+        "done_date": null,
+        "can_mark_done": false,
+        "money_step": true
+      },
+      {
+        "id": "sign_lease",
+        "order": 7,
+        "label": "Accept the offer and sign the lease",
+        "who": "Your Singapore company",
+        "likely": "ms.sign_lease.likely",
+        "likely_date": "Aug 2027",
+        "latest_safe_date": "Jan 2028",
+        "act_by_date": "Jan 2028",
+        "status": "upcoming",
+        "detail": "",
+        "done_date": null,
+        "can_mark_done": false,
+        "money_step": false
+      },
+      {
+        "id": "hiring",
+        "order": 8,
+        "label": "Hire and train local staff",
+        "who": "Your Singapore company (locals first: MOM quotas)",
+        "likely": "ms.hiring.likely",
+        "likely_date": "Oct 2027",
+        "latest_safe_date": "May 2028",
+        "act_by_date": "Mar 2028",
+        "status": "upcoming",
+        "detail": "",
+        "done_date": null,
+        "can_mark_done": false,
+        "money_step": false
+      },
+      {
+        "id": "fitout",
+        "order": 9,
+        "label": "Fit-out",
+        "who": "Your contractor",
+        "likely": "ms.fitout.likely",
+        "likely_date": "Nov 2027",
+        "latest_safe_date": "Apr 2028",
+        "act_by_date": "Jan 2028",
+        "status": "upcoming",
+        "detail": "",
+        "done_date": null,
+        "can_mark_done": false,
+        "money_step": false
+      },
+      {
+        "id": "licence",
+        "order": 10,
+        "label": "Food shop licence",
+        "who": "Your Singapore company",
+        "likely": "ms.licence.likely",
+        "likely_date": "Nov 2027",
+        "latest_safe_date": "May 2028",
+        "act_by_date": "Apr 2028",
+        "status": "upcoming",
+        "detail": "",
+        "done_date": null,
+        "can_mark_done": false,
+        "money_step": false
+      },
+      {
+        "id": "opening",
+        "order": 11,
+        "label": "Opening",
+        "who": "You",
+        "likely": "ms.opening.likely",
+        "likely_date": "May 2028",
+        "latest_safe_date": "May 2028",
+        "act_by_date": "May 2028",
+        "status": "upcoming",
+        "detail": "",
+        "done_date": null,
+        "can_mark_done": false,
+        "money_step": true
+      }
+    ],
+    "step": "goal_keeper"
+  },
+  "figures": {
+    "ms.lender_consent.likely": {
+      "id": "ms.lender_consent.likely",
+      "label": "WeBank's consent as lender",
+      "unit": "weeks",
+      "value": "4",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "timeline",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "ms.odi_filing.likely": {
+      "id": "ms.odi_filing.likely",
+      "label": "ODI filing (DRC and Commerce Bureau)",
+      "unit": "weeks",
+      "value": "14",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "timeline",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "ms.bank_registration.likely": {
+      "id": "ms.bank_registration.likely",
+      "label": "Bank ODI registration",
+      "unit": "weeks",
+      "value": "18",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "timeline",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "ms.incorporate.likely": {
+      "id": "ms.incorporate.likely",
+      "label": "Incorporate and open the Singapore account",
+      "unit": "weeks",
+      "value": "28",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "timeline",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "ms.setup_transfer.likely": {
+      "id": "ms.setup_transfer.likely",
+      "label": "Setup transfer",
+      "unit": "weeks",
+      "value": "28",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "timeline",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "ms.first_transfer.likely": {
+      "id": "ms.first_transfer.likely",
+      "label": "First main transfer",
+      "unit": "weeks",
+      "value": "40",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "timeline",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "ms.sign_lease.likely": {
+      "id": "ms.sign_lease.likely",
+      "label": "Accept the offer and sign the lease",
+      "unit": "weeks",
+      "value": "43",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "timeline",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "ms.hiring.likely": {
+      "id": "ms.hiring.likely",
+      "label": "Hire and train local staff",
+      "unit": "weeks",
+      "value": "50",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "timeline",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "ms.fitout.likely": {
+      "id": "ms.fitout.likely",
+      "label": "Fit-out",
+      "unit": "weeks",
+      "value": "54",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "timeline",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "ms.licence.likely": {
+      "id": "ms.licence.likely",
+      "label": "Food shop licence",
+      "unit": "weeks",
+      "value": "57",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "timeline",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "ms.opening.likely": {
+      "id": "ms.opening.likely",
+      "label": "Opening",
+      "unit": "weeks",
+      "value": "80",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "timeline",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    }
+  },
+  "display": {
+    "ms.lender_consent.likely": "month 1 (Nov 2026)",
+    "ms.odi_filing.likely": "month 3 (Jan 2027)",
+    "ms.bank_registration.likely": "month 4 (Feb 2027)",
+    "ms.incorporate.likely": "month 6.5 (May 2027)",
+    "ms.setup_transfer.likely": "month 6.5 (May 2027)",
+    "ms.first_transfer.likely": "month 9 (Jul 2027)",
+    "ms.sign_lease.likely": "month 10 (Aug 2027)",
+    "ms.hiring.likely": "month 11.5 (Oct 2027)",
+    "ms.fitout.likely": "month 12.5 (Nov 2027)",
+    "ms.licence.likely": "month 13 (Nov 2027)",
+    "ms.opening.likely": "month 18.5 (May 2028)"
+  }
+}

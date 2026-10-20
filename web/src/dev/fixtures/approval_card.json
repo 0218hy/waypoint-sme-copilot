@@ -1,0 +1,32 @@
+{
+  "id": "w_ap1",
+  "payload": {
+    "type": "approval_card",
+    "action": "create_goal",
+    "title": "Start my goal",
+    "card_hash": "sha256:4b1e…",
+    "nonce": "n_7f3a",
+    "expires_at": "Oct 19, 2026 18:30",
+    "state": "pending",
+    "lines": [
+      {
+        "label": "Goal",
+        "value": "Open at Century Square #B1-08 around Jan 2028"
+      },
+      {
+        "label": "Monthly set-aside",
+        "value": "RMB 168,000 (40% of profit)"
+      },
+      {
+        "label": "Check-in emails",
+        "value": "Monthly, dates only"
+      },
+      {
+        "label": "Money moved by Waypoint",
+        "value": "None"
+      }
+    ]
+  },
+  "figures": {},
+  "display": {}
+}

@@ -1,0 +1,2344 @@
+{
+  "title": "Simulated owners played by a model (Claude; single-family deviation)",
+  "status": "run",
+  "n": 20,
+  "metrics": {
+    "personas": 20,
+    "reached_goal": {
+      "k": 18,
+      "n": 20,
+      "p": 0.9,
+      "lo": 0.698966,
+      "hi": 0.972134,
+      "method": "wilson95"
+    },
+    "median_owner_turns_completed": {
+      "value": 20.0,
+      "lo": 18.0,
+      "hi": 24.0,
+      "method": "percentile_bootstrap",
+      "resamples": 10000,
+      "seed": 20261019
+    },
+    "drop_off_by_step": {
+      "funding": 2
+    },
+    "hit_turn_cap": 2,
+    "owner_moves": {
+      "taps": 285,
+      "typed": 174
+    },
+    "simulator_errors": 0,
+    "unhandled_exceptions": 0,
+    "voice": "the configured model writes every message (claude_code:default)",
+    "rows": [
+      {
+        "completed": true,
+        "owner_turns": 18,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "tap": "Agree"
+          },
+          {
+            "step": "profile",
+            "type": "Some numbers are off: I have 12 shops, not 14. Monthly operating profit is about RMB 214k and spare cash about RMB 538k. My main customers are families."
+          },
+          {
+            "step": "profile",
+            "tap": "S$450,000–S$600,000"
+          },
+          {
+            "step": "profile",
+            "tap": "In a year to eighteen months"
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "tap": "Being near my kind of customer"
+          },
+          {
+            "step": "site",
+            "tap": "Punggol"
+          },
+          {
+            "step": "site",
+            "tap": "Waterway Point #B1-K18"
+          },
+          {
+            "step": "cost",
+            "tap": "Basic fit-out"
+          },
+          {
+            "step": "cost",
+            "tap": "Send my own manager"
+          },
+          {
+            "step": "cost",
+            "tap": "Add a contractor quote"
+          },
+          {
+            "step": "cost",
+            "tap": "Use the sample quote (demo)"
+          },
+          {
+            "step": "cost",
+            "tap": "Accept all lines read from the quote"
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "tap": "Looks good"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Change reminders"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Every fortnight"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P01"
+      },
+      {
+        "completed": true,
+        "owner_turns": 26,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "tap": "Agree"
+          },
+          {
+            "step": "profile",
+            "type": "Mostly students. But the card isn't right: I have 10 shops, not 14. Profit is about RMB 309k a month and spare cash is about RMB 632k. Please fix those."
+          },
+          {
+            "step": "profile",
+            "type": "About S$450k-600k. Also, did you fix my numbers? 10 shops, RMB 309k profit, RMB 632k spare cash."
+          },
+          {
+            "step": "profile",
+            "type": "About two years. And please make sure my numbers are corrected: 10 shops, RMB 309k profit a month, RMB 632k spare cash."
+          },
+          {
+            "step": "profile",
+            "type": "Not yet. The card still needs fixing: 10 shops, RMB 309k profit a month, RMB 632k spare cash. Please update it and show me before we go on."
+          },
+          {
+            "step": "profile",
+            "tap": "Change something"
+          },
+          {
+            "step": "profile",
+            "type": "Please fix the card: 10 shops, RMB 309k operating profit a month, RMB 632k spare cash."
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "type": "Being near my kind of customer - mostly students."
+          },
+          {
+            "step": "site",
+            "type": "Let's look at Tampines first."
+          },
+          {
+            "step": "site",
+            "type": "Cost Tampines 1 #01-K12 please - lots of students around there."
+          },
+          {
+            "step": "cost",
+            "type": "Looks right - standard fit-out, local manager, no quotes yet. Let's carry on."
+          },
+          {
+            "step": "funding",
+            "type": "Looks mostly good, but my spare cash is about RMB 632k, not 500k. Can you update that?"
+          },
+          {
+            "step": "profile",
+            "type": "Spare cash should be about RMB 632k, not 500k. Please fix that line."
+          },
+          {
+            "step": "profile",
+            "tap": "Change something"
+          },
+          {
+            "step": "profile",
+            "type": "I want to change spare cash to about RMB 632k."
+          },
+          {
+            "step": "profile",
+            "type": "Spare cash: RMB 632,000"
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "tap": "Tampines"
+          },
+          {
+            "step": "site",
+            "type": "Tampines 1 please, students hang out there a lot"
+          },
+          {
+            "step": "cost",
+            "type": "Looks right, standard fit-out and local manager is fine"
+          },
+          {
+            "step": "funding",
+            "type": "Looks good mostly. Quick question though, why spare cash RMB 500k? I have about 632k."
+          },
+          {
+            "step": "funding",
+            "type": "Ok, makes sense. Looks good, let's go with this."
+          },
+          {
+            "step": "goal_plan",
+            "type": "Can you make the reminders weekly instead of monthly? Then I'll approve."
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Weekly"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P02"
+      },
+      {
+        "completed": true,
+        "owner_turns": 27,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "tap": "Agree"
+          },
+          {
+            "step": "profile",
+            "type": "Tourists. But the card is wrong: I have 5 shops, not 14, and my spare cash is about RMB 882k, not 500k. Monthly operating profit is about RMB 245k."
+          },
+          {
+            "step": "profile",
+            "tap": "S$300,000–S$450,000"
+          },
+          {
+            "step": "profile",
+            "tap": "In about two years"
+          },
+          {
+            "step": "profile",
+            "type": "Yes, that's right as long as the card now shows 5 shops, about RMB 882k spare cash and about RMB 245k monthly operating profit. Let's start looking for places."
+          },
+          {
+            "step": "profile",
+            "tap": "Change something"
+          },
+          {
+            "step": "profile",
+            "type": "Please make sure the card says: 5 milk-tea shops in Shenzhen, about RMB 245k monthly operating profit, and about RMB 882k spare cash."
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "tap": "Being near my kind of customer"
+          },
+          {
+            "step": "site",
+            "tap": "Downtown Core"
+          },
+          {
+            "step": "site",
+            "tap": "Raffles City #B1-K26"
+          },
+          {
+            "step": "cost",
+            "tap": "Premium fit-out"
+          },
+          {
+            "step": "cost",
+            "tap": "Send my own manager"
+          },
+          {
+            "step": "cost",
+            "tap": "Add a contractor quote"
+          },
+          {
+            "step": "cost",
+            "tap": "Use the sample quote (demo)"
+          },
+          {
+            "step": "cost",
+            "tap": "Accept all lines read from the quote"
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "type": "Quick fix: my spare cash is about RMB 882k, not 500k. Please update that."
+          },
+          {
+            "step": "profile",
+            "type": "Please make sure spare cash shows RMB 882k on the card. If it does, that's right and we can move on."
+          },
+          {
+            "step": "profile",
+            "tap": "Change something"
+          },
+          {
+            "step": "profile",
+            "type": "The spare cash line is wrong. Please change spare cash to RMB 882k (not 500k), then redo the funding numbers."
+          },
+          {
+            "step": "cost",
+            "tap": "Add a contractor quote"
+          },
+          {
+            "step": "cost",
+            "tap": "Use the sample quote (demo)"
+          },
+          {
+            "step": "cost",
+            "tap": "Accept all lines read from the quote"
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "tap": "Looks good"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P03"
+      },
+      {
+        "completed": true,
+        "owner_turns": 16,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "tap": "Agree"
+          },
+          {
+            "step": "profile",
+            "tap": "游客"
+          },
+          {
+            "step": "profile",
+            "tap": "20万新元至30万新元"
+          },
+          {
+            "step": "profile",
+            "tap": "大约两年"
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "tap": "靠近我的目标顾客"
+          },
+          {
+            "step": "site",
+            "tap": "Downtown Core"
+          },
+          {
+            "step": "site",
+            "tap": "Raffles City #B1-K26"
+          },
+          {
+            "step": "cost",
+            "tap": "简洁装修"
+          },
+          {
+            "step": "cost",
+            "tap": "派自己的店长"
+          },
+          {
+            "step": "cost",
+            "tap": "添加装修报价"
+          },
+          {
+            "step": "cost",
+            "tap": "使用示例报价（演示）"
+          },
+          {
+            "step": "cost",
+            "tap": "Accept all lines read from the quote"
+          },
+          {
+            "step": "cost",
+            "tap": "没问题"
+          },
+          {
+            "step": "funding",
+            "tap": "可以"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P04"
+      },
+      {
+        "completed": true,
+        "owner_turns": 23,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "type": "同意，可以读取我的微众银行账户。"
+          },
+          {
+            "step": "welcome",
+            "tap": "Agree"
+          },
+          {
+            "step": "profile",
+            "type": "卡片上的信息没问题。来店里的主要是上班族。"
+          },
+          {
+            "step": "profile",
+            "type": "预算大概30万到45万新元。"
+          },
+          {
+            "step": "profile",
+            "type": "希望一年内开业。"
+          },
+          {
+            "step": "profile",
+            "type": "没问题，开始找地方吧。"
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "type": "租金低最重要。"
+          },
+          {
+            "step": "site",
+            "type": "看看Jurong East吧，那边上班族多。"
+          },
+          {
+            "step": "site",
+            "type": "先算Westgate #B1-K09吧，看看哪个租金最便宜。"
+          },
+          {
+            "step": "site",
+            "type": "就算Westgate #B1-K09。"
+          },
+          {
+            "step": "cost",
+            "type": "装修简单点就行，换成简洁装修吧。"
+          },
+          {
+            "step": "cost",
+            "type": "我有装修师傅的报价，加进去吧。"
+          },
+          {
+            "step": "cost",
+            "type": "用示例报价吧。"
+          },
+          {
+            "step": "cost",
+            "type": "报价里的都接受吧。"
+          },
+          {
+            "step": "cost",
+            "tap": "Accept all lines read from the quote"
+          },
+          {
+            "step": "cost",
+            "type": "30.3万在预算内，没问题，继续吧。"
+          },
+          {
+            "step": "funding",
+            "type": "晚了一点，先试试跟房东争取免租期吧。"
+          },
+          {
+            "step": "funding",
+            "type": "先按两个月去谈吧。"
+          },
+          {
+            "step": "funding",
+            "type": "13个月也差不多，可以，就按这个来。"
+          },
+          {
+            "step": "goal_plan",
+            "type": "提醒改成每周一次吧，其他不用改。"
+          },
+          {
+            "step": "goal_plan",
+            "type": "每周一次。"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P05"
+      },
+      {
+        "completed": true,
+        "owner_turns": 18,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "tap": "Agree"
+          },
+          {
+            "step": "profile",
+            "type": "主要是学生。另外卡片上有两处不对：我是6家店，不是14家；每月经营利润大概16.8万，不是20.8万。"
+          },
+          {
+            "step": "profile",
+            "tap": "45万新元至60万新元"
+          },
+          {
+            "step": "profile",
+            "tap": "大约两年"
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "tap": "靠近我的目标顾客"
+          },
+          {
+            "step": "site",
+            "tap": "Tampines"
+          },
+          {
+            "step": "site",
+            "tap": "Tampines 1 #01-K12"
+          },
+          {
+            "step": "cost",
+            "tap": "高端装修"
+          },
+          {
+            "step": "cost",
+            "tap": "添加装修报价"
+          },
+          {
+            "step": "cost",
+            "tap": "使用示例报价（演示）"
+          },
+          {
+            "step": "cost",
+            "tap": "Accept all lines read from the quote"
+          },
+          {
+            "step": "cost",
+            "tap": "没问题"
+          },
+          {
+            "step": "funding",
+            "type": "我闲置现金大概有175万人民币，不是50万，这个数字对吗？"
+          },
+          {
+            "step": "funding",
+            "tap": "可以"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "修改提醒频率"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "每两周"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P06"
+      },
+      {
+        "completed": true,
+        "owner_turns": 21,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "tap": "Let's start"
+          },
+          {
+            "step": "profile",
+            "tap": "More than 15"
+          },
+          {
+            "step": "profile",
+            "tap": "RMB 300k–RMB 500k"
+          },
+          {
+            "step": "profile",
+            "tap": "RMB 500k–RMB 1m"
+          },
+          {
+            "step": "profile",
+            "tap": "Office workers"
+          },
+          {
+            "step": "profile",
+            "tap": "S$300,000–S$450,000"
+          },
+          {
+            "step": "profile",
+            "tap": "In about two years"
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "tap": "Being near my kind of customer"
+          },
+          {
+            "step": "site",
+            "tap": "Downtown Core"
+          },
+          {
+            "step": "site",
+            "tap": "Raffles City #B1-K26"
+          },
+          {
+            "step": "cost",
+            "tap": "Send my own manager"
+          },
+          {
+            "step": "cost",
+            "tap": "Add a contractor quote"
+          },
+          {
+            "step": "cost",
+            "tap": "Use the sample quote (demo)"
+          },
+          {
+            "step": "cost",
+            "tap": "Accept all lines read from the quote"
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "type": "Quick question: my spare cash is about RMB 864k, not 750k. Why the difference?"
+          },
+          {
+            "step": "funding",
+            "tap": "Looks good"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Change reminders"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Every fortnight"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P07"
+      },
+      {
+        "completed": true,
+        "owner_turns": 25,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "type": "Yes, let's start."
+          },
+          {
+            "step": "profile",
+            "type": "3 milk tea shops in Shenzhen."
+          },
+          {
+            "step": "profile",
+            "type": "About RMB 296k a month."
+          },
+          {
+            "step": "profile",
+            "type": "About RMB 958k spare cash."
+          },
+          {
+            "step": "profile",
+            "type": "Mostly office workers."
+          },
+          {
+            "step": "profile",
+            "type": "Around S$300k to 450k."
+          },
+          {
+            "step": "profile",
+            "type": "In about two years."
+          },
+          {
+            "step": "profile",
+            "type": "Yes, that's right. Let's look for places."
+          },
+          {
+            "step": "profile",
+            "type": "That's right."
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "tap": "Being near my kind of customer"
+          },
+          {
+            "step": "site",
+            "tap": "Downtown Core"
+          },
+          {
+            "step": "site",
+            "type": "Raffles City one please"
+          },
+          {
+            "step": "cost",
+            "type": "I'd like a premium fit-out please"
+          },
+          {
+            "step": "cost",
+            "type": "I have a contractor quote, can I add it?"
+          },
+          {
+            "step": "cost",
+            "type": "Yes, use the sample quote please"
+          },
+          {
+            "step": "cost",
+            "type": "Accept all the lines from the quote"
+          },
+          {
+            "step": "cost",
+            "tap": "Accept all lines read from the quote"
+          },
+          {
+            "step": "cost",
+            "type": "Looks good. Is the Singapore manager still included in the S$367,700?"
+          },
+          {
+            "step": "cost",
+            "type": "Ok thanks, looks right. Let's carry on"
+          },
+          {
+            "step": "funding",
+            "type": "Looks good, happy with that. Let's go on"
+          },
+          {
+            "step": "goal_plan",
+            "type": "Can you make the reminders weekly instead of monthly?"
+          },
+          {
+            "step": "goal_plan",
+            "type": "Weekly please"
+          },
+          {
+            "step": "goal_plan",
+            "type": "Great, that's what I wanted. Approve, let's start the goal."
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P08"
+      },
+      {
+        "completed": true,
+        "owner_turns": 32,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "tap": "Let's start"
+          },
+          {
+            "step": "profile",
+            "tap": "More than 15"
+          },
+          {
+            "step": "profile",
+            "tap": "RMB 100k–RMB 200k"
+          },
+          {
+            "step": "profile",
+            "tap": "RMB 200k–RMB 500k"
+          },
+          {
+            "step": "profile",
+            "tap": "Office workers"
+          },
+          {
+            "step": "profile",
+            "tap": "S$300,000–S$450,000"
+          },
+          {
+            "step": "profile",
+            "tap": "In a year to eighteen months"
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "tap": "Lots of foot traffic"
+          },
+          {
+            "step": "site",
+            "tap": "Downtown Core"
+          },
+          {
+            "step": "site",
+            "tap": "Raffles City #B1-K26"
+          },
+          {
+            "step": "cost",
+            "tap": "Basic fit-out"
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "type": "Quick check: my spare cash is about RMB 275k, not 350k. Please fix that. A later date is fine if it has to be, but let's also ask the landlord for rent-free months."
+          },
+          {
+            "step": "funding",
+            "tap": "Two months"
+          },
+          {
+            "step": "funding",
+            "type": "Looks good, and a later date is fine. But you didn't confirm the spare cash fix. Please use RMB 275k, not 350k, and update the dates if that changes them."
+          },
+          {
+            "step": "goal_plan",
+            "type": "Before I approve: my spare cash is RMB 275k, not 350k. I've asked twice. Please fix it in the plan and update the dates and goal card. Then I'll approve."
+          },
+          {
+            "step": "funding",
+            "type": "It still says RMB 350k. My spare cash is RMB 275k. Please change that number and recalculate the dates before we go on."
+          },
+          {
+            "step": "profile",
+            "tap": "Change something"
+          },
+          {
+            "step": "profile",
+            "type": "Please change my spare cash to RMB 275k, not 350k. Everything else is right. After that, please recalculate the dates and the goal card."
+          },
+          {
+            "step": "site",
+            "tap": "Downtown Core"
+          },
+          {
+            "step": "site",
+            "tap": "Raffles City #B1-K26"
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "type": "The plan still says my spare cash is RMB 350k. It's RMB 275k. Please fix that and recalculate the gap, the opening dates and the goal card before I approve."
+          },
+          {
+            "step": "cost",
+            "type": "Costs look right. Please carry on, but use my real spare cash of RMB 275k, not 350k, when you redo the gap, the opening dates and the goal card."
+          },
+          {
+            "step": "funding",
+            "type": "It still says RMB 350k. My spare cash is RMB 275k. Please change it to 275k and redo the gap (should be about RMB 1.535m) and the opening dates before I approve."
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "type": "Third time asking: please don't go back to costs. Just edit the spare cash figure here in the funding step to RMB 275k, then show me the new gap (about RMB 1.535m), opening dates and goal card. I'll approve once that's fixed."
+          },
+          {
+            "step": "funding",
+            "type": "My spare cash is RMB 275k, not 350k. Please update it."
+          },
+          {
+            "step": "cost",
+            "type": "Costs look right, no changes here. Separately, my spare cash is RMB 275k, not 350k. Please use 275k in the funding step when we move on."
+          },
+          {
+            "step": "funding",
+            "tap": "Looks good"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P09"
+      },
+      {
+        "completed": true,
+        "owner_turns": 18,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "tap": "开始吧"
+          },
+          {
+            "step": "profile",
+            "tap": "六到十五家"
+          },
+          {
+            "step": "profile",
+            "tap": "人民币10万至人民币20万"
+          },
+          {
+            "step": "profile",
+            "tap": "人民币100万至人民币200万"
+          },
+          {
+            "step": "profile",
+            "tap": "学生"
+          },
+          {
+            "step": "profile",
+            "tap": "还不确定"
+          },
+          {
+            "step": "profile",
+            "tap": "不着急"
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "tap": "租金低"
+          },
+          {
+            "step": "site",
+            "tap": "Punggol"
+          },
+          {
+            "step": "site",
+            "tap": "Waterway Point #B1-K18"
+          },
+          {
+            "step": "cost",
+            "tap": "高端装修"
+          },
+          {
+            "step": "cost",
+            "tap": "没问题"
+          },
+          {
+            "step": "funding",
+            "type": "我闲钱大概有188.7万人民币，你这里为什么按150万算？"
+          },
+          {
+            "step": "funding",
+            "tap": "可以"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "修改提醒频率"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "每两周"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P10"
+      },
+      {
+        "completed": true,
+        "owner_turns": 19,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "type": "好，开始吧"
+          },
+          {
+            "step": "profile",
+            "type": "我在深圳有10家奶茶店"
+          },
+          {
+            "step": "profile",
+            "type": "每月经营利润大概40万出头，约40.6万人民币"
+          },
+          {
+            "step": "profile",
+            "type": "闲钱大概172万人民币"
+          },
+          {
+            "step": "profile",
+            "type": "主要是上班族"
+          },
+          {
+            "step": "profile",
+            "type": "预算大概45万到60万新元"
+          },
+          {
+            "step": "profile",
+            "type": "希望一年到一年半内开业"
+          },
+          {
+            "step": "profile",
+            "type": "没问题，开始找地方吧"
+          },
+          {
+            "step": "profile",
+            "type": "好的，继续吧"
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "type": "人流量大最重要，主要顾客是上班族"
+          },
+          {
+            "step": "site",
+            "tap": "Downtown Core"
+          },
+          {
+            "step": "site",
+            "type": "就帮我算Raffles City这个吧"
+          },
+          {
+            "step": "cost",
+            "type": "装修简单点就行，换成简洁装修吧"
+          },
+          {
+            "step": "cost",
+            "type": "没问题，还没有装修报价，店长就在新加坡招，继续吧"
+          },
+          {
+            "step": "funding",
+            "type": "可以，就按每月留16.2万这样来"
+          },
+          {
+            "step": "goal_plan",
+            "type": "提醒改成每两周一次吧"
+          },
+          {
+            "step": "goal_plan",
+            "type": "每两周一次"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P11"
+      },
+      {
+        "completed": true,
+        "owner_turns": 27,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "tap": "开始吧"
+          },
+          {
+            "step": "profile",
+            "tap": "六到十五家"
+          },
+          {
+            "step": "profile",
+            "tap": "人民币20万至人民币30万"
+          },
+          {
+            "step": "profile",
+            "tap": "人民币100万至人民币200万"
+          },
+          {
+            "step": "profile",
+            "tap": "家庭"
+          },
+          {
+            "step": "profile",
+            "tap": "30万新元至45万新元"
+          },
+          {
+            "step": "profile",
+            "tap": "不着急"
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "tap": "租金低"
+          },
+          {
+            "step": "site",
+            "tap": "Punggol"
+          },
+          {
+            "step": "site",
+            "tap": "Waterway Point #B1-K18"
+          },
+          {
+            "step": "cost",
+            "tap": "简洁装修"
+          },
+          {
+            "step": "cost",
+            "tap": "派自己的店长"
+          },
+          {
+            "step": "cost",
+            "tap": "没问题"
+          },
+          {
+            "step": "funding",
+            "type": "可以。不过我的闲置资金其实是人民币192万左右，不是150万，麻烦改一下。"
+          },
+          {
+            "step": "profile",
+            "type": "对的，闲置资金按人民币192万左右算就行，其他不变。可以继续了。"
+          },
+          {
+            "step": "profile",
+            "tap": "Change something"
+          },
+          {
+            "step": "profile",
+            "type": "闲置资金改为人民币192万"
+          },
+          {
+            "step": "cost",
+            "tap": "没问题"
+          },
+          {
+            "step": "funding",
+            "type": "我的闲置资金是人民币192万，不是150万，麻烦改一下再算。每月存10万可以。"
+          },
+          {
+            "step": "cost",
+            "tap": "没问题"
+          },
+          {
+            "step": "funding",
+            "type": "可以，就按每月存10万。不过闲置资金还是显示150万，实际是人民币192万，请直接更新这个数字，不用再回到成本那一步。"
+          },
+          {
+            "step": "funding",
+            "tap": "不投入"
+          },
+          {
+            "step": "funding",
+            "tap": "可以"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "修改提醒频率"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "每周"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P12"
+      },
+      {
+        "completed": false,
+        "owner_turns": 40,
+        "end_step": "funding",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding"
+        ],
+        "hit_turn_cap": true,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "tap": "Agree"
+          },
+          {
+            "step": "profile",
+            "type": "Card is wrong: I have 26 shops, not 14, and spare cash is about RMB 294k, not 500k. Monthly operating profit is about RMB 176k. Main customers: tourists."
+          },
+          {
+            "step": "profile",
+            "tap": "S$450,000–S$600,000"
+          },
+          {
+            "step": "profile",
+            "tap": "In about two years"
+          },
+          {
+            "step": "profile",
+            "type": "Yes, let's look for places, as long as the card now shows 26 shops, RMB 294k spare cash, RMB 176k monthly profit, and tourists as main customers."
+          },
+          {
+            "step": "profile",
+            "tap": "Change something"
+          },
+          {
+            "step": "profile",
+            "type": "Please correct the card: 26 shops, RMB 294k spare cash, RMB 176k monthly operating profit, main customers are tourists."
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "tap": "Being near my kind of customer"
+          },
+          {
+            "step": "site",
+            "tap": "Downtown Core"
+          },
+          {
+            "step": "site",
+            "tap": "Raffles City #B1-K26"
+          },
+          {
+            "step": "cost",
+            "tap": "Send my own manager"
+          },
+          {
+            "step": "cost",
+            "tap": "Add a contractor quote"
+          },
+          {
+            "step": "cost",
+            "tap": "Use the sample quote (demo)"
+          },
+          {
+            "step": "cost",
+            "tap": "Accept all lines read from the quote"
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "type": "Small fix: my spare cash is about RMB 294k, not 500k. Please update the numbers."
+          },
+          {
+            "step": "profile",
+            "tap": "Change something"
+          },
+          {
+            "step": "profile",
+            "type": "Please change spare cash to about RMB 294k (not 500k). Monthly operating profit of about RMB 176k is right."
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "type": "It still says spare cash RMB 500k. My spare cash is about RMB 294k. Please correct it on the Your business card and redo the funding numbers."
+          },
+          {
+            "step": "funding",
+            "type": "Spare cash is wrong: it should be RMB 294k, not RMB 500k. Please fix it."
+          },
+          {
+            "step": "cost",
+            "tap": "Add a contractor quote"
+          },
+          {
+            "step": "cost",
+            "tap": "Use the sample quote (demo)"
+          },
+          {
+            "step": "cost",
+            "tap": "Accept all lines read from the quote"
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "type": "Small correction: my spare cash is about RMB 294k, not 500k. Monthly operating profit is about RMB 176k. Please redo the numbers with these."
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "type": "The numbers still use RMB 500k spare cash. Please change it to RMB 294k spare cash and RMB 176k monthly operating profit, then redo the funding gap, set-aside amount and opening date."
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "tap": "Add my savings"
+          },
+          {
+            "step": "funding",
+            "tap": "None"
+          },
+          {
+            "step": "funding",
+            "type": "The funding numbers still show RMB 500k spare cash. My real figures are RMB 294k spare cash and RMB 176k monthly operating profit. Please update the funding step itself with these, then recalculate the gap, the monthly set-aside and the opening date."
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "type": "It still says spare cash RMB 500k. That's wrong. My spare cash is RMB 294k and monthly operating profit is RMB 176k. Please put these into the funding card and recalculate the gap, the monthly set-aside and the opening date before I approve."
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "tap": "Add my savings"
+          },
+          {
+            "step": "funding",
+            "tap": "None"
+          },
+          {
+            "step": "funding",
+            "type": "The funding card still uses spare cash RMB 500k. Please change it to RMB 294k and monthly operating profit to RMB 176k, then recalculate the gap, set-aside and opening date. I can't approve until these are right."
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          }
+        ],
+        "pid": "P13"
+      },
+      {
+        "completed": false,
+        "owner_turns": 40,
+        "end_step": "funding",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding"
+        ],
+        "hit_turn_cap": true,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "tap": "Agree"
+          },
+          {
+            "step": "profile",
+            "type": "Mostly young adults."
+          },
+          {
+            "step": "profile",
+            "type": "Around S$450k to 600k."
+          },
+          {
+            "step": "profile",
+            "type": "No rush, really."
+          },
+          {
+            "step": "profile",
+            "type": "Yes, looks right. Let's look for places."
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "type": "Lots of foot traffic, that's the main thing."
+          },
+          {
+            "step": "site",
+            "type": "Downtown Core, please. Busy area, lots of young people."
+          },
+          {
+            "step": "site",
+            "type": "Raffles City one, please. Cost it for me."
+          },
+          {
+            "step": "cost",
+            "type": "I'll send my own manager from Shenzhen. Keep the standard fit-out."
+          },
+          {
+            "step": "cost",
+            "type": "Looks right, let's carry on."
+          },
+          {
+            "step": "funding",
+            "type": "Wait, my spare cash is about RMB 337k, not 500k. Please fix that first."
+          },
+          {
+            "step": "profile",
+            "type": "Spare cash is wrong. It should be about RMB 337k, not 500k. Please change it."
+          },
+          {
+            "step": "cost",
+            "type": "Costs are fine. But you still haven't fixed my spare cash. It's about RMB 337k, not 500k. Where do I change that?"
+          },
+          {
+            "step": "funding",
+            "type": "Not happy yet. The plan still says RMB 500k spare cash, but I have about RMB 337k. Please change spare cash to RMB 337k and redo the funding numbers."
+          },
+          {
+            "step": "cost",
+            "type": "Costs look right. Take me back to Your business so I can tap Change something and fix spare cash to RMB 337k."
+          },
+          {
+            "step": "funding",
+            "type": "Please go back to Your business, not What it costs. My spare cash is RMB 337k, not 500k. Fix that first, then redo the funding."
+          },
+          {
+            "step": "funding",
+            "type": "Change my spare cash to RMB 337k."
+          },
+          {
+            "step": "funding",
+            "type": "How do I edit my business details? My spare cash is wrong. It should be RMB 337k, not RMB 500k."
+          },
+          {
+            "step": "cost",
+            "type": "Costs are fine. I need to edit Your business: spare cash is RMB 337k."
+          },
+          {
+            "step": "cost",
+            "type": "Go back one more step, to Your business."
+          },
+          {
+            "step": "cost",
+            "type": "My spare cash is still wrong. Please take me back to my business details so I can fix it to RMB 337k."
+          },
+          {
+            "step": "site",
+            "type": "Not Where. I need the Your business step, to change spare cash to RMB 337k."
+          },
+          {
+            "step": "site",
+            "type": "Go back one more step please, to the step before Where."
+          },
+          {
+            "step": "site",
+            "type": "Edit my business: spare cash is RMB 337k, not what you have."
+          },
+          {
+            "step": "site",
+            "tap": "Downtown Core"
+          },
+          {
+            "step": "site",
+            "tap": "Raffles City #B1-K26"
+          },
+          {
+            "step": "cost",
+            "type": "Looks right, standard fit-out and my own manager is fine. Let's carry on."
+          },
+          {
+            "step": "funding",
+            "type": "Wait, my spare cash is RMB 337k, not 500k. Please fix that first, then the slider is fine."
+          },
+          {
+            "step": "cost",
+            "type": "Cost looks right. Carry on, but please use my real spare cash of RMB 337k for the funding step."
+          },
+          {
+            "step": "funding",
+            "type": "It still says spare cash RMB 500k. My spare cash is RMB 337k. Please update that and recalculate the gap and opening date before I approve."
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "type": "The funding step still shows spare cash of RMB 500k. Please don't go back to costs, those are fine. Just change spare cash to RMB 337k here and redo the gap and opening date."
+          },
+          {
+            "step": "funding",
+            "tap": "Add my savings"
+          },
+          {
+            "step": "funding",
+            "type": "None for now. But please fix one thing: my spare cash is RMB 337k, not 500k. Use 337k for the gap and opening date."
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "type": "Still says spare cash RMB 500k. My actual spare cash is RMB 337k. Can I edit that number somewhere?"
+          },
+          {
+            "step": "cost",
+            "type": "Costs look right, carry on."
+          },
+          {
+            "step": "funding",
+            "type": "Not happy yet. The gap still uses RMB 500k spare cash. Mine is RMB 337k. Please redo the gap and opening date with 337k, then I'll approve."
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          }
+        ],
+        "pid": "P14"
+      },
+      {
+        "completed": true,
+        "owner_turns": 21,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "tap": "Agree"
+          },
+          {
+            "step": "profile",
+            "tap": "Families"
+          },
+          {
+            "step": "profile",
+            "tap": "Not sure yet"
+          },
+          {
+            "step": "profile",
+            "tap": "In a year to eighteen months"
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "tap": "Being near my kind of customer"
+          },
+          {
+            "step": "site",
+            "tap": "Punggol"
+          },
+          {
+            "step": "site",
+            "tap": "Waterway Point #B1-K18"
+          },
+          {
+            "step": "cost",
+            "tap": "Basic fit-out"
+          },
+          {
+            "step": "cost",
+            "tap": "Send my own manager"
+          },
+          {
+            "step": "cost",
+            "tap": "Add a contractor quote"
+          },
+          {
+            "step": "cost",
+            "tap": "Use the sample quote (demo)"
+          },
+          {
+            "step": "cost",
+            "tap": "Accept all lines read from the quote"
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "tap": "Add my savings"
+          },
+          {
+            "step": "funding",
+            "type": "Quick check first: my spare cash is about RMB 938k, not 500k. Can you use that figure? If that already covers my savings, then put None for extra savings."
+          },
+          {
+            "step": "funding",
+            "tap": "None"
+          },
+          {
+            "step": "funding",
+            "tap": "Looks good"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Change reminders"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Every fortnight"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P15"
+      },
+      {
+        "completed": true,
+        "owner_turns": 15,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "tap": "Agree"
+          },
+          {
+            "step": "profile",
+            "tap": "游客"
+          },
+          {
+            "step": "profile",
+            "tap": "45万新元至60万新元"
+          },
+          {
+            "step": "profile",
+            "tap": "一年到一年半"
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "tap": "人流量大"
+          },
+          {
+            "step": "site",
+            "tap": "Downtown Core"
+          },
+          {
+            "step": "site",
+            "tap": "Raffles City #B1-K26"
+          },
+          {
+            "step": "cost",
+            "tap": "简洁装修"
+          },
+          {
+            "step": "cost",
+            "tap": "添加装修报价"
+          },
+          {
+            "step": "cost",
+            "tap": "使用示例报价（演示）"
+          },
+          {
+            "step": "cost",
+            "tap": "Accept all lines read from the quote"
+          },
+          {
+            "step": "cost",
+            "tap": "没问题"
+          },
+          {
+            "step": "funding",
+            "tap": "可以"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P16"
+      },
+      {
+        "completed": true,
+        "owner_turns": 22,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "type": "同意，可以读取。"
+          },
+          {
+            "step": "welcome",
+            "tap": "Agree"
+          },
+          {
+            "step": "profile",
+            "type": "主要是游客。另外门店数不对，我有20家店，不是14家。"
+          },
+          {
+            "step": "profile",
+            "type": "预算大概45万到60万新元。对了，门店数改成20家了吗？"
+          },
+          {
+            "step": "profile",
+            "type": "大约两年后开业。"
+          },
+          {
+            "step": "profile",
+            "type": "门店数还是没确认改成20家，请先帮我改好，其他没问题。"
+          },
+          {
+            "step": "profile",
+            "tap": "Change something"
+          },
+          {
+            "step": "profile",
+            "type": "我要改门店数：现在是20家店，不是别的数字。请把汇总卡片上的门店数改成20。"
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "type": "租金低最重要。"
+          },
+          {
+            "step": "site",
+            "tap": "Woodlands"
+          },
+          {
+            "step": "site",
+            "type": "就算Causeway Point #B1-K11这个铺位的成本吧。"
+          },
+          {
+            "step": "cost",
+            "type": "我想要高端装修。"
+          },
+          {
+            "step": "cost",
+            "type": "我有装修商的报价，加上吧。"
+          },
+          {
+            "step": "cost",
+            "tap": "使用示例报价（演示）"
+          },
+          {
+            "step": "cost",
+            "type": "报价里的都接受吧。"
+          },
+          {
+            "step": "cost",
+            "tap": "Accept all lines read from the quote"
+          },
+          {
+            "step": "cost",
+            "type": "好的，没问题，继续吧。"
+          },
+          {
+            "step": "funding",
+            "type": "可以，就按每月留8.4万来。"
+          },
+          {
+            "step": "goal_plan",
+            "type": "提醒改成每周一次吧。"
+          },
+          {
+            "step": "goal_plan",
+            "type": "每周一次就好。"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P17"
+      },
+      {
+        "completed": true,
+        "owner_turns": 16,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "tap": "Agree"
+          },
+          {
+            "step": "profile",
+            "tap": "学生"
+          },
+          {
+            "step": "profile",
+            "tap": "30万新元至45万新元"
+          },
+          {
+            "step": "profile",
+            "tap": "一年内"
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "tap": "租金低"
+          },
+          {
+            "step": "site",
+            "tap": "Woodlands"
+          },
+          {
+            "step": "site",
+            "tap": "Causeway Point #B1-K11"
+          },
+          {
+            "step": "cost",
+            "tap": "派自己的店长"
+          },
+          {
+            "step": "cost",
+            "tap": "没问题"
+          },
+          {
+            "step": "funding",
+            "tap": "加入个人积蓄"
+          },
+          {
+            "step": "funding",
+            "tap": "人民币60万"
+          },
+          {
+            "step": "funding",
+            "tap": "可以"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "修改提醒频率"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "每两周"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P18"
+      },
+      {
+        "completed": true,
+        "owner_turns": 18,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "tap": "Let's start"
+          },
+          {
+            "step": "profile",
+            "tap": "More than 15"
+          },
+          {
+            "step": "profile",
+            "tap": "RMB 200k–RMB 300k"
+          },
+          {
+            "step": "profile",
+            "tap": "RMB 1m–RMB 2m"
+          },
+          {
+            "step": "profile",
+            "tap": "Students"
+          },
+          {
+            "step": "profile",
+            "tap": "Not sure yet"
+          },
+          {
+            "step": "profile",
+            "tap": "No rush"
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "tap": "Low rent"
+          },
+          {
+            "step": "site",
+            "tap": "Woodlands"
+          },
+          {
+            "step": "site",
+            "tap": "Causeway Point #B1-K11"
+          },
+          {
+            "step": "cost",
+            "tap": "Basic fit-out"
+          },
+          {
+            "step": "cost",
+            "tap": "Send my own manager"
+          },
+          {
+            "step": "cost",
+            "tap": "Looks right"
+          },
+          {
+            "step": "funding",
+            "tap": "Looks good"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Change reminders"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Weekly"
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P19"
+      },
+      {
+        "completed": true,
+        "owner_turns": 17,
+        "end_step": "goal_keeper",
+        "reached": [
+          "welcome",
+          "profile",
+          "site",
+          "cost",
+          "funding",
+          "goal_plan",
+          "goal_keeper"
+        ],
+        "hit_turn_cap": false,
+        "sim_errors": 0,
+        "notices": 0,
+        "errors": [],
+        "moves": [
+          {
+            "step": "welcome",
+            "type": "Yes, let's start. I run 12 milk-tea shops in Shenzhen and want to open my first one in Singapore."
+          },
+          {
+            "step": "profile",
+            "type": "12 shops, all in Shenzhen."
+          },
+          {
+            "step": "profile",
+            "type": "About RMB 122k a month operating profit."
+          },
+          {
+            "step": "profile",
+            "type": "About RMB 624k spare cash."
+          },
+          {
+            "step": "profile",
+            "type": "Mostly tourists."
+          },
+          {
+            "step": "profile",
+            "type": "Around S$450k to 600k."
+          },
+          {
+            "step": "profile",
+            "type": "No rush really."
+          },
+          {
+            "step": "profile",
+            "type": "Yes, that's right. Let's look for places."
+          },
+          {
+            "step": "profile",
+            "tap": "That's right"
+          },
+          {
+            "step": "site",
+            "type": "Low rent matters most for me."
+          },
+          {
+            "step": "site",
+            "type": "Let's look at Woodlands first."
+          },
+          {
+            "step": "site",
+            "tap": "Causeway Point #B1-K11"
+          },
+          {
+            "step": "cost",
+            "type": "I'd rather send my own manager from Shenzhen."
+          },
+          {
+            "step": "cost",
+            "type": "Looks right, let's carry on."
+          },
+          {
+            "step": "funding",
+            "type": "Looks good, no rush on opening. Let's go with that."
+          },
+          {
+            "step": "goal_plan",
+            "type": "Monthly email reminders are fine. Approve it."
+          },
+          {
+            "step": "goal_plan",
+            "tap": "Approve (start my goal)"
+          }
+        ],
+        "pid": "P20"
+      }
+    ],
+    "model_calls": {
+      "calls": 1122,
+      "failed": 0,
+      "cooling_refusals": 0
+    }
+  },
+  "pass_marks": {
+    "reached a confirmed goal (single-family deviation)": {
+      "mark": ">= 90%",
+      "value": "90.0%",
+      "pass": true
+    },
+    "median owner turns (single-family deviation)": {
+      "mark": "<= 25",
+      "value": 20.0,
+      "pass": true
+    }
+  },
+  "seed": 20261019,
+  "notes": [
+    "Model arm, single-family deviation: Claude in every role (prereg addendum 2); TODO re-run with an owner from another family.",
+    "20 simulated owners (the first 20 of E1a's fixed personas) played by a model; the agent is the real orchestrator. the configured model writes every message (claude_code:default). Single-family deviation: the owner and the agent are both Claude (prereg addendum 2).",
+    "Reached a confirmed goal: 18/20 = 90.0% (95% CI 69.9%–97.2%); median owner turns among those 20.0 (95% CI 18.0-24.0); stopped at: {'funding': 2}; owner moves: 285 taps, 174 typed.",
+    "Model calls in this arm: 1122 made, 0 failed, 0 refused during a cooldown after a provider failure (those reached the owner as the product's fallback)."
+  ],
+  "runtime_s": 2043.3,
+  "model_arm": {
+    "arm": "e1b",
+    "git_commit": "4d3b5b9821fd38538944d8ac9d621cdab73899f5-dirty",
+    "versions": {
+      "skills": {
+        "cost": "v3:713c9255d127",
+        "detour": "v3:a2d3c56760a3",
+        "funding": "v3:25cc279d2d7a",
+        "goal-keeper": "v3:ca924cc5278f",
+        "goal-plan": "v3:f8385970d312",
+        "guard": "v3:01b856e4c588",
+        "journey": "v3:154a56c4d352",
+        "profile": "v3:d257fdebf546",
+        "site-finder": "v3:a181f8d185dc",
+        "welcome": "v3:e8a0ca837887"
+      },
+      "params": "fdd2ca430a24d3479d6bfa7264feee2b3a0c823aba6125bc022e3e191ba68043",
+      "cost_key": "455d1e1d8008d454fc8e901832d5dc3c71401fe5b9756ae82c637f6ea42f9da6",
+      "topics": "8e28ffa8f4ad32c618c6cd9ddcf614ff68fc62d7d6930ac99e3b39e35b8d62a4",
+      "funding_catalogue": "b960b2df29c020751a4ad4b9ed59e2d368d581d9ee3d092e2aa26686ab440e52",
+      "prompts": "31394e6e5928a4c2e0e883480f22d23f185632dba06915644bbbf6dd79f966c0"
+    },
+    "model": "claude_code:default",
+    "runtime_s": 2043.3,
+    "slices": 4,
+    "slice_commits": [
+      "4d3b5b9821fd38538944d8ac9d621cdab73899f5"
+    ],
+    "summed_runtime_s": 6965.6
+  }
+}

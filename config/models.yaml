@@ -1,0 +1,26 @@
+# Model per role (SPEC §0.8). Provider-agnostic: nothing in code names a model.
+# provider: auto | anthropic | openai | claude_code | none
+#   auto        -> claude_code if the Claude Code CLI is installed (uses whatever it is signed in with:
+#                  `claude /login`, CLAUDE_CODE_OAUTH_TOKEN, or ANTHROPIC_AUTH_TOKEN + ANTHROPIC_BASE_URL),
+#                  else anthropic if a key/token is set, else none.
+#   claude_code -> Claude Agent SDK, run with no tools, no project settings, a temp working directory.
+# Per-role env overrides: WAYPOINT_LLM_<ROLE>_PROVIDER / _MODEL / _BASE_URL / _API_KEY.
+# Production (inside WeBank) uses a domestic model filed with the CAC; set it here, not in code.
+defaults:
+  provider: auto
+  model_env: WAYPOINT_LLM_MODEL
+  model_anthropic: claude-sonnet-5-5
+  model_claude_code: null        # null = the Claude Code default model
+  model_openai: null
+  timeout_s: 30
+  retries: 1
+roles:
+  voice:   {}   # writes every Waypoint message from the turn's beats (placeholders only for numbers)
+  turn:    {model_claude_code: claude-haiku-5-5}   # understands free text: maps it to an allowed action / slot value / topic (a small fast model: about half the wait)
+  intent:  {model_claude_code: claude-haiku-5-5}   # optional guard classifier; can add a flag, never remove one
+  reader:  {}   # vision: quote photo -> extracted lines (no tools, no network)
+  judge:   {model_claude_code: claude-sonnet-5-5}   # evaluation only, never the product: judges a reply's content against a frozen rubric (prereg addendum 2026-10-20 (8))
+credentials:
+  anthropic:   {api_key_env: ANTHROPIC_API_KEY, auth_token_env: ANTHROPIC_AUTH_TOKEN, base_url_env: ANTHROPIC_BASE_URL}
+  openai:      {api_key_env: OPENAI_API_KEY, base_url_env: OPENAI_BASE_URL}
+  claude_code: {}

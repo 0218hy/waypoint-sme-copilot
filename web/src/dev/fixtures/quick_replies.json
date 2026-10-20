@@ -1,0 +1,26 @@
+{
+  "id": "w_qr1",
+  "payload": {
+    "type": "quick_replies",
+    "slot": "priority",
+    "default": "near_customers",
+    "allow_text": true,
+    "options": [
+      {
+        "value": "foot_traffic",
+        "label": "Foot traffic"
+      },
+      {
+        "value": "near_customers",
+        "label": "Near my kind of customer",
+        "detail": "Young adults, office workers"
+      },
+      {
+        "value": "low_rent",
+        "label": "Low rent"
+      }
+    ]
+  },
+  "figures": {},
+  "display": {}
+}

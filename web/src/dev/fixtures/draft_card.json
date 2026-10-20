@@ -1,0 +1,202 @@
+{
+  "id": "w33",
+  "payload": {
+    "type": "draft_card",
+    "kind": "consent_request",
+    "milestone_id": "lender_consent",
+    "title": "Consent request (draft)",
+    "to": "WeBank, your relationship manager",
+    "subject": "Request for lender consent: an outbound investment in Singapore",
+    "body": "We plan to open one leased tea shop in Singapore through a new Singapore company owned by our Shenzhen company, with a planned investment of about S$367,600.\n\nIt is funded only from our own profit, setting aside RMB 84k a month, and our savings, never from the WeBank loan. Nothing in China guarantees the Singapore company, and no money leaves before the ODI filing and bank registration.\n\nWe ask for WeBank's consent as our lender, and we are glad to provide any documents you need.",
+    "facts": [
+      {
+        "label": "What",
+        "figure": null,
+        "text": "One leased tea shop at Raffles City #B1-K26, through a new Singapore company owned by your Shenzhen company"
+      },
+      {
+        "label": "Planned investment (likely)",
+        "figure": "draft.invest_total",
+        "text": ""
+      },
+      {
+        "label": "In RMB",
+        "figure": "draft.invest_total_cny",
+        "text": ""
+      },
+      {
+        "label": "Funded by",
+        "figure": null,
+        "text": "The company's own profit, set aside each month, and its savings. No WeBank loan money"
+      },
+      {
+        "label": "Monthly set-aside",
+        "figure": "draft.setaside_monthly",
+        "text": ""
+      },
+      {
+        "label": "Home cash kept above",
+        "figure": "draft.floor",
+        "text": ""
+      },
+      {
+        "label": "Guarantees",
+        "figure": null,
+        "text": "None: nothing in China guarantees the Singapore company"
+      },
+      {
+        "label": "Order",
+        "figure": null,
+        "text": "Your consent first, then the ODI filing and bank registration, before any money leaves China"
+      },
+      {
+        "label": "First main transfer (likely)",
+        "figure": "draft.first_transfer",
+        "text": ""
+      },
+      {
+        "label": "Likely opening",
+        "figure": "draft.open_likely",
+        "text": ""
+      },
+      {
+        "label": "If borrowing rises",
+        "figure": null,
+        "text": "The set-aside pauses while WeBank borrowing is above its usual level"
+      }
+    ],
+    "items": [],
+    "who": "",
+    "sources": [
+      {
+        "label": "流动资金贷款管理办法 (2024) Art. 25(3): the lender's consent",
+        "url": "https://www.gov.cn/gongbao/2024/issue_11306/202404/content_6947721.html",
+        "as_of": "2026-10"
+      }
+    ],
+    "as_of": null,
+    "filename": "waypoint-consent-request.txt"
+  },
+  "figures": {
+    "draft.invest_total": {
+      "id": "draft.invest_total",
+      "label": "Planned investment in Singapore (likely)",
+      "unit": "SGD",
+      "value": "367575",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "drafts.consent_request",
+        "as_of": null,
+        "note": "the approved goal's cost card",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "draft.invest_total_cny": {
+      "id": "draft.invest_total_cny",
+      "label": "Planned investment in RMB (likely)",
+      "unit": "CNY",
+      "value": "1929768.75",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "drafts.consent_request",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [
+        "fx_cny_per_sgd"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "draft.invest_total"
+      ]
+    },
+    "draft.setaside_monthly": {
+      "id": "draft.setaside_monthly",
+      "label": "Monthly set-aside from profit",
+      "unit": "CNY",
+      "value": "83467",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "drafts.consent_request",
+        "as_of": null,
+        "note": "the approved goal",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "draft.floor": {
+      "id": "draft.floor",
+      "label": "Home cash safety floor",
+      "unit": "CNY",
+      "value": "605535",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "drafts.consent_request",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "draft.first_transfer": {
+      "id": "draft.first_transfer",
+      "label": "First main transfer",
+      "unit": "weeks",
+      "value": "40",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "drafts.consent_request",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "draft.open_likely": {
+      "id": "draft.open_likely",
+      "label": "Likely opening",
+      "unit": "weeks",
+      "value": "80",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "drafts.consent_request",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    }
+  },
+  "display": {
+    "draft.invest_total": "S$367,600",
+    "draft.invest_total_cny": "RMB 1.93m",
+    "draft.setaside_monthly": "RMB 84k",
+    "draft.floor": "RMB 606k",
+    "draft.first_transfer": "month 9 (Jul 2027)",
+    "draft.open_likely": "month 18.5 (May 2028)"
+  }
+}

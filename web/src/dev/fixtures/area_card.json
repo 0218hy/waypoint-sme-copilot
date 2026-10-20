@@ -1,0 +1,142 @@
+{
+  "id": "w_ac1",
+  "payload": {
+    "type": "area_card",
+    "area_id": "TAMPINES",
+    "name": "Tampines",
+    "score": 86,
+    "stats": [
+      "f_res",
+      "f_share",
+      "f_rentrange",
+      "f_taps",
+      "f_outlets"
+    ],
+    "age_bands": {
+      "0–19": 0.21,
+      "20–39": 0.31,
+      "40–59": 0.29,
+      "60+": 0.19
+    },
+    "factors": [
+      {
+        "key": "fit",
+        "label": "Customer fit",
+        "points": 34,
+        "max_points": 40,
+        "detail": "31% of residents are aged 20–39"
+      },
+      {
+        "key": "traffic",
+        "label": "Station traffic",
+        "points": 26,
+        "max_points": 30,
+        "detail": "Tampines MRT, about 1.9m taps a month"
+      },
+      {
+        "key": "rent",
+        "label": "Affordability",
+        "points": 18,
+        "max_points": 20,
+        "detail": "Typical rent below your budget line"
+      },
+      {
+        "key": "competition",
+        "label": "Nearby food outlets",
+        "points": 8,
+        "max_points": 10,
+        "detail": "Shown for information only"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Singstat population by planning area",
+        "as_of": "2025-06-30"
+      },
+      {
+        "label": "LTA passenger volume",
+        "as_of": "2026-08-31"
+      }
+    ],
+    "simulated_fields": [
+      "rent range"
+    ]
+  },
+  "figures": {
+    "f_res": {
+      "id": "f_res",
+      "label": "Residents",
+      "unit": "people",
+      "value": "274000",
+      "source": {
+        "kind": "public_data",
+        "ref": "singstat.pop_pa",
+        "as_of": "2025-06-30"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_share": {
+      "id": "f_share",
+      "label": "Share aged 20–39",
+      "unit": "pct",
+      "value": "31",
+      "source": {
+        "kind": "public_data",
+        "ref": "singstat.age_pa",
+        "as_of": "2025-06-30"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_rentrange": {
+      "id": "f_rentrange",
+      "label": "Typical rent, 400–600 sq ft",
+      "unit": "SGD",
+      "value": "11500",
+      "source": {
+        "kind": "simulated",
+        "ref": "units.rent_range",
+        "as_of": "2026-10-01",
+        "note": "Fictional listing for the demo"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "low": "9000",
+      "high": "14000"
+    },
+    "f_taps": {
+      "id": "f_taps",
+      "label": "Station taps a month",
+      "unit": "count",
+      "value": "1900000",
+      "source": {
+        "kind": "public_data",
+        "ref": "lta.pv_train",
+        "as_of": "2026-08-31"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_outlets": {
+      "id": "f_outlets",
+      "label": "Food outlets within 800 m",
+      "unit": "count",
+      "value": "212",
+      "source": {
+        "kind": "public_data",
+        "ref": "sfa.licensed",
+        "as_of": "2026-07-31"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    }
+  },
+  "display": {
+    "f_res": "274,000",
+    "f_share": "31%",
+    "f_rentrange": "S$9,000–14,000 a month",
+    "f_taps": "about 1.9m",
+    "f_outlets": "212"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "w_st1",
+  "payload": {
+    "type": "status_card",
+    "status": "at_risk",
+    "headline": "Your opening may slip about 3 weeks",
+    "changes": [
+      "Sales dipped at four shops in September",
+      "Savings pot is RMB 0.21m behind plan"
+    ],
+    "figures": [
+      "f_s_open",
+      "f_s_pot"
+    ]
+  },
+  "figures": {
+    "f_s_open": {
+      "id": "f_s_open",
+      "label": "Likely opening",
+      "unit": "weeks",
+      "value": "65",
+      "source": {
+        "kind": "tool",
+        "ref": "simulate_plan",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_s_pot": {
+      "id": "f_s_pot",
+      "label": "Pot so far",
+      "unit": "CNY",
+      "value": "1430000",
+      "source": {
+        "kind": "feed",
+        "ref": "webank.feed.profit_monthly",
+        "as_of": "2026-09-30",
+        "note": "Mock WeBank feed"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    }
+  },
+  "display": {
+    "f_s_open": "Feb 2028",
+    "f_s_pot": "RMB 1.43m"
+  }
+}

@@ -1,0 +1,319 @@
+# Funding catalogue (SPEC §6.4). Amounts are computed by tools/funding.py, never written here.
+# status: open | optional | closed. Closed routes cite the rule (rules/rules.yaml) that closes them.
+# card: where a route is shown. Only `plan` routes count toward the Singapore plan and its funding mix; `webank`
+# and `partner_bank` cards are what the banks do *around* the plan (home working capital, custody, FX), shown on
+# the funding screen and never counted. `never_in_plan` names the rule a plan breaks if it counts the route.
+# Bank cards are dated (`as_of`) and, where a bank decides, `subject_to_approval`. status `later` with
+# card `after_opening` is a read-only view of what may come after opening, never counted (R8).
+# Ranking (tools/funding.py rank_options, judge memo §1b): `cost_kind` (own_cash and terms cost 0; profit_share
+# counts the partner's share of the Singapore profit; timing routes change when money is paid and aren't ranked),
+# `speed_weeks` (weeks from the plan start: a number, a timeline milestone id, or `setaside`), `dilution`, and
+# `eligible_when_*`, the reason shown while the route isn't open to this owner. No number is ranked from here:
+# code computes each measure from the owner's data and the plan model.
+
+as_of: 2026-10-20
+webank_role:
+  en: "WeBank's role: working capital for your shops at home; optionally, your savings pot as a deposit or account in your company's own name; and a shock buffer that the plan never draws. It does not lend to the Singapore shop."
+  zh: "微众银行的角色：为国内门店提供流动资金；可选地把您的储蓄放在公司名下的存款或账户中；以及一个计划中永不动用的应急缓冲。它不为新加坡门店放贷。"
+
+# "Compare funding plans" (tools/compare.py, SPEC §6.4): each column is a set of plan routes, run once through the
+# plan model at the slider's set-aside share with everything else in the owner's plan unchanged. `toggles` are the
+# toggle_option actions "Choose this funding" sends. No number is written here: code computes every figure, and the
+# pros and cons are the ranking words (tools/funding.py) plus each route's own cost and conditions above.
+compare:
+  - id: setaside
+    routes: [spare_cash, setaside]
+    toggles: {own_savings: false, partner_equity: false}
+    title_en: "Set-aside only"
+    title_zh: "只用利润留存"
+    blurb_en: "Your spare cash and the monthly set-aside from profit; nothing else."
+    blurb_zh: "只用闲置资金和每月利润留存。"
+  - id: savings
+    routes: [spare_cash, setaside, own_savings]
+    toggles: {own_savings: true, partner_equity: false}
+    title_en: "Set-aside + your savings"
+    title_zh: "利润留存 + 个人储蓄"
+    blurb_en: "Adds savings you put in as capital through your Shenzhen company. Change the amount to see it move."
+    blurb_zh: "加上您通过深圳公司作为出资投入的储蓄。改动金额即可看到变化。"
+  - id: partner
+    routes: [spare_cash, setaside, partner_equity]
+    toggles: {own_savings: false, partner_equity: true}
+    title_en: "Set-aside + a local partner"
+    title_zh: "利润留存 + 本地合伙人"
+    blurb_en: "A Singapore citizen or PR partner takes a share of the company and pays that share of the cost."
+    blurb_zh: "新加坡公民或永久居民合伙人持有公司部分股份，并承担相应比例的费用。"
+
+options:
+  - id: spare_cash
+    status: open
+    rule_ids: [R5]
+    label_en: "Spare cash (home company)"
+    label_zh: "闲置资金（国内公司）"
+    covers_en: "Any cost, once the legal steps allow transfers"
+    covers_zh: "法定步骤完成后可用于任何费用"
+    available_from_en: "Now (held in the pot until the first transfer)"
+    available_from_zh: "现在（首笔汇款前存放在储蓄账户）"
+    cost_en: "None"
+    cost_zh: "无"
+    conditions_en: "Only cash above the safety floor and the payroll buffer"
+    conditions_zh: "仅限安全底线和工资缓冲之上的现金"
+    cost_kind: own_cash
+    speed_weeks: 0
+    dilution: none
+    eligible_when_en: "Only when you have cash above the safety floor and the payroll buffer"
+    eligible_when_zh: "仅在现金高于安全底线和工资缓冲时"
+
+  - id: setaside
+    status: open
+    rule_ids: [R2, R5]
+    label_en: "Set-aside from monthly profit"
+    label_zh: "每月利润留存"
+    covers_en: "Any cost, in the legal order"
+    covers_zh: "按法定顺序用于任何费用"
+    available_from_en: "Monthly, from now"
+    available_from_zh: "从现在起每月"
+    cost_en: "Profit not drawn or reinvested at home"
+    cost_zh: "放弃在国内分配或再投资的利润"
+    conditions_en: "Paused while WeBank borrowing is above your normal level (R2); only from cash above the floor"
+    conditions_zh: "微众贷款高于您的正常水平时暂停（R2）；只用底线之上的现金"
+    cost_kind: own_cash
+    speed_weeks: setaside
+    dilution: none
+    eligible_when_en: "Only when the shops make a profit to set aside from"
+    eligible_when_zh: "仅在门店有利润可留存时"
+
+  - id: own_savings
+    status: optional
+    rule_ids: [R7, R4]
+    label_en: "Your own savings, put in as capital"
+    label_zh: "个人储蓄作为出资"
+    covers_en: "Any cost"
+    covers_zh: "任何费用"
+    available_from_en: "When you choose"
+    available_from_zh: "随时"
+    cost_en: "Your personal savings"
+    cost_zh: "您的个人储蓄"
+    conditions_en: "Savings only, never borrowed money (R7). Put in through your Shenzhen company: it becomes the company's capital and goes to Singapore under the company's ODI filing and bank registration, never sent personally or on your own FX quota (R4). Source of funds is checked in the filing"
+    conditions_zh: "只能是储蓄，不能是借款（R7）。通过深圳公司投入：先作为公司出资，再由公司凭境外投资备案和银行登记汇往新加坡，不能以个人名义或用个人购汇额度汇出（R4）。备案时会核查资金来源"
+    cost_kind: own_cash
+    speed_weeks: 0
+    dilution: none
+    eligible_when_en: "Only if you have savings to put in: tap “Add my savings”"
+    eligible_when_zh: "仅在您有储蓄可投入时：点“加入个人积蓄”"
+    source: "NDRC Order 11 (企业境外投资管理办法, 2017) and MOFCOM 境外投资管理办法 (2014): outbound investment is made by the enterprise; SAFE 资本项目外汇业务指引 (2024): ODI registration at the bank; 个人外汇管理办法实施细则 (汇发〔2007〕1号) Art. 2: the USD 50,000 annual quota covers current items, and capital items go under its capital-account chapter (Art. 16: a person's own outbound investment needs SAFE approval and registration); SAFE's 个人购汇申请书 (2017): FX bought on the quota can't be used for capital-account items not yet open, such as investing abroad"
+    source_kind: law
+    source_url: "https://www.safe.gov.cn/neimenggu/file/file/20170728/b94fb1d6db30472584863040ecb838f3.pdf"
+
+  - id: landlord_terms
+    status: optional
+    rule_ids: [R6]
+    label_en: "Landlord terms: rent-free fit-out months; deposit within the code's default"
+    label_zh: "房东条件：装修免租期；押金不超过守则默认"
+    covers_en: "Reduces pre-opening rent; keeps the deposit at the default"
+    covers_zh: "减少开业前租金；押金保持默认"
+    available_from_en: "In the letter of offer"
+    available_from_zh: "写入要约函时"
+    cost_en: "None, if agreed"
+    cost_zh: "如获同意则无"
+    conditions_en: "Counted only once it is in the signed offer"
+    conditions_zh: "只有写入已签要约后才计入"
+    cost_kind: terms
+    speed_weeks: sign_lease
+    dilution: none
+    eligible_when_en: "Once you have chosen a unit: the terms are in its letter of offer"
+    eligible_when_zh: "选定铺位之后：条件写在该铺位的要约函中"
+
+  - id: staged_contractor
+    status: optional
+    rule_ids: [R6]
+    label_en: "Contractor staged payments"
+    label_zh: "装修分期付款"
+    covers_en: "Lowers what's at risk if the contractor fails; it doesn't change your dates"
+    covers_zh: "降低承包商出问题时的损失风险；不会改变你的时间表"
+    available_from_en: "In the fit-out contract"
+    available_from_zh: "装修合同中约定"
+    cost_en: "None, if agreed"
+    cost_zh: "如获同意则无"
+    conditions_en: "Shifts timing, not size; the whole fit-out must still be in Singapore before signing (R6)"
+    conditions_zh: "只改变时间不改变金额；签约前全部装修款仍须在新加坡（R6）"
+    cost_kind: timing
+
+  - id: pre_investment
+    status: open
+    rule_ids: [R4]
+    label_en: "Pre-investment allowance (前期费用)"
+    label_zh: "前期费用"
+    covers_en: "Costs before the company exists (e.g. incorporation, secretary)"
+    covers_zh: "公司成立前的费用（如注册、秘书）"
+    available_from_en: "After lender consent, once registered with the bank"
+    available_from_zh: "取得贷款行同意并在银行登记后"
+    cost_en: "None"
+    cost_zh: "无"
+    conditions_en: "At most 15% of the planned total; never the lease deposit; 6-month clock (R4)"
+    conditions_zh: "不超过计划总额的15%；不得用于租赁押金；6个月期限（R4）"
+    cost_kind: timing
+
+  - id: partner_equity
+    status: optional
+    rule_ids: [R8]
+    label_en: "Local partner equity (at least 30% Singapore citizen/PR)"
+    label_zh: "本地合伙人入股（新加坡公民/永久居民至少30%）"
+    covers_en: "The partner's share of the cost"
+    covers_zh: "合伙人份额对应的费用"
+    available_from_en: "When a partner signs"
+    available_from_zh: "合伙人签约后"
+    cost_en: "A share of the profit"
+    cost_zh: "分出部分利润"
+    conditions_en: "Unlocks EFS and grant eligibility after opening; shown simply, not modelled in depth"
+    conditions_zh: "开业后可申请EFS和补助；仅作简单展示"
+    cost_kind: profit_share
+    speed_weeks: incorporate
+    dilution: partner_share
+    eligible_when_en: "Only if you would consider a local partner: tap “A local partner?”"
+    eligible_when_zh: "仅在您考虑本地合伙人时：点“本地合伙人？”"
+
+  - id: sg_bank_loan
+    status: closed
+    rule_ids: [R8]
+    label_en: "Singapore bank / EFS loan before opening"
+    label_zh: "开业前的新加坡银行 / EFS 贷款"
+    covers_en: "Not available before opening"
+    covers_zh: "开业前不可用"
+    available_from_en: "After opening: see the after-opening card"
+    available_from_zh: "开业后：见“开业后”卡片"
+    cost_en: "Interest"
+    cost_zh: "利息"
+    conditions_en: "Banks usually want trading history first (market practice); EFS needs at least 30% local shareholding. Never counted before opening (R8)"
+    conditions_zh: "银行通常要求先有经营记录（市场惯例）；EFS需要至少30%本地持股。开业前不计入（R8）"
+
+  - id: webank_loan
+    status: closed
+    rule_ids: [R1]
+    variants: [webank_microloan, weilidai, operating_loan]
+    label_en: "WeBank business loan for Singapore"
+    label_zh: "用微业贷资金投资新加坡"
+    covers_en: "Nothing in Singapore"
+    covers_zh: "不能用于新加坡"
+    available_from_en: "Never for this purpose"
+    available_from_zh: "不可用于此用途"
+    cost_en: "Breach of the loan's purpose"
+    cost_zh: "违反贷款用途"
+    conditions_en: "Loan money can't fund the overseas shop, the pot or the Singapore company"
+    conditions_zh: "贷款资金不得用于境外门店、储蓄账户或新加坡公司"
+
+  - id: china_guarantee
+    status: closed
+    rule_ids: [R3]
+    variants: [china_guarantee_company, china_guarantee_owner, china_standby_lc, china_keep_well, china_share_pledge]
+    label_en: "Any guarantee from China"
+    label_zh: "任何来自国内的担保"
+    covers_en: "Nothing"
+    covers_zh: "不适用"
+    available_from_en: "Never"
+    available_from_zh: "不可用"
+    cost_en: "Puts the shops that repay WeBank on the hook"
+    cost_zh: "让偿还微众贷款的门店承担风险"
+    conditions_en: "No guarantee, standby letter of credit, keep-well or share pledge from the company or from you personally"
+    conditions_zh: "公司或个人均不得提供担保、备用信用证、维好协议或股权质押"
+
+  - id: personal_loan
+    status: closed
+    rule_ids: [R7]
+    variants: [consumer_loan, card_advance, personal_credit_line]
+    label_en: "Personal consumer loans or card advances as capital"
+    label_zh: "个人消费贷或信用卡取现作为出资"
+    covers_en: "Nothing"
+    covers_zh: "不适用"
+    available_from_en: "Never"
+    available_from_zh: "不可用"
+    cost_en: "Breach of loan purpose; fails the ODI source-of-funds check"
+    cost_zh: "违反贷款用途；无法通过境外投资资金来源审查"
+    conditions_en: "Owner capital comes from savings only"
+    conditions_zh: "出资只能来自储蓄"
+
+  # ---------------------------------------------------------------- around the plan: what the banks say yes to
+
+  - id: webank_home_wc
+    status: optional
+    card: webank
+    never_in_plan: R1
+    note_rule: R2
+    as_of: 2026-10-20
+    subject_to_approval: true
+    rule_ids: [R1, R2]
+    label_en: "WeBank 微业贷 for your home shops"
+    label_zh: "微业贷：用于国内门店"
+    covers_en: "Documented needs of your shops at home: stock, seasonal wages, a Shenzhen refit. Nothing in Singapore"
+    covers_zh: "国内门店有据可查的经营需要：备货、季节性工资、深圳门店翻新。不用于新加坡"
+    available_from_en: "Online, when WeBank approves it"
+    available_from_zh: "线上申请，经微众银行审批后"
+    cost_en: "Interest at the rate WeBank offers you"
+    cost_zh: "按微众银行给您的利率计息"
+    conditions_en: "Sized to the real need net of your own funds, and only up to your usual borrowing level: the amount shown is what's left below it this month. Loan money never goes to Singapore or the pot (R1)"
+    conditions_zh: "按扣除自有资金后的实际需要确定额度，且不超过您平时的借款水平：显示的金额是本月距平时水平的余量。贷款资金不得用于新加坡或储蓄账户（R1）"
+    source: "流动资金贷款管理办法 (2024) Art. 6 and the annex formula (a loan no larger than the real need net of own funds), Art. 9; 互联网贷款管理暂行办法 Art. 24(三); WeBank's 微业贷 terms: business use only, never dividends, property, financial assets or equity investment"
+    source_kind: law
+    source_url: "https://www.gov.cn/gongbao/2024/issue_11306/202404/content_6947721.html"
+    product_en: "WeBank 微业贷 product page"
+    product_zh: "微众银行微业贷产品页"
+    product_url: "https://sme.webank.com/esp-web/rls/asset/wyd/index.html"
+
+  - id: webank_pot_deposit
+    status: optional
+    card: webank
+    as_of: 2026-10-20
+    subject_to_approval: true
+    rule_ids: [R3, R5]
+    label_en: "Your savings pot as a WeBank deposit in your company's name"
+    label_zh: "储蓄存为公司名下的微众存款"
+    covers_en: "Holds the spare cash and set-aside until the legal steps allow the first transfer"
+    covers_zh: "在法定步骤允许首笔汇款之前，存放闲置资金和每月留存"
+    available_from_en: "Now, if you choose"
+    available_from_zh: "现在，如您选择"
+    cost_en: "None; it earns deposit interest"
+    cost_zh: "无；按存款计息"
+    conditions_en: "A deposit or account in your company's own name, never pledged: a pledge for Singapore credit would be a guarantee from home (R3). Its statements show the money came from profit"
+    conditions_zh: "公司名下的存款或账户，永不质押：为新加坡借款质押即构成内保外贷（R3）。其流水可证明资金来自利润"
+
+  - id: partner_bank_fx
+    status: optional
+    card: partner_bank
+    as_of: 2026-10-20
+    subject_to_approval: true
+    rule_ids: [R4, R7]
+    label_en: "FX and transfer at the bank that registers your ODI"
+    label_zh: "由办理境外投资登记的银行换汇汇款"
+    covers_en: "Converting to Singapore dollars and sending to your Singapore company"
+    covers_zh: "兑换新加坡元并汇往您的新加坡公司"
+    available_from_en: "After lender consent, the ODI filing and the bank registration (R4)"
+    available_from_zh: "取得贷款行同意、完成境外投资备案和银行登记之后（R4）"
+    cost_en: "That bank's FX spread and fees"
+    cost_zh: "该银行的汇差和手续费"
+    conditions_en: "Your WeBank statements go to that bank as proof the money is the company's profit and your savings, never borrowed (R7). WeBank itself doesn't do the corporate FX or the ODI registration"
+    conditions_zh: "把微众银行流水交给该银行，证明资金来自公司利润和个人储蓄，而非借款（R7）。微众银行本身不办理企业换汇或境外投资登记"
+    source: "SAFE 资本项目外汇业务指引 (2024) §8.1 (ODI registration at a bank) and §8.2.2.1(4) (source-of-funds proof)"
+    source_kind: law
+    source_url: "https://www.safe.gov.cn/safe/file/file/20240412/14f97540545646e48df3a821639651eb.pdf"
+
+  # ---------------------------------------------------------------- after opening: a view, never in the plan
+
+  - id: efs_after_opening
+    status: later
+    card: after_opening
+    never_in_plan: R8
+    as_of: 2026-10-20
+    subject_to_approval: true
+    rule_ids: [R8]
+    label_en: "Singapore loans after opening: EFS working capital, bank SME loans"
+    label_zh: "开业后的新加坡贷款：EFS流动资金贷款、银行中小企业贷款"
+    covers_en: "Working capital for the Singapore shop once it trades"
+    covers_zh: "门店开业经营后的流动资金"
+    available_from_en: "After opening. EFS: once a local partner holds at least 30%. Banks: usually after 6 to 12 months of trading (market practice)"
+    available_from_zh: "开业之后。EFS：本地合伙人持股至少30%后。银行：通常需经营6至12个月（市场惯例）"
+    cost_en: "Interest; EFS loans are partly risk-shared by Enterprise Singapore"
+    cost_zh: "利息；EFS贷款由新加坡企业发展局分担部分风险"
+    conditions_en: "Never counted in this plan (R8). EFS needs at least 30% local shareholding (Singapore citizens or PRs, by ultimate ownership) and sets no trading-history test"
+    conditions_zh: "不计入本计划（R8）。EFS需要至少30%本地持股（新加坡公民或永久居民，按最终持股人计），不要求经营记录"
+    product_en: "Enterprise Singapore: EFS SME Working Capital Loan"
+    product_zh: "新加坡企业发展局：EFS中小企业流动资金贷款"
+    product_url: "https://www.enterprisesg.gov.sg/financial-support/enterprise-financing-scheme---sme-working-capital"

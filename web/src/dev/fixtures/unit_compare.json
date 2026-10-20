@@ -1,0 +1,228 @@
+{
+  "id": "w_uc1",
+  "payload": {
+    "type": "unit_compare",
+    "units": [
+      {
+        "id": "u1",
+        "mall": "Tampines Mall",
+        "unit_no": "#01-23",
+        "area_name": "Tampines",
+        "size_sqft": 480,
+        "rent": "f_u1_rent",
+        "gto_pct": 0.07,
+        "breakeven": "f_u1_be",
+        "best_shop_cups": "f_best",
+        "early_cost": "f_u1_early",
+        "lat": 1.3525,
+        "lng": 103.9447,
+        "simulated": true,
+        "avg_shop_cups": "f_avg"
+      },
+      {
+        "id": "u2",
+        "mall": "Century Square",
+        "unit_no": "#B1-08",
+        "area_name": "Tampines",
+        "size_sqft": 420,
+        "rent": "f_u2_rent",
+        "gto_pct": null,
+        "breakeven": "f_u2_be",
+        "best_shop_cups": "f_best",
+        "early_cost": "f_u2_early",
+        "lat": 1.3523,
+        "lng": 103.9437,
+        "simulated": true,
+        "avg_shop_cups": "f_avg"
+      },
+      {
+        "id": "u3",
+        "mall": "Tampines 1",
+        "unit_no": "#02-15",
+        "area_name": "Tampines",
+        "size_sqft": 550,
+        "rent": "f_u3_rent",
+        "gto_pct": 0.08,
+        "breakeven": "f_u3_be",
+        "best_shop_cups": "f_best",
+        "early_cost": "f_u3_early",
+        "lat": 1.354,
+        "lng": 103.9451,
+        "simulated": true,
+        "avg_shop_cups": "f_avg"
+      }
+    ],
+    "chosen": null
+  },
+  "figures": {
+    "f_u1_rent": {
+      "id": "f_u1_rent",
+      "label": "Rent + service charge",
+      "unit": "SGD",
+      "value": "12800",
+      "source": {
+        "kind": "simulated",
+        "ref": "units.u1",
+        "as_of": "2026-10-01",
+        "note": "Fictional listing for the demo"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_u1_be": {
+      "id": "f_u1_be",
+      "label": "Break-even cups a day",
+      "unit": "cups_per_day",
+      "value": "412",
+      "source": {
+        "kind": "tool",
+        "ref": "break_even",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "cup_price",
+        "variable_cost_per_cup",
+        "opening_days"
+      ],
+      "taint": "trusted"
+    },
+    "f_u1_early": {
+      "id": "f_u1_early",
+      "label": "Early cost estimate (likely)",
+      "unit": "SGD",
+      "value": "286000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_u2_rent": {
+      "id": "f_u2_rent",
+      "label": "Rent + service charge",
+      "unit": "SGD",
+      "value": "9600",
+      "source": {
+        "kind": "simulated",
+        "ref": "units.u2",
+        "as_of": "2026-10-01",
+        "note": "Fictional listing for the demo"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_u2_be": {
+      "id": "f_u2_be",
+      "label": "Break-even cups a day",
+      "unit": "cups_per_day",
+      "value": "338",
+      "source": {
+        "kind": "tool",
+        "ref": "break_even",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "cup_price",
+        "variable_cost_per_cup",
+        "opening_days"
+      ],
+      "taint": "trusted"
+    },
+    "f_u2_early": {
+      "id": "f_u2_early",
+      "label": "Early cost estimate (likely)",
+      "unit": "SGD",
+      "value": "241000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_u3_rent": {
+      "id": "f_u3_rent",
+      "label": "Rent + service charge",
+      "unit": "SGD",
+      "value": "14200",
+      "source": {
+        "kind": "simulated",
+        "ref": "units.u3",
+        "as_of": "2026-10-01",
+        "note": "Fictional listing for the demo"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_u3_be": {
+      "id": "f_u3_be",
+      "label": "Break-even cups a day",
+      "unit": "cups_per_day",
+      "value": "455",
+      "source": {
+        "kind": "tool",
+        "ref": "break_even",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "cup_price",
+        "variable_cost_per_cup",
+        "opening_days"
+      ],
+      "taint": "trusted"
+    },
+    "f_u3_early": {
+      "id": "f_u3_early",
+      "label": "Early cost estimate (likely)",
+      "unit": "SGD",
+      "value": "312000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_best": {
+      "id": "f_best",
+      "label": "Your best Shenzhen shop",
+      "unit": "cups_per_day",
+      "value": "600",
+      "source": {
+        "kind": "owner",
+        "ref": "owner"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_avg": {
+      "id": "f_avg",
+      "label": "Your average Shenzhen shop",
+      "unit": "cups_per_day",
+      "value": "420",
+      "source": {
+        "kind": "feed",
+        "ref": "avg_shop_cups_per_day"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    }
+  },
+  "display": {
+    "f_u1_rent": "S$12,800 a month",
+    "f_u1_be": "412 cups a day",
+    "f_u1_early": "S$286,000",
+    "f_u2_rent": "S$9,600 a month",
+    "f_u2_be": "338 cups a day",
+    "f_u2_early": "S$241,000",
+    "f_u3_rent": "S$14,200 a month",
+    "f_u3_be": "455 cups a day",
+    "f_u3_early": "S$312,000",
+    "f_best": "600 a day",
+    "f_avg": "420 a day"
+  }
+}

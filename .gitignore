@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.env
+var/
+web/node_modules/
+web/dist/
+data/public/raw/
+*.sqlite3
+.DS_Store
+demo/out/
+
+# local editor and agent launch config (machine-specific paths)
+.claude/launch.json
+.claude/settings.local.json

@@ -1,0 +1,218 @@
+{
+  "id": "w_bg1",
+  "payload": {
+    "type": "business_glance",
+    "rows": [
+      {
+        "key": "margin",
+        "label": "Operating margin, last 12 months",
+        "figure": "ratio.op_margin_ttm",
+        "compare": null,
+        "compare_label": null,
+        "note": "Operating profit / revenue",
+        "caveat": false
+      },
+      {
+        "key": "trend",
+        "label": "Margin, last 3 months",
+        "figure": "ratio.margin_recent_3m",
+        "compare": "ratio.margin_year_ago_3m",
+        "compare_label": "Same months a year earlier",
+        "note": "Against the same months a year earlier: sales are seasonal, so never month on month",
+        "caveat": false
+      },
+      {
+        "key": "per_shop",
+        "label": "Revenue per shop a month",
+        "figure": "ratio.revenue_per_shop_month",
+        "compare": null,
+        "compare_label": null,
+        "note": "Last 12 months' revenue / 12 / shops",
+        "caveat": false
+      },
+      {
+        "key": "runway",
+        "label": "Cash runway",
+        "figure": "ratio.cash_runway",
+        "compare": null,
+        "compare_label": null,
+        "note": "Overstated: home rent and suppliers aren't in the feed, only payroll, loan repayments and listed commitments",
+        "caveat": true
+      },
+      {
+        "key": "dscr",
+        "label": "Debt-service coverage",
+        "figure": "ratio.dscr",
+        "compare": "ratio.dscr_after_drawings",
+        "compare_label": "After your drawings",
+        "note": "A month's operating profit / the monthly loan repayment",
+        "caveat": false
+      }
+    ],
+    "singapore": [],
+    "as_of": "2026-10-19",
+    "simulated_feed": true,
+    "note": "Worked out from the accounts you shared (simulated feed)"
+  },
+  "figures": {
+    "ratio.op_margin_ttm": {
+      "id": "ratio.op_margin_ttm",
+      "label": "Operating margin, last 12 months",
+      "unit": "pct",
+      "value": "0.1835972748301614347546842276",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "chain_ratios",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "feed.ttm_profit",
+        "feed.ttm_revenue"
+      ]
+    },
+    "ratio.margin_recent_3m": {
+      "id": "ratio.margin_recent_3m",
+      "label": "Operating margin, last 3 months",
+      "unit": "pct",
+      "value": "0.1793072025876902677791953968",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "chain_ratios",
+        "as_of": null,
+        "note": "Jul 2026 to Sep 2026",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "feed.profit_3m",
+        "feed.rev_3m"
+      ]
+    },
+    "ratio.margin_year_ago_3m": {
+      "id": "ratio.margin_year_ago_3m",
+      "label": "Operating margin, same 3 months a year earlier",
+      "unit": "pct",
+      "value": "0.1558378082642773809822458154",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "chain_ratios",
+        "as_of": null,
+        "note": "the series is seasonal: never compared month on month",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "feed.profit_3m_year_ago",
+        "feed.rev_3m_year_ago"
+      ]
+    },
+    "ratio.revenue_per_shop_month": {
+      "id": "ratio.revenue_per_shop_month",
+      "label": "Revenue per shop a month",
+      "unit": "CNY",
+      "value": "35542.7388888888888888888889",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "chain_ratios",
+        "as_of": null,
+        "note": "last 12 months / 12 / shops",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "feed.ttm_revenue",
+        "feed.shops"
+      ]
+    },
+    "ratio.cash_runway": {
+      "id": "ratio.cash_runway",
+      "label": "Cash runway",
+      "unit": "months",
+      "value": "3.840290140845070422535211268",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "chain_ratios",
+        "as_of": null,
+        "note": "overstated: home rent and suppliers are not in the feed, only payroll, loan repayments and listed commitments",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "feed.cash",
+        "feed.payroll",
+        "feed.repayment",
+        "feed.home_commitments"
+      ]
+    },
+    "ratio.dscr": {
+      "id": "ratio.dscr",
+      "label": "Debt-service coverage",
+      "unit": "times",
+      "value": "4.350366666666666666666666667",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "chain_ratios",
+        "as_of": null,
+        "note": "a month's operating profit (last 12 months / 12) / the monthly loan repayment",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "feed.ttm_profit",
+        "feed.repayment"
+      ]
+    },
+    "ratio.dscr_after_drawings": {
+      "id": "ratio.dscr_after_drawings",
+      "label": "Debt-service coverage after drawings",
+      "unit": "times",
+      "value": "2.617033333333333333333333333",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "chain_ratios",
+        "as_of": null,
+        "note": "(a month's operating profit - the owner's drawings) / the monthly loan repayment",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "feed.ttm_profit",
+        "feed.drawings",
+        "feed.repayment"
+      ]
+    }
+  },
+  "display": {
+    "ratio.op_margin_ttm": "18.4%",
+    "ratio.margin_recent_3m": "17.9%",
+    "ratio.margin_year_ago_3m": "15.6%",
+    "ratio.revenue_per_shop_month": "RMB 36k",
+    "ratio.cash_runway": "4 months",
+    "ratio.dscr": "4.4x",
+    "ratio.dscr_after_drawings": "2.6x"
+  }
+}

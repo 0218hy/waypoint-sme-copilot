@@ -1,0 +1,188 @@
+# Plan rules (SPEC §8.1). Checked by rules/engine.py on every FundingPlan, Goal, repair and prepared action.
+# A failing plan can't be shown as a recommendation, only as closed, with the rule.
+# kind: law (a rule the law states), design (Waypoint's own prudential rule; any legal background is in `source`)
+# or law+design (the law, plus a stricter line Waypoint draws). `url` is the primary source (or, for a pure
+# design rule, the SPEC section that sets it). The rule card shows "Law" or "Design rule" from `kind`.
+
+as_of: 2026-10-20
+rules:
+  R1:
+    title_en: "Loan money stays home"
+    title_zh: "贷款资金留在国内"
+    message_en: "Your WeBank loan can't pay for Singapore: not the shop, the savings pot or the Singapore company."
+    message_zh: "微众银行的贷款不能用于新加坡：不能用于门店、储蓄账户或新加坡公司。"
+    consequence_en: "Using loan money abroad breaches the loan's purpose: WeBank can recall the loan, and the ODI source-of-funds check fails."
+    consequence_zh: "将贷款用于境外违反贷款用途：微众银行可提前收回贷款，境外投资资金来源审查也无法通过。"
+    kind: law
+    source: "互联网贷款管理暂行办法 (银保监会令2020年第9号) Art. 24(三) (no fixed-asset or equity investment) and Art. 30 (purpose monitoring); 流动资金贷款管理办法 (2024, in force 1 Jul 2024) Art. 9 (no equity investment); WeBank 微业贷 terms (business use only)"
+    url: "https://www.gov.cn/gongbao/content/2020/content_5541497.htm"
+    alternatives: [raise_share, add_savings, webank_home]
+    checks: [funding_plan, action, funding_source]
+  R2:
+    title_en: "No borrowing to free up profit"
+    title_zh: "不借款腾挪利润"
+    message_en: "While your WeBank borrowing is above your usual level, your Singapore set-aside and transfers pause. They restart once it's back to normal."
+    message_zh: "当您的微众贷款高于平时水平时，新加坡留存和汇款暂停，恢复正常后自动重启。"
+    consequence_en: "Borrowing for home bills so that profit can go abroad is substitution (置换): it evades the loan's purpose rule, and a loan sized above the real need breaks the sizing rule."
+    consequence_zh: "借款支付国内开支、从而把利润转到境外，属于置换，规避贷款用途规定；超出实际需求的贷款也不符合额度测算规定。"
+    kind: law+design
+    source: "流动资金贷款管理办法 (2024) Art. 6 (a loan no larger than the real need) and the annex formula (新增额度 = 营运资金量 − 借款人自有资金 − …); Arts 10, 34 (挪用 and monitoring for it); 银保监办发〔2021〕39号 §二 (credit matches operating income and cash flow). The pause while borrowing is above your usual level is Waypoint's design"
+    url: "https://www.gov.cn/gongbao/2024/issue_11306/202404/content_6947721.html"
+    alternatives: [webank_home, rent_free, partner]
+    checks: [feed, plan_result, action]
+  R3:
+    title_en: "No guarantee from home"
+    title_zh: "国内不提供担保"
+    message_en: "Nothing in China guarantees anything in Singapore: not your company, and not you personally."
+    message_zh: "国内任何主体都不为新加坡提供担保：公司不行，您个人也不行。"
+    consequence_en: "A guarantee from home (内保外贷) puts the shops that repay WeBank on the hook for Singapore. The law allows one with SAFE registration and the lender's consent; Waypoint's plans leave it out to protect the shops that repay WeBank."
+    consequence_zh: "内保外贷会让偿还微众贷款的门店为新加坡承担风险。法律允许在外汇局登记并取得贷款行同意后办理；为保护偿还微众贷款的门店，Waypoint 的计划不使用。"
+    kind: design
+    source: "Design rule (protects repayment capacity). Legal background: a guarantee from home for Singapore credit (内保外贷), including a personal one, is allowed if registered with SAFE within 15 working days (汇发〔2014〕29号 Arts 6, 9, 16; SAFE 资本项目外汇业务指引 (2024) §3.5.4; keep-wells count, §3.5.4.1(7)), and would need WeBank's prior consent (流动资金贷款管理办法 (2024) Art. 25(三)). Out of scope for this prototype"
+    url: "https://www.safe.gov.cn/hebei/file/file/20170731/912cdc767c0748db9b977fc8a1b43bd2.pdf"
+    alternatives: [partner, add_savings, staged_contractor]
+    checks: [funding_plan, action, funding_source]
+  R4:
+    title_en: "Legal order"
+    title_zh: "法定顺序"
+    message_en: "Money goes to Singapore only after lender consent, the ODI filing and the bank registration, in that order. The pre-investment allowance (前期费用) is at most 15% of the plan and never pays the deposit."
+    message_zh: "只有在取得贷款行同意、完成境外投资备案和银行登记之后，才能按顺序汇款到新加坡。前期费用不超过计划总额的15%，且不得支付押金。"
+    consequence_en: "Investing before the filing is completed can bring penalties under the outbound investment rules and blocks later transfers."
+    consequence_zh: "未完成备案即实施投资可能受到境外投资规定的处罚，并影响后续汇款。"
+    kind: law+design
+    source: "流动资金贷款管理办法 (2024) Art. 25(三) (lender consent); NDRC Order 11 (企业境外投资管理办法) Arts 32–33; SAFE 资本项目外汇业务指引 (2024) §8.1 (ODI registration; 前期费用 ≤ 15%, §8.1.3.1); 国务院令第837号 Art. 27 para 2. Never paying the lease deposit from 前期费用 is Waypoint's design"
+    url: "https://www.safe.gov.cn/safe/file/file/20240412/14f97540545646e48df3a821639651eb.pdf"
+    alternatives: [pre_investment, start_filing, add_savings]
+    checks: [funding_plan, plan_result, action]
+  R5:
+    title_en: "A safe home floor"
+    title_zh: "国内现金安全底线"
+    message_en: "Your home cash stays above the floor, with at most a 5% chance of dipping below it."
+    message_zh: "国内现金保持在底线之上，跌破的概率不超过5%。"
+    consequence_en: "Below the floor, payroll and WeBank repayments are at risk."
+    consequence_zh: "跌破底线会危及工资发放和微众贷款还款。"
+    kind: design
+    source: "Design rule (protects repayment capacity)"
+    url: "https://github.com/0218hy/fintechathon/blob/main/docs/SPEC.md#81-plan-rules-rulesrulesyaml--rulesenginepy"
+    alternatives: [lower_share, add_savings, rent_free]
+    checks: [plan_result]
+  R6:
+    title_en: "Cash before commitment"
+    title_zh: "先到账，再签约"
+    message_en: "You don't sign the lease until the deposit, the whole fit-out and the rent before opening are already in Singapore."
+    message_zh: "押金、全部装修款和开业前租金都已在新加坡到账之前，不签租约。"
+    consequence_en: "A signed lease without the money in place can mean a lost deposit or a half-built shop."
+    consequence_zh: "资金未到位就签约，可能损失押金或店铺半途停工。"
+    kind: design
+    source: "Design rule (no lease is signed on money that isn't there yet)"
+    url: "https://github.com/0218hy/fintechathon/blob/main/docs/SPEC.md#81-plan-rules-rulesrulesyaml--rulesenginepy"
+    alternatives: [rent_free, staged_contractor, later_lease]
+    checks: [plan_result, action]
+  R7:
+    title_en: "Capital from savings only"
+    title_zh: "只用储蓄出资"
+    message_en: "Money you put in yourself must be savings, never a consumer loan or a card advance."
+    message_zh: "您个人出资必须是储蓄，不能是消费贷或信用卡取现。"
+    consequence_en: "Consumer-loan money can't be used as investment capital, and it fails the ODI source-of-funds proof."
+    consequence_zh: "消费贷资金不得用于投资，也无法通过境外投资资金来源证明。"
+    kind: law+design
+    source: "贷款通则 Art. 20(三) (no loan money for equity investment); 互联网贷款管理暂行办法 Art. 24(三) (internet consumer loans); SAFE 资本项目外汇业务指引 (2024) §8.2.2.1(4) (ODI source-of-funds proof). Savings only, for every personal input, is Waypoint's design"
+    url: "https://www.gov.cn/gongbao/content/2020/content_5541497.htm"
+    alternatives: [add_savings, partner, raise_share]
+    checks: [funding_plan, action, funding_source]
+  R8:
+    title_en: "No Singapore borrowing before opening"
+    title_zh: "开业前不在新加坡借款"
+    message_en: "The plan doesn't count on any Singapore loan before opening. EFS loans and grants need at least 30% local ownership."
+    message_zh: "计划不依赖开业前的任何新加坡贷款。EFS贷款和补助需要至少30%本地持股。"
+    consequence_en: "Banks usually ask for trading history before they lend (market practice); a plan that relies on a loan it can't get stalls before opening."
+    consequence_zh: "银行通常要求有经营记录才放贷（市场惯例）；依赖拿不到的贷款，计划会在开业前停滞。"
+    kind: design
+    source: "Design rule (prudential). Background: Enterprise Singapore EFS needs at least 30% local shareholding and sets no trading-history test; banks usually ask for trading history [market practice]"
+    url: "https://www.enterprisesg.gov.sg/financial-support/enterprise-financing-scheme"
+    alternatives: [partner, after_opening, raise_share]
+    checks: [funding_plan, action, funding_source]
+
+# Lawful alternatives a rule card offers (agent/toolkit.lawful_options; agent/steps.guard_option acts on a pick
+# at any step). Each rule lists its own, most specific first, at least two. action:
+#   lever:  changes the funding plan; at the funding step it applies there, from a later step it reopens the
+#           funding step with the change applied (the reopen flow re-confirms); before funding it waits for it
+#   cards:  shows the funding screen's cards (WeBank at home, after opening); same reach as a lever
+#   topic:  shows a topic card (data/topics.yaml) at any step
+alternatives:
+  raise_share:
+    action: lever
+    label_en: "Set aside a bit more profit"
+    label_zh: "多存一些利润"
+    detail_en: "Within your safety line"
+    detail_zh: "在安全线以内"
+  lower_share:
+    action: lever
+    label_en: "Set aside a little less each month"
+    label_zh: "每月少存一点"
+    detail_en: "Back inside your safety line; the opening moves later"
+    detail_zh: "回到安全线以内；开业时间会推后"
+  add_savings:
+    action: lever
+    label_en: "Add your own savings (as capital, not a loan)"
+    label_zh: "加入个人积蓄（出资，不是借款）"
+    detail_en: "Put in through your Shenzhen company"
+    detail_zh: "通过深圳公司投入"
+  rent_free:
+    action: lever
+    label_en: "Ask the landlord for rent-free months"
+    label_zh: "向业主争取免租期"
+    detail_en: "Counted once it's in the signed offer"
+    detail_zh: "写入已签要约后才计入"
+  partner:
+    action: lever
+    label_en: "Bring in a local partner as a shareholder"
+    label_zh: "引入本地合伙人入股"
+    detail_en: "Equity, not a loan; a Singapore citizen or PR"
+    detail_zh: "是入股，不是借款；新加坡公民或永久居民"
+  staged_contractor:
+    action: lever
+    label_en: "Pay the contractor in stages"
+    label_zh: "装修款分期支付"
+    detail_en: "Less at risk; the whole fit-out still lands before signing"
+    detail_zh: "降低风险；签约前全部装修款仍须到位"
+  webank_home:
+    action: cards
+    label_en: "Use WeBank for home needs, up to your usual level"
+    label_zh: "微众银行贷款用于国内经营，不超过平时水平"
+    detail_en: "Singapore money stays profit and savings"
+    detail_zh: "新加坡的钱只来自利润和储蓄"
+  after_opening:
+    action: cards
+    label_en: "Look at Singapore loans after opening"
+    label_zh: "开业后再看新加坡贷款"
+    detail_en: "Shown for later, never counted in this plan"
+    detail_zh: "仅供以后参考，不计入本计划"
+  pre_investment:
+    action: topic
+    topic: T-PRE-INVESTMENT
+    label_en: "Use the pre-investment allowance (前期费用) for setup costs"
+    label_zh: "用前期费用支付设立费用"
+    detail_en: "After lender consent; never the deposit"
+    detail_zh: "取得贷款行同意之后；不得支付押金"
+  start_filing:
+    action: topic
+    topic: T-LENDER-CONSENT
+    label_en: "Start with WeBank's consent, then the ODI filing"
+    label_zh: "先取得微众银行同意，再办理境外投资备案"
+    detail_en: "The first steps on your timeline"
+    detail_zh: "时间表上的第一步"
+  later_lease:
+    action: topic
+    topic: T-NOT-YET-SIGN
+    label_en: "Sign the lease later, once the money has landed"
+    label_zh: "资金到位后再签租约"
+    detail_en: "Your timeline puts signing after the first transfer"
+    detail_zh: "时间表把签约排在首笔汇款之后"
+
+# Action vocabulary for check_action (prepared actions, SPEC §8.2):
+guarantee_types: [guarantee, corporate_guarantee, personal_guarantee, standby_letter_of_credit, sblc,
+                  keep_well, keepwell, share_pledge, equity_pledge, comfort_letter, counter_guarantee]
+borrowed_sources: [personal_loan, consumer_loan, credit_card, card_advance, personal_credit_line, borrowed,
+                   loan, webank_loan]
+legal_chain: [lender_consent, odi_filing, bank_registration]

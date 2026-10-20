@@ -1,0 +1,126 @@
+{
+  "top_areas": [
+    "DOWNTOWN CORE",
+    "TAMPINES",
+    "WOODLANDS"
+  ],
+  "unit": "u-t1-01",
+  "cost_likely_sgd_parts_only": "312366",
+  "cost_likely_sgd": "312504",
+  "cost_bad_sgd": "330640",
+  "guard_rule": "R1",
+  "slider_0.30": {
+    "open_likely": "month 18.5 (May 2028)",
+    "open_p95": "month 22.5 (Sep 2028)",
+    "floor_risk": "1.4%",
+    "monthly_amount": "RMB 64k"
+  },
+  "slider_0.50": {
+    "open_likely": "month 12.5 (Nov 2027)",
+    "open_p95": "month 17.5 (Apr 2028)",
+    "floor_risk": "3.1%",
+    "monthly_amount": "RMB 106k"
+  },
+  "slider_0.40": {
+    "open_likely": "month 14.5 (Jan 2028)",
+    "open_p95": "month 18.5 (May 2028)",
+    "floor_risk": "2.6%",
+    "monthly_amount": "RMB 85k"
+  },
+  "wall": 1.0,
+  "goal": {
+    "open_likely_week": 63,
+    "open_p95_week": 80,
+    "setaside_monthly_cny": "84826.0",
+    "floor_risk": "0.0255"
+  },
+  "checks": [
+    {
+      "week": 4,
+      "today": "2026-11-16",
+      "status": "off_track",
+      "likely_week": 76,
+      "floor_risk": "0.039",
+      "detector_alarm": true,
+      "alerts": 1,
+      "alert": "a_a2a528f0ed"
+    }
+  ],
+  "alert_after_weeks": 4,
+  "alert": "a_a2a528f0ed",
+  "revised": {
+    "open_likely_week": 63,
+    "revisions": 2
+  },
+  "emails": [
+    {
+      "template": "welcome",
+      "delivered": false
+    },
+    {
+      "template": "alert",
+      "delivered": false
+    }
+  ],
+  "control": {
+    "what": "the same seed and journey, no scenario, checked every 4 weeks for 16 weeks",
+    "seed": 1422,
+    "same_goal": true,
+    "goal": {
+      "open_likely_week": 63,
+      "open_p95_week": 80,
+      "setaside_monthly_cny": "84826.0",
+      "floor_risk": "0.0255"
+    },
+    "checks": [
+      {
+        "week": 4,
+        "today": "2026-11-16",
+        "status": "on_track",
+        "likely_week": 63,
+        "floor_risk": "0.029",
+        "detector_alarm": false,
+        "alerts": 0,
+        "alert": null
+      },
+      {
+        "week": 8,
+        "today": "2026-12-14",
+        "status": "on_track",
+        "likely_week": 63,
+        "floor_risk": "0.03125",
+        "detector_alarm": false,
+        "alerts": 0,
+        "alert": null
+      },
+      {
+        "week": 12,
+        "today": "2027-01-11",
+        "status": "at_risk",
+        "likely_week": 68,
+        "floor_risk": "0.03025",
+        "detector_alarm": false,
+        "alerts": 0,
+        "alert": null
+      },
+      {
+        "week": 16,
+        "today": "2027-02-08",
+        "status": "off_track",
+        "likely_week": 72,
+        "floor_risk": "0.02675",
+        "detector_alarm": false,
+        "alerts": 0,
+        "alert": null
+      }
+    ],
+    "alerts": 0,
+    "detector_alarm": false
+  },
+  "audit_log": {
+    "verified": true,
+    "message": "106 records verified"
+  },
+  "model": "claude_code:claude-haiku-5-5",
+  "simulated": true
+}

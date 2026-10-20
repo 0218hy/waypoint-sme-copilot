@@ -1,0 +1,842 @@
+{
+  "id": "w_cb2",
+  "payload": {
+    "type": "cost_breakdown",
+    "groups": [
+      {
+        "key": "deposit",
+        "label": "Deposit and lease extras",
+        "likely": "f_g_deposit_l",
+        "bad": "f_g_deposit_b",
+        "lines": [
+          {
+            "key": "security_deposit",
+            "label": "Security deposit (3 months)",
+            "likely": "f_security_deposit_l",
+            "bad": "f_security_deposit_b",
+            "source": {
+              "label": "Leasing code default",
+              "as_of": "2026-10-01"
+            },
+            "from_quote": false,
+            "editable": true
+          },
+          {
+            "key": "stamp_duty",
+            "label": "Stamp duty",
+            "likely": "f_stamp_duty_l",
+            "bad": "f_stamp_duty_b",
+            "source": {
+              "label": "IRAS stamp duty on leases",
+              "as_of": "2026-10-01"
+            },
+            "from_quote": false,
+            "editable": true
+          },
+          {
+            "key": "restore",
+            "label": "Restoring the unit at lease end (deposit)",
+            "likely": "f_restore_l",
+            "bad": "f_restore_b",
+            "source": {
+              "label": "Landlord fit-out deposit",
+              "as_of": "2026-10-01"
+            },
+            "from_quote": false,
+            "editable": true
+          }
+        ]
+      },
+      {
+        "key": "fitout",
+        "label": "Fit-out and equipment",
+        "likely": "f_g_fitout_l",
+        "bad": "f_g_fitout_b",
+        "lines": [
+          {
+            "key": "fitout",
+            "label": "Fit-out",
+            "likely": "f_fitout_l",
+            "bad": "f_fitout_b",
+            "source": {
+              "label": "Your quote: Lim Renovation",
+              "as_of": "2026-10-01"
+            },
+            "from_quote": true,
+            "editable": true
+          },
+          {
+            "key": "equipment",
+            "label": "Equipment and POS",
+            "likely": "f_equipment_l",
+            "bad": "f_equipment_b",
+            "source": {
+              "label": "Supplier price lists",
+              "as_of": "2026-10-01"
+            },
+            "from_quote": false,
+            "editable": true
+          },
+          {
+            "key": "stock",
+            "label": "Opening stock with freight and GST",
+            "likely": "f_stock_l",
+            "bad": "f_stock_b",
+            "source": {
+              "label": "Your Shenzhen supplier",
+              "as_of": "2026-10-01"
+            },
+            "from_quote": false,
+            "editable": true
+          }
+        ]
+      },
+      {
+        "key": "setup",
+        "label": "Company setup and licences",
+        "likely": "f_g_setup_l",
+        "bad": "f_g_setup_b",
+        "lines": [
+          {
+            "key": "incorp",
+            "label": "Incorporation",
+            "likely": "f_incorp_l",
+            "bad": "f_incorp_b",
+            "source": {
+              "label": "ACRA fees + provider",
+              "as_of": "2026-10-01"
+            },
+            "from_quote": false,
+            "editable": true
+          },
+          {
+            "key": "secretary",
+            "label": "Corporate secretary and resident director (first year)",
+            "likely": "f_secretary_l",
+            "bad": "f_secretary_b",
+            "source": {
+              "label": "Provider quotes",
+              "as_of": "2026-10-01"
+            },
+            "from_quote": false,
+            "editable": true
+          },
+          {
+            "key": "licence",
+            "label": "SFA food shop licence",
+            "likely": "f_licence_l",
+            "bad": "f_licence_b",
+            "source": {
+              "label": "SFA fee schedule",
+              "as_of": "2026-10-01"
+            },
+            "from_quote": false,
+            "editable": true
+          }
+        ]
+      },
+      {
+        "key": "people",
+        "label": "People before opening",
+        "likely": "f_g_people_l",
+        "bad": "f_g_people_b",
+        "lines": [
+          {
+            "key": "wages",
+            "label": "Manager and crew pre-opening wages with CPF",
+            "likely": "f_wages_l",
+            "bad": "f_wages_b",
+            "source": {
+              "label": "MOM wage guide",
+              "as_of": "2026-10-01"
+            },
+            "from_quote": false,
+            "editable": true
+          },
+          {
+            "key": "passes",
+            "label": "Work-pass fees",
+            "likely": "f_passes_l",
+            "bad": "f_passes_b",
+            "source": {
+              "label": "MOM fees",
+              "as_of": "2026-10-01"
+            },
+            "from_quote": false,
+            "editable": true
+          }
+        ]
+      },
+      {
+        "key": "reserve",
+        "label": "Running-cost reserve",
+        "likely": "f_g_reserve_l",
+        "bad": "f_g_reserve_b",
+        "lines": [
+          {
+            "key": "reserve3",
+            "label": "3 months of rent, wages and utilities",
+            "likely": "f_reserve3_l",
+            "bad": "f_reserve3_b",
+            "source": {
+              "label": "Waypoint plan model",
+              "as_of": "2026-10-01"
+            },
+            "from_quote": false,
+            "editable": true
+          }
+        ]
+      },
+      {
+        "key": "gst",
+        "label": "GST",
+        "likely": "f_g_gst_l",
+        "bad": "f_g_gst_b",
+        "lines": [
+          {
+            "key": "gst",
+            "label": "GST on local supplies and rent",
+            "likely": "f_gst_l",
+            "bad": "f_gst_b",
+            "source": {
+              "label": "IRAS: 9%",
+              "as_of": "2026-10-01"
+            },
+            "from_quote": false,
+            "editable": false
+          }
+        ]
+      }
+    ],
+    "read_only": true,
+    "total_likely": "f_tot_l",
+    "total_bad": "f_tot_b",
+    "total_likely_cny": "f_tot_l_cny",
+    "total_bad_cny": "f_tot_b_cny"
+  },
+  "figures": {
+    "f_security_deposit_l": {
+      "id": "f_security_deposit_l",
+      "label": "Security deposit (3 months)",
+      "unit": "SGD",
+      "value": "38400",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_security_deposit_b": {
+      "id": "f_security_deposit_b",
+      "label": "Security deposit (3 months) (bad case)",
+      "unit": "SGD",
+      "value": "38400",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "copula_rho"
+      ],
+      "taint": "trusted"
+    },
+    "f_stamp_duty_l": {
+      "id": "f_stamp_duty_l",
+      "label": "Stamp duty",
+      "unit": "SGD",
+      "value": "1500",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_stamp_duty_b": {
+      "id": "f_stamp_duty_b",
+      "label": "Stamp duty (bad case)",
+      "unit": "SGD",
+      "value": "1700",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "copula_rho"
+      ],
+      "taint": "trusted"
+    },
+    "f_restore_l": {
+      "id": "f_restore_l",
+      "label": "Restoring the unit at lease end (deposit)",
+      "unit": "SGD",
+      "value": "8000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_restore_b": {
+      "id": "f_restore_b",
+      "label": "Restoring the unit at lease end (deposit) (bad case)",
+      "unit": "SGD",
+      "value": "12000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "copula_rho"
+      ],
+      "taint": "trusted"
+    },
+    "f_g_deposit_l": {
+      "id": "f_g_deposit_l",
+      "label": "Deposit and lease extras",
+      "unit": "SGD",
+      "value": "47900",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_g_deposit_b": {
+      "id": "f_g_deposit_b",
+      "label": "Deposit and lease extras (bad case)",
+      "unit": "SGD",
+      "value": "52100",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_fitout_l": {
+      "id": "f_fitout_l",
+      "label": "Fit-out",
+      "unit": "SGD",
+      "value": "96000",
+      "source": {
+        "kind": "document",
+        "ref": "doc_q1",
+        "as_of": "2026-10-12",
+        "note": "Accepted from your quote"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_fitout_b": {
+      "id": "f_fitout_b",
+      "label": "Fit-out (bad case)",
+      "unit": "SGD",
+      "value": "132000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "copula_rho"
+      ],
+      "taint": "trusted"
+    },
+    "f_equipment_l": {
+      "id": "f_equipment_l",
+      "label": "Equipment and POS",
+      "unit": "SGD",
+      "value": "58000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_equipment_b": {
+      "id": "f_equipment_b",
+      "label": "Equipment and POS (bad case)",
+      "unit": "SGD",
+      "value": "71000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "copula_rho"
+      ],
+      "taint": "trusted"
+    },
+    "f_stock_l": {
+      "id": "f_stock_l",
+      "label": "Opening stock with freight and GST",
+      "unit": "SGD",
+      "value": "12000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_stock_b": {
+      "id": "f_stock_b",
+      "label": "Opening stock with freight and GST (bad case)",
+      "unit": "SGD",
+      "value": "15500",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "copula_rho"
+      ],
+      "taint": "trusted"
+    },
+    "f_g_fitout_l": {
+      "id": "f_g_fitout_l",
+      "label": "Fit-out and equipment",
+      "unit": "SGD",
+      "value": "166000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_g_fitout_b": {
+      "id": "f_g_fitout_b",
+      "label": "Fit-out and equipment (bad case)",
+      "unit": "SGD",
+      "value": "218500",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_incorp_l": {
+      "id": "f_incorp_l",
+      "label": "Incorporation",
+      "unit": "SGD",
+      "value": "1800",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_incorp_b": {
+      "id": "f_incorp_b",
+      "label": "Incorporation (bad case)",
+      "unit": "SGD",
+      "value": "2400",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "copula_rho"
+      ],
+      "taint": "trusted"
+    },
+    "f_secretary_l": {
+      "id": "f_secretary_l",
+      "label": "Corporate secretary and resident director (first year)",
+      "unit": "SGD",
+      "value": "9600",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_secretary_b": {
+      "id": "f_secretary_b",
+      "label": "Corporate secretary and resident director (first year) (bad case)",
+      "unit": "SGD",
+      "value": "14400",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "copula_rho"
+      ],
+      "taint": "trusted"
+    },
+    "f_licence_l": {
+      "id": "f_licence_l",
+      "label": "SFA food shop licence",
+      "unit": "SGD",
+      "value": "1200",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_licence_b": {
+      "id": "f_licence_b",
+      "label": "SFA food shop licence (bad case)",
+      "unit": "SGD",
+      "value": "1200",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "copula_rho"
+      ],
+      "taint": "trusted"
+    },
+    "f_g_setup_l": {
+      "id": "f_g_setup_l",
+      "label": "Company setup and licences",
+      "unit": "SGD",
+      "value": "12600",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_g_setup_b": {
+      "id": "f_g_setup_b",
+      "label": "Company setup and licences (bad case)",
+      "unit": "SGD",
+      "value": "18000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_wages_l": {
+      "id": "f_wages_l",
+      "label": "Manager and crew pre-opening wages with CPF",
+      "unit": "SGD",
+      "value": "26000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_wages_b": {
+      "id": "f_wages_b",
+      "label": "Manager and crew pre-opening wages with CPF (bad case)",
+      "unit": "SGD",
+      "value": "31000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "copula_rho"
+      ],
+      "taint": "trusted"
+    },
+    "f_passes_l": {
+      "id": "f_passes_l",
+      "label": "Work-pass fees",
+      "unit": "SGD",
+      "value": "1650",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_passes_b": {
+      "id": "f_passes_b",
+      "label": "Work-pass fees (bad case)",
+      "unit": "SGD",
+      "value": "2200",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "copula_rho"
+      ],
+      "taint": "trusted"
+    },
+    "f_g_people_l": {
+      "id": "f_g_people_l",
+      "label": "People before opening",
+      "unit": "SGD",
+      "value": "27650",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_g_people_b": {
+      "id": "f_g_people_b",
+      "label": "People before opening (bad case)",
+      "unit": "SGD",
+      "value": "33200",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_reserve3_l": {
+      "id": "f_reserve3_l",
+      "label": "3 months of rent, wages and utilities",
+      "unit": "SGD",
+      "value": "118000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_reserve3_b": {
+      "id": "f_reserve3_b",
+      "label": "3 months of rent, wages and utilities (bad case)",
+      "unit": "SGD",
+      "value": "139000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "copula_rho"
+      ],
+      "taint": "trusted"
+    },
+    "f_g_reserve_l": {
+      "id": "f_g_reserve_l",
+      "label": "Running-cost reserve",
+      "unit": "SGD",
+      "value": "118000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_g_reserve_b": {
+      "id": "f_g_reserve_b",
+      "label": "Running-cost reserve (bad case)",
+      "unit": "SGD",
+      "value": "139000",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_gst_l": {
+      "id": "f_gst_l",
+      "label": "GST on local supplies and rent",
+      "unit": "SGD",
+      "value": "18400",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_gst_b": {
+      "id": "f_gst_b",
+      "label": "GST on local supplies and rent (bad case)",
+      "unit": "SGD",
+      "value": "23900",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "copula_rho"
+      ],
+      "taint": "trusted"
+    },
+    "f_g_gst_l": {
+      "id": "f_g_gst_l",
+      "label": "GST",
+      "unit": "SGD",
+      "value": "18400",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_g_gst_b": {
+      "id": "f_g_gst_b",
+      "label": "GST (bad case)",
+      "unit": "SGD",
+      "value": "23900",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_tot_l": {
+      "id": "f_tot_l",
+      "label": "Total, likely",
+      "unit": "SGD",
+      "value": "390550",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_tot_b": {
+      "id": "f_tot_b",
+      "label": "Total, if things go badly",
+      "unit": "SGD",
+      "value": "484700",
+      "source": {
+        "kind": "tool",
+        "ref": "estimate_costs",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "copula_rho"
+      ],
+      "taint": "trusted"
+    },
+    "f_tot_l_cny": {
+      "id": "f_tot_l_cny",
+      "label": "Total, likely (RMB)",
+      "unit": "CNY",
+      "value": "2101159",
+      "source": {
+        "kind": "tool",
+        "ref": "fx",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "fx.sgd_cny"
+      ],
+      "taint": "trusted"
+    },
+    "f_tot_b_cny": {
+      "id": "f_tot_b_cny",
+      "label": "Total, bad case (RMB)",
+      "unit": "CNY",
+      "value": "2607686",
+      "source": {
+        "kind": "tool",
+        "ref": "fx",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "fx.sgd_cny"
+      ],
+      "taint": "trusted"
+    }
+  },
+  "display": {
+    "f_security_deposit_l": "S$38,400",
+    "f_security_deposit_b": "S$38,400",
+    "f_stamp_duty_l": "S$1,500",
+    "f_stamp_duty_b": "S$1,700",
+    "f_restore_l": "S$8,000",
+    "f_restore_b": "S$12,000",
+    "f_g_deposit_l": "S$47,900",
+    "f_g_deposit_b": "S$52,100",
+    "f_fitout_l": "S$96,000",
+    "f_fitout_b": "S$132,000",
+    "f_equipment_l": "S$58,000",
+    "f_equipment_b": "S$71,000",
+    "f_stock_l": "S$12,000",
+    "f_stock_b": "S$15,500",
+    "f_g_fitout_l": "S$166,000",
+    "f_g_fitout_b": "S$218,500",
+    "f_incorp_l": "S$1,800",
+    "f_incorp_b": "S$2,400",
+    "f_secretary_l": "S$9,600",
+    "f_secretary_b": "S$14,400",
+    "f_licence_l": "S$1,200",
+    "f_licence_b": "S$1,200",
+    "f_g_setup_l": "S$12,600",
+    "f_g_setup_b": "S$18,000",
+    "f_wages_l": "S$26,000",
+    "f_wages_b": "S$31,000",
+    "f_passes_l": "S$1,650",
+    "f_passes_b": "S$2,200",
+    "f_g_people_l": "S$27,650",
+    "f_g_people_b": "S$33,200",
+    "f_reserve3_l": "S$118,000",
+    "f_reserve3_b": "S$139,000",
+    "f_g_reserve_l": "S$118,000",
+    "f_g_reserve_b": "S$139,000",
+    "f_gst_l": "S$18,400",
+    "f_gst_b": "S$23,900",
+    "f_g_gst_l": "S$18,400",
+    "f_g_gst_b": "S$23,900",
+    "f_tot_l": "S$390,550",
+    "f_tot_b": "S$484,700",
+    "f_tot_l_cny": "≈ RMB 2.1m",
+    "f_tot_b_cny": "≈ RMB 2.61m"
+  }
+}

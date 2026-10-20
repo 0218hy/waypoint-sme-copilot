@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" font-family="Helvetica, Arial, sans-serif">
+  <rect width="600" height="800" fill="#fbfaf6"/>
+  <text x="48" y="80" font-size="26" font-weight="700" fill="#222">LIM RENOVATION PTE LTD</text>
+  <text x="48" y="108" font-size="14" fill="#555">Quotation Q-2026-118 · 12 Oct 2026 (sample for the dev gallery)</text>
+  <rect x="48" y="140" width="220" height="18" fill="#111"/>
+  <text x="48" y="190" font-size="14" fill="#555">To: ████████ (redacted)</text>
+  <text x="48" y="250" font-size="15" font-weight="700" fill="#222">Item</text>
+  <text x="552" y="250" font-size="15" font-weight="700" fill="#222" text-anchor="end">Amount (S$)</text>
+  <line x1="48" y1="262" x2="552" y2="262" stroke="#999"/>
+  <text x="56" y="322" font-size="16" fill="#222">Carpentry and counters</text><text x="544" y="322" font-size="16" fill="#222" text-anchor="end">42,000.00</text>
+  <text x="56" y="394" font-size="16" fill="#222">Flooring and ceiling</text><text x="544" y="394" font-size="16" fill="#222" text-anchor="end">31,000.00</text>
+  <text x="56" y="466" font-size="16" fill="#222">Signage</text><text x="544" y="466" font-size="16" fill="#555" text-anchor="end" font-style="italic">8,5OO.00</text>
+  <text x="56" y="538" font-size="16" fill="#222">Plumbing points</text><text x="544" y="538" font-size="16" fill="#222" text-anchor="end">6,200.00</text>
+  <line x1="48" y1="590" x2="552" y2="590" stroke="#999"/>
+  <text x="56" y="630" font-size="14" fill="#555">拆除另计 · Demolition charged separately</text>
+  <text x="56" y="656" font-size="14" fill="#555">Electrical upgrade not included</text>
+</svg>

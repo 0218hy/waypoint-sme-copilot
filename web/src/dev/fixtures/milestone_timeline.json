@@ -1,0 +1,273 @@
+{
+  "id": "w_mt1",
+  "payload": {
+    "type": "milestone_timeline",
+    "start_date": "Nov 2, 2026",
+    "items": [
+      {
+        "id": "m1",
+        "order": 1,
+        "label": "Lender consent (WeBank)",
+        "who": "You send; WeBank decides",
+        "likely": "f_m1_wk",
+        "likely_date": "Nov 23, 2026",
+        "latest_safe_date": "Dec 7, 2026",
+        "act_by_date": "Nov 16, 2026",
+        "status": "done",
+        "detail": "Waypoint has drafted the consent request; you send it."
+      },
+      {
+        "id": "m2",
+        "order": 2,
+        "label": "ODI filing: Shenzhen DRC + Commerce Bureau",
+        "who": "Your ODI agent",
+        "likely": "f_m2_wk",
+        "likely_date": "Jan 4, 2027",
+        "latest_safe_date": "Jan 25, 2027",
+        "act_by_date": "Dec 14, 2026",
+        "status": "due",
+        "detail": ""
+      },
+      {
+        "id": "m3",
+        "order": 3,
+        "label": "Bank ODI registration",
+        "who": "Your ODI bank",
+        "likely": "f_m3_wk",
+        "likely_date": "Feb 1, 2027",
+        "latest_safe_date": "Feb 22, 2027",
+        "act_by_date": "Jan 18, 2027",
+        "status": "upcoming",
+        "detail": ""
+      },
+      {
+        "id": "m4",
+        "order": 4,
+        "label": "Incorporate the Pte Ltd; open its bank account",
+        "who": "Corporate service provider",
+        "likely": "f_m4_wk",
+        "likely_date": "Mar 15, 2027",
+        "latest_safe_date": "Apr 12, 2027",
+        "act_by_date": "Feb 15, 2027",
+        "status": "upcoming",
+        "detail": ""
+      },
+      {
+        "id": "m5",
+        "order": 5,
+        "label": "Setup transfer",
+        "who": "You release",
+        "likely": "f_m5_wk",
+        "likely_date": "Mar 22, 2027",
+        "latest_safe_date": "Apr 19, 2027",
+        "act_by_date": "Mar 15, 2027",
+        "status": "upcoming",
+        "detail": ""
+      },
+      {
+        "id": "m6",
+        "order": 6,
+        "label": "First main transfer",
+        "who": "You release",
+        "likely": "f_m6_wk",
+        "likely_date": "Aug 9, 2027",
+        "latest_safe_date": "Sep 20, 2027",
+        "act_by_date": "Jul 26, 2027",
+        "status": "upcoming",
+        "detail": ""
+      },
+      {
+        "id": "m7",
+        "order": 7,
+        "label": "Accept the offer and sign the lease",
+        "who": "Your Pte Ltd",
+        "likely": "f_m7_wk",
+        "likely_date": "Aug 23, 2027",
+        "latest_safe_date": "Oct 4, 2027",
+        "act_by_date": "Aug 9, 2027",
+        "status": "upcoming",
+        "detail": ""
+      },
+      {
+        "id": "m8",
+        "order": 8,
+        "label": "Fit-out",
+        "who": "Contractor",
+        "likely": "f_m8_wk",
+        "likely_date": "Nov 1, 2027",
+        "latest_safe_date": "Dec 13, 2027",
+        "act_by_date": "Aug 30, 2027",
+        "status": "upcoming",
+        "detail": ""
+      },
+      {
+        "id": "m9",
+        "order": 9,
+        "label": "SFA licence",
+        "who": "Your Pte Ltd",
+        "likely": "f_m9_wk",
+        "likely_date": "Dec 6, 2027",
+        "latest_safe_date": "Jan 10, 2028",
+        "act_by_date": "Nov 8, 2027",
+        "status": "upcoming",
+        "detail": ""
+      },
+      {
+        "id": "m10",
+        "order": 10,
+        "label": "Reserve in place; open",
+        "who": "You",
+        "likely": "f_m10_wk",
+        "likely_date": "Jan 10, 2028",
+        "latest_safe_date": "Apr 3, 2028",
+        "act_by_date": "Dec 13, 2027",
+        "status": "upcoming",
+        "detail": ""
+      }
+    ]
+  },
+  "figures": {
+    "f_m1_wk": {
+      "id": "f_m1_wk",
+      "label": "Lender consent (WeBank)",
+      "unit": "weeks",
+      "value": "6",
+      "source": {
+        "kind": "tool",
+        "ref": "build_timeline",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_m2_wk": {
+      "id": "f_m2_wk",
+      "label": "ODI filing: Shenzhen DRC + Commerce Bureau",
+      "unit": "weeks",
+      "value": "12",
+      "source": {
+        "kind": "tool",
+        "ref": "build_timeline",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_m3_wk": {
+      "id": "f_m3_wk",
+      "label": "Bank ODI registration",
+      "unit": "weeks",
+      "value": "18",
+      "source": {
+        "kind": "tool",
+        "ref": "build_timeline",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_m4_wk": {
+      "id": "f_m4_wk",
+      "label": "Incorporate the Pte Ltd; open its bank account",
+      "unit": "weeks",
+      "value": "24",
+      "source": {
+        "kind": "tool",
+        "ref": "build_timeline",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_m5_wk": {
+      "id": "f_m5_wk",
+      "label": "Setup transfer",
+      "unit": "weeks",
+      "value": "30",
+      "source": {
+        "kind": "tool",
+        "ref": "build_timeline",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_m6_wk": {
+      "id": "f_m6_wk",
+      "label": "First main transfer",
+      "unit": "weeks",
+      "value": "36",
+      "source": {
+        "kind": "tool",
+        "ref": "build_timeline",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_m7_wk": {
+      "id": "f_m7_wk",
+      "label": "Accept the offer and sign the lease",
+      "unit": "weeks",
+      "value": "42",
+      "source": {
+        "kind": "tool",
+        "ref": "build_timeline",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_m8_wk": {
+      "id": "f_m8_wk",
+      "label": "Fit-out",
+      "unit": "weeks",
+      "value": "48",
+      "source": {
+        "kind": "tool",
+        "ref": "build_timeline",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_m9_wk": {
+      "id": "f_m9_wk",
+      "label": "SFA licence",
+      "unit": "weeks",
+      "value": "54",
+      "source": {
+        "kind": "tool",
+        "ref": "build_timeline",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_m10_wk": {
+      "id": "f_m10_wk",
+      "label": "Reserve in place; open",
+      "unit": "weeks",
+      "value": "60",
+      "source": {
+        "kind": "tool",
+        "ref": "build_timeline",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    }
+  },
+  "display": {
+    "f_m1_wk": "week 6",
+    "f_m2_wk": "week 12",
+    "f_m3_wk": "week 18",
+    "f_m4_wk": "week 24",
+    "f_m5_wk": "week 30",
+    "f_m6_wk": "week 36",
+    "f_m7_wk": "week 42",
+    "f_m8_wk": "week 48",
+    "f_m9_wk": "week 54",
+    "f_m10_wk": "week 60"
+  }
+}

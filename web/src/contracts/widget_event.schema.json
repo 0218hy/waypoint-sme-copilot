@@ -1,0 +1,58 @@
+{
+  "description": "A structured event from a widget (sent in AG-UI forwardedProps; never parsed from free text).",
+  "properties": {
+    "widget_id": {
+      "title": "Widget Id",
+      "type": "string"
+    },
+    "event": {
+      "enum": [
+        "reply",
+        "edit",
+        "confirm",
+        "consent",
+        "select_area",
+        "shortlist",
+        "select_unit",
+        "edit_line",
+        "upload",
+        "accept_line",
+        "accept_all",
+        "reject_line",
+        "assign_line",
+        "set_coverage",
+        "mark_included",
+        "toggle_option",
+        "slider_commit",
+        "open_milestone",
+        "mark_milestone_done",
+        "approve",
+        "cancel",
+        "see_repairs",
+        "select_repair",
+        "select_option",
+        "reopen_step",
+        "checkin",
+        "back"
+      ],
+      "title": "Event",
+      "type": "string"
+    },
+    "value": {
+      "default": null,
+      "title": "Value"
+    },
+    "data": {
+      "additionalProperties": true,
+      "default": {},
+      "title": "Data",
+      "type": "object"
+    }
+  },
+  "required": [
+    "widget_id",
+    "event"
+  ],
+  "title": "WidgetEvent",
+  "type": "object"
+}

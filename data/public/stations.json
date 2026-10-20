@@ -1,0 +1,1955 @@
+{
+ "source": "d_b39d3a0871985372d7e1637193335da5 · LTA MRT Station Exit (GEOJSON) · dataset updated 2026-10-18; station point = mean of its exits; point-in-polygon on d_4765db0e87b9c86336792efe8a1f7a66",
+ "station_codes_source": "d_d312a5b127e1ae74299b8ae664cedd4e · Train Station Chinese Names · coverage 2017-06-27 (dataset updated 2024-06-06)",
+ "unassigned": [],
+ "areas": {
+  "ANG MO KIO": [
+   {
+    "name": "Ang Mo Kio MRT",
+    "lat": 1.369618,
+    "lng": 103.849676,
+    "type": "MRT",
+    "codes": [
+     "NS16"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Lentor MRT",
+    "lat": 1.384739,
+    "lng": 103.836552,
+    "type": "MRT",
+    "codes": [],
+    "exits": 5
+   },
+   {
+    "name": "Mayflower MRT",
+    "lat": 1.37204,
+    "lng": 103.836766,
+    "type": "MRT",
+    "codes": [],
+    "exits": 7
+   },
+   {
+    "name": "Yio Chu Kang MRT",
+    "lat": 1.381715,
+    "lng": 103.844809,
+    "type": "MRT",
+    "codes": [
+     "NS15"
+    ],
+    "exits": 3
+   }
+  ],
+  "BEDOK": [
+   {
+    "name": "Bayshore MRT",
+    "lat": 1.312815,
+    "lng": 103.941583,
+    "type": "MRT",
+    "codes": [],
+    "exits": 5
+   },
+   {
+    "name": "Bedok MRT",
+    "lat": 1.323971,
+    "lng": 103.929412,
+    "type": "MRT",
+    "codes": [
+     "EW5"
+    ],
+    "exits": 3
+   },
+   {
+    "name": "Bedok North MRT",
+    "lat": 1.334522,
+    "lng": 103.918514,
+    "type": "MRT",
+    "codes": [
+     "DT29"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Bedok Reservoir MRT",
+    "lat": 1.336451,
+    "lng": 103.933187,
+    "type": "MRT",
+    "codes": [
+     "DT30"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Kaki Bukit MRT",
+    "lat": 1.335117,
+    "lng": 103.909276,
+    "type": "MRT",
+    "codes": [
+     "DT28"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Kembangan MRT",
+    "lat": 1.321038,
+    "lng": 103.91292,
+    "type": "MRT",
+    "codes": [
+     "EW6"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Siglap MRT",
+    "lat": 1.309854,
+    "lng": 103.929979,
+    "type": "MRT",
+    "codes": [],
+    "exits": 4
+   },
+   {
+    "name": "Tanah Merah MRT",
+    "lat": 1.32696,
+    "lng": 103.945759,
+    "type": "MRT",
+    "codes": [
+     "EW4"
+    ],
+    "exits": 2
+   }
+  ],
+  "BISHAN": [
+   {
+    "name": "Bishan MRT",
+    "lat": 1.350863,
+    "lng": 103.848692,
+    "type": "MRT",
+    "codes": [
+     "CC15",
+     "NS17"
+    ],
+    "exits": 5
+   },
+   {
+    "name": "Bright Hill MRT",
+    "lat": 1.363167,
+    "lng": 103.832869,
+    "type": "MRT",
+    "codes": [],
+    "exits": 4
+   },
+   {
+    "name": "Marymount MRT",
+    "lat": 1.348423,
+    "lng": 103.839573,
+    "type": "MRT",
+    "codes": [
+     "CC16"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Upper Thomson MRT",
+    "lat": 1.354527,
+    "lng": 103.832821,
+    "type": "MRT",
+    "codes": [],
+    "exits": 5
+   }
+  ],
+  "BOON LAY": [],
+  "BUKIT BATOK": [
+   {
+    "name": "Bukit Batok MRT",
+    "lat": 1.349219,
+    "lng": 103.749699,
+    "type": "MRT",
+    "codes": [
+     "NS2"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Bukit Gombak MRT",
+    "lat": 1.359032,
+    "lng": 103.751962,
+    "type": "MRT",
+    "codes": [
+     "NS3"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Bukit Panjang MRT",
+    "lat": 1.379285,
+    "lng": 103.761231,
+    "type": "MRT",
+    "codes": [
+     "BP6",
+     "DT1"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Hume MRT",
+    "lat": 1.354946,
+    "lng": 103.768674,
+    "type": "MRT",
+    "codes": [],
+    "exits": 2
+   }
+  ],
+  "BUKIT MERAH": [
+   {
+    "name": "Cantonment MRT",
+    "lat": 1.273048,
+    "lng": 103.836977,
+    "type": "MRT",
+    "codes": [],
+    "exits": 4
+   },
+   {
+    "name": "Harbourfront MRT",
+    "lat": 1.265411,
+    "lng": 103.8215,
+    "type": "MRT",
+    "codes": [
+     "CC29",
+     "NE1"
+    ],
+    "exits": 6
+   },
+   {
+    "name": "Havelock MRT",
+    "lat": 1.288438,
+    "lng": 103.833734,
+    "type": "MRT",
+    "codes": [],
+    "exits": 5
+   },
+   {
+    "name": "Keppel MRT",
+    "lat": 1.270387,
+    "lng": 103.83011,
+    "type": "MRT",
+    "codes": [],
+    "exits": 3
+   },
+   {
+    "name": "Labrador Park MRT",
+    "lat": 1.272107,
+    "lng": 103.802356,
+    "type": "MRT",
+    "codes": [
+     "CC27"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Outram Park MRT",
+    "lat": 1.280728,
+    "lng": 103.839077,
+    "type": "MRT",
+    "codes": [
+     "EW16",
+     "NE3"
+    ],
+    "exits": 8
+   },
+   {
+    "name": "Redhill MRT",
+    "lat": 1.289428,
+    "lng": 103.817122,
+    "type": "MRT",
+    "codes": [
+     "EW18"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Telok Blangah MRT",
+    "lat": 1.270721,
+    "lng": 103.809884,
+    "type": "MRT",
+    "codes": [
+     "CC28"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Tiong Bahru MRT",
+    "lat": 1.286061,
+    "lng": 103.827244,
+    "type": "MRT",
+    "codes": [
+     "EW17"
+    ],
+    "exits": 2
+   }
+  ],
+  "BUKIT PANJANG": [
+   {
+    "name": "Bangkit LRT",
+    "lat": 1.379853,
+    "lng": 103.772591,
+    "type": "LRT",
+    "codes": [
+     "BP9"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Bukit Panjang LRT",
+    "lat": 1.377959,
+    "lng": 103.763054,
+    "type": "LRT",
+    "codes": [
+     "BP6",
+     "DT1"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Cashew MRT",
+    "lat": 1.369833,
+    "lng": 103.764234,
+    "type": "MRT",
+    "codes": [
+     "DT2"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Fajar LRT",
+    "lat": 1.384465,
+    "lng": 103.770676,
+    "type": "LRT",
+    "codes": [
+     "BP10"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Hillview MRT",
+    "lat": 1.362279,
+    "lng": 103.767398,
+    "type": "MRT",
+    "codes": [
+     "DT3"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Jelapang LRT",
+    "lat": 1.386833,
+    "lng": 103.764677,
+    "type": "LRT",
+    "codes": [
+     "BP12"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Pending LRT",
+    "lat": 1.376297,
+    "lng": 103.771328,
+    "type": "LRT",
+    "codes": [
+     "BP8"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Petir LRT",
+    "lat": 1.377603,
+    "lng": 103.766793,
+    "type": "LRT",
+    "codes": [
+     "BP7"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Segar LRT",
+    "lat": 1.387812,
+    "lng": 103.76941,
+    "type": "LRT",
+    "codes": [
+     "BP11"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Senja LRT",
+    "lat": 1.382875,
+    "lng": 103.762326,
+    "type": "LRT",
+    "codes": [
+     "BP13"
+    ],
+    "exits": 1
+   }
+  ],
+  "BUKIT TIMAH": [
+   {
+    "name": "Beauty World MRT",
+    "lat": 1.341087,
+    "lng": 103.775732,
+    "type": "MRT",
+    "codes": [
+     "DT5"
+    ],
+    "exits": 3
+   },
+   {
+    "name": "Farrer Road MRT",
+    "lat": 1.317523,
+    "lng": 103.807677,
+    "type": "MRT",
+    "codes": [
+     "CC20"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Holland Village MRT",
+    "lat": 1.311,
+    "lng": 103.795887,
+    "type": "MRT",
+    "codes": [
+     "CC21"
+    ],
+    "exits": 3
+   },
+   {
+    "name": "King Albert Park MRT",
+    "lat": 1.335757,
+    "lng": 103.783796,
+    "type": "MRT",
+    "codes": [
+     "DT6"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Sixth Avenue MRT",
+    "lat": 1.331151,
+    "lng": 103.796707,
+    "type": "MRT",
+    "codes": [
+     "DT7"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Tan Kah Kee MRT",
+    "lat": 1.32574,
+    "lng": 103.8078,
+    "type": "MRT",
+    "codes": [
+     "DT8"
+    ],
+    "exits": 2
+   }
+  ],
+  "CENTRAL WATER CATCHMENT": [],
+  "CHANGI": [
+   {
+    "name": "Changi Airport MRT",
+    "lat": 1.356781,
+    "lng": 103.988291,
+    "type": "MRT",
+    "codes": [
+     "CG2"
+    ],
+    "exits": 2
+   }
+  ],
+  "CHANGI BAY": [],
+  "CHOA CHU KANG": [
+   {
+    "name": "Choa Chu Kang LRT",
+    "lat": 1.38499,
+    "lng": 103.744608,
+    "type": "LRT",
+    "codes": [
+     "BP1",
+     "NS4"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Choa Chu Kang MRT",
+    "lat": 1.385425,
+    "lng": 103.744416,
+    "type": "MRT",
+    "codes": [
+     "BP1",
+     "NS4"
+    ],
+    "exits": 7
+   },
+   {
+    "name": "Keat Hong LRT",
+    "lat": 1.378465,
+    "lng": 103.749227,
+    "type": "LRT",
+    "codes": [
+     "BP3"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Phoenix LRT",
+    "lat": 1.378614,
+    "lng": 103.758252,
+    "type": "LRT",
+    "codes": [
+     "BP5"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "South View LRT",
+    "lat": 1.380318,
+    "lng": 103.745101,
+    "type": "LRT",
+    "codes": [
+     "BP2"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Teck Whye LRT",
+    "lat": 1.376564,
+    "lng": 103.753826,
+    "type": "LRT",
+    "codes": [
+     "BP4"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Yew Tee MRT",
+    "lat": 1.397499,
+    "lng": 103.747267,
+    "type": "MRT",
+    "codes": [
+     "NS5"
+    ],
+    "exits": 4
+   }
+  ],
+  "CLEMENTI": [
+   {
+    "name": "Clementi MRT",
+    "lat": 1.314771,
+    "lng": 103.765372,
+    "type": "MRT",
+    "codes": [
+     "EW23"
+    ],
+    "exits": 4
+   }
+  ],
+  "DOWNTOWN CORE": [
+   {
+    "name": "Bayfront MRT",
+    "lat": 1.282089,
+    "lng": 103.859205,
+    "type": "MRT",
+    "codes": [
+     "CE1",
+     "DT16"
+    ],
+    "exits": 5
+   },
+   {
+    "name": "Bugis MRT",
+    "lat": 1.299914,
+    "lng": 103.856562,
+    "type": "MRT",
+    "codes": [
+     "DT14",
+     "EW12"
+    ],
+    "exits": 8
+   },
+   {
+    "name": "City Hall MRT",
+    "lat": 1.293206,
+    "lng": 103.852441,
+    "type": "MRT",
+    "codes": [
+     "EW13",
+     "NS25"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Downtown MRT",
+    "lat": 1.279553,
+    "lng": 103.852771,
+    "type": "MRT",
+    "codes": [
+     "DT17"
+    ],
+    "exits": 6
+   },
+   {
+    "name": "Esplanade MRT",
+    "lat": 1.293194,
+    "lng": 103.85568,
+    "type": "MRT",
+    "codes": [
+     "CC3"
+    ],
+    "exits": 7
+   },
+   {
+    "name": "Marina Bay MRT",
+    "lat": 1.275451,
+    "lng": 103.855131,
+    "type": "MRT",
+    "codes": [
+     "CE2",
+     "NS27"
+    ],
+    "exits": 5
+   },
+   {
+    "name": "Nicoll Highway MRT",
+    "lat": 1.299915,
+    "lng": 103.863829,
+    "type": "MRT",
+    "codes": [
+     "CC5"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Prince Edward Road MRT",
+    "lat": 1.273235,
+    "lng": 103.846218,
+    "type": "MRT",
+    "codes": [],
+    "exits": 2
+   },
+   {
+    "name": "Promenade MRT",
+    "lat": 1.293226,
+    "lng": 103.860349,
+    "type": "MRT",
+    "codes": [
+     "CC4",
+     "DT15"
+    ],
+    "exits": 3
+   },
+   {
+    "name": "Raffles Place MRT",
+    "lat": 1.283704,
+    "lng": 103.851415,
+    "type": "MRT",
+    "codes": [
+     "EW14",
+     "NS26"
+    ],
+    "exits": 10
+   },
+   {
+    "name": "Shenton Way MRT",
+    "lat": 1.277471,
+    "lng": 103.850936,
+    "type": "MRT",
+    "codes": [],
+    "exits": 6
+   },
+   {
+    "name": "Tanjong Pagar MRT",
+    "lat": 1.276506,
+    "lng": 103.846433,
+    "type": "MRT",
+    "codes": [
+     "EW15"
+    ],
+    "exits": 9
+   }
+  ],
+  "GEYLANG": [
+   {
+    "name": "Aljunied MRT",
+    "lat": 1.316363,
+    "lng": 103.882485,
+    "type": "MRT",
+    "codes": [
+     "EW9"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Dakota MRT",
+    "lat": 1.308455,
+    "lng": 103.888643,
+    "type": "MRT",
+    "codes": [
+     "CC8"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Eunos MRT",
+    "lat": 1.319537,
+    "lng": 103.902897,
+    "type": "MRT",
+    "codes": [
+     "EW7"
+    ],
+    "exits": 3
+   },
+   {
+    "name": "Macpherson MRT",
+    "lat": 1.325871,
+    "lng": 103.889558,
+    "type": "MRT",
+    "codes": [
+     "CC10",
+     "DT26"
+    ],
+    "exits": 5
+   },
+   {
+    "name": "Mattar MRT",
+    "lat": 1.326857,
+    "lng": 103.88324,
+    "type": "MRT",
+    "codes": [
+     "DT25"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Mountbatten MRT",
+    "lat": 1.306399,
+    "lng": 103.882923,
+    "type": "MRT",
+    "codes": [
+     "CC7"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Paya Lebar MRT",
+    "lat": 1.317721,
+    "lng": 103.892441,
+    "type": "MRT",
+    "codes": [
+     "CC9",
+     "EW8"
+    ],
+    "exits": 6
+   },
+   {
+    "name": "Ubi MRT",
+    "lat": 1.329891,
+    "lng": 103.899231,
+    "type": "MRT",
+    "codes": [
+     "DT27"
+    ],
+    "exits": 2
+   }
+  ],
+  "HOUGANG": [
+   {
+    "name": "Hougang MRT",
+    "lat": 1.371432,
+    "lng": 103.892464,
+    "type": "MRT",
+    "codes": [
+     "NE14"
+    ],
+    "exits": 3
+   },
+   {
+    "name": "Kovan MRT",
+    "lat": 1.35998,
+    "lng": 103.884827,
+    "type": "MRT",
+    "codes": [
+     "NE13"
+    ],
+    "exits": 3
+   }
+  ],
+  "JURONG EAST": [
+   {
+    "name": "Chinese Garden MRT",
+    "lat": 1.341996,
+    "lng": 103.732785,
+    "type": "MRT",
+    "codes": [
+     "EW25"
+    ],
+    "exits": 3
+   },
+   {
+    "name": "Jurong East MRT",
+    "lat": 1.333211,
+    "lng": 103.742365,
+    "type": "MRT",
+    "codes": [
+     "EW24",
+     "NS1"
+    ],
+    "exits": 4
+   }
+  ],
+  "JURONG WEST": [
+   {
+    "name": "Boon Lay MRT",
+    "lat": 1.338476,
+    "lng": 103.705718,
+    "type": "MRT",
+    "codes": [
+     "EW27"
+    ],
+    "exits": 6
+   },
+   {
+    "name": "Lakeside MRT",
+    "lat": 1.344123,
+    "lng": 103.721079,
+    "type": "MRT",
+    "codes": [
+     "EW26"
+    ],
+    "exits": 3
+   },
+   {
+    "name": "Pioneer MRT",
+    "lat": 1.337588,
+    "lng": 103.697142,
+    "type": "MRT",
+    "codes": [
+     "EW28"
+    ],
+    "exits": 2
+   }
+  ],
+  "KALLANG": [
+   {
+    "name": "Bendemeer MRT",
+    "lat": 1.313667,
+    "lng": 103.863147,
+    "type": "MRT",
+    "codes": [
+     "DT23"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Boon Keng MRT",
+    "lat": 1.319086,
+    "lng": 103.861371,
+    "type": "MRT",
+    "codes": [
+     "NE9"
+    ],
+    "exits": 3
+   },
+   {
+    "name": "Geylang Bahru MRT",
+    "lat": 1.321335,
+    "lng": 103.871675,
+    "type": "MRT",
+    "codes": [
+     "DT24"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Kallang MRT",
+    "lat": 1.311661,
+    "lng": 103.871659,
+    "type": "MRT",
+    "codes": [
+     "EW10"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Lavender MRT",
+    "lat": 1.307394,
+    "lng": 103.862847,
+    "type": "MRT",
+    "codes": [
+     "EW11"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Stadium MRT",
+    "lat": 1.302941,
+    "lng": 103.875313,
+    "type": "MRT",
+    "codes": [
+     "CC6"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Tanjong Rhu MRT",
+    "lat": 1.29733,
+    "lng": 103.87354,
+    "type": "MRT",
+    "codes": [],
+    "exits": 2
+   }
+  ],
+  "LIM CHU KANG": [],
+  "MANDAI": [],
+  "MARINA EAST": [],
+  "MARINA SOUTH": [
+   {
+    "name": "Gardens By The Bay MRT",
+    "lat": 1.279167,
+    "lng": 103.867903,
+    "type": "MRT",
+    "codes": [],
+    "exits": 3
+   }
+  ],
+  "MARINE PARADE": [
+   {
+    "name": "Katong Park MRT",
+    "lat": 1.297959,
+    "lng": 103.886081,
+    "type": "MRT",
+    "codes": [],
+    "exits": 2
+   },
+   {
+    "name": "Marine Parade MRT",
+    "lat": 1.303777,
+    "lng": 103.906844,
+    "type": "MRT",
+    "codes": [],
+    "exits": 6
+   },
+   {
+    "name": "Marine Terrace MRT",
+    "lat": 1.306694,
+    "lng": 103.915074,
+    "type": "MRT",
+    "codes": [],
+    "exits": 6
+   },
+   {
+    "name": "Tanjong Katong MRT",
+    "lat": 1.299428,
+    "lng": 103.897485,
+    "type": "MRT",
+    "codes": [],
+    "exits": 3
+   }
+  ],
+  "MUSEUM": [
+   {
+    "name": "Bras Basah MRT",
+    "lat": 1.297001,
+    "lng": 103.850526,
+    "type": "MRT",
+    "codes": [
+     "CC2"
+    ],
+    "exits": 5
+   },
+   {
+    "name": "Dhoby Ghaut MRT",
+    "lat": 1.299411,
+    "lng": 103.845502,
+    "type": "MRT",
+    "codes": [
+     "CC1",
+     "NE6",
+     "NS24"
+    ],
+    "exits": 6
+   }
+  ],
+  "NEWTON": [
+   {
+    "name": "Newton MRT",
+    "lat": 1.312764,
+    "lng": 103.838114,
+    "type": "MRT",
+    "codes": [
+     "DT11",
+     "NS21"
+    ],
+    "exits": 3
+   }
+  ],
+  "NORTH-EASTERN ISLANDS": [],
+  "NOVENA": [
+   {
+    "name": "Novena MRT",
+    "lat": 1.320495,
+    "lng": 103.843865,
+    "type": "MRT",
+    "codes": [
+     "NS20"
+    ],
+    "exits": 2
+   }
+  ],
+  "ORCHARD": [
+   {
+    "name": "Orchard Boulevard MRT",
+    "lat": 1.303044,
+    "lng": 103.823767,
+    "type": "MRT",
+    "codes": [],
+    "exits": 2
+   },
+   {
+    "name": "Orchard MRT",
+    "lat": 1.303789,
+    "lng": 103.83186,
+    "type": "MRT",
+    "codes": [
+     "NS22"
+    ],
+    "exits": 13
+   },
+   {
+    "name": "Somerset MRT",
+    "lat": 1.300368,
+    "lng": 103.83884,
+    "type": "MRT",
+    "codes": [
+     "NS23"
+    ],
+    "exits": 4
+   }
+  ],
+  "OUTRAM": [
+   {
+    "name": "Chinatown MRT",
+    "lat": 1.284642,
+    "lng": 103.844073,
+    "type": "MRT",
+    "codes": [
+     "DT19",
+     "NE4"
+    ],
+    "exits": 6
+   },
+   {
+    "name": "Maxwell MRT",
+    "lat": 1.280715,
+    "lng": 103.843992,
+    "type": "MRT",
+    "codes": [],
+    "exits": 3
+   },
+   {
+    "name": "Telok Ayer MRT",
+    "lat": 1.282387,
+    "lng": 103.848344,
+    "type": "MRT",
+    "codes": [
+     "DT18"
+    ],
+    "exits": 5
+   }
+  ],
+  "PASIR RIS": [
+   {
+    "name": "Pasir Ris MRT",
+    "lat": 1.372864,
+    "lng": 103.949235,
+    "type": "MRT",
+    "codes": [
+     "EW1"
+    ],
+    "exits": 2
+   }
+  ],
+  "PAYA LEBAR": [],
+  "PIONEER": [
+   {
+    "name": "Joo Koon MRT",
+    "lat": 1.327729,
+    "lng": 103.678582,
+    "type": "MRT",
+    "codes": [
+     "EW29"
+    ],
+    "exits": 2
+   }
+  ],
+  "PUNGGOL": [
+   {
+    "name": "Coral Edge LRT",
+    "lat": 1.393828,
+    "lng": 103.91268,
+    "type": "LRT",
+    "codes": [
+     "PE3"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Cove LRT",
+    "lat": 1.399214,
+    "lng": 103.906052,
+    "type": "LRT",
+    "codes": [
+     "PE1"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Damai LRT",
+    "lat": 1.405165,
+    "lng": 103.908703,
+    "type": "LRT",
+    "codes": [
+     "PE7"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Kadaloor LRT",
+    "lat": 1.39961,
+    "lng": 103.916452,
+    "type": "LRT",
+    "codes": [
+     "PE5"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Meridian LRT",
+    "lat": 1.396901,
+    "lng": 103.908918,
+    "type": "LRT",
+    "codes": [
+     "PE2"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Nibong LRT",
+    "lat": 1.411842,
+    "lng": 103.900303,
+    "type": "LRT",
+    "codes": [
+     "PW5"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Oasis LRT",
+    "lat": 1.402305,
+    "lng": 103.9127,
+    "type": "LRT",
+    "codes": [
+     "PE6"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Punggol Coast MRT",
+    "lat": 1.414963,
+    "lng": 103.910107,
+    "type": "MRT",
+    "codes": [],
+    "exits": 2
+   },
+   {
+    "name": "Punggol LRT",
+    "lat": 1.404369,
+    "lng": 103.901957,
+    "type": "LRT",
+    "codes": [
+     "NE17",
+     "PTC"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Punggol MRT",
+    "lat": 1.405263,
+    "lng": 103.902452,
+    "type": "MRT",
+    "codes": [
+     "NE17",
+     "PTC"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Punggol Point LRT",
+    "lat": 1.416789,
+    "lng": 103.906756,
+    "type": "LRT",
+    "codes": [
+     "PW3"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Riviera LRT",
+    "lat": 1.394442,
+    "lng": 103.916099,
+    "type": "LRT",
+    "codes": [
+     "PE4"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Sam Kee LRT",
+    "lat": 1.409765,
+    "lng": 103.904915,
+    "type": "LRT",
+    "codes": [
+     "PW1"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Samudera LRT",
+    "lat": 1.415886,
+    "lng": 103.902137,
+    "type": "LRT",
+    "codes": [
+     "PW4"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Soo Teck LRT",
+    "lat": 1.40513,
+    "lng": 103.897219,
+    "type": "LRT",
+    "codes": [
+     "PW7"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Sumang LRT",
+    "lat": 1.408428,
+    "lng": 103.898546,
+    "type": "LRT",
+    "codes": [
+     "PW6"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Teck Lee LRT",
+    "lat": 1.412902,
+    "lng": 103.906646,
+    "type": "LRT",
+    "codes": [
+     "PW2"
+    ],
+    "exits": 2
+   }
+  ],
+  "QUEENSTOWN": [
+   {
+    "name": "Buona Vista MRT",
+    "lat": 1.306929,
+    "lng": 103.790659,
+    "type": "MRT",
+    "codes": [
+     "CC22",
+     "EW21"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Commonwealth MRT",
+    "lat": 1.302373,
+    "lng": 103.798379,
+    "type": "MRT",
+    "codes": [
+     "EW20"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Dover MRT",
+    "lat": 1.311554,
+    "lng": 103.778385,
+    "type": "MRT",
+    "codes": [
+     "EW22"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Haw Par Villa MRT",
+    "lat": 1.283055,
+    "lng": 103.782006,
+    "type": "MRT",
+    "codes": [
+     "CC25"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Kent Ridge MRT",
+    "lat": 1.293487,
+    "lng": 103.784575,
+    "type": "MRT",
+    "codes": [
+     "CC24"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "One-North MRT",
+    "lat": 1.299794,
+    "lng": 103.787546,
+    "type": "MRT",
+    "codes": [
+     "CC23"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Pasir Panjang MRT",
+    "lat": 1.276003,
+    "lng": 103.79203,
+    "type": "MRT",
+    "codes": [
+     "CC26"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Queenstown MRT",
+    "lat": 1.294852,
+    "lng": 103.805893,
+    "type": "MRT",
+    "codes": [
+     "EW19"
+    ],
+    "exits": 4
+   }
+  ],
+  "RIVER VALLEY": [],
+  "ROCHOR": [
+   {
+    "name": "Bencoolen MRT",
+    "lat": 1.298365,
+    "lng": 103.849892,
+    "type": "MRT",
+    "codes": [
+     "DT21"
+    ],
+    "exits": 3
+   },
+   {
+    "name": "Farrer Park MRT",
+    "lat": 1.312161,
+    "lng": 103.854337,
+    "type": "MRT",
+    "codes": [
+     "NE8"
+    ],
+    "exits": 9
+   },
+   {
+    "name": "Jalan Besar MRT",
+    "lat": 1.305179,
+    "lng": 103.85527,
+    "type": "MRT",
+    "codes": [
+     "DT22"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Little India MRT",
+    "lat": 1.306748,
+    "lng": 103.849279,
+    "type": "MRT",
+    "codes": [
+     "DT12",
+     "NE7"
+    ],
+    "exits": 6
+   },
+   {
+    "name": "Rochor MRT",
+    "lat": 1.303809,
+    "lng": 103.85274,
+    "type": "MRT",
+    "codes": [
+     "DT13"
+    ],
+    "exits": 2
+   }
+  ],
+  "SELETAR": [],
+  "SEMBAWANG": [
+   {
+    "name": "Canberra MRT",
+    "lat": 1.443227,
+    "lng": 103.829712,
+    "type": "MRT",
+    "codes": [],
+    "exits": 5
+   },
+   {
+    "name": "Sembawang MRT",
+    "lat": 1.448922,
+    "lng": 103.820015,
+    "type": "MRT",
+    "codes": [
+     "NS11"
+    ],
+    "exits": 4
+   }
+  ],
+  "SENGKANG": [
+   {
+    "name": "Bakau LRT",
+    "lat": 1.388013,
+    "lng": 103.905464,
+    "type": "LRT",
+    "codes": [
+     "SE3"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Buangkok MRT",
+    "lat": 1.38303,
+    "lng": 103.893173,
+    "type": "MRT",
+    "codes": [
+     "NE15"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Cheng Lim LRT",
+    "lat": 1.39628,
+    "lng": 103.893803,
+    "type": "LRT",
+    "codes": [
+     "SW1"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Compassvale LRT",
+    "lat": 1.394431,
+    "lng": 103.900662,
+    "type": "LRT",
+    "codes": [
+     "SE1"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Farmway LRT",
+    "lat": 1.397167,
+    "lng": 103.889261,
+    "type": "LRT",
+    "codes": [
+     "SW2"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Fernvale LRT",
+    "lat": 1.392158,
+    "lng": 103.876262,
+    "type": "LRT",
+    "codes": [
+     "SW5"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Kangkar LRT",
+    "lat": 1.38392,
+    "lng": 103.902212,
+    "type": "LRT",
+    "codes": [
+     "SE4"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Kupang LRT",
+    "lat": 1.398221,
+    "lng": 103.881139,
+    "type": "LRT",
+    "codes": [
+     "SW3"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Layar LRT",
+    "lat": 1.392085,
+    "lng": 103.880151,
+    "type": "LRT",
+    "codes": [
+     "SW6"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Ranggung LRT",
+    "lat": 1.384141,
+    "lng": 103.897273,
+    "type": "LRT",
+    "codes": [
+     "SE5"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Renjong LRT",
+    "lat": 1.386756,
+    "lng": 103.890424,
+    "type": "LRT",
+    "codes": [
+     "SW8"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Rumbia LRT",
+    "lat": 1.391377,
+    "lng": 103.906062,
+    "type": "LRT",
+    "codes": [
+     "SE2"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Sengkang MRT",
+    "lat": 1.391719,
+    "lng": 103.895489,
+    "type": "MRT",
+    "codes": [
+     "NE16",
+     "STC"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Thanggam LRT",
+    "lat": 1.397195,
+    "lng": 103.875627,
+    "type": "LRT",
+    "codes": [
+     "SW4"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Tongkang LRT",
+    "lat": 1.38928,
+    "lng": 103.886023,
+    "type": "LRT",
+    "codes": [
+     "SW7"
+    ],
+    "exits": 2
+   }
+  ],
+  "SERANGOON": [
+   {
+    "name": "Lorong Chuan MRT",
+    "lat": 1.351589,
+    "lng": 103.863926,
+    "type": "MRT",
+    "codes": [
+     "CC14"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Serangoon MRT",
+    "lat": 1.350262,
+    "lng": 103.873297,
+    "type": "MRT",
+    "codes": [
+     "CC13",
+     "NE12"
+    ],
+    "exits": 8
+   }
+  ],
+  "SIMPANG": [],
+  "SINGAPORE RIVER": [
+   {
+    "name": "Clarke Quay MRT",
+    "lat": 1.288616,
+    "lng": 103.846565,
+    "type": "MRT",
+    "codes": [
+     "NE5"
+    ],
+    "exits": 6
+   },
+   {
+    "name": "Fort Canning MRT",
+    "lat": 1.292618,
+    "lng": 103.844298,
+    "type": "MRT",
+    "codes": [
+     "DT20"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Great World MRT",
+    "lat": 1.294296,
+    "lng": 103.833092,
+    "type": "MRT",
+    "codes": [],
+    "exits": 6
+   }
+  ],
+  "SOUTHERN ISLANDS": [],
+  "STRAITS VIEW": [
+   {
+    "name": "Marina South MRT",
+    "lat": 1.27402,
+    "lng": 103.862211,
+    "type": "MRT",
+    "codes": [],
+    "exits": 4
+   },
+   {
+    "name": "Marina South Pier MRT",
+    "lat": 1.270984,
+    "lng": 103.862955,
+    "type": "MRT",
+    "codes": [
+     "NS28"
+    ],
+    "exits": 2
+   }
+  ],
+  "SUNGEI KADUT": [
+   {
+    "name": "Kranji MRT",
+    "lat": 1.424961,
+    "lng": 103.762053,
+    "type": "MRT",
+    "codes": [
+     "NS7"
+    ],
+    "exits": 4
+   }
+  ],
+  "TAMPINES": [
+   {
+    "name": "Expo MRT",
+    "lat": 1.33518,
+    "lng": 103.962394,
+    "type": "MRT",
+    "codes": [
+     "CG1",
+     "DT35"
+    ],
+    "exits": 8
+   },
+   {
+    "name": "Simei MRT",
+    "lat": 1.342662,
+    "lng": 103.953819,
+    "type": "MRT",
+    "codes": [
+     "EW3"
+    ],
+    "exits": 1
+   },
+   {
+    "name": "Tampines East MRT",
+    "lat": 1.356143,
+    "lng": 103.955283,
+    "type": "MRT",
+    "codes": [
+     "DT33"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Tampines MRT",
+    "lat": 1.354317,
+    "lng": 103.943782,
+    "type": "MRT",
+    "codes": [
+     "DT32",
+     "EW2"
+    ],
+    "exits": 7
+   },
+   {
+    "name": "Tampines West MRT",
+    "lat": 1.345315,
+    "lng": 103.938573,
+    "type": "MRT",
+    "codes": [
+     "DT31"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Upper Changi MRT",
+    "lat": 1.341548,
+    "lng": 103.961285,
+    "type": "MRT",
+    "codes": [
+     "DT34"
+    ],
+    "exits": 5
+   }
+  ],
+  "TANGLIN": [
+   {
+    "name": "Botanic Gardens MRT",
+    "lat": 1.32261,
+    "lng": 103.815446,
+    "type": "MRT",
+    "codes": [
+     "CC19",
+     "DT9"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Napier MRT",
+    "lat": 1.30664,
+    "lng": 103.819495,
+    "type": "MRT",
+    "codes": [],
+    "exits": 2
+   },
+   {
+    "name": "Stevens MRT",
+    "lat": 1.320142,
+    "lng": 103.825788,
+    "type": "MRT",
+    "codes": [
+     "DT10"
+    ],
+    "exits": 5
+   }
+  ],
+  "TENGAH": [],
+  "TOA PAYOH": [
+   {
+    "name": "Bartley MRT",
+    "lat": 1.342875,
+    "lng": 103.879582,
+    "type": "MRT",
+    "codes": [
+     "CC12"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Braddell MRT",
+    "lat": 1.340828,
+    "lng": 103.846759,
+    "type": "MRT",
+    "codes": [
+     "NS18"
+    ],
+    "exits": 3
+   },
+   {
+    "name": "Caldecott MRT",
+    "lat": 1.337487,
+    "lng": 103.840035,
+    "type": "MRT",
+    "codes": [
+     "CC17"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Potong Pasir MRT",
+    "lat": 1.331672,
+    "lng": 103.869001,
+    "type": "MRT",
+    "codes": [
+     "NE10"
+    ],
+    "exits": 3
+   },
+   {
+    "name": "Tai Seng MRT",
+    "lat": 1.335436,
+    "lng": 103.888034,
+    "type": "MRT",
+    "codes": [
+     "CC11"
+    ],
+    "exits": 3
+   },
+   {
+    "name": "Toa Payoh MRT",
+    "lat": 1.332741,
+    "lng": 103.847285,
+    "type": "MRT",
+    "codes": [
+     "NS19"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Woodleigh MRT",
+    "lat": 1.338987,
+    "lng": 103.870834,
+    "type": "MRT",
+    "codes": [
+     "NE11"
+    ],
+    "exits": 3
+   }
+  ],
+  "TUAS": [
+   {
+    "name": "Gul Circle MRT",
+    "lat": 1.318935,
+    "lng": 103.65994,
+    "type": "MRT",
+    "codes": [
+     "EW30"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Tuas Crescent MRT",
+    "lat": 1.321004,
+    "lng": 103.649123,
+    "type": "MRT",
+    "codes": [
+     "EW31"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Tuas Link MRT",
+    "lat": 1.340683,
+    "lng": 103.637043,
+    "type": "MRT",
+    "codes": [
+     "EW33"
+    ],
+    "exits": 2
+   },
+   {
+    "name": "Tuas West Road MRT",
+    "lat": 1.330027,
+    "lng": 103.639538,
+    "type": "MRT",
+    "codes": [
+     "EW32"
+    ],
+    "exits": 2
+   }
+  ],
+  "WESTERN ISLANDS": [],
+  "WESTERN WATER CATCHMENT": [],
+  "WOODLANDS": [
+   {
+    "name": "Admiralty MRT",
+    "lat": 1.440407,
+    "lng": 103.800857,
+    "type": "MRT",
+    "codes": [
+     "NS10"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Marsiling MRT",
+    "lat": 1.432693,
+    "lng": 103.77411,
+    "type": "MRT",
+    "codes": [
+     "NS8"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Woodlands MRT",
+    "lat": 1.436187,
+    "lng": 103.787627,
+    "type": "MRT",
+    "codes": [
+     "NS9"
+    ],
+    "exits": 7
+   },
+   {
+    "name": "Woodlands North MRT",
+    "lat": 1.448492,
+    "lng": 103.785266,
+    "type": "MRT",
+    "codes": [],
+    "exits": 2
+   },
+   {
+    "name": "Woodlands South MRT",
+    "lat": 1.426972,
+    "lng": 103.793958,
+    "type": "MRT",
+    "codes": [],
+    "exits": 5
+   }
+  ],
+  "YISHUN": [
+   {
+    "name": "Khatib MRT",
+    "lat": 1.417404,
+    "lng": 103.832937,
+    "type": "MRT",
+    "codes": [
+     "NS14"
+    ],
+    "exits": 4
+   },
+   {
+    "name": "Springleaf MRT",
+    "lat": 1.398097,
+    "lng": 103.818159,
+    "type": "MRT",
+    "codes": [],
+    "exits": 3
+   },
+   {
+    "name": "Yishun MRT",
+    "lat": 1.429384,
+    "lng": 103.835049,
+    "type": "MRT",
+    "codes": [
+     "NS13"
+    ],
+    "exits": 5
+   }
+  ]
+ }
+}

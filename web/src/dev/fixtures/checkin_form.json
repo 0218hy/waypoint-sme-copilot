@@ -1,0 +1,14 @@
+{
+  "id": "w_ci1",
+  "payload": {
+    "type": "checkin_form",
+    "goal_id": "g_1",
+    "period_label": "September 2026",
+    "fields": [
+      "profit_cny",
+      "set_aside_cny"
+    ]
+  },
+  "figures": {},
+  "display": {}
+}

@@ -1,0 +1,3 @@
+{% if lang == 'zh' %}登录 Waypoint：{{ url }}
+链接在短时间内有效，且只能使用一次。如果不是你本人操作，请忽略这封邮件。{% else %}Sign in to Waypoint: {{ url }}
+The link works once and expires soon. If you didn't ask for this, ignore this email.{% endif %}

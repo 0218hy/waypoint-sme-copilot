@@ -1,0 +1,4 @@
+{{ status_line }}
+{% if lang == 'zh' %}下一步：{{ next_step }}（建议在{{ next_act_by }}之前完成）。
+查看：{{ url }}{% else %}Next step: {{ next_step }} (act by {{ next_act_by }}).
+See your goal: {{ url }}{% endif %}

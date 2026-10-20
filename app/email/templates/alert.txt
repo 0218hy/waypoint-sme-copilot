@@ -1,0 +1,3 @@
+{{ headline }}
+{% if act_by %}{% if lang == 'zh' %}建议在{{ act_by }}之前做出调整。{% else %}To keep your date, act by {{ act_by }}.{% endif %}{% endif %}
+{% if lang == 'zh' %}查看补救办法：{{ url }}{% else %}See the fixes: {{ url }}{% endif %}

@@ -1,0 +1,120 @@
+{
+  "id": "w_pc1",
+  "payload": {
+    "type": "profile_card",
+    "simulated_feed": true,
+    "fields": [
+      {
+        "key": "sells",
+        "label": "What you sell",
+        "text": "Bubble tea and fruit tea",
+        "source": "owner",
+        "input": "text"
+      },
+      {
+        "key": "shops",
+        "label": "Shops in Shenzhen",
+        "text": "6 shops",
+        "source": "feed",
+        "input": "count"
+      },
+      {
+        "key": "profit",
+        "label": "Monthly operating profit",
+        "figure": "f_profit",
+        "source": "feed",
+        "input": "money_cny"
+      },
+      {
+        "key": "spare_cash",
+        "label": "Spare cash (above your safety floor)",
+        "figure": "f_cash",
+        "source": "computed",
+        "editable": false,
+        "input": "money_cny"
+      },
+      {
+        "key": "customers",
+        "label": "Your customers",
+        "text": "Students, young office workers",
+        "source": "owner",
+        "input": "multi",
+        "options": [
+          {
+            "value": "students",
+            "label": "Students"
+          },
+          {
+            "value": "office",
+            "label": "Office workers"
+          },
+          {
+            "value": "families",
+            "label": "Families"
+          },
+          {
+            "value": "tourists",
+            "label": "Tourists"
+          }
+        ]
+      },
+      {
+        "key": "window",
+        "label": "Hoped-for opening",
+        "text": null,
+        "source": "missing",
+        "input": "enum",
+        "options": [
+          {
+            "value": "6m",
+            "label": "Within 6 months"
+          },
+          {
+            "value": "12m",
+            "label": "In about a year"
+          },
+          {
+            "value": "18m",
+            "label": "In 18 months"
+          }
+        ]
+      }
+    ]
+  },
+  "figures": {
+    "f_profit": {
+      "id": "f_profit",
+      "label": "Average monthly operating profit",
+      "unit": "CNY",
+      "value": "420000",
+      "source": {
+        "kind": "feed",
+        "ref": "webank.feed.profit_monthly",
+        "as_of": "2026-09-30",
+        "note": "Mock WeBank feed"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_cash": {
+      "id": "f_cash",
+      "label": "Spare cash",
+      "unit": "CNY",
+      "value": "1850000",
+      "source": {
+        "kind": "tool",
+        "ref": "spare_cash",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "floor.payroll_weeks",
+        "buffer.payroll_weeks"
+      ],
+      "taint": "trusted"
+    }
+  },
+  "display": {
+    "f_profit": "RMB 420,000",
+    "f_cash": "RMB 1.85m"
+  }
+}

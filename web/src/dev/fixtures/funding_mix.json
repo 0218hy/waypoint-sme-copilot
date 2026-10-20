@@ -1,0 +1,103 @@
+{
+  "id": "w_fm1",
+  "payload": {
+    "type": "funding_mix",
+    "segments": [
+      {
+        "key": "spare",
+        "label": "Spare cash",
+        "amount": "f_mix_spare"
+      },
+      {
+        "key": "setaside",
+        "label": "Monthly set-aside",
+        "amount": "f_mix_sa"
+      },
+      {
+        "key": "landlord",
+        "label": "Rent-free months",
+        "amount": "f_mix_ll"
+      },
+      {
+        "key": "allowance",
+        "label": "前期费用 allowance",
+        "amount": "f_mix_pre"
+      }
+    ],
+    "total": "f_mix_tot"
+  },
+  "figures": {
+    "f_mix_tot": {
+      "id": "f_mix_tot",
+      "label": "Total opening cost",
+      "unit": "CNY",
+      "value": "2950000",
+      "source": {
+        "kind": "tool",
+        "ref": "funding_mix",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_mix_spare": {
+      "id": "f_mix_spare",
+      "label": "Spare cash",
+      "unit": "CNY",
+      "value": "1110000",
+      "source": {
+        "kind": "tool",
+        "ref": "funding_mix",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_mix_sa": {
+      "id": "f_mix_sa",
+      "label": "Set-aside",
+      "unit": "CNY",
+      "value": "1520000",
+      "source": {
+        "kind": "tool",
+        "ref": "funding_mix",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_mix_ll": {
+      "id": "f_mix_ll",
+      "label": "Rent-free months",
+      "unit": "CNY",
+      "value": "120000",
+      "source": {
+        "kind": "tool",
+        "ref": "funding_mix",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_mix_pre": {
+      "id": "f_mix_pre",
+      "label": "Pre-investment allowance",
+      "unit": "CNY",
+      "value": "200000",
+      "source": {
+        "kind": "tool",
+        "ref": "funding_mix",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    }
+  },
+  "display": {
+    "f_mix_tot": "RMB 2.95m",
+    "f_mix_spare": "RMB 1.11m",
+    "f_mix_sa": "RMB 1.52m",
+    "f_mix_ll": "RMB 0.12m",
+    "f_mix_pre": "RMB 0.20m"
+  }
+}

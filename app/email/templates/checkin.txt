@@ -1,0 +1,5 @@
+{% if lang == 'zh' %}上个月一切按计划进行吗？
+一切按计划：{{ quick_url }}
+有变化：{{ url }}{% else %}Did last month go to plan?
+On plan as usual: {{ quick_url }}
+Something changed: {{ url }}{% endif %}

@@ -1,0 +1,567 @@
+{
+  "title": "The Goal Keeper catches real problems, not noise: held-out shock set",
+  "status": "run",
+  "n": 3300,
+  "metrics": {
+    "chain_seed_source": 20261020,
+    "n_chains_per_class": 300,
+    "onset_weeks": [
+      4,
+      40
+    ],
+    "onsets_jan_feb": 64,
+    "onsets_month_boundary": 73,
+    "no_shock": {
+      "alarms_total_52w": 497,
+      "false_alerts_per_chain_year": 1.6567,
+      "false_alerts_per_chain_year_ci": {
+        "value": 1.6566666666666667,
+        "lo": 1.4733333333333334,
+        "hi": 1.85,
+        "method": "percentile_bootstrap",
+        "resamples": 10000,
+        "seed": 20261019
+      },
+      "chains_with_any_alarm": {
+        "k": 219,
+        "n": 300,
+        "p": 0.73,
+        "lo": 0.677088,
+        "hi": 0.777096,
+        "method": "wilson95"
+      }
+    },
+    "profit_-20": {
+      "median_delay_weeks": {
+        "value": 2.0,
+        "lo": 2.0,
+        "hi": 3.0,
+        "method": "percentile_bootstrap",
+        "resamples": 10000,
+        "seed": 20261019
+      },
+      "detected_within_26w": {
+        "k": 237,
+        "n": 300,
+        "p": 0.79,
+        "lo": 0.740389,
+        "hi": 0.832278,
+        "method": "wilson95"
+      },
+      "detected_within_3w": {
+        "k": 177,
+        "n": 300,
+        "p": 0.59,
+        "lo": 0.533548,
+        "hi": 0.644176,
+        "method": "wilson95"
+      },
+      "delay_quartiles_finite": [
+        1.0,
+        2.0,
+        4.0
+      ],
+      "chains_with_alarm_before_shock": {
+        "k": 122,
+        "n": 300,
+        "p": 0.406667,
+        "lo": 0.352602,
+        "hi": 0.463092,
+        "method": "wilson95"
+      },
+      "onset_jan_feb": {
+        "n": 64,
+        "median_delay_weeks": 3.0,
+        "detected_within_3w": {
+          "k": 34,
+          "n": 64,
+          "p": 0.53125,
+          "lo": 0.410721,
+          "hi": 0.64824,
+          "method": "wilson95"
+        }
+      },
+      "onset_month_boundary": {
+        "n": 73,
+        "median_delay_weeks": 3.0,
+        "detected_within_3w": {
+          "k": 37,
+          "n": 73,
+          "p": 0.506849,
+          "lo": 0.394722,
+          "hi": 0.618291,
+          "method": "wilson95"
+        }
+      },
+      "onset_other": {
+        "n": 171,
+        "median_delay_weeks": 2.0,
+        "detected_within_3w": {
+          "k": 110,
+          "n": 171,
+          "p": 0.643275,
+          "lo": 0.569052,
+          "hi": 0.711202,
+          "method": "wilson95"
+        }
+      }
+    },
+    "sales_chainwide_-20": {
+      "median_delay_weeks": {
+        "value": 2.0,
+        "lo": 1.0,
+        "hi": 2.0,
+        "method": "percentile_bootstrap",
+        "resamples": 10000,
+        "seed": 20261019
+      },
+      "detected_within_26w": {
+        "k": 251,
+        "n": 300,
+        "p": 0.836667,
+        "lo": 0.790627,
+        "hi": 0.874194,
+        "method": "wilson95"
+      },
+      "detected_within_3w": {
+        "k": 192,
+        "n": 300,
+        "p": 0.64,
+        "lo": 0.584229,
+        "hi": 0.692231,
+        "method": "wilson95"
+      },
+      "delay_quartiles_finite": [
+        0.0,
+        1.0,
+        3.0
+      ],
+      "chains_with_alarm_before_shock": {
+        "k": 122,
+        "n": 300,
+        "p": 0.406667,
+        "lo": 0.352602,
+        "hi": 0.463092,
+        "method": "wilson95"
+      },
+      "onset_jan_feb": {
+        "n": 64,
+        "median_delay_weeks": 1.0,
+        "detected_within_3w": {
+          "k": 55,
+          "n": 64,
+          "p": 0.859375,
+          "lo": 0.753837,
+          "hi": 0.924214,
+          "method": "wilson95"
+        }
+      },
+      "onset_month_boundary": {
+        "n": 73,
+        "median_delay_weeks": 2.0,
+        "detected_within_3w": {
+          "k": 41,
+          "n": 73,
+          "p": 0.561644,
+          "lo": 0.447578,
+          "hi": 0.669547,
+          "method": "wilson95"
+        }
+      },
+      "onset_other": {
+        "n": 171,
+        "median_delay_weeks": 2.0,
+        "detected_within_3w": {
+          "k": 103,
+          "n": 171,
+          "p": 0.602339,
+          "lo": 0.527512,
+          "hi": 0.67267,
+          "method": "wilson95"
+        }
+      }
+    },
+    "profit_-10": {
+      "median_delay_weeks": {
+        "value": 15.0,
+        "lo": 11.0,
+        "hi": 17.0,
+        "method": "percentile_bootstrap",
+        "resamples": 10000,
+        "seed": 20261019
+      },
+      "detected_within_26w": {
+        "k": 196,
+        "n": 300,
+        "p": 0.653333,
+        "lo": 0.597848,
+        "hi": 0.704941,
+        "method": "wilson95"
+      },
+      "detected_within_3w": {
+        "k": 94,
+        "n": 300,
+        "p": 0.313333,
+        "lo": 0.263484,
+        "hi": 0.367902,
+        "method": "wilson95"
+      },
+      "delay_quartiles_finite": [
+        1.0,
+        4.0,
+        14.0
+      ],
+      "chains_with_alarm_before_shock": {
+        "k": 122,
+        "n": 300,
+        "p": 0.406667,
+        "lo": 0.352602,
+        "hi": 0.463092,
+        "method": "wilson95"
+      },
+      "onset_jan_feb": {
+        "n": 64,
+        "median_delay_weeks": 15.0,
+        "detected_within_3w": {
+          "k": 17,
+          "n": 64,
+          "p": 0.265625,
+          "lo": 0.172964,
+          "hi": 0.384829,
+          "method": "wilson95"
+        }
+      },
+      "onset_month_boundary": {
+        "n": 73,
+        "median_delay_weeks": 15.0,
+        "detected_within_3w": {
+          "k": 19,
+          "n": 73,
+          "p": 0.260274,
+          "lo": 0.173422,
+          "hi": 0.371095,
+          "method": "wilson95"
+        }
+      },
+      "onset_other": {
+        "n": 171,
+        "median_delay_weeks": 13.0,
+        "detected_within_3w": {
+          "k": 60,
+          "n": 171,
+          "p": 0.350877,
+          "lo": 0.283337,
+          "hi": 0.42497,
+          "method": "wilson95"
+        }
+      }
+    },
+    "profit_-30": {
+      "median_delay_weeks": {
+        "value": 1.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "method": "percentile_bootstrap",
+        "resamples": 10000,
+        "seed": 20261019
+      },
+      "detected_within_26w": {
+        "k": 276,
+        "n": 300,
+        "p": 0.92,
+        "lo": 0.883727,
+        "hi": 0.945653,
+        "method": "wilson95"
+      },
+      "detected_within_3w": {
+        "k": 253,
+        "n": 300,
+        "p": 0.843333,
+        "lo": 0.797892,
+        "hi": 0.880093,
+        "method": "wilson95"
+      },
+      "delay_quartiles_finite": [
+        0.0,
+        1.0,
+        2.0
+      ],
+      "chains_with_alarm_before_shock": {
+        "k": 122,
+        "n": 300,
+        "p": 0.406667,
+        "lo": 0.352602,
+        "hi": 0.463092,
+        "method": "wilson95"
+      },
+      "onset_jan_feb": {
+        "n": 64,
+        "median_delay_weeks": 1.0,
+        "detected_within_3w": {
+          "k": 54,
+          "n": 64,
+          "p": 0.84375,
+          "lo": 0.735719,
+          "hi": 0.912852,
+          "method": "wilson95"
+        }
+      },
+      "onset_month_boundary": {
+        "n": 73,
+        "median_delay_weeks": 1.0,
+        "detected_within_3w": {
+          "k": 62,
+          "n": 73,
+          "p": 0.849315,
+          "lo": 0.749981,
+          "hi": 0.913723,
+          "method": "wilson95"
+        }
+      },
+      "onset_other": {
+        "n": 171,
+        "median_delay_weeks": 1.0,
+        "detected_within_3w": {
+          "k": 144,
+          "n": 171,
+          "p": 0.842105,
+          "lo": 0.780019,
+          "hi": 0.889159,
+          "method": "wilson95"
+        }
+      }
+    },
+    "demo_dip_four_shops_-20_sales": {
+      "median_delay_weeks": {
+        "value": 13.0,
+        "lo": 10.0,
+        "hi": 17.0,
+        "method": "percentile_bootstrap",
+        "resamples": 10000,
+        "seed": 20261019
+      },
+      "detected_within_26w": {
+        "k": 200,
+        "n": 300,
+        "p": 0.666667,
+        "lo": 0.611512,
+        "hi": 0.717607,
+        "method": "wilson95"
+      },
+      "detected_within_3w": {
+        "k": 94,
+        "n": 300,
+        "p": 0.313333,
+        "lo": 0.263484,
+        "hi": 0.367902,
+        "method": "wilson95"
+      },
+      "delay_quartiles_finite": [
+        1.0,
+        4.0,
+        13.0
+      ],
+      "chains_with_alarm_before_shock": {
+        "k": 122,
+        "n": 300,
+        "p": 0.406667,
+        "lo": 0.352602,
+        "hi": 0.463092,
+        "method": "wilson95"
+      },
+      "onset_jan_feb": {
+        "n": 64,
+        "median_delay_weeks": 15.0,
+        "detected_within_3w": {
+          "k": 22,
+          "n": 64,
+          "p": 0.34375,
+          "lo": 0.239231,
+          "hi": 0.465964,
+          "method": "wilson95"
+        }
+      },
+      "onset_month_boundary": {
+        "n": 73,
+        "median_delay_weeks": 15.0,
+        "detected_within_3w": {
+          "k": 20,
+          "n": 73,
+          "p": 0.273973,
+          "lo": 0.184914,
+          "hi": 0.38563,
+          "method": "wilson95"
+        }
+      },
+      "onset_other": {
+        "n": 171,
+        "median_delay_weeks": 13.0,
+        "detected_within_3w": {
+          "k": 54,
+          "n": 171,
+          "p": 0.315789,
+          "lo": 0.250818,
+          "hi": 0.388856,
+          "method": "wilson95"
+        }
+      }
+    },
+    "channel_shift_share25": {
+      "chains_with_additional_alarm": {
+        "k": 0,
+        "n": 300,
+        "p": 0.0,
+        "lo": 0.0,
+        "hi": 0.012643,
+        "method": "wilson95"
+      },
+      "example_seeds": []
+    },
+    "channel_shift_share35": {
+      "chains_with_additional_alarm": {
+        "k": 0,
+        "n": 300,
+        "p": 0.0,
+        "lo": 0.0,
+        "hi": 0.012643,
+        "method": "wilson95"
+      },
+      "example_seeds": []
+    },
+    "channel_shift_share25_commission05": {
+      "chains_with_additional_alarm": {
+        "k": 7,
+        "n": 300,
+        "p": 0.023333,
+        "lo": 0.011348,
+        "hi": 0.047372,
+        "method": "wilson95"
+      },
+      "example_seeds": [
+        920127374,
+        1468937039,
+        845180539,
+        752316050,
+        1079852562
+      ]
+    },
+    "channel_shift_share25_commission15": {
+      "chains_with_additional_alarm": {
+        "k": 32,
+        "n": 300,
+        "p": 0.106667,
+        "lo": 0.076576,
+        "hi": 0.146703,
+        "method": "wilson95"
+      },
+      "example_seeds": [
+        1847774230,
+        800362859,
+        1758898026,
+        920127374,
+        1242568635
+      ]
+    },
+    "missing_two_weeks": {
+      "chains_with_additional_alarm": {
+        "k": 23,
+        "n": 300,
+        "p": 0.076667,
+        "lo": 0.051628,
+        "hi": 0.11241,
+        "method": "wilson95"
+      },
+      "example_seeds": [
+        800362859,
+        1062704967,
+        426040262,
+        1493639876,
+        545040702
+      ]
+    },
+    "model_calls": {
+      "calls": 0,
+      "failed": 0,
+      "cooling_refusals": 0
+    }
+  },
+  "pass_marks": {
+    "median detection delay at -20% profit, onsets weeks 4-40 (weeks)": {
+      "mark": "<= 3",
+      "value": 2.0,
+      "pass": true,
+      "result": "pass"
+    },
+    "median detection delay at -20% (chain-wide sales drop, 6.25% of sales) (weeks)": {
+      "mark": "<= 3",
+      "value": 2.0,
+      "pass": true,
+      "result": "pass"
+    },
+    "false alerts per chain-year, no-shock chains": {
+      "mark": "<= 2",
+      "value": 1.6567,
+      "pass": true,
+      "result": "pass"
+    },
+    "chains where a channel shift alone adds an alarm (share 0.25, commission 0)": {
+      "mark": "0",
+      "value": 0,
+      "pass": true,
+      "result": "pass"
+    },
+    "chains where a channel shift alone adds an alarm (share 0.35, commission 0)": {
+      "mark": "0",
+      "value": 0,
+      "pass": true,
+      "result": "pass"
+    }
+  },
+  "seed": 20261020,
+  "notes": [
+    "Held-out shock set (prereg addendum 2026-10-20 (7)), measured once. Simulated chains (sim.chen persona, fictional). The detector is tools.detect with k, h, lambda, lag and the shrink frozen on dev seeds 0-299 (results/detect_freeze.json) before this set existed; alarms are CUSUM onsets with re-arming, as E6.",
+    "Onsets weeks 4-40 after the goal start (2026-10-19), 64 chains in Jan-Feb, 73 in a week that contains the 1st of a month.",
+    "profit_-20: median delay 2.0 weeks (95% CI 2.0–3.0); within 3 weeks 177/300 = 59.0% (95% CI 53.4%–64.4%); within 26 weeks 237/300 = 79.0% (95% CI 74.0%–83.2%); alarm before the shock 122/300 = 40.7% (95% CI 35.3%–46.3%); Jan-Feb onsets (64) median 3.0, month-boundary onsets (73) median 3.0",
+    "sales_chainwide_-20: median delay 2.0 weeks (95% CI 1.0–2.0); within 3 weeks 192/300 = 64.0% (95% CI 58.4%–69.2%); within 26 weeks 251/300 = 83.7% (95% CI 79.1%–87.4%); alarm before the shock 122/300 = 40.7% (95% CI 35.3%–46.3%); Jan-Feb onsets (64) median 1.0, month-boundary onsets (73) median 2.0",
+    "profit_-10: median delay 15.0 weeks (95% CI 11.0–17.0); within 3 weeks 94/300 = 31.3% (95% CI 26.3%–36.8%); within 26 weeks 196/300 = 65.3% (95% CI 59.8%–70.5%); alarm before the shock 122/300 = 40.7% (95% CI 35.3%–46.3%); Jan-Feb onsets (64) median 15.0, month-boundary onsets (73) median 15.0",
+    "profit_-30: median delay 1.0 weeks (95% CI 1.0–1.0); within 3 weeks 253/300 = 84.3% (95% CI 79.8%–88.0%); within 26 weeks 276/300 = 92.0% (95% CI 88.4%–94.6%); alarm before the shock 122/300 = 40.7% (95% CI 35.3%–46.3%); Jan-Feb onsets (64) median 1.0, month-boundary onsets (73) median 1.0",
+    "demo_dip_four_shops_-20_sales: median delay 13.0 weeks (95% CI 10.0–17.0); within 3 weeks 94/300 = 31.3% (95% CI 26.3%–36.8%); within 26 weeks 200/300 = 66.7% (95% CI 61.2%–71.8%); alarm before the shock 122/300 = 40.7% (95% CI 35.3%–46.3%); Jan-Feb onsets (64) median 15.0, month-boundary onsets (73) median 15.0",
+    "No-shock chains: 497 alarms over 300 chain-years (1.6567 per chain-year, bootstrap 95% CI 1.47–1.85); chains with any alarm in a year 219/300 = 73.0% (95% CI 67.7%–77.7%).",
+    "channel_shift_share25 (paired with the no-shock chain): additional alarm in 0/300 = 0.0% (95% CI 0.0%–1.3%)",
+    "channel_shift_share35 (paired with the no-shock chain): additional alarm in 0/300 = 0.0% (95% CI 0.0%–1.3%)",
+    "channel_shift_share25_commission05 (paired with the no-shock chain): additional alarm in 7/300 = 2.3% (95% CI 1.1%–4.7%) (descriptive: a real profit fall of about 6%, which the guard treats as the plan's cost)",
+    "channel_shift_share25_commission15 (paired with the no-shock chain): additional alarm in 32/300 = 10.7% (95% CI 7.7%–14.7%) (descriptive: a real profit fall of about 19%, which the guard treats as the plan's cost)",
+    "missing_two_weeks (paired with the no-shock chain): additional alarm in 23/300 = 7.7% (95% CI 5.2%–11.2%)",
+    "These test the detector, not the full alert rule (SPEC §7.2), so product alerts are at most this frequent.",
+    "The detector's parameters were frozen on dev seeds (results/detect_freeze.json, commit 9b58a7d) before this set was built; the harness was checked on dev seeds only; this arm runs once on the held-out seeds.",
+    "Model calls in this arm: 0 made, 0 failed, 0 refused during a cooldown after a provider failure (those reached the owner as the product's fallback)."
+  ],
+  "runtime_s": 8.84,
+  "model_arm": {
+    "arm": "e6h",
+    "git_commit": "b6bf10e5942395e4b3f7fb044b35f03764dcb9dd",
+    "versions": {
+      "skills": {
+        "cost": "v3:262cb3768398",
+        "detour": "v3:a2d3c56760a3",
+        "funding": "v3:25cc279d2d7a",
+        "goal-keeper": "v5:3d1c835135c5",
+        "goal-plan": "v3:f8385970d312",
+        "guard": "v7:086918b49eac",
+        "journey": "v3:eaa70473cebc",
+        "profile": "v3:d257fdebf546",
+        "site-finder": "v3:a181f8d185dc",
+        "welcome": "v3:e8a0ca837887"
+      },
+      "params": "686253662246c05a9b0a0699660b9436145b0dd595f76aa1d78ac1c1577ba274",
+      "cost_key": "559a2f36f30d789610b6c32179c5f0bb03ff3761d2bc6c44d6bccd1302df4257",
+      "topics": "e24b1f558e89382a9d19af2a953202209a82a1ac50a56bd02e9b4a1eda253c4d",
+      "funding_catalogue": "35ebc7e5dc085febab542f5847094ebe2723d756abdc44bbf8c8602134c6d43b",
+      "prompts": "31394e6e5928a4c2e0e883480f22d23f185632dba06915644bbbf6dd79f966c0"
+    },
+    "model": "off",
+    "runtime_s": 8.8,
+    "no_model": true,
+    "started_commit": "b6bf10e5942395e4b3f7fb044b35f03764dcb9dd"
+  }
+}

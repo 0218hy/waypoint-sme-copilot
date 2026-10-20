@@ -1,0 +1,18 @@
+{
+  "id": "w_cc1",
+  "payload": {
+    "type": "consent_card",
+    "reads": [
+      "Monthly profit and cash balances of your company accounts",
+      "Your WeBank loan balance and repayments",
+      "Transfers into your savings sub-account"
+    ],
+    "never": [
+      "Your chat, plans and what-ifs are never used for credit decisions",
+      "Nothing is shared with anyone without your preview and tap"
+    ],
+    "withdraw": "Withdraw any time on the Account tab. Waypoint then asks you for a monthly check-in instead."
+  },
+  "figures": {},
+  "display": {}
+}

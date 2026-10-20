@@ -1,0 +1,2701 @@
+{
+  "id": "w_ue1",
+  "payload": {
+    "type": "unit_economics",
+    "unit_id": "u-t1-01",
+    "unit_name": "Tampines 1 #01-K12",
+    "headline": [
+      {
+        "key": "econ.breakeven",
+        "label": "Break-even (a month's EBITDA is zero)",
+        "figure": "econ.breakeven",
+        "estimate": false,
+        "note": null
+      },
+      {
+        "key": "econ.cups_needed_likely",
+        "label": "To pay back within the lease",
+        "figure": "econ.cups_needed_likely",
+        "estimate": true,
+        "note": null
+      },
+      {
+        "key": "econ.cups_needed_bad",
+        "label": "To pay back within the lease, if things go badly",
+        "figure": "econ.cups_needed_bad",
+        "estimate": true,
+        "note": null
+      },
+      {
+        "key": "econ.cups_needed_price_low",
+        "label": "At the lower menu price",
+        "figure": "econ.cups_needed_price_low",
+        "estimate": true,
+        "note": null
+      },
+      {
+        "key": "profile.best_shop_cups",
+        "label": "Your best shop at home",
+        "figure": "profile.best_shop_cups",
+        "estimate": false,
+        "note": null
+      }
+    ],
+    "per_cup": [
+      {
+        "key": "econ.price",
+        "label": "Menu price",
+        "figure": "econ.price",
+        "estimate": false,
+        "note": null
+      },
+      {
+        "key": "econ.var_cost",
+        "label": "Ingredients and packaging, with GST",
+        "figure": "econ.var_cost",
+        "estimate": false,
+        "note": null
+      },
+      {
+        "key": "econ.delivery_cost",
+        "label": "Delivery commission (averaged over every cup)",
+        "figure": "econ.delivery_cost",
+        "estimate": true,
+        "note": null
+      },
+      {
+        "key": "econ.contribution",
+        "label": "Contribution a cup",
+        "figure": "econ.contribution",
+        "estimate": false,
+        "note": null
+      }
+    ],
+    "fixed": [
+      {
+        "key": "econ.fixed.wages",
+        "label": "Wages with CPF",
+        "figure": "econ.fixed.wages",
+        "estimate": false,
+        "note": null
+      },
+      {
+        "key": "econ.fixed.rent",
+        "label": "Rent and service charge",
+        "figure": "econ.fixed.rent",
+        "estimate": false,
+        "note": null
+      },
+      {
+        "key": "econ.fixed.running",
+        "label": "Utilities and other running costs",
+        "figure": "econ.fixed.running",
+        "estimate": false,
+        "note": null
+      },
+      {
+        "key": "econ.fixed.gst",
+        "label": "GST on rent and running costs (a cost while unregistered)",
+        "figure": "econ.fixed.gst",
+        "estimate": false,
+        "note": null
+      },
+      {
+        "key": "econ.fixed",
+        "label": "Fixed costs a month",
+        "figure": "econ.fixed",
+        "estimate": false,
+        "note": null
+      }
+    ],
+    "investment": [
+      {
+        "key": "econ.card_total",
+        "label": "Opening cost, likely",
+        "figure": "econ.card_total",
+        "estimate": false,
+        "note": null
+      },
+      {
+        "key": "econ.reserve",
+        "label": "Less the running reserve (it pays for the ramp-up months)",
+        "figure": "econ.reserve",
+        "estimate": false,
+        "note": null
+      },
+      {
+        "key": "econ.investment_likely",
+        "label": "Investment, likely",
+        "figure": "econ.investment_likely",
+        "estimate": false,
+        "note": null
+      },
+      {
+        "key": "econ.investment_bad",
+        "label": "Investment if things go badly (P90 cost)",
+        "figure": "econ.investment_bad",
+        "estimate": false,
+        "note": null
+      }
+    ],
+    "rows": [
+      {
+        "key": "250",
+        "cups": "lvl.250.cups",
+        "owner": false,
+        "registered": false,
+        "revenue": "lvl.250.revenue",
+        "ebitda": "lvl.250.ebitda",
+        "margin": "lvl.250.margin",
+        "depreciation": "lvl.250.depreciation",
+        "tax": "lvl.250.tax",
+        "net": "lvl.250.net",
+        "payback_likely": "lvl.250.payback_likely",
+        "payback_bad": "lvl.250.payback_bad",
+        "npv": "lvl.250.npv",
+        "npv_bad": "lvl.250.npv_bad"
+      },
+      {
+        "key": "300",
+        "cups": "lvl.300.cups",
+        "owner": false,
+        "registered": false,
+        "revenue": "lvl.300.revenue",
+        "ebitda": "lvl.300.ebitda",
+        "margin": "lvl.300.margin",
+        "depreciation": "lvl.300.depreciation",
+        "tax": "lvl.300.tax",
+        "net": "lvl.300.net",
+        "payback_likely": "lvl.300.payback_likely",
+        "payback_bad": "lvl.300.payback_bad",
+        "npv": "lvl.300.npv",
+        "npv_bad": "lvl.300.npv_bad"
+      },
+      {
+        "key": "350",
+        "cups": "lvl.350.cups",
+        "owner": false,
+        "registered": false,
+        "revenue": "lvl.350.revenue",
+        "ebitda": "lvl.350.ebitda",
+        "margin": "lvl.350.margin",
+        "depreciation": "lvl.350.depreciation",
+        "tax": "lvl.350.tax",
+        "net": "lvl.350.net",
+        "payback_likely": "lvl.350.payback_likely",
+        "payback_bad": "lvl.350.payback_bad",
+        "npv": "lvl.350.npv",
+        "npv_bad": "lvl.350.npv_bad"
+      },
+      {
+        "key": "400",
+        "cups": "lvl.400.cups",
+        "owner": false,
+        "registered": false,
+        "revenue": "lvl.400.revenue",
+        "ebitda": "lvl.400.ebitda",
+        "margin": "lvl.400.margin",
+        "depreciation": "lvl.400.depreciation",
+        "tax": "lvl.400.tax",
+        "net": "lvl.400.net",
+        "payback_likely": "lvl.400.payback_likely",
+        "payback_bad": "lvl.400.payback_bad",
+        "npv": "lvl.400.npv",
+        "npv_bad": "lvl.400.npv_bad"
+      },
+      {
+        "key": "450",
+        "cups": "lvl.450.cups",
+        "owner": false,
+        "registered": false,
+        "revenue": "lvl.450.revenue",
+        "ebitda": "lvl.450.ebitda",
+        "margin": "lvl.450.margin",
+        "depreciation": "lvl.450.depreciation",
+        "tax": "lvl.450.tax",
+        "net": "lvl.450.net",
+        "payback_likely": "lvl.450.payback_likely",
+        "payback_bad": "lvl.450.payback_bad",
+        "npv": "lvl.450.npv",
+        "npv_bad": "lvl.450.npv_bad"
+      },
+      {
+        "key": "owner",
+        "cups": "lvl.owner.cups",
+        "owner": true,
+        "registered": true,
+        "revenue": "lvl.owner.revenue",
+        "ebitda": "lvl.owner.ebitda",
+        "margin": "lvl.owner.margin",
+        "depreciation": "lvl.owner.depreciation",
+        "tax": "lvl.owner.tax",
+        "net": "lvl.owner.net",
+        "payback_likely": "lvl.owner.payback_likely",
+        "payback_bad": "lvl.owner.payback_bad",
+        "npv": "lvl.owner.npv",
+        "npv_bad": "lvl.owner.npv_bad"
+      }
+    ],
+    "sensitivity": [
+      {
+        "key": "npv_8",
+        "label": "NPV over 36 months at 8%",
+        "figure": "econ.npv_at_8",
+        "estimate": true,
+        "note": null
+      },
+      {
+        "key": "npv_12",
+        "label": "NPV over 36 months at 12%",
+        "figure": "lvl.owner.npv",
+        "estimate": true,
+        "note": null
+      },
+      {
+        "key": "npv_15",
+        "label": "NPV over 36 months at 15%",
+        "figure": "econ.npv_at_15",
+        "estimate": true,
+        "note": null
+      },
+      {
+        "key": "econ.price_low",
+        "label": "Lower menu price",
+        "figure": "econ.price_low",
+        "estimate": false,
+        "note": null
+      },
+      {
+        "key": "econ.cups_needed_price_low",
+        "label": "At the lower menu price",
+        "figure": "econ.cups_needed_price_low",
+        "estimate": true,
+        "note": null
+      },
+      {
+        "key": "econ.price_high",
+        "label": "Higher menu price",
+        "figure": "econ.price_high",
+        "estimate": false,
+        "note": null
+      },
+      {
+        "key": "econ.cups_needed_price_high",
+        "label": "At the higher menu price",
+        "figure": "econ.cups_needed_price_high",
+        "estimate": true,
+        "note": null
+      }
+    ],
+    "ramp_likely": [
+      0.6,
+      0.713,
+      0.795,
+      0.853,
+      0.895,
+      0.924,
+      0.946,
+      0.961,
+      0.972,
+      0.98,
+      0.986,
+      0.99
+    ],
+    "ramp_bad": [
+      0.5,
+      0.577,
+      0.642,
+      0.697,
+      0.743,
+      0.783,
+      0.816,
+      0.844,
+      0.868,
+      0.888,
+      0.906,
+      0.92
+    ],
+    "benchmarks": [
+      {
+        "label": "Nayuki: payback of its stores opened in 2018",
+        "figure": "econ.bench.nayuki_payback_2018",
+        "source": {
+          "label": "HKEX prospectus p.197",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/0618/2021061800009.pdf",
+          "as_of": "2026-10-20"
+        }
+      },
+      {
+        "label": "Nayuki: payback of its stores opened in 2018-19",
+        "figure": "econ.bench.nayuki_payback_2018_19",
+        "source": {
+          "label": "HKEX prospectus p.197",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/0618/2021061800009.pdf",
+          "as_of": "2026-10-20"
+        }
+      },
+      {
+        "label": "Nayuki: store operating margin, 2020 (18.9% in 2018)",
+        "figure": "econ.bench.nayuki_store_margin_2020",
+        "source": {
+          "label": "HKEX prospectus p.197",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/0618/2021061800009.pdf",
+          "as_of": "2026-10-20"
+        }
+      },
+      {
+        "label": "Guming: franchisee store operating margin, FY2023",
+        "figure": "econ.bench.guming_franchisee_margin_2023",
+        "source": {
+          "label": "HKEX prospectus p.179",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0204/2025020400011.pdf",
+          "as_of": "2026-10-20"
+        }
+      },
+      {
+        "label": "Mixue: cups a store a day",
+        "figure": "econ.bench.mixue_cups_per_store",
+        "source": {
+          "label": "HKEX prospectus p.15",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0221/2025022100009.pdf",
+          "as_of": "2026-10-20"
+        }
+      }
+    ],
+    "chain": [
+      {
+        "key": "sg_share",
+        "label": "Singapore investment, share of a year's profit",
+        "figure": "ratio.sg_investment_share",
+        "compare": "ratio.sg_investment_share_bad",
+        "compare_label": "If costs go badly",
+        "note": "The opening investment (cost card less the running reserve) / the last 12 months' operating profit",
+        "caveat": false
+      },
+      {
+        "key": "sg_vs_home",
+        "label": "The Singapore shop, in home shops",
+        "figure": "ratio.sg_vs_home_shops",
+        "compare": null,
+        "compare_label": null,
+        "note": "Its steady monthly operating profit at your figure (or the middle level) / a home shop's",
+        "caveat": false
+      }
+    ],
+    "notes": [
+      "Not GST-registered at first: the whole menu price is revenue, and the GST paid on ingredients, rent, running costs and commissions is a cost. A level whose yearly sales pass the compulsory-registration threshold is treated as registered (marked).",
+      "Tax: Singapore corporate income tax with partial exemption only. The start-up exemption doesn't apply: a company wholly owned by a foreign company doesn't qualify.",
+      "Investment is the opening cost less the running reserve: the ramp-up months the reserve pays for are already in the monthly cash. Payback is the first month the cash after tax has paid the investment back.",
+      "Estimates: the ramp-up curve and the share of cups sold through delivery apps are build-team assumptions. 'If things go badly' uses the P90 opening cost and a slower ramp-up."
+    ],
+    "owner_cups": 500,
+    "editable": true
+  },
+  "figures": {
+    "econ.breakeven": {
+      "id": "econ.breakeven",
+      "label": "Break-even cups a day",
+      "unit": "cups_per_day",
+      "value": "264",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [
+        "cup_price_sgd",
+        "variable_cost_per_cup_sgd",
+        "delivery_share",
+        "delivery_commission",
+        "gst_rate",
+        "staff_plan",
+        "local_manager_wage_sgd",
+        "pwm_counter_attendant_wage_sgd",
+        "cpf_employer_rate",
+        "utilities_monthly_sgd",
+        "other_fixed_monthly_sgd",
+        "gst_rate"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.contribution",
+        "econ.fixed"
+      ]
+    },
+    "econ.cups_needed_likely": {
+      "id": "econ.cups_needed_likely",
+      "label": "Cups a day to pay back within the 36-month lease",
+      "unit": "cups_per_day",
+      "value": "331",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "estimate: depends on build-team assumptions (ramp-up, delivery share, price)",
+        "url": null
+      },
+      "assumptions": [
+        "cup_price_sgd",
+        "variable_cost_per_cup_sgd",
+        "delivery_share",
+        "delivery_commission",
+        "gst_rate",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "econ.contribution",
+        "econ.fixed"
+      ]
+    },
+    "econ.cups_needed_bad": {
+      "id": "econ.cups_needed_bad",
+      "label": "Cups a day to pay back within the lease, if things go badly",
+      "unit": "cups_per_day",
+      "value": "357",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "P90 opening cost and the slow ramp-up",
+        "url": null
+      },
+      "assumptions": [
+        "cup_price_sgd",
+        "variable_cost_per_cup_sgd",
+        "delivery_share",
+        "delivery_commission",
+        "gst_rate",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_bad",
+        "econ.contribution",
+        "econ.fixed"
+      ]
+    },
+    "econ.cups_needed_price_low": {
+      "id": "econ.cups_needed_price_low",
+      "label": "Cups a day to pay back within the lease at the lower price",
+      "unit": "cups_per_day",
+      "value": "445",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [
+        "cup_price_range_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "econ.price_low"
+      ]
+    },
+    "profile.best_shop_cups": {
+      "id": "profile.best_shop_cups",
+      "label": "Your best shop",
+      "unit": "cups_per_day",
+      "value": "600",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "feed",
+        "ref": "best_shop_cups_per_day",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "econ.price": {
+      "id": "econ.price",
+      "label": "Menu price a cup",
+      "unit": "SGD",
+      "value": "6.0",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "param",
+        "ref": "cup_price_sgd",
+        "as_of": "2026-10-16",
+        "note": "Build-team survey of mall tea-chain menu prices (S$5-7 a cup); assumption",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "econ.var_cost": {
+      "id": "econ.var_cost",
+      "label": "Ingredients and packaging a cup (with GST)",
+      "unit": "SGD",
+      "value": "1.96",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [
+        "variable_cost_per_cup_sgd",
+        "gst_rate"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "econ.delivery_cost": {
+      "id": "econ.delivery_cost",
+      "label": "Delivery commission a cup (averaged over all cups)",
+      "unit": "SGD",
+      "value": "0.39",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "build-team estimate of the delivery share",
+        "url": null
+      },
+      "assumptions": [
+        "delivery_share",
+        "delivery_commission",
+        "gst_rate"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "econ.contribution": {
+      "id": "econ.contribution",
+      "label": "Contribution a cup",
+      "unit": "SGD",
+      "value": "3.65",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "not GST-registered: the whole price is revenue; GST on supplies is a cost",
+        "url": null
+      },
+      "assumptions": [
+        "cup_price_sgd",
+        "variable_cost_per_cup_sgd",
+        "delivery_share",
+        "delivery_commission",
+        "gst_rate"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.price",
+        "econ.var_cost",
+        "econ.delivery_cost"
+      ]
+    },
+    "econ.fixed.wages": {
+      "id": "econ.fixed.wages",
+      "label": "Wages with CPF a month",
+      "unit": "SGD",
+      "value": "16880",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [
+        "staff_plan",
+        "local_manager_wage_sgd",
+        "pwm_counter_attendant_wage_sgd",
+        "cpf_employer_rate"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "econ.fixed.rent": {
+      "id": "econ.fixed.rent",
+      "label": "Rent and service charge a month",
+      "unit": "SGD",
+      "value": "8820",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "simulated",
+        "ref": "units:u-t1-01",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "econ.fixed.running": {
+      "id": "econ.fixed.running",
+      "label": "Utilities and other running costs a month",
+      "unit": "SGD",
+      "value": "2500",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [
+        "utilities_monthly_sgd",
+        "other_fixed_monthly_sgd"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "econ.fixed.gst": {
+      "id": "econ.fixed.gst",
+      "label": "GST on rent, service charge and running costs (not claimable)",
+      "unit": "SGD",
+      "value": "1019",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "a cost while the shop isn't GST-registered",
+        "url": null
+      },
+      "assumptions": [
+        "gst_rate"
+      ],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "econ.fixed": {
+      "id": "econ.fixed",
+      "label": "Fixed costs a month",
+      "unit": "SGD",
+      "value": "29218",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [
+        "staff_plan",
+        "local_manager_wage_sgd",
+        "pwm_counter_attendant_wage_sgd",
+        "cpf_employer_rate",
+        "utilities_monthly_sgd",
+        "other_fixed_monthly_sgd",
+        "gst_rate"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.fixed.wages",
+        "econ.fixed.rent",
+        "econ.fixed.running",
+        "econ.fixed.gst"
+      ]
+    },
+    "econ.card_total": {
+      "id": "econ.card_total",
+      "label": "Opening cost, likely",
+      "unit": "SGD",
+      "value": "311616",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "econ.reserve": {
+      "id": "econ.reserve",
+      "label": "Running reserve left out (it covers the ramp-up months)",
+      "unit": "SGD",
+      "value": "88827",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [
+        "reserve_months",
+        "gst_rate"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.card_total"
+      ]
+    },
+    "econ.investment_likely": {
+      "id": "econ.investment_likely",
+      "label": "Investment, likely",
+      "unit": "SGD",
+      "value": "222789",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "opening cost less the running reserve",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "econ.card_total",
+        "econ.reserve"
+      ]
+    },
+    "econ.investment_bad": {
+      "id": "econ.investment_bad",
+      "label": "Investment if things go badly",
+      "unit": "SGD",
+      "value": "248759",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "P90 opening cost less the running reserve",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "econ.card_total_bad"
+      ]
+    },
+    "lvl.250.cups": {
+      "id": "lvl.250.cups",
+      "label": "Cups a day",
+      "unit": "cups_per_day",
+      "value": "250",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "param",
+        "ref": "econ_cups_levels",
+        "as_of": "2026-10-20",
+        "note": "Build-team choice: around the break-even and the cups needed to pay back within the lease",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "lvl.250.revenue": {
+      "id": "lvl.250.revenue",
+      "label": "Sales a month",
+      "unit": "SGD",
+      "value": "45600",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.250.cups",
+        "econ.price"
+      ]
+    },
+    "lvl.250.ebitda": {
+      "id": "lvl.250.ebitda",
+      "label": "Store EBITDA a month",
+      "unit": "SGD",
+      "value": "-1512",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.250.cups",
+        "econ.contribution",
+        "econ.fixed"
+      ]
+    },
+    "lvl.250.margin": {
+      "id": "lvl.250.margin",
+      "label": "Store margin",
+      "unit": "pct",
+      "value": "-0.033154",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.250.ebitda",
+        "lvl.250.revenue"
+      ]
+    },
+    "lvl.250.depreciation": {
+      "id": "lvl.250.depreciation",
+      "label": "Investment spread over the lease, a month",
+      "unit": "SGD",
+      "value": "4871",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "straight line over the lease (simplified capital allowances)",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely"
+      ]
+    },
+    "lvl.250.tax": {
+      "id": "lvl.250.tax",
+      "label": "Corporate tax a month (steady year)",
+      "unit": "SGD",
+      "value": "0",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "17% with partial exemption only; no SUTE",
+        "url": null
+      },
+      "assumptions": [
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.250.ebitda",
+        "lvl.250.depreciation"
+      ]
+    },
+    "lvl.250.net": {
+      "id": "lvl.250.net",
+      "label": "Profit after tax a month",
+      "unit": "SGD",
+      "value": "-6383",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.250.ebitda",
+        "lvl.250.depreciation",
+        "lvl.250.tax"
+      ]
+    },
+    "lvl.250.payback_likely": {
+      "id": "lvl.250.payback_likely",
+      "label": "Payback, likely",
+      "unit": "months",
+      "value": null,
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "estimate: depends on build-team assumptions (ramp-up, delivery share, price)",
+        "url": null
+      },
+      "assumptions": [
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "lvl.250.ebitda"
+      ]
+    },
+    "lvl.250.payback_bad": {
+      "id": "lvl.250.payback_bad",
+      "label": "Payback if things go badly",
+      "unit": "months",
+      "value": null,
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "P90 opening cost and the slow ramp-up",
+        "url": null
+      },
+      "assumptions": [
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_bad",
+        "lvl.250.ebitda"
+      ]
+    },
+    "lvl.250.npv": {
+      "id": "lvl.250.npv",
+      "label": "NPV over 36 months at 12%",
+      "unit": "SGD",
+      "value": "-284138",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "estimate: depends on build-team assumptions (ramp-up, delivery share, price)",
+        "url": null
+      },
+      "assumptions": [
+        "discount_rate_annual",
+        "reinstatement_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "lvl.250.ebitda"
+      ]
+    },
+    "lvl.250.npv_bad": {
+      "id": "lvl.250.npv_bad",
+      "label": "NPV over 36 months at 12%, if things go badly",
+      "unit": "SGD",
+      "value": "-357065",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [
+        "discount_rate_annual",
+        "reinstatement_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_bad",
+        "lvl.250.ebitda"
+      ]
+    },
+    "lvl.300.cups": {
+      "id": "lvl.300.cups",
+      "label": "Cups a day",
+      "unit": "cups_per_day",
+      "value": "300",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "param",
+        "ref": "econ_cups_levels",
+        "as_of": "2026-10-20",
+        "note": "Build-team choice: around the break-even and the cups needed to pay back within the lease",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "lvl.300.revenue": {
+      "id": "lvl.300.revenue",
+      "label": "Sales a month",
+      "unit": "SGD",
+      "value": "54720",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.300.cups",
+        "econ.price"
+      ]
+    },
+    "lvl.300.ebitda": {
+      "id": "lvl.300.ebitda",
+      "label": "Store EBITDA a month",
+      "unit": "SGD",
+      "value": "4029",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.300.cups",
+        "econ.contribution",
+        "econ.fixed"
+      ]
+    },
+    "lvl.300.margin": {
+      "id": "lvl.300.margin",
+      "label": "Store margin",
+      "unit": "pct",
+      "value": "0.073638",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.300.ebitda",
+        "lvl.300.revenue"
+      ]
+    },
+    "lvl.300.depreciation": {
+      "id": "lvl.300.depreciation",
+      "label": "Investment spread over the lease, a month",
+      "unit": "SGD",
+      "value": "4871",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "straight line over the lease (simplified capital allowances)",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely"
+      ]
+    },
+    "lvl.300.tax": {
+      "id": "lvl.300.tax",
+      "label": "Corporate tax a month (steady year)",
+      "unit": "SGD",
+      "value": "0",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "17% with partial exemption only; no SUTE",
+        "url": null
+      },
+      "assumptions": [
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.300.ebitda",
+        "lvl.300.depreciation"
+      ]
+    },
+    "lvl.300.net": {
+      "id": "lvl.300.net",
+      "label": "Profit after tax a month",
+      "unit": "SGD",
+      "value": "-841",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.300.ebitda",
+        "lvl.300.depreciation",
+        "lvl.300.tax"
+      ]
+    },
+    "lvl.300.payback_likely": {
+      "id": "lvl.300.payback_likely",
+      "label": "Payback, likely",
+      "unit": "months",
+      "value": null,
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "estimate: depends on build-team assumptions (ramp-up, delivery share, price)",
+        "url": null
+      },
+      "assumptions": [
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "lvl.300.ebitda"
+      ]
+    },
+    "lvl.300.payback_bad": {
+      "id": "lvl.300.payback_bad",
+      "label": "Payback if things go badly",
+      "unit": "months",
+      "value": null,
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "P90 opening cost and the slow ramp-up",
+        "url": null
+      },
+      "assumptions": [
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_bad",
+        "lvl.300.ebitda"
+      ]
+    },
+    "lvl.300.npv": {
+      "id": "lvl.300.npv",
+      "label": "NPV over 36 months at 12%",
+      "unit": "SGD",
+      "value": "-123388",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "estimate: depends on build-team assumptions (ramp-up, delivery share, price)",
+        "url": null
+      },
+      "assumptions": [
+        "discount_rate_annual",
+        "reinstatement_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "lvl.300.ebitda"
+      ]
+    },
+    "lvl.300.npv_bad": {
+      "id": "lvl.300.npv_bad",
+      "label": "NPV over 36 months at 12%, if things go badly",
+      "unit": "SGD",
+      "value": "-205716",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [
+        "discount_rate_annual",
+        "reinstatement_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_bad",
+        "lvl.300.ebitda"
+      ]
+    },
+    "lvl.350.cups": {
+      "id": "lvl.350.cups",
+      "label": "Cups a day",
+      "unit": "cups_per_day",
+      "value": "350",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "param",
+        "ref": "econ_cups_levels",
+        "as_of": "2026-10-20",
+        "note": "Build-team choice: around the break-even and the cups needed to pay back within the lease",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "lvl.350.revenue": {
+      "id": "lvl.350.revenue",
+      "label": "Sales a month",
+      "unit": "SGD",
+      "value": "63840",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.350.cups",
+        "econ.price"
+      ]
+    },
+    "lvl.350.ebitda": {
+      "id": "lvl.350.ebitda",
+      "label": "Store EBITDA a month",
+      "unit": "SGD",
+      "value": "9571",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.350.cups",
+        "econ.contribution",
+        "econ.fixed"
+      ]
+    },
+    "lvl.350.margin": {
+      "id": "lvl.350.margin",
+      "label": "Store margin",
+      "unit": "pct",
+      "value": "0.149918",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.350.ebitda",
+        "lvl.350.revenue"
+      ]
+    },
+    "lvl.350.depreciation": {
+      "id": "lvl.350.depreciation",
+      "label": "Investment spread over the lease, a month",
+      "unit": "SGD",
+      "value": "4871",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "straight line over the lease (simplified capital allowances)",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely"
+      ]
+    },
+    "lvl.350.tax": {
+      "id": "lvl.350.tax",
+      "label": "Corporate tax a month (steady year)",
+      "unit": "SGD",
+      "value": "364",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "17% with partial exemption only; no SUTE",
+        "url": null
+      },
+      "assumptions": [
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.350.ebitda",
+        "lvl.350.depreciation"
+      ]
+    },
+    "lvl.350.net": {
+      "id": "lvl.350.net",
+      "label": "Profit after tax a month",
+      "unit": "SGD",
+      "value": "4336",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.350.ebitda",
+        "lvl.350.depreciation",
+        "lvl.350.tax"
+      ]
+    },
+    "lvl.350.payback_likely": {
+      "id": "lvl.350.payback_likely",
+      "label": "Payback, likely",
+      "unit": "months",
+      "value": "29",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "estimate: depends on build-team assumptions (ramp-up, delivery share, price)",
+        "url": null
+      },
+      "assumptions": [
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "lvl.350.ebitda"
+      ]
+    },
+    "lvl.350.payback_bad": {
+      "id": "lvl.350.payback_bad",
+      "label": "Payback if things go badly",
+      "unit": "months",
+      "value": null,
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "P90 opening cost and the slow ramp-up",
+        "url": null
+      },
+      "assumptions": [
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_bad",
+        "lvl.350.ebitda"
+      ]
+    },
+    "lvl.350.npv": {
+      "id": "lvl.350.npv",
+      "label": "NPV over 36 months at 12%",
+      "unit": "SGD",
+      "value": "30736",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "estimate: depends on build-team assumptions (ramp-up, delivery share, price)",
+        "url": null
+      },
+      "assumptions": [
+        "discount_rate_annual",
+        "reinstatement_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "lvl.350.ebitda"
+      ]
+    },
+    "lvl.350.npv_bad": {
+      "id": "lvl.350.npv_bad",
+      "label": "NPV over 36 months at 12%, if things go badly",
+      "unit": "SGD",
+      "value": "-55110",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [
+        "discount_rate_annual",
+        "reinstatement_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_bad",
+        "lvl.350.ebitda"
+      ]
+    },
+    "lvl.400.cups": {
+      "id": "lvl.400.cups",
+      "label": "Cups a day",
+      "unit": "cups_per_day",
+      "value": "400",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "param",
+        "ref": "econ_cups_levels",
+        "as_of": "2026-10-20",
+        "note": "Build-team choice: around the break-even and the cups needed to pay back within the lease",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "lvl.400.revenue": {
+      "id": "lvl.400.revenue",
+      "label": "Sales a month",
+      "unit": "SGD",
+      "value": "72960",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.400.cups",
+        "econ.price"
+      ]
+    },
+    "lvl.400.ebitda": {
+      "id": "lvl.400.ebitda",
+      "label": "Store EBITDA a month",
+      "unit": "SGD",
+      "value": "15112",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.400.cups",
+        "econ.contribution",
+        "econ.fixed"
+      ]
+    },
+    "lvl.400.margin": {
+      "id": "lvl.400.margin",
+      "label": "Store margin",
+      "unit": "pct",
+      "value": "0.207129",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.400.ebitda",
+        "lvl.400.revenue"
+      ]
+    },
+    "lvl.400.depreciation": {
+      "id": "lvl.400.depreciation",
+      "label": "Investment spread over the lease, a month",
+      "unit": "SGD",
+      "value": "4871",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "straight line over the lease (simplified capital allowances)",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely"
+      ]
+    },
+    "lvl.400.tax": {
+      "id": "lvl.400.tax",
+      "label": "Corporate tax a month (steady year)",
+      "unit": "SGD",
+      "value": "835",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "17% with partial exemption only; no SUTE",
+        "url": null
+      },
+      "assumptions": [
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.400.ebitda",
+        "lvl.400.depreciation"
+      ]
+    },
+    "lvl.400.net": {
+      "id": "lvl.400.net",
+      "label": "Profit after tax a month",
+      "unit": "SGD",
+      "value": "9406",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.400.ebitda",
+        "lvl.400.depreciation",
+        "lvl.400.tax"
+      ]
+    },
+    "lvl.400.payback_likely": {
+      "id": "lvl.400.payback_likely",
+      "label": "Payback, likely",
+      "unit": "months",
+      "value": "19",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "estimate: depends on build-team assumptions (ramp-up, delivery share, price)",
+        "url": null
+      },
+      "assumptions": [
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "lvl.400.ebitda"
+      ]
+    },
+    "lvl.400.payback_bad": {
+      "id": "lvl.400.payback_bad",
+      "label": "Payback if things go badly",
+      "unit": "months",
+      "value": "26",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "P90 opening cost and the slow ramp-up",
+        "url": null
+      },
+      "assumptions": [
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_bad",
+        "lvl.400.ebitda"
+      ]
+    },
+    "lvl.400.npv": {
+      "id": "lvl.400.npv",
+      "label": "NPV over 36 months at 12%",
+      "unit": "SGD",
+      "value": "178782",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "estimate: depends on build-team assumptions (ramp-up, delivery share, price)",
+        "url": null
+      },
+      "assumptions": [
+        "discount_rate_annual",
+        "reinstatement_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "lvl.400.ebitda"
+      ]
+    },
+    "lvl.400.npv_bad": {
+      "id": "lvl.400.npv_bad",
+      "label": "NPV over 36 months at 12%, if things go badly",
+      "unit": "SGD",
+      "value": "84968",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [
+        "discount_rate_annual",
+        "reinstatement_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_bad",
+        "lvl.400.ebitda"
+      ]
+    },
+    "lvl.450.cups": {
+      "id": "lvl.450.cups",
+      "label": "Cups a day",
+      "unit": "cups_per_day",
+      "value": "450",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "param",
+        "ref": "econ_cups_levels",
+        "as_of": "2026-10-20",
+        "note": "Build-team choice: around the break-even and the cups needed to pay back within the lease",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "lvl.450.revenue": {
+      "id": "lvl.450.revenue",
+      "label": "Sales a month",
+      "unit": "SGD",
+      "value": "82080",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.450.cups",
+        "econ.price"
+      ]
+    },
+    "lvl.450.ebitda": {
+      "id": "lvl.450.ebitda",
+      "label": "Store EBITDA a month",
+      "unit": "SGD",
+      "value": "20653",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.450.cups",
+        "econ.contribution",
+        "econ.fixed"
+      ]
+    },
+    "lvl.450.margin": {
+      "id": "lvl.450.margin",
+      "label": "Store margin",
+      "unit": "pct",
+      "value": "0.251625",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.450.ebitda",
+        "lvl.450.revenue"
+      ]
+    },
+    "lvl.450.depreciation": {
+      "id": "lvl.450.depreciation",
+      "label": "Investment spread over the lease, a month",
+      "unit": "SGD",
+      "value": "4871",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "straight line over the lease (simplified capital allowances)",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely"
+      ]
+    },
+    "lvl.450.tax": {
+      "id": "lvl.450.tax",
+      "label": "Corporate tax a month (steady year)",
+      "unit": "SGD",
+      "value": "1306",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "17% with partial exemption only; no SUTE",
+        "url": null
+      },
+      "assumptions": [
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.450.ebitda",
+        "lvl.450.depreciation"
+      ]
+    },
+    "lvl.450.net": {
+      "id": "lvl.450.net",
+      "label": "Profit after tax a month",
+      "unit": "SGD",
+      "value": "14476",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.450.ebitda",
+        "lvl.450.depreciation",
+        "lvl.450.tax"
+      ]
+    },
+    "lvl.450.payback_likely": {
+      "id": "lvl.450.payback_likely",
+      "label": "Payback, likely",
+      "unit": "months",
+      "value": "15",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "estimate: depends on build-team assumptions (ramp-up, delivery share, price)",
+        "url": null
+      },
+      "assumptions": [
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "lvl.450.ebitda"
+      ]
+    },
+    "lvl.450.payback_bad": {
+      "id": "lvl.450.payback_bad",
+      "label": "Payback if things go badly",
+      "unit": "months",
+      "value": "20",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "P90 opening cost and the slow ramp-up",
+        "url": null
+      },
+      "assumptions": [
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_bad",
+        "lvl.450.ebitda"
+      ]
+    },
+    "lvl.450.npv": {
+      "id": "lvl.450.npv",
+      "label": "NPV over 36 months at 12%",
+      "unit": "SGD",
+      "value": "326548",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "estimate: depends on build-team assumptions (ramp-up, delivery share, price)",
+        "url": null
+      },
+      "assumptions": [
+        "discount_rate_annual",
+        "reinstatement_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "lvl.450.ebitda"
+      ]
+    },
+    "lvl.450.npv_bad": {
+      "id": "lvl.450.npv_bad",
+      "label": "NPV over 36 months at 12%, if things go badly",
+      "unit": "SGD",
+      "value": "224551",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [
+        "discount_rate_annual",
+        "reinstatement_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_bad",
+        "lvl.450.ebitda"
+      ]
+    },
+    "lvl.owner.cups": {
+      "id": "lvl.owner.cups",
+      "label": "Your own figure, cups a day",
+      "unit": "cups_per_day",
+      "value": "500",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "owner",
+        "ref": "expected_sg_cups_per_day",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "lvl.owner.revenue": {
+      "id": "lvl.owner.revenue",
+      "label": "Sales a month",
+      "unit": "SGD",
+      "value": "83670",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "GST-registered at this level (sales over the threshold)",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.owner.cups",
+        "econ.price"
+      ]
+    },
+    "lvl.owner.ebitda": {
+      "id": "lvl.owner.ebitda",
+      "label": "Store EBITDA a month",
+      "unit": "SGD",
+      "value": "22638",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.owner.cups",
+        "econ.contribution",
+        "econ.fixed"
+      ]
+    },
+    "lvl.owner.margin": {
+      "id": "lvl.owner.margin",
+      "label": "Store margin",
+      "unit": "pct",
+      "value": "0.270565",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.owner.ebitda",
+        "lvl.owner.revenue"
+      ]
+    },
+    "lvl.owner.depreciation": {
+      "id": "lvl.owner.depreciation",
+      "label": "Investment spread over the lease, a month",
+      "unit": "SGD",
+      "value": "4871",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "straight line over the lease (simplified capital allowances)",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely"
+      ]
+    },
+    "lvl.owner.tax": {
+      "id": "lvl.owner.tax",
+      "label": "Corporate tax a month (steady year)",
+      "unit": "SGD",
+      "value": "1568",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "17% with partial exemption only; no SUTE",
+        "url": null
+      },
+      "assumptions": [
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.owner.ebitda",
+        "lvl.owner.depreciation"
+      ]
+    },
+    "lvl.owner.net": {
+      "id": "lvl.owner.net",
+      "label": "Profit after tax a month",
+      "unit": "SGD",
+      "value": "16199",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.owner.ebitda",
+        "lvl.owner.depreciation",
+        "lvl.owner.tax"
+      ]
+    },
+    "lvl.owner.payback_likely": {
+      "id": "lvl.owner.payback_likely",
+      "label": "Payback, likely",
+      "unit": "months",
+      "value": "14",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "estimate: depends on build-team assumptions (ramp-up, delivery share, price)",
+        "url": null
+      },
+      "assumptions": [
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "lvl.owner.ebitda"
+      ]
+    },
+    "lvl.owner.payback_bad": {
+      "id": "lvl.owner.payback_bad",
+      "label": "Payback if things go badly",
+      "unit": "months",
+      "value": "18",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "P90 opening cost and the slow ramp-up",
+        "url": null
+      },
+      "assumptions": [
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_bad",
+        "lvl.owner.ebitda"
+      ]
+    },
+    "lvl.owner.npv": {
+      "id": "lvl.owner.npv",
+      "label": "NPV over 36 months at 12%",
+      "unit": "SGD",
+      "value": "379151",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "estimate: depends on build-team assumptions (ramp-up, delivery share, price)",
+        "url": null
+      },
+      "assumptions": [
+        "discount_rate_annual",
+        "reinstatement_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "lvl.owner.ebitda"
+      ]
+    },
+    "lvl.owner.npv_bad": {
+      "id": "lvl.owner.npv_bad",
+      "label": "NPV over 36 months at 12%, if things go badly",
+      "unit": "SGD",
+      "value": "277133",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [
+        "discount_rate_annual",
+        "reinstatement_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_bad",
+        "lvl.owner.ebitda"
+      ]
+    },
+    "econ.npv_at_8": {
+      "id": "econ.npv_at_8",
+      "label": "NPV over 36 months at 8%",
+      "unit": "SGD",
+      "value": "414579",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "at 500 cups a day",
+        "url": null
+      },
+      "assumptions": [
+        "discount_rate_sensitivity",
+        "reinstatement_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely"
+      ]
+    },
+    "econ.npv_at_15": {
+      "id": "econ.npv_at_15",
+      "label": "NPV over 36 months at 15%",
+      "unit": "SGD",
+      "value": "354974",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": "at 500 cups a day",
+        "url": null
+      },
+      "assumptions": [
+        "discount_rate_sensitivity",
+        "reinstatement_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely"
+      ]
+    },
+    "econ.price_low": {
+      "id": "econ.price_low",
+      "label": "Lower menu price",
+      "unit": "SGD",
+      "value": "5.0",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "param",
+        "ref": "cup_price_range_sgd",
+        "as_of": "2026-10-20",
+        "note": "Singapore menu prices run from Mixue S$2.90 to Heytea S$6.50 (eatbook, Heytea Orchard Central); the likely value is cup_price_sgd. Build-team range for a mid-to-premium tea brand",
+        "url": "https://eatbook.sg/heytea-orchard-central/"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "econ.price_high": {
+      "id": "econ.price_high",
+      "label": "Higher menu price",
+      "unit": "SGD",
+      "value": "6.5",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "param",
+        "ref": "cup_price_range_sgd",
+        "as_of": "2026-10-20",
+        "note": "Singapore menu prices run from Mixue S$2.90 to Heytea S$6.50 (eatbook, Heytea Orchard Central); the likely value is cup_price_sgd. Build-team range for a mid-to-premium tea brand",
+        "url": "https://eatbook.sg/heytea-orchard-central/"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "econ.cups_needed_price_high": {
+      "id": "econ.cups_needed_price_high",
+      "label": "Cups a day to pay back within the lease at the higher price",
+      "unit": "cups_per_day",
+      "value": "293",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "unit_economics",
+        "as_of": null,
+        "note": null,
+        "url": null
+      },
+      "assumptions": [
+        "cup_price_range_sgd",
+        "ramp_curve",
+        "sg_cit_rate",
+        "sg_partial_exemption"
+      ],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "econ.price_high"
+      ]
+    },
+    "econ.bench.nayuki_payback_2018": {
+      "id": "econ.bench.nayuki_payback_2018",
+      "label": "Nayuki: payback of its stores opened in 2018",
+      "unit": "months",
+      "value": "10.6",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "public_data",
+        "ref": "chain_benchmarks:nayuki_payback_2018",
+        "as_of": "2026-10-20",
+        "note": "HKEX prospectus p.197",
+        "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/0618/2021061800009.pdf"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "econ.bench.nayuki_payback_2018_19": {
+      "id": "econ.bench.nayuki_payback_2018_19",
+      "label": "Nayuki: payback of its stores opened in 2018-19",
+      "unit": "months",
+      "value": "15.5",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "public_data",
+        "ref": "chain_benchmarks:nayuki_payback_2018_19",
+        "as_of": "2026-10-20",
+        "note": "HKEX prospectus p.197",
+        "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/0618/2021061800009.pdf"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "econ.bench.nayuki_store_margin_2020": {
+      "id": "econ.bench.nayuki_store_margin_2020",
+      "label": "Nayuki: store operating margin, 2020 (18.9% in 2018)",
+      "unit": "pct",
+      "value": "0.122",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "public_data",
+        "ref": "chain_benchmarks:nayuki_store_margin_2020",
+        "as_of": "2026-10-20",
+        "note": "HKEX prospectus p.197",
+        "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/0618/2021061800009.pdf"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "econ.bench.guming_franchisee_margin_2023": {
+      "id": "econ.bench.guming_franchisee_margin_2023",
+      "label": "Guming: franchisee store operating margin, FY2023",
+      "unit": "pct",
+      "value": "0.202",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "public_data",
+        "ref": "chain_benchmarks:guming_franchisee_margin_2023",
+        "as_of": "2026-10-20",
+        "note": "HKEX prospectus p.179",
+        "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0204/2025020400011.pdf"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "econ.bench.mixue_cups_per_store": {
+      "id": "econ.bench.mixue_cups_per_store",
+      "label": "Mixue: cups a store a day",
+      "unit": "cups_per_day",
+      "value": "640",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "public_data",
+        "ref": "chain_benchmarks:mixue_cups_per_store",
+        "as_of": "2026-10-20",
+        "note": "HKEX prospectus p.15",
+        "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0221/2025022100009.pdf"
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": []
+    },
+    "ratio.sg_investment_share": {
+      "id": "ratio.sg_investment_share",
+      "label": "Singapore investment, share of a year's profit",
+      "unit": "pct",
+      "value": "0.4978900245956279547317850603",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "chain_ratios",
+        "as_of": null,
+        "note": "investment x FX / operating profit of the last 12 months",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_likely",
+        "param.fx",
+        "feed.ttm_profit"
+      ]
+    },
+    "ratio.sg_investment_share_bad": {
+      "id": "ratio.sg_investment_share_bad",
+      "label": "Singapore investment if costs go badly, share of a year's profit",
+      "unit": "pct",
+      "value": "0.5559279166762444034091634677",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "chain_ratios",
+        "as_of": null,
+        "note": "investment x FX / operating profit of the last 12 months",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "econ.investment_bad",
+        "param.fx",
+        "feed.ttm_profit"
+      ]
+    },
+    "ratio.sg_vs_home_shops": {
+      "id": "ratio.sg_vs_home_shops",
+      "label": "The Singapore shop's monthly profit, in home shops",
+      "unit": "times",
+      "value": "18.21294756763797687551240892",
+      "low": null,
+      "high": null,
+      "source": {
+        "kind": "tool",
+        "ref": "chain_ratios",
+        "as_of": null,
+        "note": "the Singapore shop's steady monthly operating profit x FX / a home shop's",
+        "url": null
+      },
+      "assumptions": [],
+      "taint": "trusted",
+      "inputs": [
+        "lvl.owner.ebitda",
+        "param.fx",
+        "ratio.profit_per_home_shop_month"
+      ]
+    }
+  },
+  "display": {
+    "econ.breakeven": "264 cups a day",
+    "econ.cups_needed_likely": "331 cups a day",
+    "econ.cups_needed_bad": "357 cups a day",
+    "econ.cups_needed_price_low": "445 cups a day",
+    "profile.best_shop_cups": "600 cups a day",
+    "econ.price": "S$6",
+    "econ.var_cost": "S$1.96",
+    "econ.delivery_cost": "S$0.39",
+    "econ.contribution": "S$3.65",
+    "econ.fixed.wages": "S$16,900",
+    "econ.fixed.rent": "S$8,820",
+    "econ.fixed.running": "S$2,500",
+    "econ.fixed.gst": "S$1,019",
+    "econ.fixed": "S$29,200",
+    "econ.card_total": "S$311,600",
+    "econ.reserve": "S$88,800",
+    "econ.investment_likely": "S$222,800",
+    "econ.investment_bad": "S$248,800",
+    "lvl.250.cups": "250 cups a day",
+    "lvl.250.revenue": "S$45,600",
+    "lvl.250.ebitda": "-S$1,512",
+    "lvl.250.margin": "-3.3%",
+    "lvl.250.depreciation": "S$4,871",
+    "lvl.250.tax": "S$0",
+    "lvl.250.net": "-S$6,383",
+    "lvl.250.payback_likely": "not within the lease",
+    "lvl.250.payback_bad": "not within the lease",
+    "lvl.250.npv": "-S$284,100",
+    "lvl.250.npv_bad": "-S$357,100",
+    "lvl.300.cups": "300 cups a day",
+    "lvl.300.revenue": "S$54,700",
+    "lvl.300.ebitda": "S$4,029",
+    "lvl.300.margin": "7.4%",
+    "lvl.300.depreciation": "S$4,871",
+    "lvl.300.tax": "S$0",
+    "lvl.300.net": "-S$841",
+    "lvl.300.payback_likely": "not within the lease",
+    "lvl.300.payback_bad": "not within the lease",
+    "lvl.300.npv": "-S$123,400",
+    "lvl.300.npv_bad": "-S$205,700",
+    "lvl.350.cups": "350 cups a day",
+    "lvl.350.revenue": "S$63,800",
+    "lvl.350.ebitda": "S$9,571",
+    "lvl.350.margin": "15%",
+    "lvl.350.depreciation": "S$4,871",
+    "lvl.350.tax": "S$364",
+    "lvl.350.net": "S$4,336",
+    "lvl.350.payback_likely": "29 months",
+    "lvl.350.payback_bad": "not within the lease",
+    "lvl.350.npv": "S$30,700",
+    "lvl.350.npv_bad": "-S$55,100",
+    "lvl.400.cups": "400 cups a day",
+    "lvl.400.revenue": "S$73,000",
+    "lvl.400.ebitda": "S$15,100",
+    "lvl.400.margin": "20.7%",
+    "lvl.400.depreciation": "S$4,871",
+    "lvl.400.tax": "S$835",
+    "lvl.400.net": "S$9,406",
+    "lvl.400.payback_likely": "19 months",
+    "lvl.400.payback_bad": "26 months",
+    "lvl.400.npv": "S$178,800",
+    "lvl.400.npv_bad": "S$85,000",
+    "lvl.450.cups": "450 cups a day",
+    "lvl.450.revenue": "S$82,100",
+    "lvl.450.ebitda": "S$20,700",
+    "lvl.450.margin": "25.2%",
+    "lvl.450.depreciation": "S$4,871",
+    "lvl.450.tax": "S$1,306",
+    "lvl.450.net": "S$14,500",
+    "lvl.450.payback_likely": "15 months",
+    "lvl.450.payback_bad": "20 months",
+    "lvl.450.npv": "S$326,500",
+    "lvl.450.npv_bad": "S$224,600",
+    "lvl.owner.cups": "500 cups a day",
+    "lvl.owner.revenue": "S$83,700",
+    "lvl.owner.ebitda": "S$22,600",
+    "lvl.owner.margin": "27.1%",
+    "lvl.owner.depreciation": "S$4,871",
+    "lvl.owner.tax": "S$1,568",
+    "lvl.owner.net": "S$16,200",
+    "lvl.owner.payback_likely": "14 months",
+    "lvl.owner.payback_bad": "18 months",
+    "lvl.owner.npv": "S$379,200",
+    "lvl.owner.npv_bad": "S$277,100",
+    "econ.npv_at_8": "S$414,600",
+    "econ.npv_at_15": "S$355,000",
+    "econ.price_low": "S$5",
+    "econ.price_high": "S$6.50",
+    "econ.cups_needed_price_high": "293 cups a day",
+    "econ.bench.nayuki_payback_2018": "10.5 months",
+    "econ.bench.nayuki_payback_2018_19": "15.5 months",
+    "econ.bench.nayuki_store_margin_2020": "12.2%",
+    "econ.bench.guming_franchisee_margin_2023": "20.2%",
+    "econ.bench.mixue_cups_per_store": "640 cups a day",
+    "ratio.sg_investment_share": "49.8%",
+    "ratio.sg_investment_share_bad": "55.6%",
+    "ratio.sg_vs_home_shops": "18.2x"
+  }
+}

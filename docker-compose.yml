@@ -1,0 +1,17 @@
+services:
+  waypoint:
+    build: .
+    ports: ["127.0.0.1:8000:8000"]  # demo mode: reachable from this machine only
+    env_file: [{path: .env, required: false}]
+    environment:
+      WAYPOINT_SMTP_HOST: mailpit
+      WAYPOINT_SMTP_PORT: "1025"
+      WAYPOINT_MAILPIT_URL: http://127.0.0.1:8025
+      WAYPOINT_BASE_URL: http://127.0.0.1:8000
+    volumes: [waypoint-var:/var/waypoint]
+    depends_on: [mailpit]
+  mailpit:
+    image: axllent/mailpit:v1.31.6
+    ports: ["127.0.0.1:8025:8025", "127.0.0.1:1025:1025"]
+volumes:
+  waypoint-var:

@@ -1,0 +1,261 @@
+{
+  "title": "Every delivered quantity is grounded, with a model writing the messages",
+  "status": "run",
+  "n": 2468,
+  "metrics": {
+    "composed_templates": 2588,
+    "renders": 3576,
+    "delivered_texts": 2468,
+    "figure_placeholders": 1233,
+    "ungrounded_total": 0,
+    "template_check_failures": 0,
+    "voice_validate_failures": 0,
+    "text_var_ungrounded": 0,
+    "text_var_identifiers_with_digits": {
+      "unit": 159
+    },
+    "figures_unresolved_or_sourceless": 0,
+    "placeholders_left_unrendered": 0,
+    "delivered_not_from_compose_and_renderer": 0,
+    "render_errors": 0,
+    "beats_failed_compose_retry_notice": 4,
+    "examples": {
+      "template_fail": [],
+      "validate_fail": [],
+      "var_ungrounded": [],
+      "fig_fail": [],
+      "braces_left": [],
+      "untraceable": [],
+      "render_errors": []
+    },
+    "e1a_with_the_model": {
+      "pass_marks": {
+        "reached a confirmed goal": {
+          "mark": ">= 90%",
+          "value": "100.0%",
+          "pass": true
+        },
+        "median owner turns": {
+          "mark": "<= 25",
+          "value": 17.0,
+          "pass": true
+        }
+      },
+      "metrics": {
+        "turn_breakdown": {
+          "median_turns_on_detours_guard_and_going_back": 3.0,
+          "median_quote_line_taps": 0.0,
+          "typed_answers_not_understood_total": 0,
+          "median_turns_completers_excluding_detours_guard_back_turns": 14.0
+        },
+        "personas": 60,
+        "completed": {
+          "k": 60,
+          "n": 60,
+          "p": 1.0,
+          "lo": 0.939828,
+          "hi": 1.0,
+          "method": "wilson95"
+        },
+        "median_owner_turns_all": {
+          "value": 17.0,
+          "lo": 16.0,
+          "hi": 18.0,
+          "method": "percentile_bootstrap",
+          "resamples": 10000,
+          "seed": 20261019
+        },
+        "median_owner_turns_completers": 17.0,
+        "owner_turns_quartiles_completers": [
+          15.0,
+          17.0,
+          19.0
+        ],
+        "dropoff_by_step": {
+          "welcome": 0,
+          "profile": 0,
+          "site": 0,
+          "cost": 0,
+          "funding": 0,
+          "goal_plan": 0
+        },
+        "reached_by_step": {
+          "welcome": 60,
+          "profile": 60,
+          "site": 60,
+          "cost": 60,
+          "funding": 60,
+          "goal_plan": 60,
+          "goal_keeper": 60
+        },
+        "stuck": 0,
+        "hit_turn_cap": 0,
+        "by_host_mode": {
+          "embedded": {
+            "completed": {
+              "k": 30,
+              "n": 30,
+              "p": 1.0,
+              "lo": 0.886487,
+              "hi": 1.0,
+              "method": "wilson95"
+            },
+            "median_turns_completers": 15.0
+          },
+          "standalone": {
+            "completed": {
+              "k": 30,
+              "n": 30,
+              "p": 1.0,
+              "lo": 0.886487,
+              "hi": 1.0,
+              "method": "wilson95"
+            },
+            "median_turns_completers": 19.0
+          }
+        },
+        "by_language": {
+          "en": {
+            "completed": {
+              "k": 30,
+              "n": 30,
+              "p": 1.0,
+              "lo": 0.886487,
+              "hi": 1.0,
+              "method": "wilson95"
+            },
+            "median_turns_completers": 17.0
+          },
+          "zh": {
+            "completed": {
+              "k": 30,
+              "n": 30,
+              "p": 1.0,
+              "lo": 0.886487,
+              "hi": 1.0,
+              "method": "wilson95"
+            },
+            "median_turns_completers": 17.5
+          }
+        },
+        "by_style": {
+          "tap": {
+            "completed": {
+              "k": 20,
+              "n": 20,
+              "p": 1.0,
+              "lo": 0.838875,
+              "hi": 1.0,
+              "method": "wilson95"
+            },
+            "median_turns_completers": 18.0
+          },
+          "typed": {
+            "completed": {
+              "k": 20,
+              "n": 20,
+              "p": 1.0,
+              "lo": 0.838875,
+              "hi": 1.0,
+              "method": "wilson95"
+            },
+            "median_turns_completers": 16.5
+          },
+          "mixed": {
+            "completed": {
+              "k": 20,
+              "n": 20,
+              "p": 1.0,
+              "lo": 0.838875,
+              "hi": 1.0,
+              "method": "wilson95"
+            },
+            "median_turns_completers": 17.0
+          }
+        },
+        "guard_trigger_blocked": {
+          "k": 60,
+          "n": 60,
+          "p": 1.0,
+          "lo": 0.939828,
+          "hi": 1.0,
+          "method": "wilson95"
+        },
+        "detour_topic_shown": {
+          "k": 49,
+          "n": 50,
+          "p": 0.98,
+          "lo": 0.895046,
+          "hi": 0.996461,
+          "method": "wilson95"
+        },
+        "going_back_moved_back": {
+          "k": 57,
+          "n": 60,
+          "p": 0.95,
+          "lo": 0.862995,
+          "hi": 0.98285,
+          "method": "wilson95"
+        },
+        "personas_with_unhandled_exceptions": 0,
+        "exception_examples": [],
+        "not_completed": [],
+        "voice": "the configured model writes every message (claude_code:default)"
+      }
+    },
+    "model_calls": {
+      "calls": 1546,
+      "failed": 0,
+      "cooling_refusals": 0
+    }
+  },
+  "pass_marks": {
+    "ungrounded quantities in delivered bot text (single-family deviation)": {
+      "mark": "0",
+      "value": 0,
+      "pass": true
+    }
+  },
+  "seed": 20261019,
+  "notes": [
+    "Model arm, single-family deviation: Claude in every role (prereg addendum 2); TODO re-run with an owner from another family.",
+    "Audited 2588 composed templates, 3576 renders and 2468 delivered bot texts from all 60 E1a transcripts; 1233 figure placeholders were filled. Voice: the configured model writes every message (claude_code:default) — every delivered message was written by the model and checked here.",
+    "Template check failures: 0; voice.validate failures: 0; text variables carrying an ungrounded quantity: 0; unresolved or sourceless figures: 0; placeholders left unrendered: 0; delivered texts not traceable to a composed template: 0; render errors: 0.",
+    "Beats the composer failed (owner shown a retry notice, no text delivered): 4.",
+    "Text variables that contain digits but are verbatim names from data records (simulated unit numbers such as '#B1-S03', area names) are not quantities and are not counted: {'unit': 159}.",
+    "Scope: bot text only (as pre-registered). Widget payloads (cards, chips, approval lines) are filled from Figures by code but are not part of this check.",
+    "E1a's 60 personas with the model writing and understanding (descriptive): reached a confirmed goal 100.0%; median owner turns 17.0.",
+    "Model calls in this arm: 1546 made, 0 failed, 0 refused during a cooldown after a provider failure (those reached the owner as the product's fallback)."
+  ],
+  "runtime_s": 0.26,
+  "model_arm": {
+    "arm": "e2m",
+    "git_commit": "4d3b5b9821fd38538944d8ac9d621cdab73899f5-dirty",
+    "versions": {
+      "skills": {
+        "cost": "v3:713c9255d127",
+        "detour": "v3:a2d3c56760a3",
+        "funding": "v3:25cc279d2d7a",
+        "goal-keeper": "v3:ca924cc5278f",
+        "goal-plan": "v3:f8385970d312",
+        "guard": "v3:01b856e4c588",
+        "journey": "v3:154a56c4d352",
+        "profile": "v3:d257fdebf546",
+        "site-finder": "v3:a181f8d185dc",
+        "welcome": "v3:e8a0ca837887"
+      },
+      "params": "fdd2ca430a24d3479d6bfa7264feee2b3a0c823aba6125bc022e3e191ba68043",
+      "cost_key": "455d1e1d8008d454fc8e901832d5dc3c71401fe5b9756ae82c637f6ea42f9da6",
+      "topics": "8e28ffa8f4ad32c618c6cd9ddcf614ff68fc62d7d6930ac99e3b39e35b8d62a4",
+      "funding_catalogue": "b960b2df29c020751a4ad4b9ed59e2d368d581d9ee3d092e2aa26686ab440e52",
+      "prompts": "31394e6e5928a4c2e0e883480f22d23f185632dba06915644bbbf6dd79f966c0"
+    },
+    "model": "claude_code:default",
+    "runtime_s": 1997.1,
+    "slices": 6,
+    "slice_commits": [
+      "4d3b5b9821fd38538944d8ac9d621cdab73899f5"
+    ],
+    "summed_runtime_s": 9981.9
+  }
+}

@@ -1,0 +1,2 @@
+{{ step_label }}
+{% if lang == 'zh' %}建议在{{ act_by }}之前完成。准备清单：{{ url }}{% else %}Act by {{ act_by }}. Checklist: {{ url }}{% endif %}

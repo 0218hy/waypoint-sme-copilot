@@ -1,0 +1,266 @@
+{
+  "id": "w_fo1",
+  "payload": {
+    "type": "funding_options",
+    "options": [
+      {
+        "id": "spare_cash",
+        "label": "Spare cash (home company)",
+        "status": "open",
+        "covers": "Setup transfer and first main transfer",
+        "available_from": "Now",
+        "cost": "None",
+        "conditions": "Only cash above your safety floor and payroll buffer",
+        "amount": "f_spare",
+        "on": true,
+        "rule_ids": [
+          "R2"
+        ],
+        "words": [
+          "no_cost",
+          "fastest",
+          "keeps_ownership",
+          "raises_floor_risk"
+        ],
+        "why": {
+          "cost": "f_rank_spare_cost",
+          "weeks": "f_rank_spare_weeks",
+          "dilution": "f_rank_spare_dil",
+          "floor_change": "f_rank_spare_floor"
+        }
+      },
+      {
+        "id": "landlord",
+        "label": "Landlord rent-free fit-out months",
+        "status": "optional",
+        "covers": "Pre-opening rent",
+        "available_from": "In the signed offer",
+        "cost": "None",
+        "conditions": "Only if agreed in writing",
+        "on": false,
+        "words": [
+          "no_cost",
+          "keeps_ownership",
+          "lowers_floor_risk"
+        ]
+      },
+      {
+        "id": "setaside",
+        "label": "Set-aside from monthly profit",
+        "status": "open",
+        "covers": "The rest of the cost",
+        "available_from": "Monthly",
+        "cost": "None",
+        "conditions": "Paused while borrowing is above your usual level",
+        "on": true,
+        "rule_ids": [
+          "R2"
+        ],
+        "words": [
+          "no_cost",
+          "keeps_ownership",
+          "raises_floor_risk"
+        ]
+      },
+      {
+        "id": "savings",
+        "label": "Your own savings, as capital",
+        "status": "optional",
+        "covers": "Any part",
+        "available_from": "When you add it",
+        "cost": "None",
+        "conditions": "Never borrowed money",
+        "on": false,
+        "rule_ids": [
+          "R7"
+        ]
+      }
+    ],
+    "webank_role": "Working capital for your Shenzhen shops, optional custody of your savings pot in a sub-account in your company's name, and a buffer planned never to be drawn.",
+    "gap": "f_gap",
+    "spare": "f_spare",
+    "bank_cards": [
+      {
+        "id": "webank_home_wc",
+        "label": "WeBank 微业贷 for your home shops",
+        "status": "optional",
+        "covers": "Documented needs of your shops at home: stock, seasonal wages, a Shenzhen refit. Nothing in Singapore",
+        "available_from": "Online, when WeBank approves it",
+        "cost": "Interest at the rate WeBank offers you",
+        "conditions": "Sized to the real need net of your own funds, and only up to your usual borrowing level",
+        "amount": "f_headroom",
+        "on": false,
+        "rule_ids": [
+          "R1",
+          "R2"
+        ],
+        "source": {
+          "label": "流动资金贷款管理办法 (2024) Art. 6 and the annex formula",
+          "url": "https://www.gov.cn/gongbao/2024/issue_11306/202404/content_6947721.html",
+          "kind": "law"
+        },
+        "variant": "webank",
+        "as_of": "2026-10-20",
+        "subject_to_approval": true,
+        "product": {
+          "label": "WeBank 微业贷 product page",
+          "url": "https://sme.webank.com/esp-web/rls/asset/wyd/index.html"
+        },
+        "note": "While your WeBank borrowing is above your usual level, your Singapore set-aside and transfers pause. They restart once it's back to normal.",
+        "note_rule": "R2"
+      },
+      {
+        "id": "partner_bank_fx",
+        "label": "FX and transfer at the bank that registers your ODI",
+        "status": "optional",
+        "covers": "Converting to Singapore dollars and sending to your Singapore company",
+        "available_from": "After lender consent, the ODI filing and the bank registration (R4)",
+        "cost": "That bank's FX spread and fees",
+        "conditions": "Your WeBank statements go to that bank as proof the money is the company's profit and your savings",
+        "on": false,
+        "rule_ids": [
+          "R4",
+          "R7"
+        ],
+        "variant": "partner_bank",
+        "as_of": "2026-10-20",
+        "subject_to_approval": true
+      }
+    ],
+    "later_cards": [
+      {
+        "id": "efs_after_opening",
+        "label": "Singapore loans after opening: EFS working capital, bank SME loans",
+        "status": "later",
+        "covers": "Working capital for the Singapore shop once it trades",
+        "available_from": "After opening. EFS: once a local partner holds at least 30%. Banks: usually after 6 to 12 months of trading (market practice)",
+        "cost": "Interest; EFS loans are partly risk-shared by Enterprise Singapore",
+        "conditions": "Never counted in this plan (R8). EFS needs at least 30% local shareholding and sets no trading-history test",
+        "on": false,
+        "rule_ids": [
+          "R8"
+        ],
+        "variant": "after_opening",
+        "as_of": "2026-10-20",
+        "subject_to_approval": true,
+        "product": {
+          "label": "Enterprise Singapore: EFS SME Working Capital Loan",
+          "url": "https://www.enterprisesg.gov.sg/financial-support/enterprise-financing-scheme---sme-working-capital"
+        }
+      }
+    ],
+    "not_yet": [
+      {
+        "id": "partner",
+        "label": "Local partner equity",
+        "status": "optional",
+        "covers": "Their share",
+        "available_from": "When agreed",
+        "cost": "A share of profit",
+        "conditions": "At least 30% Singapore citizen or PR",
+        "on": false,
+        "why_not": "Only if you would consider a local partner: tap “A local partner?”"
+      }
+    ]
+  },
+  "figures": {
+    "f_gap": {
+      "id": "f_gap",
+      "label": "Funding gap",
+      "unit": "CNY",
+      "value": "1210000",
+      "source": {
+        "kind": "tool",
+        "ref": "funding_gap",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [
+        "fx.sgd_cny"
+      ],
+      "taint": "trusted"
+    },
+    "f_spare": {
+      "id": "f_spare",
+      "label": "Spare cash",
+      "unit": "CNY",
+      "value": "1850000",
+      "source": {
+        "kind": "tool",
+        "ref": "spare_cash",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_headroom": {
+      "id": "f_headroom",
+      "label": "Room below your usual WeBank borrowing",
+      "unit": "CNY",
+      "value": "150000",
+      "source": {
+        "kind": "tool",
+        "ref": "home_loan_headroom",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_rank_spare_cost": {
+      "id": "f_rank_spare_cost",
+      "label": "Share of the Singapore profit given up",
+      "unit": "pct",
+      "value": "0",
+      "source": {
+        "kind": "tool",
+        "ref": "rank_options"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_rank_spare_weeks": {
+      "id": "f_rank_spare_weeks",
+      "label": "When this route's money is in hand",
+      "unit": "weeks",
+      "value": "0",
+      "source": {
+        "kind": "tool",
+        "ref": "rank_options"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_rank_spare_dil": {
+      "id": "f_rank_spare_dil",
+      "label": "Share of the Singapore company given up",
+      "unit": "pct",
+      "value": "0",
+      "source": {
+        "kind": "tool",
+        "ref": "rank_options"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "f_rank_spare_floor": {
+      "id": "f_rank_spare_floor",
+      "label": "Change in the chance home cash dips below the floor, with this route vs without it",
+      "unit": "pct",
+      "value": "0.033",
+      "source": {
+        "kind": "tool",
+        "ref": "rank_options"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    }
+  },
+  "display": {
+    "f_gap": "RMB 1.21m",
+    "f_spare": "RMB 1.85m",
+    "f_headroom": "RMB 150k",
+    "f_rank_spare_cost": "0%",
+    "f_rank_spare_weeks": "month 0 (Oct 2026)",
+    "f_rank_spare_dil": "0%",
+    "f_rank_spare_floor": "3.3%"
+  }
+}

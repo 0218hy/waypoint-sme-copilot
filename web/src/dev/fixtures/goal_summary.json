@@ -1,0 +1,79 @@
+{
+  "id": "w_gs1",
+  "payload": {
+    "type": "goal_summary",
+    "sentence": "Open at Century Square #B1-08 around Jan 2028 (by Apr 2028 if things go badly). Set aside RMB 168,000 a month.",
+    "figures": [
+      "goal.open_likely",
+      "goal.open_p95",
+      "goal.setaside_monthly",
+      "goal.floor_risk"
+    ],
+    "assumptions": [
+      "Profit follows last year's pattern, with the CNY trough",
+      "FX at RMB 5.38 per S$",
+      "ODI filing takes 4–6 weeks",
+      "3 months of running costs held in reserve"
+    ]
+  },
+  "figures": {
+    "goal.open_likely": {
+      "id": "goal.open_likely",
+      "label": "Likely opening",
+      "unit": "weeks",
+      "value": "62",
+      "source": {
+        "kind": "tool",
+        "ref": "simulate_plan",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "goal.open_p95": {
+      "id": "goal.open_p95",
+      "label": "If things go badly",
+      "unit": "weeks",
+      "value": "74",
+      "source": {
+        "kind": "tool",
+        "ref": "simulate_plan",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "goal.setaside_monthly": {
+      "id": "goal.setaside_monthly",
+      "label": "Monthly set-aside",
+      "unit": "CNY",
+      "value": "168000",
+      "source": {
+        "kind": "tool",
+        "ref": "simulate_plan",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    },
+    "goal.floor_risk": {
+      "id": "goal.floor_risk",
+      "label": "Floor risk",
+      "unit": "pct",
+      "value": "3.1",
+      "source": {
+        "kind": "tool",
+        "ref": "simulate_plan",
+        "as_of": "2026-10-19"
+      },
+      "assumptions": [],
+      "taint": "trusted"
+    }
+  },
+  "display": {
+    "goal.open_likely": "Jan 2028",
+    "goal.open_p95": "Apr 2028",
+    "goal.setaside_monthly": "RMB 168,000",
+    "goal.floor_risk": "3.1%"
+  }
+}
